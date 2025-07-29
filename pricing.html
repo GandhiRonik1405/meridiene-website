@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- 1. Character Set and Viewport -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>meridiene-navigator-blueprint</title>
+        <!-- 2. Favicon -->
+        <link rel="icon" type="image/svg+xml" href="assets/images/favicon.ico" />
+        <!-- 3. Meta Info -->
+        <meta name="description" content="Lovable Generated Project" />
+        <meta name="author" content="Lovable" />
+        <!-- 4. Open Graph (for social sharing) -->
+        <meta property="og:title" content="meridiene-navigator-blueprint" />
+        <meta property="og:description" content="Lovable Generated Project" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/473a7f6f-2458-44b1-95c8-4caff523bd8d/id-preview-3eec9659--72a35f65-ccde-4691-bf48-6671fc54cd49.lovable.app-1752472652091.png" />
+        <!-- 5. Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@lovable_dev" />
+        <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/473a7f6f-2458-44b1-95c8-4caff523bd8d/id-preview-3eec9659--72a35f65-ccde-4691-bf48-6671fc54cd49.lovable.app-1752472652091.png" />
+        <!-- 6. External Stylesheets -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+      
+        <link rel="stylesheet" href="assets/css/main_styles.css" />
+        <link rel="stylesheet" href="assets/css/common_style.css" />
+
+        <script src="assets/js/custom.js"></script>
+    </head>
+    <body>
+
+        <!-- loader start  -->
+            <div class="fixed inset-0 flex items-center justify-center bg-white z-50" id="loader">
+                <div class="w-12 h-12 border-4 border-dashed rounded-full border-red-500 animate-spin">
+                    <img src="assets/images/meredian-loading.gif"/>
+                </div>
+            </div>
+        <!-- loader end -->
+
+        <div id="root">
+        
+            <!-- header menu start -->
+                <nav class="fixed top-0 w-full z-50 transition-all duration-500 bg-transparent">
+                    <div class="container mx-auto px-6">
+                        <div class="flex items-center justify-between h-20">
+                            <a class="transition-colors duration-200 flex items-center space-x-2 group" href="#top">
+                               
+                                <span class="">
+                                <img alt="Meridiene AI Dashboard" class="" src="assets/images/Meridiene-logo.png" style="width: 175px; height: 46px;"/>
+                                </span>
+                            </a>
+                            <div class="hidden md:flex items-center space-x-8">
+                                <div>
+                                    <div class="relative group">
+                                        <button class="flex items-center space-x-1 text-foreground hover:text-primary transition-colors py-2 px-3 rounded-lg hover:bg-muted/50">
+                                            <span class="font-medium" id="usecase-btn">
+                                            Use Cases
+                                            </span>
+                                            <svg class="lucide lucide-chevron-down h-4 w-4 transition-transform duration-300" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="m6 9 6 6 6-6">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                        <div class="absolute top-full left-0 mt-2 w-80 bg-background border border-border rounded-xl shadow-elegant transition-all duration-300 z-50 opacity-0 invisible -translate-y-2" id="sub_menu_c">
+                                            <div class="p-4 space-y-2">
+                                                <a class="block p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group/item" href="/ma">
+                                                    <div class="font-medium text-foreground group-hover/item:text-primary transition-colors">
+                                                        M&amp;A Integration
+                                                    </div>
+                                                    <div class="text-sm text-muted-foreground mt-1">
+                                                        AI-driven synergy identification and risk assessment
+                                                    </div>
+                                                </a>
+                                                <a class="block p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group/item" href="organizational-transformation.html">
+                                                    <div class="font-medium text-foreground group-hover/item:text-primary transition-colors">
+                                                        Organizational Transformation
+                                                    </div>
+                                                    <div class="text-sm text-muted-foreground mt-1">
+                                                        Navigate change with predictive insights
+                                                    </div>
+                                                </a>
+                                                <a class="block p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group/item" href="workforce-planning.html">
+                                                    <div class="font-medium text-foreground group-hover/item:text-primary transition-colors">
+                                                        Strategic Workforce Planning
+                                                    </div>
+                                                    <div class="text-sm text-muted-foreground mt-1">
+                                                        Align talent strategy with business goals
+                                                    </div>
+                                                </a>
+                                                <a class="block p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group/item" href="#ai-readiness">
+                                                    <div class="font-medium text-foreground group-hover/item:text-primary transition-colors">
+                                                        AI Readiness Assessment
+                                                    </div>
+                                                    <div class="text-sm text-muted-foreground mt-1">
+                                                        Future-proof your organization for AI adoption
+                                                    </div>
+                                                </a>
+                                                <a class="block p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group/item" href="skill-gap-analysis.html">
+                                                    <div class="font-medium text-foreground group-hover/item:text-primary transition-colors">
+                                                        Skill Gap Analysis
+                                                    </div>
+                                                    <div class="text-sm text-muted-foreground mt-1">
+                                                        Identify and close critical capability gaps
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="transition-colors duration-200 text-foreground hover:text-primary transition-colors font-medium" href="#about">
+                                About Us
+                                </a>
+                                <a class="transition-colors duration-200 text-foreground hover:text-primary transition-colors font-medium" href="pricing.html">
+                                Pricing
+                                </a>
+                                <a class="transition-colors duration-200 text-foreground hover:text-primary transition-colors font-medium" href="#contact">
+                                Contact Us
+                                </a>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <button class="items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white hover:shadow-glow font-semibold h-12 rounded-lg px-8 text-base hidden md:inline-flex group hover:scale-105 transition-all duration-300 relative overflow-hidden">
+                                    <div class="absolute inset-0 bg-gradient-glow opacity-0 group-hover:opacity-100 animate-shimmer transition-opacity duration-300">
+                                    </div>
+                                    <svg class="lucide lucide-sparkles mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z">
+                                        </path>
+                                        <path d="M20 3v4">
+                                        </path>
+                                        <path d="M22 5h-4">
+                                        </path>
+                                        <path d="M4 17v2">
+                                        </path>
+                                        <path d="M5 18H3">
+                                        </path>
+                                    </svg>
+                                    <span class="relative z-10">
+                                    Discover Your True North
+                                    </span>
+                                    <svg class="lucide lucide-arrow-right ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300 relative z-10" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12h14">
+                                        </path>
+                                        <path d="m12 5 7 7-7 7">
+                                        </path>
+                                    </svg>
+                                </button>
+                                <button class="md:hidden p-2 rounded-lg hover:bg-muted transition-colors">
+                                    <svg class="lucide lucide-menu h-6 w-6" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <line x1="4" x2="20" y1="12" y2="12">
+                                        </line>
+                                        <line x1="4" x2="20" y1="6" y2="6">
+                                        </line>
+                                        <line x1="4" x2="20" y1="18" y2="18">
+                                        </line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </nav>
+            <!-- header menu end -->
+        
+            <!-- Site animation border start -->
+                <div class="fixed inset-0 pointer-events-none overflow-hidden">
+                    <div class="animate-float absolute top-20 left-10 text-primary/10" style="animation-delay: 0s;">
+                        <svg class="lucide lucide-circuit-board h-16 w-16" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <rect height="18" rx="2" width="18" x="3" y="3">
+                            </rect>
+                            <path d="M11 9h4a2 2 0 0 0 2-2V3">
+                            </path>
+                            <circle cx="9" cy="9" r="2">
+                            </circle>
+                            <path d="M7 21v-4a2 2 0 0 1 2-2h4">
+                            </path>
+                            <circle cx="15" cy="15" r="2">
+                            </circle>
+                        </svg>
+                    </div>
+                    <div class="animate-float absolute top-40 right-20 text-secondary/10" style="animation-delay: 1s;">
+                        <svg class="lucide lucide-network h-12 w-12" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <rect height="6" rx="1" width="6" x="16" y="16">
+                            </rect>
+                            <rect height="6" rx="1" width="6" x="2" y="16">
+                            </rect>
+                            <rect height="6" rx="1" width="6" x="9" y="2">
+                            </rect>
+                            <path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3">
+                            </path>
+                            <path d="M12 12V8">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="animate-float absolute bottom-40 left-20 text-primary/10" style="animation-delay: 2s;">
+                        <svg class="lucide lucide-brain h-14 w-14" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z">
+                            </path>
+                            <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z">
+                            </path>
+                            <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4">
+                            </path>
+                            <path d="M17.599 6.5a3 3 0 0 0 .399-1.375">
+                            </path>
+                            <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5">
+                            </path>
+                            <path d="M3.477 10.896a4 4 0 0 1 .585-.396">
+                            </path>
+                            <path d="M19.938 10.5a4 4 0 0 1 .585.396">
+                            </path>
+                            <path d="M6 18a4 4 0 0 1-1.967-.516">
+                            </path>
+                            <path d="M19.967 17.484A4 4 0 0 1 18 18">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="animate-float absolute bottom-20 right-10 text-secondary/10" style="animation-delay: 0.5s;">
+                        <svg class="lucide lucide-activity h-10 w-10" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            <!-- Site animation border end -->
+
+            <!-- Site content start -->
+                <br/><br/>
+                <section class="py-20 px-4 relative overflow-hidden">
+                    <div class="animate-float" style="animation-delay: 0s;">
+                        <div class="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-xl animate-float">
+                        </div>
+                    </div>
+                    <div class="animate-float" style="animation-delay: 2000s;">
+                        <div class="absolute bottom-20 right-10 w-24 h-24 bg-secondary/10 rounded-full blur-xl animate-float">
+                        </div>
+                    </div>
+                    <div class="container mx-auto text-center relative z-10">
+                        <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 mb-6 animate-bounce-gentle">
+                            <svg class="lucide lucide-trending-up h-4 w-4 mr-2" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17">
+                                </polyline>
+                                <polyline points="16 7 22 7 22 13">
+                                </polyline>
+                            </svg>
+                            Flexible Pricing Plans
+                        </div>
+                        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                            <span class="bg-gradient-primary bg-clip-text text-transparent">
+                            Choose Your
+                            </span>
+                            <br>
+                            <span class="text-foreground relative" id="typewriter">
+                                <!-- text will come here -->
+                                <span class="animate-blink border-r-2 border-primary ml-1" id="cursor">
+                                </span>
+                            </span>
+                            </br>
+                        </h1>
+                        <p class="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+                            Transparent pricing designed to scale with your organization. From startup M&amp;A to enterprise-level transformations, we have the perfect plan for your needs.
+                        </p>
+                    </div>
+                </section>
+                <section class="py-20 px-4">
+                    <div class="container mx-auto">
+                        <div class="flex items-center justify-center gap-4 mb-12">
+                            <span class="text-lg font-medium text-primary" id="monthlyText">
+                            Monthly
+                            </span>
+                            <button class="relative w-16 h-8 bg-muted rounded-full transition-all duration-300 hover:shadow-glow focus:outline-none" id="toggleBtn">
+                                <div class="absolute top-1 left-1 w-6 h-6 bg-primary rounded-full transition-transform duration-300 translate-x-0" id="toggleCircle">
+                                </div>
+                            </button>
+                            <span class="text-lg font-medium text-muted-foreground" id="annualText">
+                            Annual
+                            </span>
+                            <div class="custom_save hidden inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-green-500 text-white animate-bounce-gentle" id="saveBadge">
+                                Save 20%
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                            <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative p-6 transition-all duration-500 hover:scale-105 hover:shadow-hover animate-fade-in group" style="animation-delay: 0ms;">
+                                <div class="flex flex-col space-y-1.5 p-6 relative z-10">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <svg class="lucide lucide-rocket h-8 w-8 text-muted-foreground" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z">
+                                            </path>
+                                            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z">
+                                            </path>
+                                            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0">
+                                            </path>
+                                            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="tracking-tight text-2xl font-bold">
+                                        Starter
+                                    </h3>
+                                    <p class="text-muted-foreground mt-2">
+                                        Perfect for small teams exploring M&amp;A opportunities
+                                    </p>
+                                    <div class="mt-6">
+                                        <div class="flex items-baseline gap-2">
+                                            <span class="text-4xl font-bold">
+                                            Contact Us
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-6 pt-0 relative z-10">
+                                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground hover:shadow-elegant h-10 px-4 py-2 w-full mb-6 transition-all duration-300 hover:scale-105 group bg-secondary hover:bg-secondary/90">
+                                        <svg class="lucide lucide-eye h-4 w-4 mr-2 group-hover:animate-pulse-glow" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0">
+                                            </path>
+                                            <circle cx="12" cy="12" r="3">
+                                            </circle>
+                                        </svg>
+                                        Start Free Trial
+                                        <svg class="lucide lucide-arrow-right h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 12h14">
+                                            </path>
+                                            <path d="m12 5 7 7-7 7">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                    <div class="space-y-3">
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Up to 5 team members
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Basic org chart visualization
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Standard synergy calculator
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Email support
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Basic reporting dashboard
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Integration with 3 tools
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 pt-4 border-t border-border">
+                                        <p class="text-xs text-muted-foreground mb-2">
+                                            Not included:
+                                        </p>
+                                        <div class="flex items-start gap-3 mb-1">
+                                            <svg class="lucide lucide-x h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M18 6 6 18">
+                                                </path>
+                                                <path d="m6 6 12 12">
+                                                </path>
+                                            </svg>
+                                            <span class="text-xs text-muted-foreground">
+                                            Advanced AI analytics
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3 mb-1">
+                                            <svg class="lucide lucide-x h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M18 6 6 18">
+                                                </path>
+                                                <path d="m6 6 12 12">
+                                                </path>
+                                            </svg>
+                                            <span class="text-xs text-muted-foreground">
+                                            Custom integrations
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3 mb-1">
+                                            <svg class="lucide lucide-x h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M18 6 6 18">
+                                                </path>
+                                                <path d="m6 6 12 12">
+                                                </path>
+                                            </svg>
+                                            <span class="text-xs text-muted-foreground">
+                                            Priority support
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3 mb-1">
+                                            <svg class="lucide lucide-x h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M18 6 6 18">
+                                                </path>
+                                                <path d="m6 6 12 12">
+                                                </path>
+                                            </svg>
+                                            <span class="text-xs text-muted-foreground">
+                                            Advanced reporting features
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative p-6 transition-all duration-500 hover:scale-105 border-primary shadow-glow animate-fade-in group" style="animation-delay: 200ms;">
+                                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                                    <div class="inline-flex items-center rounded-full border text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-gradient-primary text-white px-4 py-2 animate-pulse-glow">
+                                        <svg class="lucide lucide-crown h-4 w-4 mr-1" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z">
+                                            </path>
+                                            <path d="M5 21h14">
+                                            </path>
+                                        </svg>
+                                        Most Popular
+                                    </div>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-glow opacity-10 rounded-lg">
+                                </div>
+                                <div class="flex flex-col space-y-1.5 p-6 relative z-10">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <svg class="lucide lucide-target h-8 w-8 text-primary animate-pulse-glow" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="12" cy="12" r="10">
+                                            </circle>
+                                            <circle cx="12" cy="12" r="6">
+                                            </circle>
+                                            <circle cx="12" cy="12" r="2">
+                                            </circle>
+                                        </svg>
+                                        <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 animate-shimmer">
+                                            Popular
+                                        </div>
+                                    </div>
+                                    <h3 class="tracking-tight text-2xl font-bold">
+                                        Professional
+                                    </h3>
+                                    <p class="text-muted-foreground mt-2">
+                                        Advanced features for growing organizations
+                                    </p>
+                                    <div class="mt-6">
+                                        <div class="flex items-baseline gap-2">
+                                            <span class="text-4xl font-bold">
+                                            Contact Us
+                                            </span>
+                                        </div>
+                                        <p class="text-sm text-muted-foreground line-through">
+                                            Originally Contact for details
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="p-6 pt-0 relative z-10">
+                                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full mb-6 transition-all duration-300 hover:scale-105 group bg-gradient-primary hover:shadow-hover">
+                                        <svg class="lucide lucide-sparkles h-4 w-4 mr-2 group-hover:animate-pulse-glow" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z">
+                                            </path>
+                                            <path d="M20 3v4">
+                                            </path>
+                                            <path d="M22 5h-4">
+                                            </path>
+                                            <path d="M4 17v2">
+                                            </path>
+                                            <path d="M5 18H3">
+                                            </path>
+                                        </svg>
+                                        Unlock Professional Features
+                                        <svg class="lucide lucide-arrow-right h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 12h14">
+                                            </path>
+                                            <path d="m12 5 7 7-7 7">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                    <div class="space-y-3">
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Up to 25 team members
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Advanced AI-powered analytics
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Drag &amp; drop org chart builder
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Real-time synergy calculations
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Priority email &amp; chat support
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Custom reporting templates
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Integration with 10+ tools
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Risk assessment algorithms
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 pt-4 border-t border-border">
+                                        <p class="text-xs text-muted-foreground mb-2">
+                                            Not included:
+                                        </p>
+                                        <div class="flex items-start gap-3 mb-1">
+                                            <svg class="lucide lucide-x h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M18 6 6 18">
+                                                </path>
+                                                <path d="m6 6 12 12">
+                                                </path>
+                                            </svg>
+                                            <span class="text-xs text-muted-foreground">
+                                            White-label solutions
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3 mb-1">
+                                            <svg class="lucide lucide-x h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M18 6 6 18">
+                                                </path>
+                                                <path d="m6 6 12 12">
+                                                </path>
+                                            </svg>
+                                            <span class="text-xs text-muted-foreground">
+                                            Dedicated account manager
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3 mb-1">
+                                            <svg class="lucide lucide-x h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M18 6 6 18">
+                                                </path>
+                                                <path d="m6 6 12 12">
+                                                </path>
+                                            </svg>
+                                            <span class="text-xs text-muted-foreground">
+                                            Custom AI model training
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative p-6 transition-all duration-500 hover:scale-105 hover:shadow-hover animate-fade-in group" style="animation-delay: 400ms;">
+                                <div class="flex flex-col space-y-1.5 p-6 relative z-10">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <svg class="lucide lucide-crown h-8 w-8 text-muted-foreground" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z">
+                                            </path>
+                                            <path d="M5 21h14">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="tracking-tight text-2xl font-bold">
+                                        Enterprise
+                                    </h3>
+                                    <p class="text-muted-foreground mt-2">
+                                        Complete solution for large-scale M&amp;A operations
+                                    </p>
+                                    <div class="mt-6">
+                                        <div class="flex items-baseline gap-2">
+                                            <span class="text-4xl font-bold">
+                                            Contact Us
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-6 pt-0 relative z-10">
+                                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground hover:shadow-elegant h-10 px-4 py-2 w-full mb-6 transition-all duration-300 hover:scale-105 group bg-secondary hover:bg-secondary/90">
+                                        <svg class="lucide lucide-brain h-4 w-4 mr-2 group-hover:animate-pulse-glow" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z">
+                                            </path>
+                                            <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z">
+                                            </path>
+                                            <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4">
+                                            </path>
+                                            <path d="M17.599 6.5a3 3 0 0 0 .399-1.375">
+                                            </path>
+                                            <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5">
+                                            </path>
+                                            <path d="M3.477 10.896a4 4 0 0 1 .585-.396">
+                                            </path>
+                                            <path d="M19.938 10.5a4 4 0 0 1 .585.396">
+                                            </path>
+                                            <path d="M6 18a4 4 0 0 1-1.967-.516">
+                                            </path>
+                                            <path d="M19.967 17.484A4 4 0 0 1 18 18">
+                                            </path>
+                                        </svg>
+                                        Schedule Enterprise Demo
+                                        <svg class="lucide lucide-arrow-right h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 12h14">
+                                            </path>
+                                            <path d="m12 5 7 7-7 7">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                    <div class="space-y-3">
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Unlimited team members
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Custom AI model training
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Advanced predictive analytics
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            White-label solutions
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            24/7 dedicated support
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Custom integrations &amp; APIs
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Advanced security &amp; compliance
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Dedicated account manager
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            On-premise deployment options
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Custom workflow automation
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Multi-company management
+                                            </span>
+                                        </div>
+                                        <div class="flex items-start gap-3">
+                                            <svg class="lucide lucide-check h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 6 9 17l-5-5">
+                                                </path>
+                                            </svg>
+                                            <span class="text-sm">
+                                            Advanced audit trails
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-20 px-4 bg-muted/30">
+                    <div class="container mx-auto">
+                        <div class="text-center mb-12">
+                            <h2 class="text-4xl font-bold mb-4">
+                                Why
+                                <span class="bg-gradient-primary bg-clip-text text-transparent">
+                                Meridiene
+                                </span>
+                                Leads the Market
+                            </h2>
+                            <p class="text-xl text-muted-foreground">
+                                See how we compare against the competition
+                            </p>
+                        </div>
+                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+                            <div class="overflow-x-auto">
+                                <table class="w-full min-w-[800px] border-collapse">
+                                    <thead>
+                                        <tr class="border-b border-border">
+                                            <th class="text-left p-4 font-bold">
+                                                Features
+                                            </th>
+                                            <th class="text-center p-4 font-bold bg-gradient-primary text-white rounded-t-lg">
+                                                Meridiene
+                                                <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 ml-2 bg-white text-primary">
+                                                    <svg class="lucide lucide-star h-3 w-3 mr-1" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                                                        </path>
+                                                    </svg>
+                                                    Best
+                                                </div>
+                                            </th>
+                                            <th class="text-center p-4 font-bold">
+                                                Competitor A
+                                            </th>
+                                            <th class="text-center p-4 font-bold">
+                                                Competitor B
+                                            </th>
+                                            <th class="text-center p-4 font-bold">
+                                                Competitor C
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="border-b border-border hover:bg-muted/50 transition-colors">
+                                            <td class="p-4 font-medium">
+                                                AI-Powered Analytics
+                                            </td>
+                                            <td class="text-center p-4 bg-gradient-subtle">
+                                                <svg class="lucide lucide-check h-5 w-5 text-green-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M20 6 9 17l-5-5">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-x h-5 w-5 text-red-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M18 6 6 18">
+                                                    </path>
+                                                    <path d="m6 6 12 12">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-check h-5 w-5 text-green-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M20 6 9 17l-5-5">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-x h-5 w-5 text-red-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M18 6 6 18">
+                                                    </path>
+                                                    <path d="m6 6 12 12">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-border hover:bg-muted/50 transition-colors">
+                                            <td class="p-4 font-medium">
+                                                Drag &amp; Drop Org Charts
+                                            </td>
+                                            <td class="text-center p-4 bg-gradient-subtle">
+                                                <svg class="lucide lucide-check h-5 w-5 text-green-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M20 6 9 17l-5-5">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-check h-5 w-5 text-green-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M20 6 9 17l-5-5">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-x h-5 w-5 text-red-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M18 6 6 18">
+                                                    </path>
+                                                    <path d="m6 6 12 12">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-x h-5 w-5 text-red-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M18 6 6 18">
+                                                    </path>
+                                                    <path d="m6 6 12 12">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-border hover:bg-muted/50 transition-colors">
+                                            <td class="p-4 font-medium">
+                                                Real-time Synergy Calc
+                                            </td>
+                                            <td class="text-center p-4 bg-gradient-subtle">
+                                                <svg class="lucide lucide-check h-5 w-5 text-green-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M20 6 9 17l-5-5">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-x h-5 w-5 text-red-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M18 6 6 18">
+                                                    </path>
+                                                    <path d="m6 6 12 12">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-check h-5 w-5 text-green-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M20 6 9 17l-5-5">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-x h-5 w-5 text-red-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M18 6 6 18">
+                                                    </path>
+                                                    <path d="m6 6 12 12">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-border hover:bg-muted/50 transition-colors">
+                                            <td class="p-4 font-medium">
+                                                Predictive Risk Assessment
+                                            </td>
+                                            <td class="text-center p-4 bg-gradient-subtle">
+                                                <svg class="lucide lucide-check h-5 w-5 text-green-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M20 6 9 17l-5-5">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-x h-5 w-5 text-red-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M18 6 6 18">
+                                                    </path>
+                                                    <path d="m6 6 12 12">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-x h-5 w-5 text-red-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M18 6 6 18">
+                                                    </path>
+                                                    <path d="m6 6 12 12">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-x h-5 w-5 text-red-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M18 6 6 18">
+                                                    </path>
+                                                    <path d="m6 6 12 12">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-border hover:bg-muted/50 transition-colors">
+                                            <td class="p-4 font-medium">
+                                                24/7 Support
+                                            </td>
+                                            <td class="text-center p-4 bg-gradient-subtle">
+                                                <svg class="lucide lucide-check h-5 w-5 text-green-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M20 6 9 17l-5-5">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-check h-5 w-5 text-green-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M20 6 9 17l-5-5">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-x h-5 w-5 text-red-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M18 6 6 18">
+                                                    </path>
+                                                    <path d="m6 6 12 12">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-check h-5 w-5 text-green-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M20 6 9 17l-5-5">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-border hover:bg-muted/50 transition-colors">
+                                            <td class="p-4 font-medium">
+                                                Custom Integrations
+                                            </td>
+                                            <td class="text-center p-4 bg-gradient-subtle">
+                                                <svg class="lucide lucide-check h-5 w-5 text-green-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M20 6 9 17l-5-5">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-x h-5 w-5 text-red-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M18 6 6 18">
+                                                    </path>
+                                                    <path d="m6 6 12 12">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-check h-5 w-5 text-green-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M20 6 9 17l-5-5">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-x h-5 w-5 text-red-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M18 6 6 18">
+                                                    </path>
+                                                    <path d="m6 6 12 12">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-border hover:bg-muted/50 transition-colors">
+                                            <td class="p-4 font-medium">
+                                                Advanced Reporting
+                                            </td>
+                                            <td class="text-center p-4 bg-gradient-subtle">
+                                                <svg class="lucide lucide-check h-5 w-5 text-green-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M20 6 9 17l-5-5">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-check h-5 w-5 text-green-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M20 6 9 17l-5-5">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-x h-5 w-5 text-red-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M18 6 6 18">
+                                                    </path>
+                                                    <path d="m6 6 12 12">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-check h-5 w-5 text-green-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M20 6 9 17l-5-5">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-border hover:bg-muted/50 transition-colors">
+                                            <td class="p-4 font-medium">
+                                                Multi-language Support
+                                            </td>
+                                            <td class="text-center p-4 bg-gradient-subtle">
+                                                <svg class="lucide lucide-check h-5 w-5 text-green-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M20 6 9 17l-5-5">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-x h-5 w-5 text-red-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M18 6 6 18">
+                                                    </path>
+                                                    <path d="m6 6 12 12">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-check h-5 w-5 text-green-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M20 6 9 17l-5-5">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                            <td class="text-center p-4">
+                                                <svg class="lucide lucide-x h-5 w-5 text-red-500 mx-auto" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M18 6 6 18">
+                                                    </path>
+                                                    <path d="m6 6 12 12">
+                                                    </path>
+                                                </svg>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-20 px-4">
+                    <div class="container mx-auto">
+                        <div class="text-center mb-12">
+                            <h2 class="text-4xl font-bold mb-4">
+                                Trusted by
+                                <span class="bg-gradient-primary bg-clip-text text-transparent">
+                                Industry Leaders
+                                </span>
+                            </h2>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6 hover:shadow-hover transition-all duration-300 hover:scale-105">
+                                <div class="p-6 pt-6">
+                                    <div class="flex mb-4">
+                                        <svg class="lucide lucide-star h-5 w-5 text-yellow-500 fill-current" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                                            </path>
+                                        </svg>
+                                        <svg class="lucide lucide-star h-5 w-5 text-yellow-500 fill-current" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                                            </path>
+                                        </svg>
+                                        <svg class="lucide lucide-star h-5 w-5 text-yellow-500 fill-current" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                                            </path>
+                                        </svg>
+                                        <svg class="lucide lucide-star h-5 w-5 text-yellow-500 fill-current" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                                            </path>
+                                        </svg>
+                                        <svg class="lucide lucide-star h-5 w-5 text-yellow-500 fill-current" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <p class="text-muted-foreground mb-4 italic">
+                                        "Meridiene's AI-powered insights reduced our M&amp;A integration time by 40% and increased synergy realization by $50M."
+                                    </p>
+                                    <div>
+                                        <p class="font-bold">
+                                            Sarah Johnson
+                                        </p>
+                                        <p class="text-sm text-muted-foreground">
+                                            VP of Corporate Development
+                                        </p>
+                                        <p class="text-sm text-primary">
+                                            TechGlobal Inc.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6 hover:shadow-hover transition-all duration-300 hover:scale-105">
+                                <div class="p-6 pt-6">
+                                    <div class="flex mb-4">
+                                        <svg class="lucide lucide-star h-5 w-5 text-yellow-500 fill-current" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                                            </path>
+                                        </svg>
+                                        <svg class="lucide lucide-star h-5 w-5 text-yellow-500 fill-current" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                                            </path>
+                                        </svg>
+                                        <svg class="lucide lucide-star h-5 w-5 text-yellow-500 fill-current" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                                            </path>
+                                        </svg>
+                                        <svg class="lucide lucide-star h-5 w-5 text-yellow-500 fill-current" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                                            </path>
+                                        </svg>
+                                        <svg class="lucide lucide-star h-5 w-5 text-yellow-500 fill-current" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <p class="text-muted-foreground mb-4 italic">
+                                        "The drag-and-drop org chart feature alone saved us weeks of planning. The ROI was immediate."
+                                    </p>
+                                    <div>
+                                        <p class="font-bold">
+                                            Michael Chen
+                                        </p>
+                                        <p class="text-sm text-muted-foreground">
+                                            Chief Strategy Officer
+                                        </p>
+                                        <p class="text-sm text-primary">
+                                            Innovation Partners
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6 hover:shadow-hover transition-all duration-300 hover:scale-105">
+                                <div class="p-6 pt-6">
+                                    <div class="flex mb-4">
+                                        <svg class="lucide lucide-star h-5 w-5 text-yellow-500 fill-current" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                                            </path>
+                                        </svg>
+                                        <svg class="lucide lucide-star h-5 w-5 text-yellow-500 fill-current" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                                            </path>
+                                        </svg>
+                                        <svg class="lucide lucide-star h-5 w-5 text-yellow-500 fill-current" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                                            </path>
+                                        </svg>
+                                        <svg class="lucide lucide-star h-5 w-5 text-yellow-500 fill-current" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                                            </path>
+                                        </svg>
+                                        <svg class="lucide lucide-star h-5 w-5 text-yellow-500 fill-current" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <p class="text-muted-foreground mb-4 italic">
+                                        "Best M&amp;A platform we've used. The predictive analytics are incredibly accurate and actionable."
+                                    </p>
+                                    <div>
+                                        <p class="font-bold">
+                                            Emily Rodriguez
+                                        </p>
+                                        <p class="text-sm text-muted-foreground">
+                                            M&amp;A Director
+                                        </p>
+                                        <p class="text-sm text-primary">
+                                            Future Ventures
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-20 bg-gradient-primary text-white relative overflow-hidden">
+                    <div class="absolute inset-0" style="transform: translateY(0px);">
+                        <div class="w-full h-full bg-gradient-glow opacity-20">
+                        </div>
+                    </div>
+                    <div class="container mx-auto px-6 text-center relative z-10">
+                        <h2 class="text-5xl lg:text-6xl font-bold mb-8 animate-fade-in">
+                            Ready to Chart Your Course to a Future-Ready Organization?
+                        </h2>
+                        <p class="text-xl lg:text-2xl mb-12 opacity-90 max-w-4xl mx-auto leading-relaxed animate-slide-up">
+                            See exactly how Meridiene's AI can solve your specific workforce challenges. Book a personalized demo with one of our strategists today.
+                        </p>
+                        <div class="space-y-6">
+                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-14 rounded-lg group hover:scale-110 hover:shadow-hover transition-all duration-500 text-lg px-12 py-6 animate-bounce-gentle relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                </div>
+                                <svg class="lucide lucide-eye mr-3 h-6 w-6 group-hover:rotate-12 transition-transform duration-300" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0">
+                                    </path>
+                                    <circle cx="12" cy="12" r="3">
+                                    </circle>
+                                </svg>
+                                <span class="relative z-10">
+                                Navigate Your AI Journey
+                                </span>
+                                <svg class="lucide lucide-arrow-right ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform duration-300" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12h14">
+                                    </path>
+                                    <path d="m12 5 7 7-7 7">
+                                    </path>
+                                </svg>
+                            </button>
+                            <p class="text-sm opacity-80 animate-slide-in-right">
+                                In just 30 minutes, you'll see a tailored demonstration of how Meridiene can provide immediate value. Limited strategic consultation slots are available each month.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            <!-- Site content end -->
+          
+        </div>
+        <!-- Footer start -->
+            <footer class="footer">
+                <div class="footer-container">
+                    <div class="footer-column brand">
+                        <div class="logo">
+                            <svg class="h-8 w-auto mr-3" fill="none" viewbox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <lineargradient id="footerLogoGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#DF5660;stop-opacity:1">
+                                        </stop>
+                                        <stop offset="100%" style="stop-color:#4F297C;stop-opacity:1">
+                                        </stop>
+                                    </lineargradient>
+                                </defs>
+                                <circle cx="20" cy="20" fill="url(#footerLogoGradient)" opacity="0.1" r="18">
+                                </circle>
+                                <circle cx="20" cy="20" fill="url(#footerLogoGradient)" r="12">
+                                </circle>
+                                <path d="M12 20 L20 12 L28 20 L20 28 Z" fill="white">
+                                </path>
+                                <text fill="url(#footerLogoGradient)" font-family="Poppins, sans-serif" font-size="18" font-weight="600" x="50" y="25">
+                                    Meridiene
+                                </text>
+                            </svg>
+                        </div>
+                        <p>
+                            Transforming organizational complexity into competitive clarity through intelligent analytics and strategic insights.
+                        <div class="social-icons" style="margin-top: 1rem;">
+                            <a aria-label="LinkedIn" href="https://www.linkedin.com/company/yourcompany" target="_blank">
+                            <i class="fab fa-linkedin-in">
+                            </i>
+                            </a>
+                            <a aria-label="Twitter" href="https://twitter.com/yourcompany" target="_blank">
+                            <i class="fab fa-twitter">
+                            </i>
+                            </a>
+                            <a aria-label="YouTube" href="https://www.youtube.com/@yourcompany" target="_blank">
+                            <i class="fab fa-youtube">
+                            </i>
+                            </a>
+                        </div>
+                        </p>
+                    </div>
+                    <div class="footer-column">
+                        <h4>
+                            Product
+                        </h4>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                Platform Overview
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                Solutions
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                Use Cases
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                Integrations
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                API Documentation
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>
+                            Company
+                        </h4>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                Careers
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                News &amp; Press
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                Partners
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>
+                            Support
+                        </h4>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                Help Center
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                Documentation
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                Community
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                Training
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                System Status
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>
+                        © 2025 Meridiene. All rights reserved.
+                    </p>
+                    <div class="footer-links">
+                        <a href="#">
+                        Privacy Policy
+                        </a>
+                        <a href="#">
+                        Terms of Service
+                        </a>
+                        <a href="#">
+                        Security
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        <!-- Footer end -->
+
+        <script>
+            /* ✅ Use Case Menu Toggle Start */
+            const toggleBtn = document.getElementById("usecase-btn");
+            const submenu = document.getElementById("sub_menu_c");
+
+            toggleBtn.addEventListener("click", function (e) {
+                submenu.classList.toggle("opacity-0");
+                submenu.classList.toggle("invisible");
+                submenu.classList.toggle("-translate-y-2");
+
+                submenu.classList.toggle("opacity-100");
+                submenu.classList.toggle("visible");
+                submenu.classList.toggle("translate-y-0");
+            });
+
+            // Outside click logic
+            document.addEventListener("click", function (e) {
+                if (!submenu || !toggleBtn) return;
+
+                if (submenu.contains(e.target) || toggleBtn.contains(e.target)) return;
+
+                if (submenu.classList.contains("visible")) {
+                submenu.classList.remove("opacity-100", "visible", "translate-y-0");
+                submenu.classList.add("opacity-0", "invisible", "-translate-y-2");
+                }
+            });
+            /* ✅ Use Case Menu Toggle End */
+      
+            /* ✅ Text Auto Type Effect */
+            const phrases = ["Success Path", "Growth Strategy", "AI Advantage"];
+            const typewriter = document.getElementById("typewriter");
+            const cursor = document.getElementById("cursor");
+      
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+      
+            function typeEffect() {
+            const currentPhrase = phrases[phraseIndex];
+            const currentText = currentPhrase.substring(0, charIndex);
+      
+            if (typewriter.childNodes[0]) {
+               typewriter.childNodes[0].textContent = currentText;
+            } else {
+               typewriter.insertBefore(document.createTextNode(currentText), cursor);
+            }
+      
+            if (!isDeleting && charIndex < currentPhrase.length) {
+               charIndex++;
+               setTimeout(typeEffect, 100);
+            } else if (isDeleting && charIndex > 0) {
+               charIndex--;
+               setTimeout(typeEffect, 50);
+            } else {
+               isDeleting = !isDeleting;
+               if (!isDeleting) {
+               phraseIndex = (phraseIndex + 1) % phrases.length;
+               }
+               setTimeout(typeEffect, 2000);
+            }
+            }
+      
+            typeEffect();
+      
+            /* ✅ Monthly/Annual Toggle Button */
+            const toggleBtns = document.getElementById("toggleBtn");
+            const toggleCircle = document.getElementById("toggleCircle");
+            const monthlyText = document.getElementById("monthlyText");
+            const annualText = document.getElementById("annualText");
+            const saveBadge = document.getElementById("saveBadge"); // 👈 Add this line
+   
+            let isAnnual = false;
+   
+            toggleBtns.addEventListener("click", () => {
+            isAnnual = !isAnnual;
+   
+            toggleCircle.style.transform = isAnnual ? "translateX(32px)" : "translateX(0)";
+   
+            if (isAnnual) {
+               monthlyText.classList.remove("text-primary");
+               monthlyText.classList.add("text-muted-foreground");
+               annualText.classList.remove("text-muted-foreground");
+               annualText.classList.add("text-primary");
+               saveBadge.classList.remove("hidden"); // 👈 Show Save 20%
+            } else {
+               annualText.classList.remove("text-primary");
+               annualText.classList.add("text-muted-foreground");
+               monthlyText.classList.remove("text-muted-foreground");
+               monthlyText.classList.add("text-primary");
+               saveBadge.classList.add("hidden"); // 👈 Hide Save 20%
+            }
+            });
+
+         const header = document.querySelector("nav");
+          
+          window.addEventListener("scroll", () => {
+            if (window.scrollY > 10) {
+              header.classList.add(
+                "bg-background/95",
+                "backdrop-blur-lg",
+                "border-b",
+                "border-border",
+                "shadow-elegant"
+              );
+            } else {
+              header.classList.remove(
+                "bg-background/95",
+                "backdrop-blur-lg",
+                "border-b",
+                "border-border",
+                "shadow-elegant"
+              );
+            }
+          });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- 1. Character Set and Viewport -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>meridiene-navigator-blueprint</title>
+        <!-- 2. Favicon -->
+        <link rel="icon" type="image/svg+xml" href="assets/images/favicon.ico" />
+        <!-- 3. Meta Info -->
+        <meta name="description" content="Lovable Generated Project" />
+        <meta name="author" content="Lovable" />
+        <!-- 4. Open Graph (for social sharing) -->
+        <meta property="og:title" content="meridiene-navigator-blueprint" />
+        <meta property="og:description" content="Lovable Generated Project" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/473a7f6f-2458-44b1-95c8-4caff523bd8d/id-preview-3eec9659--72a35f65-ccde-4691-bf48-6671fc54cd49.lovable.app-1752472652091.png" />
+        <!-- 5. Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@lovable_dev" />
+        <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/473a7f6f-2458-44b1-95c8-4caff523bd8d/id-preview-3eec9659--72a35f65-ccde-4691-bf48-6671fc54cd49.lovable.app-1752472652091.png" />
+        <!-- 6. External Stylesheets -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="assets/css/main_styles.css" />
+        <link rel="stylesheet" href="assets/css/organizational-tr.css" />
+        <link rel="stylesheet" href="assets/css/common_style.css" />
+        
+        <script src="assets/js/custom.js"></script>
+    </head>
+    <body>
+
+        <!-- Site loader start -->
+            <div class="fixed inset-0 flex items-center justify-center bg-white z-50" id="loader">
+                <div class="w-12 h-12 border-4 border-dashed rounded-full border-red-500 animate-spin">
+                    <img src="assets/images/meredian-loading.gif"/>
+                </div>
+            </div>
+        <!-- Site loader end -->
+
+        <div id="root">
+            <div aria-label="Notifications (F8)" role="region" style="pointer-events: none;" tabindex="-1">
+                <ol class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]" tabindex="-1">
+                </ol>
+            </div>
+    
+            <!-- Header menu start -->
+                <nav class="fixed top-0 w-full z-50 transition-all duration-500 bg-transparent">
+                    <div class="container mx-auto px-6">
+                        <div class="flex items-center justify-between h-20">
+                            <a class="transition-colors duration-200 flex items-center space-x-2 group" href="#top">
+                               
+                                <span class="">
+                                <img alt="Meridiene AI Dashboard" class="" src="assets/images/Meridiene-logo.png" style="width: 175px; height: 46px;"/>
+                                </span>
+                            </a>
+                            <div class="hidden md:flex items-center space-x-8">
+                                <div>
+                                    <div class="relative group">
+                                        <button class="flex items-center space-x-1 text-foreground hover:text-primary transition-colors py-2 px-3 rounded-lg hover:bg-muted/50">
+                                            <span class="font-medium" id="usecase-btn">
+                                            Use Cases
+                                            </span>
+                                            <svg class="lucide lucide-chevron-down h-4 w-4 transition-transform duration-300" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="m6 9 6 6 6-6">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                        <div class="absolute top-full left-0 mt-2 w-80 bg-background border border-border rounded-xl shadow-elegant transition-all duration-300 z-50 opacity-0 invisible -translate-y-2" id="sub_menu_c">
+                                            <div class="p-4 space-y-2">
+                                                <a class="block p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group/item" href="/ma">
+                                                    <div class="font-medium text-foreground group-hover/item:text-primary transition-colors">
+                                                        M&amp;A Integration
+                                                    </div>
+                                                    <div class="text-sm text-muted-foreground mt-1">
+                                                        AI-driven synergy identification and risk assessment
+                                                    </div>
+                                                </a>
+                                                <a class="block p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group/item" href="organizational-transformation.html">
+                                                    <div class="font-medium text-foreground group-hover/item:text-primary transition-colors">
+                                                        Organizational Transformation
+                                                    </div>
+                                                    <div class="text-sm text-muted-foreground mt-1">
+                                                        Navigate change with predictive insights
+                                                    </div>
+                                                </a>
+                                                <a class="block p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group/item" href="workforce-planning.html">
+                                                    <div class="font-medium text-foreground group-hover/item:text-primary transition-colors">
+                                                        Strategic Workforce Planning
+                                                    </div>
+                                                    <div class="text-sm text-muted-foreground mt-1">
+                                                        Align talent strategy with business goals
+                                                    </div>
+                                                </a>
+                                                <a class="block p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group/item" href="#ai-readiness">
+                                                    <div class="font-medium text-foreground group-hover/item:text-primary transition-colors">
+                                                        AI Readiness Assessment
+                                                    </div>
+                                                    <div class="text-sm text-muted-foreground mt-1">
+                                                        Future-proof your organization for AI adoption
+                                                    </div>
+                                                </a>
+                                                <a class="block p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group/item" href="skill-gap-analysis.html">
+                                                    <div class="font-medium text-foreground group-hover/item:text-primary transition-colors">
+                                                        Skill Gap Analysis
+                                                    </div>
+                                                    <div class="text-sm text-muted-foreground mt-1">
+                                                        Identify and close critical capability gaps
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="transition-colors duration-200 text-foreground hover:text-primary transition-colors font-medium" href="#about">
+                                About Us
+                                </a>
+                                <a class="transition-colors duration-200 text-foreground hover:text-primary transition-colors font-medium" href="pricing.html">
+                                Pricing
+                                </a>
+                                <a class="transition-colors duration-200 text-foreground hover:text-primary transition-colors font-medium" href="#contact">
+                                Contact Us
+                                </a>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <button class="items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white hover:shadow-glow font-semibold h-12 rounded-lg px-8 text-base hidden md:inline-flex group hover:scale-105 transition-all duration-300 relative overflow-hidden">
+                                    <div class="absolute inset-0 bg-gradient-glow opacity-0 group-hover:opacity-100 animate-shimmer transition-opacity duration-300">
+                                    </div>
+                                    <svg class="lucide lucide-sparkles mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z">
+                                        </path>
+                                        <path d="M20 3v4">
+                                        </path>
+                                        <path d="M22 5h-4">
+                                        </path>
+                                        <path d="M4 17v2">
+                                        </path>
+                                        <path d="M5 18H3">
+                                        </path>
+                                    </svg>
+                                    <span class="relative z-10">
+                                    Discover Your True North
+                                    </span>
+                                    <svg class="lucide lucide-arrow-right ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300 relative z-10" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12h14">
+                                        </path>
+                                        <path d="m12 5 7 7-7 7">
+                                        </path>
+                                    </svg>
+                                </button>
+                                <button class="md:hidden p-2 rounded-lg hover:bg-muted transition-colors">
+                                    <svg class="lucide lucide-menu h-6 w-6" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <line x1="4" x2="20" y1="12" y2="12">
+                                        </line>
+                                        <line x1="4" x2="20" y1="6" y2="6">
+                                        </line>
+                                        <line x1="4" x2="20" y1="18" y2="18">
+                                        </line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                
+                </nav>
+            <!-- Header menu end -->
+
+            <!-- Site animation border logo start -->
+                <div class="fixed inset-0 pointer-events-none overflow-hidden">
+                    <div class="animate-float absolute top-20 left-10 text-primary/10" style="animation-delay: 0s;">
+                        <svg class="lucide lucide-refresh-cw h-16 w-16" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8">
+                            </path>
+                            <path d="M21 3v5h-5">
+                            </path>
+                            <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16">
+                            </path>
+                            <path d="M8 16H3v5">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="animate-float absolute top-40 right-20 text-secondary/10" style="animation-delay: 1s;">
+                        <svg class="lucide lucide-trending-up h-12 w-12" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17">
+                            </polyline>
+                            <polyline points="16 7 22 7 22 13">
+                            </polyline>
+                        </svg>
+                    </div>
+                    <div class="animate-float absolute bottom-40 left-20 text-primary/10" style="animation-delay: 2s;">
+                        <svg class="lucide lucide-target h-14 w-14" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10">
+                            </circle>
+                            <circle cx="12" cy="12" r="6">
+                            </circle>
+                            <circle cx="12" cy="12" r="2">
+                            </circle>
+                        </svg>
+                    </div>
+                </div>
+            <!-- Site animation border logo end -->
+
+            <!-- Site content start -->
+                <br><br><br><br>
+                <section class="py-20 relative">
+                    <div class="container mx-auto px-6">
+                        <div class="text-center mb-16">
+                            <div class="inline-flex items-center space-x-2 bg-primary/10 rounded-full px-4 py-2 mb-6">
+                                <svg class="lucide lucide-refresh-cw h-4 w-4 text-primary animate-spin-slow" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8">
+                                    </path>
+                                    <path d="M21 3v5h-5">
+                                    </path>
+                                    <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16">
+                                    </path>
+                                    <path d="M8 16H3v5">
+                                    </path>
+                                </svg>
+                                <span class="text-sm font-medium text-primary">
+                                Organizational Transformation
+                                </span>
+                            </div>
+                            <h1 class="text-5xl lg:text-6xl font-bold mb-6">
+                                Navigate Change with
+                                <span class="bg-gradient-primary bg-clip-text text-transparent">
+                                AI Precision
+                                </span>
+                            </h1>
+                            <p class="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                                Model organizational transformations before implementation. Visualize impact, identify risks, and ensure successful change management with predictive insights and scenario planning.
+                            </p>
+                        </div>
+                        <div class="max-w-7xl mx-auto">
+                            <div class="rounded-lg bg-card text-card-foreground shadow-sm bg-gradient-to-br from-card to-card/50 border-2 border-primary/20 shadow-glow overflow-hidden">
+                                <div class="flex flex-col space-y-1.5 p-6 bg-secondary/50 border-b border-border">
+                                    <div class="flex items-center justify-between">
+                                        <h3 class="text-2xl font-semibold leading-none tracking-tight flex items-center space-x-3">
+                                            <svg class="lucide lucide-settings h-6 w-6 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                                                </path>
+                                                <circle cx="12" cy="12" r="3">
+                                                </circle>
+                                            </svg>
+                                            <span>
+                                            Transformation Scenario Planner
+                                            </span>
+                                        </h3>
+                                        <div class="flex items-center space-x-2">
+                                            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80">
+                                                Live Data
+                                            </div>
+                                            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground">
+                                                AI Powered
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+							
+                                <div class="p-8">
+                                    <div class="mb-8">
+                                        <h3 class="text-lg font-semibold mb-4">
+                                            Transformation Scenarios
+                                        </h3>
+                                        <div class="grid md:grid-cols-3 gap-4">
+                                            <div class="card-item_c rounded-lg border text-card-foreground shadow-sm cursor-pointer transition-all duration-300 hover:shadow-elegant border-primary bg-primary/5">
+                                                <div class="p-6">
+                                                    <h4 class="font-semibold mb-2">
+                                                        Organizational Restructure
+                                                    </h4>
+                                                    <p class="text-sm text-muted-foreground mb-4">
+                                                        Model different reporting structures and their impact
+                                                    </p>
+                                                    <div class="space-y-2">
+                                                        <div class="flex justify-between text-sm">
+                                                            <span>
+                                                            Impact:
+                                                            </span>
+                                                            <span class="text-green-500 font-medium">
+                                                            +23% efficiency
+                                                            </span>
+                                                        </div>
+                                                        <div class="flex justify-between text-sm">
+                                                            <span>
+                                                            Timeline:
+                                                            </span>
+                                                            <span class="font-medium">
+                                                            6 months
+                                                            </span>
+                                                        </div>
+                                                        <div class="flex justify-between text-sm">
+                                                            <span>
+                                                            Risk:
+                                                            </span>
+                                                            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 text-xs">
+                                                                Medium
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-item_c rounded-lg border bg-card text-card-foreground shadow-sm cursor-pointer transition-all duration-300 hover:shadow-elegant hover:border-primary/50">
+                                                <div class="p-6">
+                                                    <h4 class="font-semibold mb-2">
+                                                        Agile Transformation
+                                                    </h4>
+                                                    <p class="text-sm text-muted-foreground mb-4">
+                                                        Transition to cross-functional teams
+                                                    </p>
+                                                    <div class="space-y-2">
+                                                        <div class="flex justify-between text-sm">
+                                                            <span>
+                                                            Impact:
+                                                            </span>
+                                                            <span class="text-green-500 font-medium">
+                                                            +35% velocity
+                                                            </span>
+                                                        </div>
+                                                        <div class="flex justify-between text-sm">
+                                                            <span>
+                                                            Timeline:
+                                                            </span>
+                                                            <span class="font-medium">
+                                                            8 months
+                                                            </span>
+                                                        </div>
+                                                        <div class="flex justify-between text-sm">
+                                                            <span>
+                                                            Risk:
+                                                            </span>
+                                                            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 text-xs">
+                                                                Low
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-item_c rounded-lg border bg-card text-card-foreground shadow-sm cursor-pointer transition-all duration-300 hover:shadow-elegant hover:border-primary/50">
+                                                <div class="p-6">
+                                                    <h4 class="font-semibold mb-2">
+                                                        Digital First Culture
+                                                    </h4>
+                                                    <p class="text-sm text-muted-foreground mb-4">
+                                                        Implement AI-driven decision making
+                                                    </p>
+                                                    <div class="space-y-2">
+                                                        <div class="flex justify-between text-sm">
+                                                            <span>
+                                                            Impact:
+                                                            </span>
+                                                            <span class="text-green-500 font-medium">
+                                                            +40% innovation
+                                                            </span>
+                                                        </div>
+                                                        <div class="flex justify-between text-sm">
+                                                            <span>
+                                                            Timeline:
+                                                            </span>
+                                                            <span class="font-medium">
+                                                            12 months
+                                                            </span>
+                                                        </div>
+                                                        <div class="flex justify-between text-sm">
+                                                            <span>
+                                                            Risk:
+                                                            </span>
+                                                            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80 text-xs">
+                                                                High
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-8">
+                                        <h3 class="text-lg font-semibold mb-4">
+                                            Implementation Progress
+                                        </h3>
+                                        <div class="space-y-4">
+                                            <div class="flex items-center space-x-4 p-4 bg-secondary/30 rounded-lg">
+                                                <div class="flex items-center space-x-3 flex-1">
+                                                    <svg class="lucide lucide-circle-check-big h-5 w-5 text-green-500" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M21.801 10A10 10 0 1 1 17 3.335">
+                                                        </path>
+                                                        <path d="m9 11 3 3L22 4">
+                                                        </path>
+                                                    </svg>
+                                                    <span class="font-medium">
+                                                    Current State Analysis
+                                                    </span>
+                                                </div>
+                                                <div class="w-32 bg-muted rounded-full h-2">
+                                                    <div class="bg-primary h-2 rounded-full transition-all duration-1000" style="width: 100%;">
+                                                    </div>
+                                                </div>
+                                                <span class="text-sm font-medium w-12 text-right">
+                                                100%
+                                                </span>
+                                            </div>
+                                            <div class="flex items-center space-x-4 p-4 bg-secondary/30 rounded-lg">
+                                                <div class="flex items-center space-x-3 flex-1">
+                                                    <svg class="lucide lucide-clock h-5 w-5 text-blue-500 animate-pulse" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="12" cy="12" r="10">
+                                                        </circle>
+                                                        <polyline points="12 6 12 12 16 14">
+                                                        </polyline>
+                                                    </svg>
+                                                    <span class="font-medium">
+                                                    Future State Design
+                                                    </span>
+                                                </div>
+                                                <div class="w-32 bg-muted rounded-full h-2">
+                                                    <div class="bg-primary h-2 rounded-full transition-all duration-1000" style="width: 75%;">
+                                                    </div>
+                                                </div>
+                                                <span class="text-sm font-medium w-12 text-right">
+                                                75%
+                                                </span>
+                                            </div>
+                                            <div class="flex items-center space-x-4 p-4 bg-secondary/30 rounded-lg">
+                                                <div class="flex items-center space-x-3 flex-1">
+                                                    <svg class="lucide lucide-clock h-5 w-5 text-blue-500 animate-pulse" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="12" cy="12" r="10">
+                                                        </circle>
+                                                        <polyline points="12 6 12 12 16 14">
+                                                        </polyline>
+                                                    </svg>
+                                                    <span class="font-medium">
+                                                    Change Impact Assessment
+                                                    </span>
+                                                </div>
+                                                <div class="w-32 bg-muted rounded-full h-2">
+                                                    <div class="bg-primary h-2 rounded-full transition-all duration-1000" style="width: 45%;">
+                                                    </div>
+                                                </div>
+                                                <span class="text-sm font-medium w-12 text-right">
+                                                45%
+                                                </span>
+                                            </div>
+                                            <div class="flex items-center space-x-4 p-4 bg-secondary/30 rounded-lg">
+                                                <div class="flex items-center space-x-3 flex-1">
+                                                    <div class="h-5 w-5 rounded-full border-2 border-muted">
+                                                    </div>
+                                                    <span class="font-medium">
+                                                    Implementation Planning
+                                                    </span>
+                                                </div>
+                                                <div class="w-32 bg-muted rounded-full h-2">
+                                                    <div class="bg-primary h-2 rounded-full transition-all duration-1000" style="width: 0%;">
+                                                    </div>
+                                                </div>
+                                                <span class="text-sm font-medium w-12 text-right">
+                                                0%
+                                                </span>
+                                            </div>
+                                            <div class="flex items-center space-x-4 p-4 bg-secondary/30 rounded-lg">
+                                                <div class="flex items-center space-x-3 flex-1">
+                                                    <div class="h-5 w-5 rounded-full border-2 border-muted">
+                                                    </div>
+                                                    <span class="font-medium">
+                                                    Risk Mitigation
+                                                    </span>
+                                                </div>
+                                                <div class="w-32 bg-muted rounded-full h-2">
+                                                    <div class="bg-primary h-2 rounded-full transition-all duration-1000" style="width: 0%;">
+                                                    </div>
+                                                </div>
+                                                <span class="text-sm font-medium w-12 text-right">
+                                                0%
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid md:grid-cols-4 gap-6">
+                                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm text-center hover:shadow-elegant transition-all duration-300">
+                                            <div class="p-6">
+                                                <svg class="lucide lucide-users h-8 w-8 text-primary mx-auto mb-3" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2">
+                                                    </path>
+                                                    <circle cx="9" cy="7" r="4">
+                                                    </circle>
+                                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87">
+                                                    </path>
+                                                    <path d="M16 3.13a4 4 0 0 1 0 7.75">
+                                                    </path>
+                                                </svg>
+                                                <div class="text-2xl font-bold mb-1">
+                                                    <span class="animate-count-up" id="count-78">
+                                                    0%
+                                                    </span>
+                                                </div>
+                                                <div class="text-sm text-muted-foreground">
+                                                    Employee Readiness
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm text-center hover:shadow-elegant transition-all duration-300">
+                                            <div class="p-6">
+                                                <svg class="lucide lucide-trending-up h-8 w-8 text-primary mx-auto mb-3" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17">
+                                                    </polyline>
+                                                    <polyline points="16 7 22 7 22 13">
+                                                    </polyline>
+                                                </svg>
+                                                <div class="text-2xl font-bold mb-1">
+                                                    <span class="animate-count-up" id="count-24">
+                                                    0/month
+                                                    </span>
+                                                </div>
+                                                <div class="text-sm text-muted-foreground">
+                                                    Change Velocity
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm text-center hover:shadow-elegant transition-all duration-300">
+                                            <div class="p-6">
+                                                <svg class="lucide lucide-target h-8 w-8 text-primary mx-auto mb-3" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <circle cx="12" cy="12" r="10">
+                                                    </circle>
+                                                    <circle cx="12" cy="12" r="6">
+                                                    </circle>
+                                                    <circle cx="12" cy="12" r="2">
+                                                    </circle>
+                                                </svg>
+                                                <div class="text-2xl font-bold mb-1">
+                                                    <span class="animate-count-up" id="count-92">
+                                                    0%
+                                                    </span>
+                                                </div>
+                                                <div class="text-sm text-muted-foreground">
+                                                    Risk Mitigation
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm text-center hover:shadow-elegant transition-all duration-300">
+                                            <div class="p-6">
+                                                <svg class="lucide lucide-chart-column h-8 w-8 text-primary mx-auto mb-3" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3 3v16a2 2 0 0 0 2 2h16">
+                                                    </path>
+                                                    <path d="M18 17V9">
+                                                    </path>
+                                                    <path d="M13 17V5">
+                                                    </path>
+                                                    <path d="M8 17v-3">
+                                                    </path>
+                                                </svg>
+                                                <div class="text-2xl font-bold mb-1">
+                                                    <span class="animate-count-up" id="count-156">
+                                                    0%
+                                                    </span>
+                                                </div>
+                                                <div class="text-sm text-muted-foreground">
+                                                    ROI Projection
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-20 bg-secondary/20">
+                    <div class="container mx-auto px-6">
+                        <div class="grid lg:grid-cols-2 gap-16 items-center">
+                            <div>
+                                <h2 class="text-4xl font-bold mb-6">
+                                    See Your Transformation in Action
+                                </h2>
+                                <p class="text-lg text-muted-foreground mb-8">
+                                    Watch how Meridiene's AI models organizational changes in real-time, providing predictive insights and risk assessments to ensure successful transformations.
+                                </p>
+                                <div class="space-y-6">
+                                    <div class="flex items-start space-x-4">
+                                        <div class="bg-primary/20 rounded-lg p-2">
+                                            <svg class="lucide lucide-zap h-5 w-5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold mb-2">
+                                                Real-Time Impact Modeling
+                                            </h3>
+                                            <p class="text-muted-foreground">
+                                                Visualize how organizational changes affect productivity, engagement, and performance
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-4">
+                                        <div class="bg-primary/20 rounded-lg p-2">
+                                            <svg class="lucide lucide-triangle-alert h-5 w-5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3">
+                                                </path>
+                                                <path d="M12 9v4">
+                                                </path>
+                                                <path d="M12 17h.01">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold mb-2">
+                                                Risk Assessment &amp; Mitigation
+                                            </h3>
+                                            <p class="text-muted-foreground">
+                                                Identify potential challenges before they occur and develop proactive solutions
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-4">
+                                        <div class="bg-primary/20 rounded-lg p-2">
+                                            <svg class="lucide lucide-target h-5 w-5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="12" cy="12" r="10">
+                                                </circle>
+                                                <circle cx="12" cy="12" r="6">
+                                                </circle>
+                                                <circle cx="12" cy="12" r="2">
+                                                </circle>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold mb-2">
+                                                Success Probability Scoring
+                                            </h3>
+                                            <p class="text-muted-foreground">
+                                                Get AI-driven confidence scores for transformation scenarios and outcomes
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-8 space-y-4">
+                                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white hover:shadow-glow hover:scale-[1.02] font-semibold border-0 h-12 rounded-lg px-8 text-base group">
+                                        <svg class="lucide lucide-play mr-2 h-5 w-5 group-hover:scale-110 transition-transform" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <polygon points="6 3 20 12 6 21 6 3">
+                                            </polygon>
+                                        </svg>
+                                        Watch Demo Video
+                                        <svg class="lucide lucide-arrow-right ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 12h14">
+                                            </path>
+                                            <path d="m12 5 7 7-7 7">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-12 rounded-lg px-8 text-base ml-4 group hover:shadow-elegant transition-all">
+                                        <svg class="lucide lucide-download mr-2 h-5 w-5 group-hover:scale-110 transition-transform" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4">
+                                            </path>
+                                            <polyline points="7 10 12 15 17 10">
+                                            </polyline>
+                                            <line x1="12" x2="12" y1="15" y2="3">
+                                            </line>
+                                        </svg>
+                                        Download Case Study
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <div class="rounded-lg border bg-card text-card-foreground shadow-sm bg-gradient-to-br from-card to-card/50 shadow-glow">
+                                    <div class="p-8">
+                                        <div class="aspect-video bg-muted rounded-lg flex items-center justify-center mb-6">
+                                            <div class="text-center">
+                                                <svg class="lucide lucide-play h-16 w-16 text-primary mx-auto mb-4 cursor-pointer hover:scale-110 transition-transform" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                    <polygon points="6 3 20 12 6 21 6 3">
+                                                    </polygon>
+                                                </svg>
+                                                <p class="text-muted-foreground">
+                                                    Interactive Product Demo
+                                                </p>
+                                                <p class="text-sm text-muted-foreground">
+                                                    Click to explore transformation modeling
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <h3 class="text-xl font-semibold mb-2">
+                                            Global Tech Company Case Study
+                                        </h3>
+                                        <p class="text-muted-foreground">
+                                            See how a Fortune 500 technology company used Meridiene to successfully navigate a company-wide agile transformation, reducing implementation time by 40% and increasing employee adoption by 65%.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="absolute -top-4 -right-4 bg-background/90 backdrop-blur-sm border border-border rounded-xl p-4 shadow-elegant animate-bounce-gentle">
+                                    <div class="text-sm text-muted-foreground">
+                                        Success Rate
+                                    </div>
+                                    <div class="text-xl font-bold text-green-500">
+                                        <span class="animate-count-up" id="count-94">
+                                        0%
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-20">
+                    <div class="container mx-auto px-6 text-center">
+                        <div class="max-w-3xl mx-auto">
+                            <h2 class="text-4xl font-bold mb-6">
+                                Ready to Transform with Confidence?
+                            </h2>
+                            <p class="text-xl text-muted-foreground mb-8">
+                                Join leading organizations using Meridiene to navigate change successfully. See how AI-powered transformation planning can de-risk your next organizational change.
+                            </p>
+                            <div class="space-x-4">
+                                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white hover:shadow-glow font-semibold border-0 h-14 rounded-lg px-10 text-lg group hover:scale-105 transition-all duration-300">
+                                    <svg class="lucide lucide-sparkles mr-3 h-5 w-5 group-hover:rotate-12 transition-transform" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z">
+                                        </path>
+                                        <path d="M20 3v4">
+                                        </path>
+                                        <path d="M22 5h-4">
+                                        </path>
+                                        <path d="M4 17v2">
+                                        </path>
+                                        <path d="M5 18H3">
+                                        </path>
+                                    </svg>
+                                    <span class="text-lg font-semibold">
+                                    Experience Your Future Now
+                                    </span>
+                                    <svg class="lucide lucide-arrow-right ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12h14">
+                                        </path>
+                                        <path d="m12 5 7 7-7 7">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <p class="text-sm text-muted-foreground mt-6">
+                                30-minute personalized demo • No commitment required • See immediate value
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-20 bg-gradient-primary text-white relative overflow-hidden">
+                    <div class="absolute inset-0" style="transform: translateY(0px);">
+                        <div class="w-full h-full bg-gradient-glow opacity-20">
+                        </div>
+                    </div>
+                    <div class="container mx-auto px-6 text-center relative z-10">
+                        <h2 class="text-5xl lg:text-6xl font-bold mb-8 animate-fade-in">
+                            Ready to Chart Your Course to a Future-Ready Organization?
+                        </h2>
+                        <p class="text-xl lg:text-2xl mb-12 opacity-90 max-w-4xl mx-auto leading-relaxed animate-slide-up">
+                            See exactly how Meridiene's AI can solve your specific workforce challenges. Book a personalized demo with one of our strategists today.
+                        </p>
+                        <div class="space-y-6">
+                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-14 rounded-lg group hover:scale-110 hover:shadow-hover transition-all duration-500 text-lg px-12 py-6 animate-bounce-gentle relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                </div>
+                                <svg class="lucide lucide-eye mr-3 h-6 w-6 group-hover:rotate-12 transition-transform duration-300" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0">
+                                    </path>
+                                    <circle cx="12" cy="12" r="3">
+                                    </circle>
+                                </svg>
+                                <span class="relative z-10">
+                                Navigate Your AI Journey
+                                </span>
+                                <svg class="lucide lucide-arrow-right ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform duration-300" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12h14">
+                                    </path>
+                                    <path d="m12 5 7 7-7 7">
+                                    </path>
+                                </svg>
+                            </button>
+                            <p class="text-sm opacity-80 animate-slide-in-right">
+                                In just 30 minutes, you'll see a tailored demonstration of how Meridiene can provide immediate value. Limited strategic consultation slots are available each month.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            <!-- Site content start -->
+
+        </div>
+        
+        <!-- Site animation start -->
+            <script src="https://cdn.gpteng.co/lovable.js" type="module"></script>
+            <a href="https://lovable.dev/projects/72a35f65-ccde-4691-bf48-6671fc54cd49?utm_source=lovable-badge" id="lovable-badge" target="_blank">
+                <span style="color: #A1A1AA;">
+                Edit with
+                </span>
+                <svg fill="none" height="12" viewbox="0 0 116 22" width="60" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M109.108 21.115C107.649 21.115 106.381 20.8369 105.306 20.2807C104.23 19.7154 103.391 18.8675 102.789 17.7369C102.196 16.6063 101.9 15.2068 101.9 13.5382C101.9 11.9518 102.21 10.5841 102.83 9.4353C103.45 8.27736 104.307 7.3975 105.401 6.79574C106.495 6.19398 107.74 5.89309 109.135 5.89309C110.475 5.89309 111.665 6.18486 112.705 6.76839C113.744 7.35192 114.551 8.19986 115.125 9.31221C115.709 10.4246 116.001 11.7557 116.001 13.3057C116.001 13.8619 115.996 14.3041 115.987 14.6324H105.087V11.7603H113.347L111.788 12.2937C111.788 11.546 111.679 10.9215 111.46 10.42C111.25 9.90941 110.94 9.52647 110.53 9.27118C110.12 9.01588 109.623 8.88824 109.039 8.88824C108.428 8.88824 107.89 9.03868 107.425 9.33956C106.97 9.63133 106.614 10.069 106.359 10.6525C106.112 11.236 105.989 11.9381 105.989 12.7587V14.1674C105.989 15.0062 106.117 15.7174 106.372 16.3009C106.628 16.8844 106.992 17.3266 107.466 17.6275C107.941 17.9193 108.501 18.0651 109.149 18.0651C109.86 18.0651 110.448 17.8828 110.913 17.5181C111.378 17.1443 111.67 16.62 111.788 15.9453H115.932C115.805 17.0029 115.444 17.9193 114.852 18.6943C114.268 19.4693 113.489 20.0665 112.513 20.4859C111.537 20.9053 110.402 21.115 109.108 21.115Z" fill="#FCFBF8">
+                    </path>
+                    <path d="M96.5167 1.1061H100.661V20.7181H96.5167V1.1061Z" fill="#FCFBF8">
+                    </path>
+                    <path d="M89.4649 21.1148C88.6808 21.1148 87.9788 20.978 87.3588 20.7045C86.7479 20.4309 86.2282 20.0207 85.7996 19.4736C85.3711 18.9174 85.052 18.2336 84.8423 17.4221L85.2799 17.5452V20.7182H81.177V6.28948H85.321V9.51713L84.856 9.59919C85.0657 8.82419 85.3848 8.16316 85.8133 7.6161C86.251 7.05992 86.7844 6.63595 87.4135 6.34419C88.0426 6.04331 88.7492 5.89287 89.5333 5.89287C90.7095 5.89287 91.7307 6.19831 92.5968 6.80919C93.463 7.42007 94.1286 8.29992 94.5936 9.44875C95.0586 10.5885 95.2911 11.9424 95.2911 13.5107C95.2911 15.0698 95.054 16.4237 94.5799 17.5726C94.1058 18.7123 93.4265 19.5876 92.5421 20.1984C91.6668 20.8093 90.6411 21.1148 89.4649 21.1148ZM88.1794 17.9555C88.7994 17.9555 89.3191 17.7732 89.7385 17.4084C90.167 17.0437 90.4861 16.5286 90.6958 15.863C90.9146 15.1974 91.0241 14.4133 91.0241 13.5107C91.0241 12.608 90.9146 11.8239 90.6958 11.1583C90.4861 10.4927 90.167 9.97757 89.7385 9.61286C89.3191 9.23904 88.7994 9.05213 88.1794 9.05213C87.5685 9.05213 87.0442 9.23904 86.6066 9.61286C86.178 9.97757 85.8544 10.4973 85.6355 11.172C85.4167 11.8376 85.3073 12.6171 85.3073 13.5107C85.3073 14.4133 85.4167 15.1974 85.6355 15.863C85.8544 16.5286 86.178 17.0437 86.6066 17.4084C87.0442 17.7732 87.5685 17.9555 88.1794 17.9555ZM81.177 1.1061H85.321V6.28948H81.177V1.1061Z" fill="#FCFBF8">
+                    </path>
+                    <path d="M70.7749 21.115C69.8723 21.115 69.0608 20.9372 68.3405 20.5816C67.6293 20.226 67.0686 19.72 66.6583 19.0635C66.2571 18.3979 66.0565 17.6229 66.0565 16.7385C66.0565 15.3891 66.4531 14.3588 67.2464 13.6476C68.0396 12.9274 69.1839 12.4578 70.6792 12.239L73.182 11.8834C73.6834 11.8104 74.08 11.7193 74.3718 11.6099C74.6636 11.5004 74.8778 11.3546 75.0146 11.1722C75.1514 10.9807 75.2197 10.7391 75.2197 10.4474C75.2197 10.1465 75.1377 9.87294 74.9736 9.62677C74.8186 9.37147 74.5815 9.17088 74.2624 9.025C73.9524 8.87 73.574 8.7925 73.1272 8.7925C72.4161 8.7925 71.8462 8.97941 71.4177 9.35324C70.9892 9.71794 70.7567 10.2194 70.7202 10.8576H66.4395C66.4759 9.89118 66.7677 9.03412 67.3148 8.28647C67.8709 7.52971 68.6414 6.94162 69.6261 6.52221C70.6108 6.1028 71.7505 5.89309 73.0452 5.89309C74.4037 5.89309 75.5525 6.11648 76.4917 6.56324C77.4308 7.00089 78.1374 7.63 78.6115 8.45059C79.0947 9.27118 79.3364 10.2513 79.3364 11.391V17.4087C79.3364 18.056 79.382 18.6578 79.4731 19.214C79.5734 19.761 79.7147 20.1075 79.8971 20.2534V20.7184H75.589C75.4887 20.3263 75.4112 19.8841 75.3565 19.3918C75.3018 18.8994 75.2699 18.3797 75.2608 17.8326L75.9309 17.5454C75.7577 18.1928 75.4386 18.79 74.9736 19.3371C74.5177 19.875 73.9296 20.3081 73.2093 20.6363C72.4981 20.9554 71.6867 21.115 70.7749 21.115ZM72.3067 18.0788C72.8902 18.0788 73.4053 17.9512 73.8521 17.6959C74.2989 17.4315 74.6408 17.0668 74.8778 16.6018C75.124 16.1368 75.2471 15.6079 75.2471 15.0153V13.1279L75.589 13.3194C75.3702 13.6112 75.0967 13.8346 74.7684 13.9896C74.4493 14.1446 74.0162 14.2768 73.4692 14.3862L72.4161 14.5913C71.714 14.7281 71.1852 14.9378 70.8296 15.2204C70.4831 15.5031 70.3099 15.8997 70.3099 16.4103C70.3099 16.9209 70.4968 17.3266 70.8706 17.6275C71.2445 17.9284 71.7231 18.0788 72.3067 18.0788Z" fill="#FCFBF8">
+                    </path>
+                    <path d="M51.962 6.28958H56.3659L60.1542 18.6668H58.8276L62.4656 6.28958H66.7463L61.7544 20.7182H57.1454L51.962 6.28958Z" fill="#FCFBF8">
+                    </path>
+                    <path d="M45.4846 21.115C44.0531 21.115 42.7949 20.805 41.7099 20.185C40.634 19.565 39.7997 18.6806 39.2071 17.5318C38.6236 16.3829 38.3318 15.0381 38.3318 13.4972C38.3318 11.9563 38.6236 10.616 39.2071 9.47633C39.7997 8.3275 40.634 7.44309 41.7099 6.82309C42.7949 6.20309 44.0531 5.89309 45.4846 5.89309C46.916 5.89309 48.1697 6.20309 49.2456 6.82309C50.3215 7.44309 51.1512 8.3275 51.7347 9.47633C52.3274 10.616 52.6237 11.9563 52.6237 13.4972C52.6237 15.0381 52.3274 16.3829 51.7347 17.5318C51.1512 18.6806 50.3215 19.565 49.2456 20.185C48.1697 20.805 46.916 21.115 45.4846 21.115ZM45.4846 17.9421C46.0863 17.9421 46.6015 17.7779 47.03 17.4497C47.4585 17.1123 47.7868 16.6154 48.0147 15.959C48.2427 15.2934 48.3566 14.4728 48.3566 13.4972C48.3566 12.0475 48.1059 10.9488 47.6044 10.2012C47.103 9.44441 46.3963 9.06603 45.4846 9.06603C44.8828 9.06603 44.3631 9.23471 43.9255 9.57206C43.4969 9.9003 43.1687 10.3972 42.9408 11.0628C42.7128 11.7193 42.5988 12.5307 42.5988 13.4972C42.5988 14.4637 42.7128 15.2797 42.9408 15.9453C43.1687 16.6109 43.4969 17.1123 43.9255 17.4497C44.3631 17.7779 44.8828 17.9421 45.4846 17.9421Z" fill="#FCFBF8">
+                    </path>
+                    <path d="M26.2195 1.10631H30.514V17.6623L29.7481 16.7734C29.7481 16.7734 31.8751 16.7734 35.534 16.7734C39.1928 16.7734 38.6925 20.7184 38.6925 20.7184H26.2195V1.10631Z" fill="#FCFBF8">
+                    </path>
+                    <mask height="21" id="mask0_19703_15608" maskunits="userSpaceOnUse" style="mask-type:alpha" width="20" x="0" y="0">
+                        <path clip-rule="evenodd" d="M5.90405 0.885124C9.16477 0.885124 11.8081 3.53543 11.8081 6.80474V9.05456H13.773C17.0337 9.05456 19.677 11.7049 19.677 14.9742C19.677 18.2435 17.0337 20.8938 13.773 20.8938H0V6.80474C0 3.53543 2.64333 0.885124 5.90405 0.885124Z" fill="url(#paint0_linear_19703_15608)" fill-rule="evenodd">
+                        </path>
+                    </mask>
+                    <g mask="url(#mask0_19703_15608)">
+                        <g filter="url(#filter0_f_19703_15608)">
+                            <circle cx="8.63157" cy="11.5658" fill="#4B73FF" r="13.3199">
+                            </circle>
+                        </g>
+                        <g filter="url(#filter1_f_19703_15608)">
+                            <ellipse cx="10.0949" cy="4.25612" fill="#FF66F4" rx="17.0591" ry="13.3199">
+                            </ellipse>
+                        </g>
+                        <g filter="url(#filter2_f_19703_15608)">
+                            <ellipse cx="12.8775" cy="1.74957" fill="#FF0105" rx="13.3199" ry="11.6977">
+                            </ellipse>
+                        </g>
+                        <g filter="url(#filter3_f_19703_15608)">
+                            <circle cx="10.3319" cy="4.25254" fill="#FE7B02" r="8.01052">
+                            </circle>
+                        </g>
+                    </g>
+                    <defs>
+                        <filter color-interpolation-filters="sRGB" filterunits="userSpaceOnUse" height="38.5786" id="filter0_f_19703_15608" width="38.5786" x="-10.6577" y="-7.72354">
+                            <feflood flood-opacity="0" result="BackgroundImageFix">
+                            </feflood>
+                            <feblend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape">
+                            </feblend>
+                            <fegaussianblur result="effect1_foregroundBlur_19703_15608" stddeviation="2.98472">
+                            </fegaussianblur>
+                        </filter>
+                        <filter color-interpolation-filters="sRGB" filterunits="userSpaceOnUse" height="38.5786" id="filter1_f_19703_15608" width="46.057" x="-12.9337" y="-15.0332">
+                            <feflood flood-opacity="0" result="BackgroundImageFix">
+                            </feflood>
+                            <feblend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape">
+                            </feblend>
+                            <fegaussianblur result="effect1_foregroundBlur_19703_15608" stddeviation="2.98472">
+                            </fegaussianblur>
+                        </filter>
+                        <filter color-interpolation-filters="sRGB" filterunits="userSpaceOnUse" height="35.3342" id="filter2_f_19703_15608" width="38.5786" x="-6.41182" y="-15.9176">
+                            <feflood flood-opacity="0" result="BackgroundImageFix">
+                            </feflood>
+                            <feblend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape">
+                            </feblend>
+                            <fegaussianblur result="effect1_foregroundBlur_19703_15608" stddeviation="2.98472">
+                            </fegaussianblur>
+                        </filter>
+                        <filter color-interpolation-filters="sRGB" filterunits="userSpaceOnUse" height="27.9599" id="filter3_f_19703_15608" width="27.9599" x="-3.64803" y="-9.72742">
+                            <feflood flood-opacity="0" result="BackgroundImageFix">
+                            </feflood>
+                            <feblend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape">
+                            </feblend>
+                            <fegaussianblur result="effect1_foregroundBlur_19703_15608" stddeviation="2.98472">
+                            </fegaussianblur>
+                        </filter>
+                        <lineargradient gradientunits="userSpaceOnUse" id="paint0_linear_19703_15608" x1="6.62168" x2="12.6165" y1="4.40129" y2="20.8863">
+                            <stop offset="0.025" stop-color="#FF8E63">
+                            </stop>
+                            <stop offset="0.56" stop-color="#FF7EB0">
+                            </stop>
+                            <stop offset="0.95" stop-color="#4B73FF">
+                            </stop>
+                        </lineargradient>
+                    </defs>
+                </svg>
+                <button id="lovable-badge-close" style="position: absolute; top: -2px; right: 5px; cursor: pointer; font-size: 14px; color: #A1A1AA;">
+                ×
+                </button>
+            </a>
+        <!-- Site animation start -->
+
+         <!-- Footer start -->
+            <footer class="footer">
+                <div class="footer-container">
+                    <div class="footer-column brand">
+                        <div class="logo">
+                            <svg class="h-8 w-auto mr-3" fill="none" viewbox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <lineargradient id="footerLogoGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#DF5660;stop-opacity:1">
+                                        </stop>
+                                        <stop offset="100%" style="stop-color:#4F297C;stop-opacity:1">
+                                        </stop>
+                                    </lineargradient>
+                                </defs>
+                                <circle cx="20" cy="20" fill="url(#footerLogoGradient)" opacity="0.1" r="18">
+                                </circle>
+                                <circle cx="20" cy="20" fill="url(#footerLogoGradient)" r="12">
+                                </circle>
+                                <path d="M12 20 L20 12 L28 20 L20 28 Z" fill="white">
+                                </path>
+                                <text fill="url(#footerLogoGradient)" font-family="Poppins, sans-serif" font-size="18" font-weight="600" x="50" y="25">
+                                    Meridiene
+                                </text>
+                            </svg>
+                        </div>
+                        <p>
+                            Transforming organizational complexity into competitive clarity through intelligent analytics and strategic insights.
+                        <div class="social-icons" style="margin-top: 1rem;">
+                            <a aria-label="LinkedIn" href="https://www.linkedin.com/company/yourcompany" target="_blank">
+                            <i class="fab fa-linkedin-in">
+                            </i>
+                            </a>
+                            <a aria-label="Twitter" href="https://twitter.com/yourcompany" target="_blank">
+                            <i class="fab fa-twitter">
+                            </i>
+                            </a>
+                            <a aria-label="YouTube" href="https://www.youtube.com/@yourcompany" target="_blank">
+                            <i class="fab fa-youtube">
+                            </i>
+                            </a>
+                        </div>
+                        </p>
+                    </div>
+                    <div class="footer-column">
+                        <h4>
+                            Product
+                        </h4>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                Platform Overview
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                Solutions
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                Use Cases
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                Integrations
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                API Documentation
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>
+                            Company
+                        </h4>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                Careers
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                News &amp; Press
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                Partners
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>
+                            Support
+                        </h4>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                Help Center
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                Documentation
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                Community
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                Training
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                System Status
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>
+                        © 2025 Meridiene. All rights reserved.
+                    </p>
+                    <div class="footer-links">
+                        <a href="#">
+                        Privacy Policy
+                        </a>
+                        <a href="#">
+                        Terms of Service
+                        </a>
+                        <a href="#">
+                        Security
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        <!-- Footer end -->
+
+        <script>
+            /* ✅ Use Case Menu Toggle Start */
+            const toggleBtn = document.getElementById("usecase-btn");
+            const submenu = document.getElementById("sub_menu_c");
+
+            toggleBtn.addEventListener("click", function (e) {
+                submenu.classList.toggle("opacity-0");
+                submenu.classList.toggle("invisible");
+                submenu.classList.toggle("-translate-y-2");
+
+                submenu.classList.toggle("opacity-100");
+                submenu.classList.toggle("visible");
+                submenu.classList.toggle("translate-y-0");
+            });
+
+            // Outside click logic
+            document.addEventListener("click", function (e) {
+                if (!submenu || !toggleBtn) return;
+
+                if (submenu.contains(e.target) || toggleBtn.contains(e.target)) return;
+
+                if (submenu.classList.contains("visible")) {
+                submenu.classList.remove("opacity-100", "visible", "translate-y-0");
+                submenu.classList.add("opacity-0", "invisible", "-translate-y-2");
+                }
+            });
+            /* ✅ Use Case Menu Toggle End */
+        
+		  
+		    // ✅ Transformation Scenarios: Card Selection
+            const cards = document.querySelectorAll(".card-item_c");
+
+            cards.forEach((card) => {
+            card.addEventListener("click", () => {
+                // 🔁 Remove selection styling from all cards
+                cards.forEach((c) => {
+                c.classList.remove("bg-primary/5", "rounded-lg", "border");
+                });
+
+                // ✅ Add selection styling to clicked card
+                card.classList.add("bg-primary/5", "rounded-lg", "border");
+            });
+            });
+
+            const header = document.querySelector("nav");
+        
+          window.addEventListener("scroll", () => {
+            if (window.scrollY > 10) {
+              header.classList.add(
+                "bg-background/95",
+                "backdrop-blur-lg",
+                "border-b",
+                "border-border",
+                "shadow-elegant"
+              );
+            } else {
+              header.classList.remove(
+                "bg-background/95",
+                "backdrop-blur-lg",
+                "border-b",
+                "border-border",
+                "shadow-elegant"
+              );
+            }
+          });
+
+		</script>
+    </body>
+</html>
