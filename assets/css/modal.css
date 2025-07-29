@@ -1,0 +1,354 @@
+ /* Parent class for encapsulation */
+ .hp-form-container {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    /* max-width: 1024px; */
+    min-height: 600px;
+}
+
+.hp-sidebar {
+    /* width: 280px; */
+    width: auto;
+    background-color: rgba(249, 250, 251, 1);
+    color: #f8f9fa; /* Light text color */
+    padding: 2rem;
+    border-right: 2px solid #e9ecef;
+}
+.hp-sidebar-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000;
+}
+.hp-sidebar-header p {
+    font-size: 0.875rem;
+    color: rgba(75, 85, 99, 1);
+}
+
+.hp-sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 3rem;
+}
+
+.hp-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    color: #000;
+    white-space: nowrap;
+}
+.hp-nav-item.active {
+    background-color: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.hp-nav-item:hover:not(.active) {
+    background-color: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.hp-nav-item i {
+    /* margin-right: 0.75rem; */
+    /* font-size: 1.125rem; */
+}
+.hp-nav-item .hp-check-icon {
+    margin-left: auto;
+    color: #6c757d; /* Gray checkmark */
+}
+.hp-nav-item.completed .hp-check-icon {
+    color: #198754; /* Green checkmark for completed (Bootstrap success color) */
+}
+
+.hp-nav-item .nav-company-icon {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    opacity: .9;
+    border-radius: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+
+.hp-main-content {
+    flex-grow: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.hp-main-content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.hp-main-content-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #212529;
+}
+.hp-main-content-header p {
+    font-size: 1rem;
+    color: #495057;
+    margin-top: 0.5rem;
+}
+
+/* Company Size Specific Styles */
+.hp-options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    /* margin-top: 2rem; */
+}
+.hp-option-card {
+    /* background-color: #f8f9fa; */
+    border: 2px solid #e9ecef; /* Light border */
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+}
+.hp-option-card.selected {
+    border-color: #dc3545; /* Red border for selected card (Bootstrap danger color) */
+    background-color: #ffebeb; /* Light red background for selected card */
+    box-shadow: 0 0.25rem 0.5rem rgba(220, 53, 69, 0.1);
+}
+.hp-option-card:hover {
+    border-color: #f1aeb5; /* Lighter red on hover */
+}
+.hp-option-card i:first-child {
+    font-size: 2.5rem;
+    color: #495057;
+    margin-bottom: 1rem;
+}
+.hp-option-card.selected i {
+    color: #dc3545; /* Red icon for selected card */
+}
+.hp-option-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 0.5rem;
+}
+.hp-option-card p {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+.hp-selected-icon {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 0.75rem;
+    font-size: 1.5rem;
+    color: #dc3545; /* Red checkmark */
+    display: none;
+}
+.hp-option-card.selected .hp-selected-icon {
+    display: block;
+}
+
+/* Form Fields (Contact Info & Requirements) */
+.hp-form-fields {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.hp-form-group {
+    display: flex;
+    flex-direction: column;
+}
+.hp-form-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #212529;
+    margin-bottom: 0.5rem;
+}
+/* Bootstrap's form-control class handles most of this */
+.hp-full-width {
+    grid-column: 1 / -1;
+}
+
+/* Use Cases Specific Styles (Custom Checkboxes) */
+.hp-use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.hp-use-case-card {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid #e9ecef;
+    border-radius: 0.5rem;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #495057;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.hp-use-case-card input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Custom checkbox box */
+.hp-use-case-card::before {
+    content: '';
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 1px solid #ced4da; /* Bootstrap border color */
+    border-radius: 0.25rem;
+    margin-right: 0.75rem;
+    background-color: #fff;
+    transition: all 0.2s ease-in-out;
+    flex-shrink: 0;
+}
+
+/* Custom checkmark inside the box */
+.hp-use-case-card::after {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
+    color: #fff;
+    display: none;
+}
+
+/* Styles when checkbox is checked */
+.hp-use-case-card:has(input[type="checkbox"]:checked) {
+    border-color: #dc3545; /* Bootstrap danger color */
+    background-color: #ffebeb;
+    box-shadow: 0 0.25rem 0.5rem rgba(220, 53, 69, 0.1);
+}
+
+.hp-use-case-card:has(input[type="checkbox"]:checked)::before {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.hp-use-case-card:has(input[type="checkbox"]:checked)::after {
+    display: block;
+}
+
+.hp-use-case-card:hover {
+    border-color: #f1aeb5;
+}
+
+.hp-form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e9ecef;
+}
+/* Bootstrap buttons will replace these */
+
+/* Final Checklist (Thank You) Specific Styles */
+.hp-thank-you-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.hp-checkmark-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #dc3545; /* Bootstrap danger color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+
+.hp-info-card {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+.hp-info-card:last-child {
+    margin-bottom: 0;
+}
+.hp-info-card i {
+    color: #495057;
+}
+
+/* Ensure the form-footer for this screen is centered */
+.hp-main-content .hp-form-footer.text-center-footer {
+    justify-content: center;
+}
+
+/* Custom Modal/Message Box Styles */
+.hp-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050; /* Bootstrap modal z-index */
+}
+.hp-modal-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 90%;
+    width: 400px;
+}
+.hp-modal-content p {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+
+/* Hide all step containers by default */
+.hp-step-container {
+    display: none;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+#planningModal .modal-body {
+    padding: 0;
+} 

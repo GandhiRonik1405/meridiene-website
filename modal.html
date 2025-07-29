@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meridiene - Form Steps (Bootstrap)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* Light gray background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Parent class for encapsulation */
+        .hp-form-container {
+            display: flex;
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 90%;
+            max-width: 1024px;
+            min-height: 600px;
+        }
+
+        .hp-sidebar {
+            width: 280px;
+            background-color: #343a40; /* Dark gray for sidebar */
+            color: #f8f9fa; /* Light text color */
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .hp-sidebar-header h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        .hp-sidebar-header p {
+            font-size: 0.875rem;
+            color: #adb5bd;
+        }
+        .hp-nav-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .hp-nav-item.active {
+            background-color: #495057; /* Slightly lighter gray for active item */
+        }
+        .hp-nav-item:hover:not(.active) {
+            background-color: #495057;
+        }
+        .hp-nav-item i {
+            margin-right: 0.75rem;
+            font-size: 1.125rem;
+        }
+        .hp-nav-item .hp-check-icon {
+            margin-left: auto;
+            color: #6c757d; /* Gray checkmark */
+        }
+        .hp-nav-item.completed .hp-check-icon {
+            color: #198754; /* Green checkmark for completed (Bootstrap success color) */
+        }
+
+        .hp-main-content {
+            flex-grow: 1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .hp-main-content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .hp-main-content-header h1 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #212529;
+        }
+        .hp-main-content-header p {
+            font-size: 1rem;
+            color: #495057;
+            margin-top: 0.5rem;
+        }
+
+        /* Company Size Specific Styles */
+        .hp-options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .hp-option-card {
+            background-color: #f8f9fa; /* Light background for cards */
+            border: 2px solid #e9ecef; /* Light border */
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            position: relative;
+        }
+        .hp-option-card.selected {
+            border-color: #dc3545; /* Red border for selected card (Bootstrap danger color) */
+            background-color: #ffebeb; /* Light red background for selected card */
+            box-shadow: 0 0.25rem 0.5rem rgba(220, 53, 69, 0.1);
+        }
+        .hp-option-card:hover {
+            border-color: #f1aeb5; /* Lighter red on hover */
+        }
+        .hp-option-card i {
+            font-size: 2.5rem;
+            color: #495057;
+            margin-bottom: 1rem;
+        }
+        .hp-option-card.selected i {
+            color: #dc3545; /* Red icon for selected card */
+        }
+        .hp-option-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #212529;
+            margin-bottom: 0.5rem;
+        }
+        .hp-option-card p {
+            font-size: 0.875rem;
+            color: #6c757d;
+        }
+        .hp-selected-icon {
+            position: absolute;
+            bottom: 0.75rem;
+            right: 0.75rem;
+            font-size: 1.5rem;
+            color: #dc3545; /* Red checkmark */
+            display: none;
+        }
+        .hp-option-card.selected .hp-selected-icon {
+            display: block;
+        }
+
+        /* Form Fields (Contact Info & Requirements) */
+        .hp-form-fields {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .hp-form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .hp-form-group label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #212529;
+            margin-bottom: 0.5rem;
+        }
+        /* Bootstrap's form-control class handles most of this */
+        .hp-full-width {
+            grid-column: 1 / -1;
+        }
+
+        /* Use Cases Specific Styles (Custom Checkboxes) */
+        .hp-use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .hp-use-case-card {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1.25rem;
+            border: 1px solid #e9ecef;
+            border-radius: 0.5rem;
+            background-color: #f8f9fa;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #495057;
+            position: relative;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .hp-use-case-card input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* Custom checkbox box */
+        .hp-use-case-card::before {
+            content: '';
+            display: inline-block;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 1px solid #ced4da; /* Bootstrap border color */
+            border-radius: 0.25rem;
+            margin-right: 0.75rem;
+            background-color: #fff;
+            transition: all 0.2s ease-in-out;
+            flex-shrink: 0;
+        }
+
+        /* Custom checkmark inside the box */
+        .hp-use-case-card::after {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+            color: #fff;
+            display: none;
+        }
+
+        /* Styles when checkbox is checked */
+        .hp-use-case-card:has(input[type="checkbox"]:checked) {
+            border-color: #dc3545; /* Bootstrap danger color */
+            background-color: #ffebeb;
+            box-shadow: 0 0.25rem 0.5rem rgba(220, 53, 69, 0.1);
+        }
+
+        .hp-use-case-card:has(input[type="checkbox"]:checked)::before {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        .hp-use-case-card:has(input[type="checkbox"]:checked)::after {
+            display: block;
+        }
+
+        .hp-use-case-card:hover {
+            border-color: #f1aeb5;
+        }
+
+        .hp-form-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e9ecef;
+        }
+        /* Bootstrap buttons will replace these */
+
+        /* Final Checklist (Thank You) Specific Styles */
+        .hp-thank-you-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            padding-bottom: 2rem;
+            text-align: center;
+        }
+
+        .hp-checkmark-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #dc3545; /* Bootstrap danger color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+        }
+
+        .hp-info-card {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            width: 100%;
+            max-width: 400px;
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+        .hp-info-card:last-child {
+            margin-bottom: 0;
+        }
+        .hp-info-card i {
+            color: #495057;
+        }
+
+        /* Ensure the form-footer for this screen is centered */
+        .hp-main-content .hp-form-footer.text-center-footer {
+            justify-content: center;
+        }
+
+        /* Custom Modal/Message Box Styles */
+        .hp-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1050; /* Bootstrap modal z-index */
+        }
+        .hp-modal-content {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 90%;
+            width: 400px;
+        }
+        .hp-modal-content p {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #212529;
+        }
+
+        /* Hide all step containers by default */
+        .hp-step-container {
+            display: none;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="hp-form-container">
+        <div class="hp-sidebar">
+            <div class="hp-sidebar-header">
+                <h2>Meridiene</h2>
+                <p>Organizational Planning Software</p>
+            </div>
+            <nav class="hp-sidebar-nav">
+                <div id="nav-company-size" class="hp-nav-item" data-step="company-size">
+                    <i class="fas fa-building"></i>
+                    <span>Company Size</span>
+                    <i class="fas fa-check-circle hp-check-icon"></i>
+                </div>
+                <div id="nav-contact-info" class="hp-nav-item" data-step="contact-information">
+                    <i class="fas fa-address-book"></i>
+                    <span>Contact Information</span>
+                    <i class="fas fa-check-circle hp-check-icon"></i>
+                </div>
+                <div id="nav-use-cases" class="hp-nav-item" data-step="use-cases">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>Use Cases</span>
+                    <i class="fas fa-check-circle hp-check-icon"></i>
+                </div>
+                <div id="nav-requirements" class="hp-nav-item" data-step="requirements">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Requirements</span>
+                    <i class="fas fa-check-circle hp-check-icon"></i>
+                </div>
+                <div id="nav-final-checklist" class="hp-nav-item" data-step="final-checklist">
+                    <i class="fas fa-file-invoice hp-check-icon"></i> <span>Final Checklist</span>
+                    <i class="fas fa-circle-notch hp-check-icon"></i>
+                </div>
+            </nav>
+            <div></div>
+        </div>
+
+        <div class="hp-main-content">
+            <div id="company-size-step" class="hp-step-container">
+                <div class="hp-main-content-header">
+                    <div>
+                        <h1>What's your company size?</h1>
+                        <p>This helps us understand your organizational complexity.</p>
+                    </div>
+                    <button type="button" class="btn-close text-secondary" aria-label="Close form"></button>
+                </div>
+                <div class="hp-options-grid">
+                    <div class="hp-option-card" data-value="1000-2000">
+                        <i class="fas fa-users"></i>
+                        <h3>1000 - 2000</h3>
+                        <p>Growing Enterprise</p>
+                        <i class="fas fa-check-circle hp-selected-icon"></i>
+                    </div>
+                    <div class="hp-option-card" data-value="2000-5000">
+                        <i class="fas fa-building"></i>
+                        <h3>2000 - 5000</h3>
+                        <p>Large Corporation</p>
+                        <i class="fas fa-check-circle hp-selected-icon"></i>
+                    </div>
+                    <div class="hp-option-card" data-value="5000-10000">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>5000 - 10000</h3>
+                        <p>Enterprise Scale</p>
+                        <i class="fas fa-check-circle hp-selected-icon"></i>
+                    </div>
+                    <div class="hp-option-card" data-value="10k-plus">
+                        <i class="fas fa-city"></i>
+                        <h3>10k or more</h3>
+                        <p>Global Enterprise</p>
+                        <i class="fas fa-check-circle hp-selected-icon"></i>
+                    </div>
+                </div>
+                <div class="hp-form-footer">
+                    <button type="button" class="btn btn-outline-secondary hp-back-button" disabled>Back</button>
+                    <button type="button" class="btn btn-danger hp-continue-button" disabled>Continue</button>
+                </div>
+            </div>
+
+            <div id="contact-information-step" class="hp-step-container">
+                <div class="hp-main-content-header">
+                    <div>
+                        <h1>Contact Information</h1>
+                        <p>Help us personalize our approach to your needs.</p>
+                    </div>
+                    <button type="button" class="btn-close text-secondary" aria-label="Close form"></button>
+                </div>
+                <div class="hp-form-fields">
+                    <div class="hp-form-group">
+                        <label for="yourName" class="form-label">Your Name *</label>
+                        <input type="text" class="form-control" id="yourName" placeholder="John Doe">
+                    </div>
+                    <div class="hp-form-group">
+                        <label for="yourPosition" class="form-label">Your Position *</label>
+                        <input type="text" class="form-control" id="yourPosition" placeholder="HR Director">
+                    </div>
+                    <div class="hp-form-group hp-full-width">
+                        <label for="companyName" class="form-label">Company Name *</label>
+                        <input type="text" class="form-control" id="companyName" placeholder="Acme Corporation">
+                    </div>
+                    <div class="hp-form-group">
+                        <label for="companyEmail" class="form-label">Company Email *</label>
+                        <input type="email" class="form-control" id="companyEmail" placeholder="john@acme.com">
+                    </div>
+                    <div class="hp-form-group">
+                        <label for="phoneNumber" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phoneNumber" placeholder="+1 (555) 123-4567">
+                    </div>
+                </div>
+                <div class="hp-form-footer">
+                    <button type="button" class="btn btn-outline-secondary hp-back-button">Back</button>
+                    <button type="button" class="btn btn-danger hp-continue-button" disabled>Continue</button>
+                </div>
+            </div>
+
+            <div id="use-cases-step" class="hp-step-container">
+                <div class="hp-main-content-header">
+                    <div>
+                        <h1>Use Cases</h1>
+                        <p>Select the areas you might be interested in exploring.</p>
+                    </div>
+                    <button type="button" class="btn-close text-secondary" aria-label="Close form"></button>
+                </div>
+                <div class="hp-use-cases-grid">
+                    <label class="hp-use-case-card">
+                        <input type="checkbox" name="useCase" value="strategic_workforce_planning">
+                        <span>Strategic workforce planning</span>
+                    </label>
+                    <label class="hp-use-case-card">
+                        <input type="checkbox" name="useCase" value="org_design">
+                        <span>Org design</span>
+                    </label>
+                    <label class="hp-use-case-card">
+                        <input type="checkbox" name="useCase" value="org_transformation">
+                        <span>Org transformation</span>
+                    </label>
+                    <label class="hp-use-case-card">
+                        <input type="checkbox" name="useCase" value="current_state_analysis">
+                        <span>Current state analysis</span>
+                    </label>
+                    <label class="hp-use-case-card">
+                        <input type="checkbox" name="useCase" value="activity_analysis">
+                        <span>Activity analysis</span>
+                    </label>
+                    <label class="hp-use-case-card">
+                        <input type="checkbox" name="useCase" value="organizational_survey">
+                        <span>Organizational Survey</span>
+                    </label>
+                </div>
+                <div class="hp-form-footer">
+                    <button type="button" class="btn btn-outline-secondary hp-back-button">Back</button>
+                    <button type="button" class="btn btn-danger hp-continue-button" disabled>Continue</button>
+                </div>
+            </div>
+
+            <div id="requirements-step" class="hp-step-container">
+                <div class="hp-main-content-header">
+                    <div>
+                        <h1>Define Your Requirements</h1>
+                        <p>Help us understand your specific challenges and what you're looking for.</p>
+                    </div>
+                    <button type="button" class="btn-close text-secondary" aria-label="Close form"></button>
+                </div>
+                <div class="hp-form-fields">
+                    <div class="hp-form-group hp-full-width">
+                        <label for="problemsFacing" class="form-label">What problems is your organization facing? *</label>
+                        <textarea class="form-control" id="problemsFacing" rows="5" placeholder="Describe the organizational challenges you're experiencing..."></textarea>
+                    </div>
+                    <div class="hp-form-group hp-full-width">
+                        <label for="toolRequirements" class="form-label">What are you looking for in an organizational planning tool? *</label>
+                        <textarea class="form-control" id="toolRequirements" rows="5" placeholder="Tell us about your requirements, expectations, and desired outcomes..."></textarea>
+                    </div>
+                </div>
+                <div class="hp-form-footer">
+                    <button type="button" class="btn btn-outline-secondary hp-back-button">Back</button>
+                    <button type="button" class="btn btn-danger hp-continue-button" disabled>Submit</button>
+                </div>
+            </div>
+
+            <div id="final-checklist-step" class="hp-step-container">
+                <div class="hp-main-content-header">
+                    <div></div> <button type="button" class="btn-close text-secondary" aria-label="Close form"></button>
+                </div>
+                <div class="hp-thank-you-content">
+                    <div class="hp-checkmark-circle">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h1 class="h3 fw-bold text-dark mt-4 mb-2">Thank you for choosing Meridiene!</h1>
+                    <p class="text-muted text-center mb-4 mx-auto" style="max-width: 400px;">Your interest has been recorded and we will soon be in touch. An email will find you with meeting details.</p>
+
+                    <div class="hp-info-card">
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fas fa-clock text-secondary fs-5 me-3"></i>
+                            <h2 class="h5 fw-semibold text-dark">Time required</h2>
+                        </div>
+                        <p class="text-muted ms-4">We'll schedule a 30-45 minute consultation</p>
+                    </div>
+
+                    <div class="hp-info-card mt-3">
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fas fa-map-marker-alt text-secondary fs-5 me-3"></i>
+                            <h2 class="h5 fw-semibold text-dark">Have questions?</h2>
+                        </div>
+                        <p class="text-muted ms-4">Contact us at <a href="mailto:contact@meridiene.com" class="text-danger text-decoration-none">contact@meridiene.com</a></p>
+                    </div>
+                </div>
+                <div class="hp-form-footer text-center-footer">
+                    <button type="button" class="btn btn-danger hp-close-form-button">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            const $mainContent = $('.hp-main-content');
+            const $navItems = $('.hp-nav-item');
+
+            let currentStep = 'company-size'; // Initial step
+
+            // Function to display a custom modal message
+            function showMessageModal(message) {
+                const $modalOverlay = $(`
+                    <div class="hp-modal-overlay">
+                        <div class="hp-modal-content">
+                            <p>${message}</p>
+                            <button type="button" class="btn btn-danger">OK</button>
+                        </div>
+                    </div>
+                `);
+                $('body').append($modalOverlay);
+                $modalOverlay.find('button').on('click', function() {
+                    $modalOverlay.remove();
+                });
+            }
+
+            function renderStep(stepName) {
+                // Hide all step containers
+                $('.hp-step-container').hide();
+                // Show the target step container
+                $(`#${stepName}-step`).css('display', 'flex'); // Use flex to maintain layout
+
+                // Reset all nav items and then set active/completed based on stepName
+                $navItems.removeClass('active completed');
+
+                if (stepName === 'company-size') {
+                    $('#nav-company-size').addClass('active');
+                    // Disable back button on first step
+                    $(`#${stepName}-step`).find('.hp-back-button').prop('disabled', true);
+                } else if (stepName === 'contact-information') {
+                    $('#nav-company-size').addClass('completed');
+                    $('#nav-contact-info').addClass('active');
+                } else if (stepName === 'use-cases') {
+                    $('#nav-company-size').addClass('completed');
+                    $('#nav-contact-info').addClass('completed');
+                    $('#nav-use-cases').addClass('active');
+                } else if (stepName === 'requirements') {
+                    $('#nav-company-size').addClass('completed');
+                    $('#nav-contact-info').addClass('completed');
+                    $('#nav-use-cases').addClass('completed');
+                    $('#nav-requirements').addClass('active');
+                } else if (stepName === 'final-checklist') {
+                    $('#nav-company-size').addClass('completed');
+                    $('#nav-contact-info').addClass('completed');
+                    $('#nav-use-cases').addClass('completed');
+                    $('#nav-requirements').addClass('completed');
+                    $('#nav-final-checklist').addClass('active');
+                    // Change the icon for Final Checklist in sidebar to a solid checkmark
+                    $('#nav-final-checklist .fa-circle-notch').removeClass('fa-circle-notch').addClass('fa-check-circle');
+                    // Hide back/continue buttons on final step
+                    $(`#${stepName}-step`).find('.hp-form-footer .hp-back-button, .hp-form-footer .hp-continue-button').hide();
+                    // Show the dedicated close button for the final step
+                    $(`#${stepName}-step`).find('.hp-form-footer .hp-close-form-button').show();
+
+                }
+                currentStep = stepName;
+                attachEventListeners(); // Re-attach event listeners after content is loaded (or step is shown)
+            }
+
+            function attachEventListeners() {
+                // Remove previous event listeners to prevent duplicates
+                // Only remove handlers from direct descendants of the current step container
+                // that match our button classes to avoid affecting other parts of the DOM.
+                $('.hp-step-container').find('.hp-continue-button, .hp-back-button, .btn-close, .hp-option-card, .hp-use-case-card input, .form-control, .hp-close-form-button').off();
+
+                const $currentStepContainer = $(`#${currentStep}-step`);
+                const $continueButton = $currentStepContainer.find('.hp-continue-button');
+                const $backButton = $currentStepContainer.find('.hp-back-button');
+                const $closeButton = $currentStepContainer.find('.btn-close'); // Header close button (Bootstrap's btn-close)
+
+                // Universal close button listener
+                if ($closeButton.length) {
+                    $closeButton.on('click', function() {
+                        console.log('Header close button clicked.');
+                        showMessageModal('Closing the form.');
+                        // Add logic here to close or hide the form entirely
+                        // $('.hp-form-container').hide();
+                    });
+                }
+
+                if (currentStep === 'company-size') {
+                    const $optionCards = $currentStepContainer.find('.hp-option-card');
+                    let selectedOption = null;
+
+                    $optionCards.on('click', function() {
+                        $optionCards.removeClass('selected');
+                        $(this).addClass('selected');
+                        selectedOption = $(this).data('value');
+                        $continueButton.prop('disabled', false);
+                    });
+
+                    $continueButton.on('click', function() {
+                        if (selectedOption) {
+                            console.log('Selected company size:', selectedOption);
+                            renderStep('contact-information');
+                        } else {
+                            showMessageModal('Please select a company size to continue.');
+                        }
+                    });
+
+                    // Back button is disabled for the first step, so no listener needed here.
+
+                } else if (currentStep === 'contact-information') {
+                    const $contactInputs = $currentStepContainer.find('.hp-form-fields input');
+
+                    function checkContactFormValidity() {
+                        let isValid = true;
+                        const yourName = $currentStepContainer.find('#yourName').val().trim();
+                        const yourPosition = $currentStepContainer.find('#yourPosition').val().trim();
+                        const companyName = $currentStepContainer.find('#companyName').val().trim();
+                        const companyEmail = $currentStepContainer.find('#companyEmail').val().trim();
+
+                        if (!yourName || !yourPosition || !companyName || !companyEmail) {
+                            isValid = false;
+                        }
+
+                        if (companyEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(companyEmail)) {
+                            isValid = false;
+                        }
+
+                        $continueButton.prop('disabled', !isValid);
+                    }
+
+                    $contactInputs.on('input', checkContactFormValidity);
+                    checkContactFormValidity(); // Run on initial load to set button state
+
+                    $continueButton.on('click', function() {
+                        const contactData = {
+                            yourName: $currentStepContainer.find('#yourName').val(),
+                            yourPosition: $currentStepContainer.find('#yourPosition').val(),
+                            companyName: $currentStepContainer.find('#companyName').val(),
+                            companyEmail: $currentStepContainer.find('#companyEmail').val(),
+                            phoneNumber: $currentStepContainer.find('#phoneNumber').val(),
+                        };
+                        console.log('Contact Information:', contactData);
+                        renderStep('use-cases');
+                    });
+
+                    $backButton.on('click', function() {
+                        console.log('Back button clicked from contact information.');
+                        renderStep('company-size');
+                    });
+                } else if (currentStep === 'use-cases') {
+                    const $useCaseCheckboxes = $currentStepContainer.find('.hp-use-case-card input[type="checkbox"]');
+
+                    function checkUseCasesValidity() {
+                        let isAnySelected = false;
+                        $useCaseCheckboxes.each(function() {
+                            if ($(this).prop('checked')) {
+                                isAnySelected = true;
+                                return false; // Break out of each loop
+                            }
+                        });
+                        $continueButton.prop('disabled', !isAnySelected);
+                    }
+
+                    $useCaseCheckboxes.on('change', checkUseCasesValidity);
+                    checkUseCasesValidity(); // Initial check on load
+
+                    $continueButton.on('click', function() {
+                        const selectedUseCases = $useCaseCheckboxes.filter(':checked').map(function() {
+                            return $(this).val();
+                        }).get();
+                        console.log('Selected Use Cases:', selectedUseCases);
+                        renderStep('requirements');
+                    });
+
+                    $backButton.on('click', function() {
+                        console.log('Back button clicked from use cases.');
+                        renderStep('contact-information');
+                    });
+                } else if (currentStep === 'requirements') {
+                    const $problemsTextarea = $currentStepContainer.find('#problemsFacing');
+                    const $requirementsTextarea = $currentStepContainer.find('#toolRequirements');
+
+                    function checkRequirementsValidity() {
+                        const problemsFilled = $problemsTextarea.val().trim() !== '';
+                        const requirementsFilled = $requirementsTextarea.val().trim() !== '';
+                        $continueButton.prop('disabled', !(problemsFilled && requirementsFilled));
+                    }
+
+                    $problemsTextarea.on('input', checkRequirementsValidity);
+                    $requirementsTextarea.on('input', checkRequirementsValidity);
+
+                    checkRequirementsValidity(); // Initial check on load
+
+                    $continueButton.on('click', function() {
+                        const requirementsData = {
+                            problems: $problemsTextarea.val().trim(),
+                            toolRequirements: $requirementsTextarea.val().trim()
+                        };
+                        console.log('Requirements Data:', requirementsData);
+                        renderStep('final-checklist');
+                    });
+
+                    $backButton.on('click', function() {
+                        console.log('Back button clicked from requirements.');
+                        renderStep('use-cases');
+                    });
+                } else if (currentStep === 'final-checklist') {
+                    // This screen has no "Back" button, and "Continue" is replaced by "Close"
+                    const $closeFormButton = $currentStepContainer.find('.hp-close-form-button');
+
+                    if ($closeFormButton.length) {
+                        $closeFormButton.on('click', function() {
+                            console.log('Form Close button clicked from final checklist.');
+                            showMessageModal('Form submission complete! Closing the form.');
+                            // Here you would add logic to truly close or reset the form,
+                            // for example, hiding the main form container or redirecting.
+                            // $('.hp-form-container').hide();
+                        });
+                    }
+                }
+            }
+
+            // Initial render of the first step
+            renderStep('company-size');
+        });
+    </script>
+</body>
+</html>
