@@ -22,205 +22,197 @@
         <!-- 6. External Stylesheets -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
         <link rel="stylesheet" href="assets/css/main_styles.css" />
         <link rel="stylesheet" href="assets/css/common_style.css" />
         <link rel="stylesheet" href="assets/css/organizational-tr.css" />
         <link rel="stylesheet" href="assets/css/workforce-planning.css" />
-
         <script src="assets/js/custom.js"></script>
     </head>
     <body>
-
         <!-- Site loader start -->
-            <div class="fixed inset-0 flex items-center justify-center bg-white z-50" id="loader">
-                <div class="w-12 h-12 border-4 border-dashed rounded-full border-red-500 animate-spin">
-                    <img src="assets/images/meredian-loading.gif"/>
-                </div>
+        <div class="fixed inset-0 flex items-center justify-center bg-white z-50" id="loader">
+            <div class="w-12 h-12 border-4 border-dashed rounded-full border-red-500 animate-spin">
+                <img src="assets/images/meredian-loading.gif"/>
             </div>
+        </div>
         <!-- Site loader end -->
-
         <div id="root">
             <div style="pointer-events: none;">
                 <ol class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]">
                 </ol>
-               </div>
-                <!-- Header menu start -->
-                    <nav class="fixed top-0 w-full z-50 transition-all duration-500 bg-transparent">
-                        <div class="container mx-auto px-6">
-                            <div class="flex items-center justify-between h-20">
-                                <a class="transition-colors duration-200 flex items-center space-x-2 group" href="index.html">
-                                  
-                                    <span class="">
-                                    <img alt="Meridiene AI Dashboard" class="" src="assets/images/Meridiene-logo.png" style="width: 175px; height: 46px;"/>
-                                    </span>
-                                </a>
-                                <div class="hidden md:flex items-center space-x-8">
-                                    <div>
-                                        <div class="relative group">
-                                            <button class="flex items-center space-x-1 text-foreground hover:text-primary transition-colors py-2 px-3 rounded-lg hover:bg-muted/50">
-                                                <span class="font-medium" id="usecase-btn">
-                                                Use Cases
-                                                </span>
-                                                <svg class="lucide lucide-chevron-down h-4 w-4 transition-transform duration-300" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="m6 9 6 6 6-6">
-                                                    </path>
-                                                </svg>
-                                            </button>
-                                            <div class="absolute top-full left-0 mt-2 w-80 bg-background border border-border rounded-xl shadow-elegant transition-all duration-300 z-50 opacity-0 invisible -translate-y-2" id="sub_menu_c">
-                                                <div class="p-4 space-y-2">
-                                                    <a class="block p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group/item" href="#">
-                                                        <div class="font-medium text-foreground group-hover/item:text-primary transition-colors">
-                                                            M&amp;A Integration
-                                                        </div>
-                                                        <div class="text-sm text-muted-foreground mt-1">
-                                                            AI-driven synergy identification and risk assessment
-                                                        </div>
-                                                    </a>
-                                                    <a class="block p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group/item" href="organizational-transformation.html">
-                                                        <div class="font-medium text-foreground group-hover/item:text-primary transition-colors">
-                                                            Organizational Transformation
-                                                        </div>
-                                                        <div class="text-sm text-muted-foreground mt-1">
-                                                            Navigate change with predictive insights
-                                                        </div>
-                                                    </a>
-                                                    <a class="block p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group/item" href="workforce-planning.html">
-                                                        <div class="font-medium text-foreground group-hover/item:text-primary transition-colors">
-                                                            Strategic Workforce Planning
-                                                        </div>
-                                                        <div class="text-sm text-muted-foreground mt-1">
-                                                            Align talent strategy with business goals
-                                                        </div>
-                                                    </a>
-                                                    <a class="block p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group/item" href="#ai-readiness">
-                                                        <div class="font-medium text-foreground group-hover/item:text-primary transition-colors">
-                                                            AI Readiness Assessment
-                                                        </div>
-                                                        <div class="text-sm text-muted-foreground mt-1">
-                                                            Future-proof your organization for AI adoption
-                                                        </div>
-                                                    </a>
-                                                    <a class="block p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group/item" href="skill-gap-analysis.html">
-                                                        <div class="font-medium text-foreground group-hover/item:text-primary transition-colors">
-                                                            Skill Gap Analysis
-                                                        </div>
-                                                        <div class="text-sm text-muted-foreground mt-1">
-                                                            Identify and close critical capability gaps
-                                                        </div>
-                                                    </a>
+            </div>
+            <!-- Header menu start -->
+            <nav class="fixed top-0 w-full z-50 transition-all duration-500 bg-transparent">
+                <div class="container mx-auto px-6">
+                    <div class="flex items-center justify-between h-20">
+                        <a class="transition-colors duration-200 flex items-center space-x-2 group" href="index.html">
+                        <span class="">
+                        <img alt="Meridiene AI Dashboard" class="" src="assets/images/Meridiene-logo.png" style="width: 175px; height: 46px;"/>
+                        </span>
+                        </a>
+                        <div class="hidden md:flex items-center space-x-8">
+                            <div>
+                                <div class="relative group">
+                                    <button class="flex items-center space-x-1 text-foreground hover:text-primary transition-colors py-2 px-3 rounded-lg hover:bg-muted/50">
+                                        <span class="font-medium" id="usecase-btn">
+                                        Use Cases
+                                        </span>
+                                        <svg class="lucide lucide-chevron-down h-4 w-4 transition-transform duration-300" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="m6 9 6 6 6-6">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                    <div class="absolute top-full left-0 mt-2 w-80 bg-background border border-border rounded-xl shadow-elegant transition-all duration-300 z-50 opacity-0 invisible -translate-y-2" id="sub_menu_c">
+                                        <div class="p-4 space-y-2">
+                                            <a class="block p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group/item" href="#">
+                                                <div class="font-medium text-foreground group-hover/item:text-primary transition-colors">
+                                                    M&amp;A Integration
                                                 </div>
-                                            </div>
+                                                <div class="text-sm text-muted-foreground mt-1">
+                                                    AI-driven synergy identification and risk assessment
+                                                </div>
+                                            </a>
+                                            <a class="block p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group/item" href="organizational-transformation.html">
+                                                <div class="font-medium text-foreground group-hover/item:text-primary transition-colors">
+                                                    Organizational Transformation
+                                                </div>
+                                                <div class="text-sm text-muted-foreground mt-1">
+                                                    Navigate change with predictive insights
+                                                </div>
+                                            </a>
+                                            <a class="block p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group/item" href="workforce-planning.html">
+                                                <div class="font-medium text-foreground group-hover/item:text-primary transition-colors">
+                                                    Strategic Workforce Planning
+                                                </div>
+                                                <div class="text-sm text-muted-foreground mt-1">
+                                                    Align talent strategy with business goals
+                                                </div>
+                                            </a>
+                                            <a class="block p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group/item" href="#ai-readiness">
+                                                <div class="font-medium text-foreground group-hover/item:text-primary transition-colors">
+                                                    AI Readiness Assessment
+                                                </div>
+                                                <div class="text-sm text-muted-foreground mt-1">
+                                                    Future-proof your organization for AI adoption
+                                                </div>
+                                            </a>
+                                            <a class="block p-3 rounded-lg hover:bg-muted/50 transition-all duration-200 group/item" href="skill-gap-analysis.html">
+                                                <div class="font-medium text-foreground group-hover/item:text-primary transition-colors">
+                                                    Skill Gap Analysis
+                                                </div>
+                                                <div class="text-sm text-muted-foreground mt-1">
+                                                    Identify and close critical capability gaps
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
-                                    <a class="transition-colors duration-200 text-foreground hover:text-primary transition-colors font-medium" href="about-us.html">
-                                    About Us
-                                    </a>
-                                    <a class="transition-colors duration-200 text-foreground hover:text-primary transition-colors font-medium" href="pricing.html">
-                                    Pricing
-                                    </a>
-                                    <a class="transition-colors duration-200 text-foreground hover:text-primary transition-colors font-medium" href="contact-us.html">
-                                    Contact Us
-                                    </a>
-                                </div>
-                                <div class="flex items-center space-x-4">
-                                    <button class="items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white hover:shadow-glow font-semibold h-12 rounded-lg px-8 text-base hidden md:inline-flex group hover:scale-105 transition-all duration-300 relative overflow-hidden">
-                                        <div class="absolute inset-0 bg-gradient-glow opacity-0 group-hover:opacity-100 animate-shimmer transition-opacity duration-300">
-                                        </div>
-                                        <svg class="lucide lucide-sparkles mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z">
-                                            </path>
-                                            <path d="M20 3v4">
-                                            </path>
-                                            <path d="M22 5h-4">
-                                            </path>
-                                            <path d="M4 17v2">
-                                            </path>
-                                            <path d="M5 18H3">
-                                            </path>
-                                        </svg>
-                                        <span class="relative z-10">
-                                        Discover Your True North
-                                        </span>
-                                        <svg class="lucide lucide-arrow-right ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300 relative z-10" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M5 12h14">
-                                            </path>
-                                            <path d="m12 5 7 7-7 7">
-                                            </path>
-                                        </svg>
-                                    </button>
-                                    <button class="md:hidden p-2 rounded-lg hover:bg-muted transition-colors">
-                                        <svg class="lucide lucide-menu h-6 w-6" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                            <line x1="4" x2="20" y1="12" y2="12">
-                                            </line>
-                                            <line x1="4" x2="20" y1="6" y2="6">
-                                            </line>
-                                            <line x1="4" x2="20" y1="18" y2="18">
-                                            </line>
-                                        </svg>
-                                    </button>
                                 </div>
                             </div>
+                            <a class="transition-colors duration-200 text-foreground hover:text-primary transition-colors font-medium" href="about-us.html">
+                            About Us
+                            </a>
+                            <a class="transition-colors duration-200 text-foreground hover:text-primary transition-colors font-medium" href="pricing.html">
+                            Pricing
+                            </a>
+                            <a class="transition-colors duration-200 text-foreground hover:text-primary transition-colors font-medium" href="contact-us.html">
+                            Contact Us
+                            </a>
                         </div>
-                    
-                    </nav>
-                <!-- Header menu end -->
-
-                    <!-- Site animation border logo start -->
-                <div class="min-h-screen bg-background relative overflow-hidden">
-                       <div class="fixed inset-0 pointer-events-none overflow-hidden">
-                       <div class="animate-float absolute top-20 left-10 text-primary/10" style="animation-delay: 0s;">
+                        <div class="flex items-center space-x-4">
+                            <button class="items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white hover:shadow-glow font-semibold h-12 rounded-lg px-8 text-base hidden md:inline-flex group hover:scale-105 transition-all duration-300 relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-glow opacity-0 group-hover:opacity-100 animate-shimmer transition-opacity duration-300">
+                                </div>
+                                <svg class="lucide lucide-sparkles mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z">
+                                    </path>
+                                    <path d="M20 3v4">
+                                    </path>
+                                    <path d="M22 5h-4">
+                                    </path>
+                                    <path d="M4 17v2">
+                                    </path>
+                                    <path d="M5 18H3">
+                                    </path>
+                                </svg>
+                                <span class="relative z-10">
+                                Discover Your True North
+                                </span>
+                                <svg class="lucide lucide-arrow-right ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300 relative z-10" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12h14">
+                                    </path>
+                                    <path d="m12 5 7 7-7 7">
+                                    </path>
+                                </svg>
+                            </button>
+                            <button class="md:hidden p-2 rounded-lg hover:bg-muted transition-colors">
+                                <svg class="lucide lucide-menu h-6 w-6" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="4" x2="20" y1="12" y2="12">
+                                    </line>
+                                    <line x1="4" x2="20" y1="6" y2="6">
+                                    </line>
+                                    <line x1="4" x2="20" y1="18" y2="18">
+                                    </line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Header menu end -->
+            <!-- Site animation border logo start -->
+            <div class="min-h-screen bg-background relative overflow-hidden">
+                <div class="fixed inset-0 pointer-events-none overflow-hidden">
+                    <div class="animate-float absolute top-20 left-10 text-primary/10" style="animation-delay: 0s;">
                         <svg class="lucide lucide-calculator h-16 w-16" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                         <rect height="20" rx="2" width="16" x="4" y="2">
-                         </rect>
-                         <line x1="8" x2="16" y1="6" y2="6">
-                         </line>
-                         <line x1="16" x2="16" y1="14" y2="18">
-                         </line>
-                         <path d="M16 10h.01">
-                         </path>
-                         <path d="M12 10h.01">
-                         </path>
-                         <path d="M8 10h.01">
-                         </path>
-                         <path d="M12 14h.01">
-                         </path>
-                         <path d="M8 14h.01">
-                         </path>
-                         <path d="M12 18h.01">
-                         </path>
-                         <path d="M8 18h.01">
-                         </path>
+                            <rect height="20" rx="2" width="16" x="4" y="2">
+                            </rect>
+                            <line x1="8" x2="16" y1="6" y2="6">
+                            </line>
+                            <line x1="16" x2="16" y1="14" y2="18">
+                            </line>
+                            <path d="M16 10h.01">
+                            </path>
+                            <path d="M12 10h.01">
+                            </path>
+                            <path d="M8 10h.01">
+                            </path>
+                            <path d="M12 14h.01">
+                            </path>
+                            <path d="M8 14h.01">
+                            </path>
+                            <path d="M12 18h.01">
+                            </path>
+                            <path d="M8 18h.01">
+                            </path>
                         </svg>
-                       </div>
-                       <div class="animate-float absolute top-40 right-20 text-secondary/10" style="animation-delay: 1s;">
+                    </div>
+                    <div class="animate-float absolute top-40 right-20 text-secondary/10" style="animation-delay: 1s;">
                         <svg class="lucide lucide-chart-pie h-12 w-12" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                         <path d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z">
-                         </path>
-                         <path d="M21.21 15.89A10 10 0 1 1 8 2.83">
-                         </path>
+                            <path d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z">
+                            </path>
+                            <path d="M21.21 15.89A10 10 0 1 1 8 2.83">
+                            </path>
                         </svg>
-                       </div>
-                       <div class="animate-float absolute bottom-40 left-20 text-primary/10" style="animation-delay: 2s;">
+                    </div>
+                    <div class="animate-float absolute bottom-40 left-20 text-primary/10" style="animation-delay: 2s;">
                         <svg class="lucide lucide-database h-14 w-14" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                         <ellipse cx="12" cy="5" rx="9" ry="3">
-                         </ellipse>
-                         <path d="M3 5V19A9 3 0 0 0 21 19V5">
-                         </path>
-                         <path d="M3 12A9 3 0 0 0 21 12">
-                         </path>
+                            <ellipse cx="12" cy="5" rx="9" ry="3">
+                            </ellipse>
+                            <path d="M3 5V19A9 3 0 0 0 21 19V5">
+                            </path>
+                            <path d="M3 12A9 3 0 0 0 21 12">
+                            </path>
                         </svg>
-                       </div>
-                      </div>
-                     <!-- Site animation border end -->
-
-                   <!-- Site content start -->
-                        <br><br><br>
-                        <section class="py-20 relative">
-                        <div class="container mx-auto px-6">
-                            <div class="text-center mb-16">
-                                <div class="inline-flex items-center space-x-2 bg-primary/10 rounded-full px-4 py-2 mb-6">
-                                    <svg class="lucide lucide-chart-column h-4 w-4 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    </div>
+                </div>
+                <!-- Site animation border end -->
+                <!-- Site content start -->
+                <br><br><br>
+                <section class="py-20 relative">
+                    <div class="container mx-auto px-6">
+                        <div class="text-center mb-16">
+                            <div class="inline-flex items-center space-x-2 bg-primary/10 rounded-full px-4 py-2 mb-6">
+                                <svg class="lucide lucide-chart-column h-4 w-4 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M3 3v16a2 2 0 0 0 2 2h16">
                                     </path>
                                     <path d="M18 17V9">
@@ -229,24 +221,24 @@
                                     </path>
                                     <path d="M8 17v-3">
                                     </path>
-                                    </svg>
-                                    <span class="text-sm font-medium text-primary">
-                                    Strategic Workforce Planning
-                                    </span>
-                                </div>
-                                <h1 class="text-5xl lg:text-6xl font-bold mb-6">
-                                    Measure Workforce Impact with
-                                    <span class="bg-gradient-primary bg-clip-text text-transparent">
-                                    Data-Driven Planning
-                                    </span>
-                                </h1>
-                                <p class="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                                    Set cost, demand, and supply assumptions. Combine with real employee data. See and assess gaps within your workforce planning with precision.
-                                </p>
+                                </svg>
+                                <span class="text-sm font-medium text-primary">
+                                Strategic Workforce Planning
+                                </span>
                             </div>
-                            <div class="max-w-4xl mx-auto mb-16">
-                                <div class="rounded-lg border text-card-foreground shadow-sm border-destructive/20 bg-destructive/5">
-                                    <div class="p-8">
+                            <h1 class="text-5xl lg:text-6xl font-bold mb-6">
+                                Measure Workforce Impact with
+                                <span class="bg-gradient-primary bg-clip-text text-transparent">
+                                Data-Driven Planning
+                                </span>
+                            </h1>
+                            <p class="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                                Set cost, demand, and supply assumptions. Combine with real employee data. See and assess gaps within your workforce planning with precision.
+                            </p>
+                        </div>
+                        <div class="max-w-4xl mx-auto mb-16">
+                            <div class="rounded-lg border text-card-foreground shadow-sm border-destructive/20 bg-destructive/5">
+                                <div class="p-8">
                                     <div class="flex items-start space-x-4">
                                         <svg class="lucide lucide-circle-alert h-8 w-8 text-destructive mt-1" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="12" cy="12" r="10">
@@ -262,38 +254,38 @@
                                             </h3>
                                             <div class="grid md:grid-cols-3 gap-6 text-sm">
                                                 <div>
-                                                <h4 class="font-medium mb-2">
-                                                    Fragmented Data
-                                                </h4>
-                                                <p class="text-muted-foreground">
-                                                    Assumptions scattered across spreadsheets, no single source of truth
-                                                </p>
+                                                    <h4 class="font-medium mb-2">
+                                                        Fragmented Data
+                                                    </h4>
+                                                    <p class="text-muted-foreground">
+                                                        Assumptions scattered across spreadsheets, no single source of truth
+                                                    </p>
                                                 </div>
                                                 <div>
-                                                <h4 class="font-medium mb-2">
-                                                    Manual Processes
-                                                </h4>
-                                                <p class="text-muted-foreground">
-                                                    Time-consuming analysis, prone to errors and outdated quickly
-                                                </p>
+                                                    <h4 class="font-medium mb-2">
+                                                        Manual Processes
+                                                    </h4>
+                                                    <p class="text-muted-foreground">
+                                                        Time-consuming analysis, prone to errors and outdated quickly
+                                                    </p>
                                                 </div>
                                                 <div>
-                                                <h4 class="font-medium mb-2">
-                                                    Limited Visibility
-                                                </h4>
-                                                <p class="text-muted-foreground">
-                                                    Can't see impact of changes, gaps discovered too late
-                                                </p>
+                                                    <h4 class="font-medium mb-2">
+                                                        Limited Visibility
+                                                    </h4>
+                                                    <p class="text-muted-foreground">
+                                                        Can't see impact of changes, gaps discovered too late
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    </div>
                                 </div>
                             </div>
-                            <div class="max-w-7xl mx-auto">
-                                <div class="rounded-lg bg-card text-card-foreground shadow-sm bg-gradient-to-br from-card to-card/50 border-2 border-primary/20 shadow-glow overflow-hidden">
-                                    <div class="flex flex-col space-y-1.5 p-6 bg-secondary/50 border-b border-border">
+                        </div>
+                        <div class="max-w-7xl mx-auto">
+                            <div class="rounded-lg bg-card text-card-foreground shadow-sm bg-gradient-to-br from-card to-card/50 border-2 border-primary/20 shadow-glow overflow-hidden">
+                                <div class="flex flex-col space-y-1.5 p-6 bg-secondary/50 border-b border-border">
                                     <div class="flex items-center justify-between">
                                         <h3 class="text-2xl font-semibold leading-none tracking-tight flex items-center space-x-3">
                                             <svg class="lucide lucide-target h-6 w-6 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -317,8 +309,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    </div>
-                                    <div class="p-8">
+                                </div>
+                                <div class="p-8">
                                     <div class="mb-8">
                                         <h3 class="text-lg font-semibold mb-4">
                                             Set Your Planning Assumptions
@@ -326,99 +318,99 @@
                                         <div class="grid md:grid-cols-3 gap-4">
                                             <div class="card-item_c rounded-lg border text-card-foreground shadow-sm cursor-pointer transition-all duration-300 hover:shadow-elegant border-primary bg-primary/5">
                                                 <div class="p-6">
-                                                <div class="flex items-center space-x-3 mb-4">
-                                                    <div class="bg-primary/20 rounded-lg p-2">
-                                                        <svg class="lucide lucide-dollar-sign h-5 w-5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                            <line x1="12" x2="12" y1="2" y2="22">
-                                                            </line>
-                                                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6">
-                                                            </path>
-                                                        </svg>
+                                                    <div class="flex items-center space-x-3 mb-4">
+                                                        <div class="bg-primary/20 rounded-lg p-2">
+                                                            <svg class="lucide lucide-dollar-sign h-5 w-5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                                <line x1="12" x2="12" y1="2" y2="22">
+                                                                </line>
+                                                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6">
+                                                                </path>
+                                                            </svg>
+                                                        </div>
+                                                        <h4 class="font-semibold">
+                                                            Cost Assumptions
+                                                        </h4>
                                                     </div>
-                                                    <h4 class="font-semibold">
-                                                        Cost Assumptions
-                                                    </h4>
-                                                </div>
-                                                <p class="text-sm text-muted-foreground mb-4">
-                                                    Set salary ranges, benefits, and overhead costs
-                                                </p>
-                                                <div class="space-y-1">
-                                                    <div class="text-xs bg-secondary/50 rounded px-2 py-1">
-                                                        Base Salary: $85k-$120k
+                                                    <p class="text-sm text-muted-foreground mb-4">
+                                                        Set salary ranges, benefits, and overhead costs
+                                                    </p>
+                                                    <div class="space-y-1">
+                                                        <div class="text-xs bg-secondary/50 rounded px-2 py-1">
+                                                            Base Salary: $85k-$120k
+                                                        </div>
+                                                        <div class="text-xs bg-secondary/50 rounded px-2 py-1">
+                                                            Benefits: 28%
+                                                        </div>
+                                                        <div class="text-xs bg-secondary/50 rounded px-2 py-1">
+                                                            Overhead: $15k/year
+                                                        </div>
                                                     </div>
-                                                    <div class="text-xs bg-secondary/50 rounded px-2 py-1">
-                                                        Benefits: 28%
-                                                    </div>
-                                                    <div class="text-xs bg-secondary/50 rounded px-2 py-1">
-                                                        Overhead: $15k/year
-                                                    </div>
-                                                </div>
                                                 </div>
                                             </div>
                                             <div class="card-item_c rounded-lg border bg-card text-card-foreground shadow-sm cursor-pointer transition-all duration-300 hover:shadow-elegant hover:border-primary/50">
                                                 <div class="p-6">
-                                                <div class="flex items-center space-x-3 mb-4">
-                                                    <div class="bg-primary/20 rounded-lg p-2">
-                                                        <svg class="lucide lucide-trending-up h-5 w-5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17">
-                                                            </polyline>
-                                                            <polyline points="16 7 22 7 22 13">
-                                                            </polyline>
-                                                        </svg>
+                                                    <div class="flex items-center space-x-3 mb-4">
+                                                        <div class="bg-primary/20 rounded-lg p-2">
+                                                            <svg class="lucide lucide-trending-up h-5 w-5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17">
+                                                                </polyline>
+                                                                <polyline points="16 7 22 7 22 13">
+                                                                </polyline>
+                                                            </svg>
+                                                        </div>
+                                                        <h4 class="font-semibold">
+                                                            Demand Forecasting
+                                                        </h4>
                                                     </div>
-                                                    <h4 class="font-semibold">
-                                                        Demand Forecasting
-                                                    </h4>
-                                                </div>
-                                                <p class="text-sm text-muted-foreground mb-4">
-                                                    Project future workforce needs based on business growth
-                                                </p>
-                                                <div class="space-y-1">
-                                                    <div class="text-xs bg-secondary/50 rounded px-2 py-1">
-                                                        Q1 Growth: +15%
+                                                    <p class="text-sm text-muted-foreground mb-4">
+                                                        Project future workforce needs based on business growth
+                                                    </p>
+                                                    <div class="space-y-1">
+                                                        <div class="text-xs bg-secondary/50 rounded px-2 py-1">
+                                                            Q1 Growth: +15%
+                                                        </div>
+                                                        <div class="text-xs bg-secondary/50 rounded px-2 py-1">
+                                                            New Projects: 3
+                                                        </div>
+                                                        <div class="text-xs bg-secondary/50 rounded px-2 py-1">
+                                                            Skill Requirements: AI/ML
+                                                        </div>
                                                     </div>
-                                                    <div class="text-xs bg-secondary/50 rounded px-2 py-1">
-                                                        New Projects: 3
-                                                    </div>
-                                                    <div class="text-xs bg-secondary/50 rounded px-2 py-1">
-                                                        Skill Requirements: AI/ML
-                                                    </div>
-                                                </div>
                                                 </div>
                                             </div>
                                             <div class="card-item_c rounded-lg border bg-card text-card-foreground shadow-sm cursor-pointer transition-all duration-300 hover:shadow-elegant hover:border-primary/50">
                                                 <div class="p-6">
-                                                <div class="flex items-center space-x-3 mb-4">
-                                                    <div class="bg-primary/20 rounded-lg p-2">
-                                                        <svg class="lucide lucide-users h-5 w-5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2">
-                                                            </path>
-                                                            <circle cx="9" cy="7" r="4">
-                                                            </circle>
-                                                            <path d="M22 21v-2a4 4 0 0 0-3-3.87">
-                                                            </path>
-                                                            <path d="M16 3.13a4 4 0 0 1 0 7.75">
-                                                            </path>
-                                                        </svg>
+                                                    <div class="flex items-center space-x-3 mb-4">
+                                                        <div class="bg-primary/20 rounded-lg p-2">
+                                                            <svg class="lucide lucide-users h-5 w-5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2">
+                                                                </path>
+                                                                <circle cx="9" cy="7" r="4">
+                                                                </circle>
+                                                                <path d="M22 21v-2a4 4 0 0 0-3-3.87">
+                                                                </path>
+                                                                <path d="M16 3.13a4 4 0 0 1 0 7.75">
+                                                                </path>
+                                                            </svg>
+                                                        </div>
+                                                        <h4 class="font-semibold">
+                                                            Supply Analysis
+                                                        </h4>
                                                     </div>
-                                                    <h4 class="font-semibold">
-                                                        Supply Analysis
-                                                    </h4>
-                                                </div>
-                                                <p class="text-sm text-muted-foreground mb-4">
-                                                    Analyze current talent pool and availability
-                                                </p>
-                                                <div class="space-y-1">
-                                                    <div class="text-xs bg-secondary/50 rounded px-2 py-1">
-                                                        Internal Mobility: 23%
+                                                    <p class="text-sm text-muted-foreground mb-4">
+                                                        Analyze current talent pool and availability
+                                                    </p>
+                                                    <div class="space-y-1">
+                                                        <div class="text-xs bg-secondary/50 rounded px-2 py-1">
+                                                            Internal Mobility: 23%
+                                                        </div>
+                                                        <div class="text-xs bg-secondary/50 rounded px-2 py-1">
+                                                            Market Availability: Low
+                                                        </div>
+                                                        <div class="text-xs bg-secondary/50 rounded px-2 py-1">
+                                                            Training Pipeline: 45 people
+                                                        </div>
                                                     </div>
-                                                    <div class="text-xs bg-secondary/50 rounded px-2 py-1">
-                                                        Market Availability: Low
-                                                    </div>
-                                                    <div class="text-xs bg-secondary/50 rounded px-2 py-1">
-                                                        Training Pipeline: 45 people
-                                                    </div>
-                                                </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -430,92 +422,92 @@
                                         <div class="grid md:grid-cols-4 gap-6">
                                             <div class="rounded-lg border bg-card text-card-foreground shadow-sm text-center hover:shadow-elegant transition-all duration-300">
                                                 <div class="p-6">
-                                                <svg class="lucide lucide-database h-8 w-8 text-blue-500 mx-auto mb-3" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                    <ellipse cx="12" cy="5" rx="9" ry="3">
-                                                    </ellipse>
-                                                    <path d="M3 5V19A9 3 0 0 0 21 19V5">
-                                                    </path>
-                                                    <path d="M3 12A9 3 0 0 0 21 12">
-                                                    </path>
-                                                </svg>
-                                                <div class="text-2xl font-bold mb-1">
-                                                    <span class="animate-count-up-c" id="count-2847" data-target="2847" data-suffix="">
-                                                    2,847
-                                                    </span>
-                                                </div>
-                                                <div class="text-sm text-muted-foreground">
-                                                    Active Employees
-                                                </div>
-                                                <div class="text-xs text-blue-500 mt-2">
-                                                    Live HR data sync
-                                                </div>
-                                                </div>
-                                            </div>
-                                            <div class="rounded-lg border bg-card text-card-foreground shadow-sm text-center hover:shadow-elegant transition-all duration-300">
-                                                <div class="p-6">
-                                                <svg class="lucide lucide-trending-up h-8 w-8 text-green-500 mx-auto mb-3" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17">
-                                                    </polyline>
-                                                    <polyline points="16 7 22 7 22 13">
-                                                    </polyline>
-                                                </svg>
-                                                <div class="text-2xl font-bold mb-1">
-                                                    <span class="animate-count-up-c" id="count-156" data-target="156">
-                                                    156
-                                                    </span>
-                                                </div>
-                                                <div class="text-sm text-muted-foreground">
-                                                    Skill Profiles
-                                                </div>
-                                                <div class="text-xs text-green-500 mt-2">
-                                                    Auto-updated
-                                                </div>
+                                                    <svg class="lucide lucide-database h-8 w-8 text-blue-500 mx-auto mb-3" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                        <ellipse cx="12" cy="5" rx="9" ry="3">
+                                                        </ellipse>
+                                                        <path d="M3 5V19A9 3 0 0 0 21 19V5">
+                                                        </path>
+                                                        <path d="M3 12A9 3 0 0 0 21 12">
+                                                        </path>
+                                                    </svg>
+                                                    <div class="text-2xl font-bold mb-1">
+                                                        <span class="animate-count-up-c" id="count-2847" data-target="2847" data-suffix="">
+                                                        2,847
+                                                        </span>
+                                                    </div>
+                                                    <div class="text-sm text-muted-foreground">
+                                                        Active Employees
+                                                    </div>
+                                                    <div class="text-xs text-blue-500 mt-2">
+                                                        Live HR data sync
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="rounded-lg border bg-card text-card-foreground shadow-sm text-center hover:shadow-elegant transition-all duration-300">
                                                 <div class="p-6">
-                                                <svg class="lucide lucide-calendar h-8 w-8 text-purple-500 mx-auto mb-3" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M8 2v4">
-                                                    </path>
-                                                    <path d="M16 2v4">
-                                                    </path>
-                                                    <rect height="18" rx="2" width="18" x="3" y="4">
-                                                    </rect>
-                                                    <path d="M3 10h18">
-                                                    </path>
-                                                </svg>
-                                                <div class="text-2xl font-bold mb-1">
-                                                    <span class="animate-count-up-c" id="count-89" data-target="89" data-suffix="%">
-                                                    89%
-                                                    </span>
-                                                </div>
-                                                <div class="text-sm text-muted-foreground">
-                                                    Data Accuracy
-                                                </div>
-                                                <div class="text-xs text-purple-500 mt-2">
-                                                    Real-time validation
-                                                </div>
+                                                    <svg class="lucide lucide-trending-up h-8 w-8 text-green-500 mx-auto mb-3" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17">
+                                                        </polyline>
+                                                        <polyline points="16 7 22 7 22 13">
+                                                        </polyline>
+                                                    </svg>
+                                                    <div class="text-2xl font-bold mb-1">
+                                                        <span class="animate-count-up-c" id="count-156" data-target="156">
+                                                        156
+                                                        </span>
+                                                    </div>
+                                                    <div class="text-sm text-muted-foreground">
+                                                        Skill Profiles
+                                                    </div>
+                                                    <div class="text-xs text-green-500 mt-2">
+                                                        Auto-updated
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="rounded-lg border bg-card text-card-foreground shadow-sm text-center hover:shadow-elegant transition-all duration-300">
                                                 <div class="p-6">
-                                                <svg class="lucide lucide-settings h-8 w-8 text-orange-500 mx-auto mb-3" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
-                                                    </path>
-                                                    <circle cx="12" cy="12" r="3">
-                                                    </circle>
-                                                </svg>
-                                                <div class="text-2xl font-bold mb-1">
-                                                    <span class="animate-count-up-c" id="count-24" data-target="24" data-suffix="/7">
-                                                    24/7
-                                                    </span>
+                                                    <svg class="lucide lucide-calendar h-8 w-8 text-purple-500 mx-auto mb-3" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M8 2v4">
+                                                        </path>
+                                                        <path d="M16 2v4">
+                                                        </path>
+                                                        <rect height="18" rx="2" width="18" x="3" y="4">
+                                                        </rect>
+                                                        <path d="M3 10h18">
+                                                        </path>
+                                                    </svg>
+                                                    <div class="text-2xl font-bold mb-1">
+                                                        <span class="animate-count-up-c" id="count-89" data-target="89" data-suffix="%">
+                                                        89%
+                                                        </span>
+                                                    </div>
+                                                    <div class="text-sm text-muted-foreground">
+                                                        Data Accuracy
+                                                    </div>
+                                                    <div class="text-xs text-purple-500 mt-2">
+                                                        Real-time validation
+                                                    </div>
                                                 </div>
-                                                <div class="text-sm text-muted-foreground">
-                                                    Auto Updates
-                                                </div>
-                                                <div class="text-xs text-orange-500 mt-2">
-                                                    Continuous sync
-                                                </div>
+                                            </div>
+                                            <div class="rounded-lg border bg-card text-card-foreground shadow-sm text-center hover:shadow-elegant transition-all duration-300">
+                                                <div class="p-6">
+                                                    <svg class="lucide lucide-settings h-8 w-8 text-orange-500 mx-auto mb-3" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                                                        </path>
+                                                        <circle cx="12" cy="12" r="3">
+                                                        </circle>
+                                                    </svg>
+                                                    <div class="text-2xl font-bold mb-1">
+                                                        <span class="animate-count-up-c" id="count-24" data-target="24" data-suffix="/7">
+                                                        24/7
+                                                        </span>
+                                                    </div>
+                                                    <div class="text-sm text-muted-foreground">
+                                                        Auto Updates
+                                                    </div>
+                                                    <div class="text-xs text-orange-500 mt-2">
+                                                        Continuous sync
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -527,186 +519,186 @@
                                         <div class="space-y-4">
                                             <div class="p-6 bg-secondary/30 rounded-lg">
                                                 <div class="flex justify-between items-start mb-4">
-                                                <div>
-                                                    <h4 class="font-medium text-lg">
-                                                        Engineering
-                                                    </h4>
-                                                    <p class="text-sm text-muted-foreground">
-                                                        Current: 245 → Projected Need: 315
-                                                    </p>
-                                                </div>
-                                                <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80">
-                                                    Critical Priority
-                                                </div>
+                                                    <div>
+                                                        <h4 class="font-medium text-lg">
+                                                            Engineering
+                                                        </h4>
+                                                        <p class="text-sm text-muted-foreground">
+                                                            Current: 245 → Projected Need: 315
+                                                        </p>
+                                                    </div>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80">
+                                                        Critical Priority
+                                                    </div>
                                                 </div>
                                                 <div class="grid md:grid-cols-3 gap-6">
-                                                <div class="text-center p-4 bg-background/50 rounded-lg">
-                                                    <div class="text-2xl font-bold text-destructive">
-                                                        70
+                                                    <div class="text-center p-4 bg-background/50 rounded-lg">
+                                                        <div class="text-2xl font-bold text-destructive">
+                                                            70
+                                                        </div>
+                                                        <div class="text-sm text-muted-foreground">
+                                                            People Gap
+                                                        </div>
                                                     </div>
-                                                    <div class="text-sm text-muted-foreground">
-                                                        People Gap
+                                                    <div class="text-center p-4 bg-background/50 rounded-lg">
+                                                        <div class="text-2xl font-bold text-primary">
+                                                            $8.2M
+                                                        </div>
+                                                        <div class="text-sm text-muted-foreground">
+                                                            Investment Required
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="text-center p-4 bg-background/50 rounded-lg">
-                                                    <div class="text-2xl font-bold text-primary">
-                                                        $8.2M
+                                                    <div class="text-center p-4 bg-background/50 rounded-lg">
+                                                        <div class="text-2xl font-bold text-green-600">
+                                                            22%
+                                                        </div>
+                                                        <div class="text-sm text-muted-foreground">
+                                                            Gap Percentage
+                                                        </div>
                                                     </div>
-                                                    <div class="text-sm text-muted-foreground">
-                                                        Investment Required
-                                                    </div>
-                                                </div>
-                                                <div class="text-center p-4 bg-background/50 rounded-lg">
-                                                    <div class="text-2xl font-bold text-green-600">
-                                                        22%
-                                                    </div>
-                                                    <div class="text-sm text-muted-foreground">
-                                                        Gap Percentage
-                                                    </div>
-                                                </div>
                                                 </div>
                                             </div>
                                             <div class="p-6 bg-secondary/30 rounded-lg">
                                                 <div class="flex justify-between items-start mb-4">
-                                                <div>
-                                                    <h4 class="font-medium text-lg">
-                                                        Product
-                                                    </h4>
-                                                    <p class="text-sm text-muted-foreground">
-                                                        Current: 45 → Projected Need: 62
-                                                    </p>
-                                                </div>
-                                                <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80">
-                                                    High Priority
-                                                </div>
+                                                    <div>
+                                                        <h4 class="font-medium text-lg">
+                                                            Product
+                                                        </h4>
+                                                        <p class="text-sm text-muted-foreground">
+                                                            Current: 45 → Projected Need: 62
+                                                        </p>
+                                                    </div>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80">
+                                                        High Priority
+                                                    </div>
                                                 </div>
                                                 <div class="grid md:grid-cols-3 gap-6">
-                                                <div class="text-center p-4 bg-background/50 rounded-lg">
-                                                    <div class="text-2xl font-bold text-destructive">
-                                                        17
+                                                    <div class="text-center p-4 bg-background/50 rounded-lg">
+                                                        <div class="text-2xl font-bold text-destructive">
+                                                            17
+                                                        </div>
+                                                        <div class="text-sm text-muted-foreground">
+                                                            People Gap
+                                                        </div>
                                                     </div>
-                                                    <div class="text-sm text-muted-foreground">
-                                                        People Gap
+                                                    <div class="text-center p-4 bg-background/50 rounded-lg">
+                                                        <div class="text-2xl font-bold text-primary">
+                                                            $2.1M
+                                                        </div>
+                                                        <div class="text-sm text-muted-foreground">
+                                                            Investment Required
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="text-center p-4 bg-background/50 rounded-lg">
-                                                    <div class="text-2xl font-bold text-primary">
-                                                        $2.1M
+                                                    <div class="text-center p-4 bg-background/50 rounded-lg">
+                                                        <div class="text-2xl font-bold text-green-600">
+                                                            27%
+                                                        </div>
+                                                        <div class="text-sm text-muted-foreground">
+                                                            Gap Percentage
+                                                        </div>
                                                     </div>
-                                                    <div class="text-sm text-muted-foreground">
-                                                        Investment Required
-                                                    </div>
-                                                </div>
-                                                <div class="text-center p-4 bg-background/50 rounded-lg">
-                                                    <div class="text-2xl font-bold text-green-600">
-                                                        27%
-                                                    </div>
-                                                    <div class="text-sm text-muted-foreground">
-                                                        Gap Percentage
-                                                    </div>
-                                                </div>
                                                 </div>
                                             </div>
                                             <div class="p-6 bg-secondary/30 rounded-lg">
                                                 <div class="flex justify-between items-start mb-4">
-                                                <div>
-                                                    <h4 class="font-medium text-lg">
-                                                        Sales
-                                                    </h4>
-                                                    <p class="text-sm text-muted-foreground">
-                                                        Current: 156 → Projected Need: 180
-                                                    </p>
-                                                </div>
-                                                <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground">
-                                                    Medium Priority
-                                                </div>
+                                                    <div>
+                                                        <h4 class="font-medium text-lg">
+                                                            Sales
+                                                        </h4>
+                                                        <p class="text-sm text-muted-foreground">
+                                                            Current: 156 → Projected Need: 180
+                                                        </p>
+                                                    </div>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground">
+                                                        Medium Priority
+                                                    </div>
                                                 </div>
                                                 <div class="grid md:grid-cols-3 gap-6">
-                                                <div class="text-center p-4 bg-background/50 rounded-lg">
-                                                    <div class="text-2xl font-bold text-destructive">
-                                                        24
+                                                    <div class="text-center p-4 bg-background/50 rounded-lg">
+                                                        <div class="text-2xl font-bold text-destructive">
+                                                            24
+                                                        </div>
+                                                        <div class="text-sm text-muted-foreground">
+                                                            People Gap
+                                                        </div>
                                                     </div>
-                                                    <div class="text-sm text-muted-foreground">
-                                                        People Gap
+                                                    <div class="text-center p-4 bg-background/50 rounded-lg">
+                                                        <div class="text-2xl font-bold text-primary">
+                                                            $2.8M
+                                                        </div>
+                                                        <div class="text-sm text-muted-foreground">
+                                                            Investment Required
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="text-center p-4 bg-background/50 rounded-lg">
-                                                    <div class="text-2xl font-bold text-primary">
-                                                        $2.8M
+                                                    <div class="text-center p-4 bg-background/50 rounded-lg">
+                                                        <div class="text-2xl font-bold text-green-600">
+                                                            13%
+                                                        </div>
+                                                        <div class="text-sm text-muted-foreground">
+                                                            Gap Percentage
+                                                        </div>
                                                     </div>
-                                                    <div class="text-sm text-muted-foreground">
-                                                        Investment Required
-                                                    </div>
-                                                </div>
-                                                <div class="text-center p-4 bg-background/50 rounded-lg">
-                                                    <div class="text-2xl font-bold text-green-600">
-                                                        13%
-                                                    </div>
-                                                    <div class="text-sm text-muted-foreground">
-                                                        Gap Percentage
-                                                    </div>
-                                                </div>
                                                 </div>
                                             </div>
                                             <div class="p-6 bg-secondary/30 rounded-lg">
                                                 <div class="flex justify-between items-start mb-4">
-                                                <div>
-                                                    <h4 class="font-medium text-lg">
-                                                        Operations
-                                                    </h4>
-                                                    <p class="text-sm text-muted-foreground">
-                                                        Current: 89 → Projected Need: 95
-                                                    </p>
-                                                </div>
-                                                <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80">
-                                                    Low Priority
-                                                </div>
+                                                    <div>
+                                                        <h4 class="font-medium text-lg">
+                                                            Operations
+                                                        </h4>
+                                                        <p class="text-sm text-muted-foreground">
+                                                            Current: 89 → Projected Need: 95
+                                                        </p>
+                                                    </div>
+                                                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80">
+                                                        Low Priority
+                                                    </div>
                                                 </div>
                                                 <div class="grid md:grid-cols-3 gap-6">
-                                                <div class="text-center p-4 bg-background/50 rounded-lg">
-                                                    <div class="text-2xl font-bold text-destructive">
-                                                        6
+                                                    <div class="text-center p-4 bg-background/50 rounded-lg">
+                                                        <div class="text-2xl font-bold text-destructive">
+                                                            6
+                                                        </div>
+                                                        <div class="text-sm text-muted-foreground">
+                                                            People Gap
+                                                        </div>
                                                     </div>
-                                                    <div class="text-sm text-muted-foreground">
-                                                        People Gap
+                                                    <div class="text-center p-4 bg-background/50 rounded-lg">
+                                                        <div class="text-2xl font-bold text-primary">
+                                                            $650K
+                                                        </div>
+                                                        <div class="text-sm text-muted-foreground">
+                                                            Investment Required
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="text-center p-4 bg-background/50 rounded-lg">
-                                                    <div class="text-2xl font-bold text-primary">
-                                                        $650K
+                                                    <div class="text-center p-4 bg-background/50 rounded-lg">
+                                                        <div class="text-2xl font-bold text-green-600">
+                                                            6%
+                                                        </div>
+                                                        <div class="text-sm text-muted-foreground">
+                                                            Gap Percentage
+                                                        </div>
                                                     </div>
-                                                    <div class="text-sm text-muted-foreground">
-                                                        Investment Required
-                                                    </div>
-                                                </div>
-                                                <div class="text-center p-4 bg-background/50 rounded-lg">
-                                                    <div class="text-2xl font-bold text-green-600">
-                                                        6%
-                                                    </div>
-                                                    <div class="text-sm text-muted-foreground">
-                                                        Gap Percentage
-                                                    </div>
-                                                </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                        </section>
-                        <section class="py-20 bg-secondary/20">
-                        <div class="container mx-auto px-6">
-                            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                                <div>
-                                    <h2 class="text-4xl font-bold mb-6">
+                    </div>
+                </section>
+                <section class="py-20 bg-secondary/20">
+                    <div class="container mx-auto px-6">
+                        <div class="grid lg:grid-cols-2 gap-16 items-center">
+                            <div>
+                                <h2 class="text-4xl font-bold mb-6">
                                     Transform Your Workforce Planning Process
-                                    </h2>
-                                    <p class="text-lg text-muted-foreground mb-8">
+                                </h2>
+                                <p class="text-lg text-muted-foreground mb-8">
                                     Stop working with outdated spreadsheets. Start making data-driven workforce decisions with real-time insights and predictive analytics.
-                                    </p>
-                                    <div class="space-y-6">
+                                </p>
+                                <div class="space-y-6">
                                     <div class="flex items-start space-x-4">
                                         <div class="bg-primary/20 rounded-lg p-2">
                                             <svg class="lucide lucide-calculator h-5 w-5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -781,8 +773,8 @@
                                             </p>
                                         </div>
                                     </div>
-                                    </div>
-                                    <div class="mt-8 space-y-4">
+                                </div>
+                                <div class="mt-8 space-y-4">
                                     <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white hover:shadow-glow hover:scale-[1.02] font-semibold border-0 h-12 rounded-lg px-8 text-base group">
                                         <svg class="lucide lucide-play mr-2 h-5 w-5 group-hover:scale-110 transition-transform" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                             <polygon points="6 3 20 12 6 21 6 3">
@@ -811,27 +803,27 @@
                                         </svg>
                                         Download Planning Template
                                     </button>
-                                    </div>
                                 </div>
-                                <div class="relative">
-                                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm bg-gradient-to-br from-card to-card/50 shadow-glow">
+                            </div>
+                            <div class="relative">
+                                <div class="rounded-lg border bg-card text-card-foreground shadow-sm bg-gradient-to-br from-card to-card/50 shadow-glow">
                                     <div class="p-8">
                                         <div class="aspect-video bg-muted rounded-lg flex items-center justify-center mb-6">
                                             <div class="text-center">
                                                 <video autoplay="" muted="" loop="" playsinline="" class="rounded-3xl shadow-glow border border-border/20 transition-all duration-700 group-hover:shadow-hover group-hover:scale-[1.02]" style="width: 642px; height: 361px;">
                                                     <source src="assets/video/Meridiene Animation 001.mp4" type="video/mp4">
                                                     Your browser does not support the video tag.
-                                                  </video>
+                                                </video>
                                                 <!-- <svg class="lucide lucide-play h-16 w-16 text-primary mx-auto mb-4 cursor-pointer hover:scale-110 transition-transform" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                <polygon points="6 3 20 12 6 21 6 3">
-                                                </polygon>
-                                                </svg>
-                                                <p class="text-muted-foreground">
-                                                Interactive SWP Demo
-                                                </p>
-                                                <p class="text-sm text-muted-foreground">
-                                                See assumption-based planning in action
-                                                </p> -->
+                                                    <polygon points="6 3 20 12 6 21 6 3">
+                                                    </polygon>
+                                                    </svg>
+                                                    <p class="text-muted-foreground">
+                                                    Interactive SWP Demo
+                                                    </p>
+                                                    <p class="text-sm text-muted-foreground">
+                                                    See assumption-based planning in action
+                                                    </p> -->
                                             </div>
                                         </div>
                                         <h3 class="text-xl font-semibold mb-2">
@@ -841,8 +833,8 @@
                                             Learn how a 15,000+ employee tech company identified $12M in workforce optimization opportunities and reduced planning cycles from weeks to hours.
                                         </p>
                                     </div>
-                                    </div>
-                                    <div class="absolute -top-4 -right-4 bg-background/90 backdrop-blur-sm border border-border rounded-xl p-4 shadow-elegant animate-bounce-gentle">
+                                </div>
+                                <div class="absolute -top-4 -right-4 bg-background/90 backdrop-blur-sm border border-border rounded-xl p-4 shadow-elegant animate-bounce-gentle">
                                     <div class="text-sm text-muted-foreground">
                                         Planning Time Saved
                                     </div>
@@ -851,22 +843,22 @@
                                         87%
                                         </span>
                                     </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                        </section>
-                        <section class="py-20">
-                        <div class="container mx-auto px-6 text-center">
-                            <div class="max-w-3xl mx-auto">
-                                <h2 class="text-4xl font-bold mb-6">
-                                    Start Planning Your Workforce Strategically
-                                </h2>
-                                <p class="text-xl text-muted-foreground mb-8">
-                                    Experience the power of assumption-based workforce planning combined with real employee data. See your gaps, understand the costs, and make informed decisions.
-                                </p>
-                                <div class="space-x-4">
-                                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white hover:shadow-glow font-semibold border-0 h-14 rounded-lg px-10 text-lg group hover:scale-105 transition-all duration-300">
+                    </div>
+                </section>
+                <section class="py-20">
+                    <div class="container mx-auto px-6 text-center">
+                        <div class="max-w-3xl mx-auto">
+                            <h2 class="text-4xl font-bold mb-6">
+                                Start Planning Your Workforce Strategically
+                            </h2>
+                            <p class="text-xl text-muted-foreground mb-8">
+                                Experience the power of assumption-based workforce planning combined with real employee data. See your gaps, understand the costs, and make informed decisions.
+                            </p>
+                            <div class="space-x-4">
+                                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white hover:shadow-glow font-semibold border-0 h-14 rounded-lg px-10 text-lg group hover:scale-105 transition-all duration-300">
                                     <svg class="lucide lucide-sparkles mr-3 h-5 w-5 group-hover:rotate-12 transition-transform" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z">
                                         </path>
@@ -888,341 +880,338 @@
                                         <path d="m12 5 7 7-7 7">
                                         </path>
                                     </svg>
-                                    </button>
-                                </div>
-                                <p class="text-sm text-muted-foreground mt-6">
-                                    Live product demo • Real data scenarios • Custom assumption modeling
-                                </p>
+                                </button>
                             </div>
-                        </div>
-                        </section>
-                        <section class="py-20 bg-gradient-primary text-white relative overflow-hidden">
-                        <div class="absolute inset-0" style="transform: translateY(0px);">
-                            <div class="w-full h-full bg-gradient-glow opacity-20">
-                            </div>
-                        </div>
-                        <div class="container mx-auto px-6 text-center relative z-10">
-                            <h2 class="text-5xl lg:text-6xl font-bold mb-8 animate-fade-in">
-                                Ready to Chart Your Course to a Future-Ready Organization?
-                            </h2>
-                            <p class="text-xl lg:text-2xl mb-12 opacity-90 max-w-4xl mx-auto leading-relaxed animate-slide-up">
-                                See exactly how Meridiene's AI can solve your specific workforce challenges. Book a personalized demo with one of our strategists today.
+                            <p class="text-sm text-muted-foreground mt-6">
+                                Live product demo • Real data scenarios • Custom assumption modeling
                             </p>
-                            <div class="space-y-6">
-                                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-14 rounded-lg group hover:scale-110 hover:shadow-hover transition-all duration-500 text-lg px-12 py-6 animate-bounce-gentle relative overflow-hidden">
-                                    <div class="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-500">
-                                    </div>
-                                    <svg class="lucide lucide-eye mr-3 h-6 w-6 group-hover:rotate-12 transition-transform duration-300" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                        </div>
+                    </div>
+                </section>
+                <section class="py-20 bg-gradient-primary text-white relative overflow-hidden">
+                    <div class="absolute inset-0" style="transform: translateY(0px);">
+                        <div class="w-full h-full bg-gradient-glow opacity-20">
+                        </div>
+                    </div>
+                    <div class="container mx-auto px-6 text-center relative z-10">
+                        <h2 class="text-5xl lg:text-6xl font-bold mb-8 animate-fade-in">
+                            Ready to Chart Your Course to a Future-Ready Organization?
+                        </h2>
+                        <p class="text-xl lg:text-2xl mb-12 opacity-90 max-w-4xl mx-auto leading-relaxed animate-slide-up">
+                            See exactly how Meridiene's AI can solve your specific workforce challenges. Book a personalized demo with one of our strategists today.
+                        </p>
+                        <div class="space-y-6">
+                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-14 rounded-lg group hover:scale-110 hover:shadow-hover transition-all duration-500 text-lg px-12 py-6 animate-bounce-gentle relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                </div>
+                                <svg class="lucide lucide-eye mr-3 h-6 w-6 group-hover:rotate-12 transition-transform duration-300" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0">
                                     </path>
                                     <circle cx="12" cy="12" r="3">
                                     </circle>
-                                    </svg>
-                                    <span class="relative z-10">
-                                    Navigate Your AI Journey
-                                    </span>
-                                    <svg class="lucide lucide-arrow-right ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform duration-300" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                </svg>
+                                <span class="relative z-10">
+                                Navigate Your AI Journey
+                                </span>
+                                <svg class="lucide lucide-arrow-right ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform duration-300" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M5 12h14">
                                     </path>
                                     <path d="m12 5 7 7-7 7">
                                     </path>
-                                    </svg>
-                                </button>
-                                <p class="text-sm opacity-80 animate-slide-in-right">
-                                    In just 30 minutes, you'll see a tailored demonstration of how Meridiene can provide immediate value. Limited strategic consultation slots are available each month.
-                                </p>
-                            </div>
+                                </svg>
+                            </button>
+                            <p class="text-sm opacity-80 animate-slide-in-right">
+                                In just 30 minutes, you'll see a tailored demonstration of how Meridiene can provide immediate value. Limited strategic consultation slots are available each month.
+                            </p>
                         </div>
-                        </section>
-                        <!-- Site content end -->
-
-              </div>                
+                    </div>
+                </section>
+                <!-- Site content end -->
+            </div>
         </div>
-
         <!-- Footer start -->
-            <footer class="footer">
-                <div class="footer-container">
-                    <div class="footer-column brand">
-                        <div class="logo">
-                            <svg class="h-8 w-auto mr-3" fill="none" viewbox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <lineargradient id="footerLogoGradient" x1="0%" x2="100%" y1="0%" y2="0%">
-                                        <stop offset="0%" style="stop-color:#DF5660;stop-opacity:1">
-                                        </stop>
-                                        <stop offset="100%" style="stop-color:#4F297C;stop-opacity:1">
-                                        </stop>
-                                    </lineargradient>
-                                </defs>
-                                <circle cx="20" cy="20" fill="url(#footerLogoGradient)" opacity="0.1" r="18">
-                                </circle>
-                                <circle cx="20" cy="20" fill="url(#footerLogoGradient)" r="12">
-                                </circle>
-                                <path d="M12 20 L20 12 L28 20 L20 28 Z" fill="white">
-                                </path>
-                                <text fill="url(#footerLogoGradient)" font-family="Poppins, sans-serif" font-size="18" font-weight="600" x="50" y="25">
-                                    Meridiene
-                                </text>
-                            </svg>
-                        </div>
-                        <p>
-                            Transforming organizational complexity into competitive clarity through intelligent analytics and strategic insights.
-                        <div class="social-icons" style="margin-top: 1rem;">
-                            <a aria-label="LinkedIn" href="https://www.linkedin.com/company/yourcompany" target="_blank">
-                            <i class="fab fa-linkedin-in">
-                            </i>
-                            </a>
-                            <a aria-label="Twitter" href="https://twitter.com/yourcompany" target="_blank">
-                            <i class="fab fa-twitter">
-                            </i>
-                            </a>
-                            <a aria-label="YouTube" href="https://www.youtube.com/@yourcompany" target="_blank">
-                            <i class="fab fa-youtube">
-                            </i>
-                            </a>
-                        </div>
-                        </p>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-column brand">
+                    <div class="logo">
+                        <svg class="h-8 w-auto mr-3" fill="none" viewbox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <lineargradient id="footerLogoGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#DF5660;stop-opacity:1">
+                                    </stop>
+                                    <stop offset="100%" style="stop-color:#4F297C;stop-opacity:1">
+                                    </stop>
+                                </lineargradient>
+                            </defs>
+                            <circle cx="20" cy="20" fill="url(#footerLogoGradient)" opacity="0.1" r="18">
+                            </circle>
+                            <circle cx="20" cy="20" fill="url(#footerLogoGradient)" r="12">
+                            </circle>
+                            <path d="M12 20 L20 12 L28 20 L20 28 Z" fill="white">
+                            </path>
+                            <text fill="url(#footerLogoGradient)" font-family="Poppins, sans-serif" font-size="18" font-weight="600" x="50" y="25">
+                                Meridiene
+                            </text>
+                        </svg>
                     </div>
-                    <div class="footer-column">
-                        <h4>
-                            Product
-                        </h4>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                Platform Overview
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                Solutions
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                Use Cases
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                Integrations
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                API Documentation
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>
-                            Company
-                        </h4>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                About Us
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                Careers
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                News &amp; Press
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                Partners
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                Contact
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>
-                            Support
-                        </h4>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                Help Center
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                Documentation
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                Community
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                Training
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                System Status
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer-bottom">
                     <p>
-                        © 2025 Meridiene. All rights reserved.
-                    </p>
-                    <div class="footer-links">
-                        <a href="#">
-                        Privacy Policy
+                        Transforming organizational complexity into competitive clarity through intelligent analytics and strategic insights.
+                    <div class="social-icons" style="margin-top: 1rem;">
+                        <a aria-label="LinkedIn" href="https://www.linkedin.com/company/yourcompany" target="_blank">
+                        <i class="fab fa-linkedin-in">
+                        </i>
                         </a>
-                        <a href="#">
-                        Terms of Service
+                        <a aria-label="Twitter" href="https://twitter.com/yourcompany" target="_blank">
+                        <i class="fab fa-twitter">
+                        </i>
                         </a>
-                        <a href="#">
-                        Security
+                        <a aria-label="YouTube" href="https://www.youtube.com/@yourcompany" target="_blank">
+                        <i class="fab fa-youtube">
+                        </i>
                         </a>
                     </div>
+                    </p>
                 </div>
-            </footer>
-       <!-- Footer end -->
-
-       <script>
-        /* ✅ Use Case Menu Toggle Start */
-        const toggleBtn = document.getElementById("usecase-btn");
-        const submenu = document.getElementById("sub_menu_c");
-
-        toggleBtn.addEventListener("click", function (e) {
-            submenu.classList.toggle("opacity-0");
-            submenu.classList.toggle("invisible");
-            submenu.classList.toggle("-translate-y-2");
-
-            submenu.classList.toggle("opacity-100");
-            submenu.classList.toggle("visible");
-            submenu.classList.toggle("translate-y-0");
-        });
-
-        // Outside click logic
-        document.addEventListener("click", function (e) {
-            if (!submenu || !toggleBtn) return;
-
-            if (submenu.contains(e.target) || toggleBtn.contains(e.target)) return;
-
-            if (submenu.classList.contains("visible")) {
-            submenu.classList.remove("opacity-100", "visible", "translate-y-0");
-            submenu.classList.add("opacity-0", "invisible", "-translate-y-2");
-            }
-        });
-        /* ✅ Use Case Menu Toggle End */
-
-        const header = document.querySelector("nav");
-          
-          window.addEventListener("scroll", () => {
-            if (window.scrollY > 10) {
-              header.classList.add(
-                "bg-background/95",
-                "backdrop-blur-lg",
-                "border-b",
-                "border-border",
-                "shadow-elegant"
-              );
-            } else {
-              header.classList.remove(
-                "bg-background/95",
-                "backdrop-blur-lg",
-                "border-b",
-                "border-border",
-                "shadow-elegant"
-              );
-            }
-          });
-
-
-        function formatNumber(num) {
-            return num.toLocaleString(); // adds commas like 2,847
-        }
-
-        function animateCountUp(el, target, suffix = "", duration = 2000) {
-            let start = 0;
-            const increment = target / (duration / 16); // ~60fps
-
-            function update() {
-            start += increment;
-            if (start < target) {
-                el.innerText = formatNumber(Math.floor(start)) + suffix;
-                requestAnimationFrame(update);
-            } else {
-                el.innerText = formatNumber(target) + suffix;
-            }
-            }
-
-            requestAnimationFrame(update);
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const counters = document.querySelectorAll(".animate-count-up-c");
-
-            counters.forEach(counter => {
-            const target = parseInt(counter.getAttribute("data-target"));
-            const suffix = counter.getAttribute("data-suffix") || "";
-
-            if (!isNaN(target)) {
-                animateCountUp(counter, target, suffix);
-            }
-            });
-        });
-
-            function animateCountUp(id, target, duration = 2000) {
-            const el = document.getElementById(id);
-            if (!el) return;
-
-            let start = 0;
-            const increment = target / (duration / 16); // ~60fps
-
-            function update() {
-            start += increment;
-            if (start < target) {
-            el.innerText = Math.floor(start) + "%";
-            requestAnimationFrame(update);
-            } else {
-            el.innerText = target + "%";
-            }
-            }
-
-            requestAnimationFrame(update);
-            }
-
-            document.addEventListener("DOMContentLoaded", function () {
-            animateCountUp("count-87", 87);
-            });
-
-
-            // ✅ Set Your Planning Assumptions: Card Selection
-            const cards = document.querySelectorAll(".card-item_c");
-
-            cards.forEach((card) => {
-            card.addEventListener("click", () => {
-            // 🔁 Remove selection styling from all cards
-            cards.forEach((c) => {
-            c.classList.remove("bg-primary/5", "rounded-lg", "border");
-            });
-
-            // ✅ Add selection styling to clicked card
-            card.classList.add("bg-primary/5", "rounded-lg", "border");
-            });
+                <div class="footer-column">
+                    <h4>
+                        Product
+                    </h4>
+                    <ul>
+                        <li>
+                            <a href="#">
+                            Platform Overview
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            Solutions
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            Use Cases
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            Integrations
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            API Documentation
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>
+                        Company
+                    </h4>
+                    <ul>
+                        <li>
+                            <a href="#">
+                            About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            Careers
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            News &amp; Press
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            Partners
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>
+                        Support
+                    </h4>
+                    <ul>
+                        <li>
+                            <a href="#">
+                            Help Center
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            Documentation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            Community
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            Training
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            System Status
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>
+                    © 2025 Meridiene. All rights reserved.
+                </p>
+                <div class="footer-links">
+                    <a href="#">
+                    Privacy Policy
+                    </a>
+                    <a href="#">
+                    Terms of Service
+                    </a>
+                    <a href="#">
+                    Security
+                    </a>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer end -->
+        <script>
+            /* ✅ Use Case Menu Toggle Start */
+            const toggleBtn = document.getElementById("usecase-btn");
+            const submenu = document.getElementById("sub_menu_c");
+            
+            toggleBtn.addEventListener("click", function (e) {
+                submenu.classList.toggle("opacity-0");
+                submenu.classList.toggle("invisible");
+                submenu.classList.toggle("-translate-y-2");
+            
+                submenu.classList.toggle("opacity-100");
+                submenu.classList.toggle("visible");
+                submenu.classList.toggle("translate-y-0");
             });
             
-    </script>
+            // Outside click logic
+            document.addEventListener("click", function (e) {
+                if (!submenu || !toggleBtn) return;
+            
+                if (submenu.contains(e.target) || toggleBtn.contains(e.target)) return;
+            
+                if (submenu.classList.contains("visible")) {
+                submenu.classList.remove("opacity-100", "visible", "translate-y-0");
+                submenu.classList.add("opacity-0", "invisible", "-translate-y-2");
+                }
+            });
+            /* ✅ Use Case Menu Toggle End */
+            
+            const header = document.querySelector("nav");
+              
+              window.addEventListener("scroll", () => {
+                if (window.scrollY > 10) {
+                  header.classList.add(
+                    "bg-background/95",
+                    "backdrop-blur-lg",
+                    "border-b",
+                    "border-border",
+                    "shadow-elegant"
+                  );
+                } else {
+                  header.classList.remove(
+                    "bg-background/95",
+                    "backdrop-blur-lg",
+                    "border-b",
+                    "border-border",
+                    "shadow-elegant"
+                  );
+                }
+              });
+            
+            
+            function formatNumber(num) {
+                return num.toLocaleString(); // adds commas like 2,847
+            }
+            
+            function animateCountUp(el, target, suffix = "", duration = 2000) {
+                let start = 0;
+                const increment = target / (duration / 16); // ~60fps
+            
+                function update() {
+                start += increment;
+                if (start < target) {
+                    el.innerText = formatNumber(Math.floor(start)) + suffix;
+                    requestAnimationFrame(update);
+                } else {
+                    el.innerText = formatNumber(target) + suffix;
+                }
+                }
+            
+                requestAnimationFrame(update);
+            }
+            
+            document.addEventListener("DOMContentLoaded", () => {
+                const counters = document.querySelectorAll(".animate-count-up-c");
+            
+                counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute("data-target"));
+                const suffix = counter.getAttribute("data-suffix") || "";
+            
+                if (!isNaN(target)) {
+                    animateCountUp(counter, target, suffix);
+                }
+                });
+            });
+            
+                function animateCountUp(id, target, duration = 2000) {
+                const el = document.getElementById(id);
+                if (!el) return;
+            
+                let start = 0;
+                const increment = target / (duration / 16); // ~60fps
+            
+                function update() {
+                start += increment;
+                if (start < target) {
+                el.innerText = Math.floor(start) + "%";
+                requestAnimationFrame(update);
+                } else {
+                el.innerText = target + "%";
+                }
+                }
+            
+                requestAnimationFrame(update);
+                }
+            
+                document.addEventListener("DOMContentLoaded", function () {
+                animateCountUp("count-87", 87);
+                });
+            
+            
+                // ✅ Set Your Planning Assumptions: Card Selection
+                const cards = document.querySelectorAll(".card-item_c");
+            
+                cards.forEach((card) => {
+                card.addEventListener("click", () => {
+                // 🔁 Remove selection styling from all cards
+                cards.forEach((c) => {
+                c.classList.remove("bg-primary/5", "rounded-lg", "border");
+                });
+            
+                // ✅ Add selection styling to clicked card
+                card.classList.add("bg-primary/5", "rounded-lg", "border");
+                });
+                });
+                
+        </script>
     </body>
 </html>
