@@ -23,8 +23,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/main_styles.css" />
-        <link rel="stylesheet" href="assets/css/about-us.css" />
-        <link rel="stylesheet" href="assets/css/common_style.css" />
+        <link rel="stylesheet" href="assets/css/about-us.css" /> 
         <script src="assets/js/custom.js"></script>
     </head>
     <body>
@@ -44,7 +43,7 @@
             <nav class="fixed top-0 w-full z-50 transition-all duration-500 bg-transparent">
                 <div class="container mx-auto px-6">
                     <div class="flex items-center justify-between h-20">
-                        <a class="transition-colors duration-200 flex items-center space-x-2 group" href="#top">
+                        <a class="transition-colors duration-200 flex items-center space-x-2 group" href="index.html">
                         <span class="">
                         <img alt="Meridiene AI Dashboard" class="" src="assets/images/Meridiene-logo.png" style="width: 175px; height: 46px;"/>
                         </span>
@@ -104,13 +103,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <a class="transition-colors duration-200 text-foreground hover:text-primary transition-colors font-medium" href="#about">
+                            <a class="transition-colors duration-200 text-foreground hover:text-primary transition-colors font-medium" href="about-us.html">
                             About Us
                             </a>
                             <a class="transition-colors duration-200 text-foreground hover:text-primary transition-colors font-medium" href="pricing.html">
                             Pricing
                             </a>
-                            <a class="transition-colors duration-200 text-foreground hover:text-primary transition-colors font-medium" href="#contact">
+                            <a class="transition-colors duration-200 text-foreground hover:text-primary transition-colors font-medium" href="contact-us.html">
                             Contact Us
                             </a>
                         </div>
@@ -688,6 +687,25 @@
               }
             });
      
+document.addEventListener('DOMContentLoaded', () => {
+  const tabButtons = document.querySelectorAll('[role="tab"]');
+
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Reset all tabs
+      tabButtons.forEach(btn => {
+        btn.setAttribute('data-state', 'inactive');
+        btn.setAttribute('aria-selected', 'false');
+      });
+
+      // Activate the clicked tab
+      button.setAttribute('data-state', 'active');
+      button.setAttribute('aria-selected', 'true');
+    });
+  });
+});
+</script>
+
 </script>
 
         </script>
