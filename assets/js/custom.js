@@ -18,29 +18,35 @@ if (window.self !== window.top || navigator.userAgent.includes('puppeteer')) {
     });
   }
   
-  // ✅ Home Page FAQ Toggle (Questions, Answered) (home page)
-  document.addEventListener('DOMContentLoaded', () => {
-    const faqButtons = document.querySelectorAll('.faq-question button');
+   // ✅ Home Page FAQ Toggle (Questions, Answered) (home page)
   
-    faqButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const faqItem = button.closest('.faq-item');
-        const answer = faqItem.querySelector('.faq-answer');
-  
-        // Toggle visibility
-        answer.classList.toggle('hidden');
-  
-        // Toggle state attributes
-        const currentState = button.getAttribute('data-state');
-        button.setAttribute('data-state', currentState === 'open' ? 'closed' : 'open');
-        button.setAttribute('aria-expanded', currentState === 'open' ? 'false' : 'true');
-  
-        // Rotate icon
-        const icon = button.querySelector('svg');
-        icon.classList.toggle('rotate-180');
+document.addEventListener('DOMContentLoaded', () => {
+  const faqButtons = document.querySelectorAll('.faq-question button');
+
+  faqButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const clickedItem = button.closest('.faq-item');
+      const clickedAnswer = clickedItem.querySelector('.faq-answer');
+      const isOpen = !clickedAnswer.classList.contains('hidden');
+
+      // First: close all
+      document.querySelectorAll('.faq-answer').forEach(answer => answer.classList.add('hidden'));
+      document.querySelectorAll('.faq-question button').forEach(btn => {
+        btn.setAttribute('data-state', 'closed');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.querySelector('svg')?.classList.remove('rotate-180');
       });
+
+      // If it was closed, open it
+      if (!isOpen) {
+        clickedAnswer.classList.remove('hidden');
+        button.setAttribute('data-state', 'open');
+        button.setAttribute('aria-expanded', 'true');
+        button.querySelector('svg')?.classList.add('rotate-180');
+      }
     });
   });
+});
   
   // ✅ Auto Typing Text Animation
   // Home page text auto write code start  (home page)
