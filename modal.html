@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meridiene - Form Steps (Bootstrap)</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Meridiene - Form Steps (Modal)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
+        /* Base styles */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8f9fa; /* Light gray background */
@@ -17,9 +17,65 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
+            padding: 20px; /* Add some padding for smaller screens */
+            box-sizing: border-box; /* Ensure padding is included in element's total width and height */
         }
 
-        /* Parent class for encapsulation */
+        /* Button to open the modal */
+        .hp-open-modal-button {
+            padding: 1rem 2rem;
+            font-size: 1.25rem;
+            background-color: #dc3545; /* Red */
+            color: #fff;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+            transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .hp-open-modal-button:hover {
+            background-color: #bb2d3b; /* Darker red */
+            box-shadow: 0 0.35rem 0.7rem rgba(0, 0, 0, 0.15);
+        }
+
+        /* Custom Modal/Message Box Styles */
+        .hp-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.6); /* Darker overlay for modal */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000; /* Ensure it's above other content */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        .hp-modal-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .hp-modal-content-message { /* For the small message modal */
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 90%;
+            width: 400px;
+            box-sizing: border-box;
+        }
+        .hp-modal-content-message p {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #212529;
+        }
+
+        /* Form Modal Specific Styles */
         .hp-form-container {
             display: flex;
             background-color: #ffffff;
@@ -29,8 +85,16 @@
             width: 90%;
             max-width: 1024px;
             min-height: 600px;
+            box-sizing: border-box;
+            transform: scale(0.95); /* Slightly scale down when hidden */
+            transition: transform 0.3s ease-in-out;
         }
 
+        .hp-modal-overlay.show .hp-form-container {
+            transform: scale(1); /* Scale up when shown */
+        }
+
+        /* Sidebar styles */
         .hp-sidebar {
             width: 280px;
             background-color: #343a40; /* Dark gray for sidebar */
@@ -39,15 +103,21 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            flex-shrink: 0; /* Prevent sidebar from shrinking */
         }
         .hp-sidebar-header h2 {
             font-size: 1.5rem;
             font-weight: 600;
             color: #ffffff;
+            margin-bottom: 0.25rem;
         }
         .hp-sidebar-header p {
             font-size: 0.875rem;
             color: #adb5bd;
+            margin-top: 0;
+        }
+        .hp-sidebar-nav {
+            margin-top: 2rem;
         }
         .hp-nav-item {
             display: flex;
@@ -73,31 +143,46 @@
             color: #6c757d; /* Gray checkmark */
         }
         .hp-nav-item.completed .hp-check-icon {
-            color: #198754; /* Green checkmark for completed (Bootstrap success color) */
+            color: #198754; /* Green checkmark for completed */
         }
 
+        /* Main content styles */
         .hp-main-content {
             flex-grow: 1;
             padding: 2rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            box-sizing: border-box;
         }
         .hp-main-content-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start; /* Align items to the start for better spacing */
             margin-bottom: 2rem;
         }
         .hp-main-content-header h1 {
             font-size: 1.875rem;
             font-weight: 700;
             color: #212529;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
         }
         .hp-main-content-header p {
             font-size: 1rem;
             color: #495057;
-            margin-top: 0.5rem;
+            margin-top: 0;
+        }
+        .hp-main-content-header .hp-close-button { /* Custom close button */
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #6c757d;
+            cursor: pointer;
+            padding: 0;
+        }
+        .hp-main-content-header .hp-close-button:hover {
+            color: #495057;
         }
 
         /* Company Size Specific Styles */
@@ -118,7 +203,7 @@
             position: relative;
         }
         .hp-option-card.selected {
-            border-color: #dc3545; /* Red border for selected card (Bootstrap danger color) */
+            border-color: #dc3545; /* Red border for selected card */
             background-color: #ffebeb; /* Light red background for selected card */
             box-shadow: 0 0.25rem 0.5rem rgba(220, 53, 69, 0.1);
         }
@@ -172,7 +257,36 @@
             color: #212529;
             margin-bottom: 0.5rem;
         }
-        /* Bootstrap's form-control class handles most of this */
+        .hp-form-control { /* Custom form control */
+            display: block;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: 0.375rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            box-sizing: border-box; /* Ensure padding is included */
+        }
+        .hp-form-control:focus {
+            color: #212529;
+            background-color: #fff;
+            border-color: #dc3545; /* Red focus border */
+            outline: 0;
+            box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25); /* Red shadow */
+        }
+        .hp-form-control::placeholder {
+            color: #6c757d;
+            opacity: 1;
+        }
+        textarea.hp-form-control {
+            min-height: 120px;
+            resize: vertical; /* Allow vertical resizing */
+        }
         .hp-full-width {
             grid-column: 1 / -1;
         }
@@ -213,7 +327,7 @@
             display: inline-block;
             width: 1.25rem;
             height: 1.25rem;
-            border: 1px solid #ced4da; /* Bootstrap border color */
+            border: 1px solid #ced4da; /* Border color */
             border-radius: 0.25rem;
             margin-right: 0.75rem;
             background-color: #fff;
@@ -223,11 +337,11 @@
 
         /* Custom checkmark inside the box */
         .hp-use-case-card::after {
-            content: '\f00c';
+            content: '\f00c'; /* Font Awesome check icon */
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
             position: absolute;
-            left: 1.25rem;
+            left: 1.25rem; /* Adjust based on padding and box size */
             top: 50%;
             transform: translateY(-50%);
             font-size: 0.9rem;
@@ -237,7 +351,7 @@
 
         /* Styles when checkbox is checked */
         .hp-use-case-card:has(input[type="checkbox"]:checked) {
-            border-color: #dc3545; /* Bootstrap danger color */
+            border-color: #dc3545; /* Danger color */
             background-color: #ffebeb;
             box-shadow: 0 0.25rem 0.5rem rgba(220, 53, 69, 0.1);
         }
@@ -255,15 +369,57 @@
             border-color: #f1aeb5;
         }
 
+        /* Form Footer */
         .hp-form-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 2rem;
+            margin-top: auto; /* Push to the bottom */
             padding-top: 1.5rem;
             border-top: 1px solid #e9ecef;
         }
-        /* Bootstrap buttons will replace these */
+
+        /* Custom Buttons */
+        .hp-button {
+            display: inline-block;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            text-align: center;
+            text-decoration: none;
+            vertical-align: middle;
+            cursor: pointer;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border-radius: 0.375rem;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+        .hp-button-danger {
+            color: #fff;
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        .hp-button-danger:hover {
+            color: #fff;
+            background-color: #bb2d3b;
+            border-color: #bb2d3b;
+        }
+        .hp-button-outline-secondary {
+            color: #6c757d;
+            border-color: #6c757d;
+        }
+        .hp-button-outline-secondary:hover {
+            color: #fff;
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+        .hp-button:disabled {
+            pointer-events: none;
+            opacity: 0.65;
+        }
 
         /* Final Checklist (Thank You) Specific Styles */
         .hp-thank-you-content {
@@ -280,13 +436,28 @@
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background-color: #dc3545; /* Bootstrap danger color */
+            background-color: #dc3545; /* Danger color */
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 3rem;
             color: #ffffff;
             margin-bottom: 1.5rem;
+        }
+
+        .hp-thank-you-content h1 {
+            font-size: 1.75rem; /* Adjusted for better fit */
+            font-weight: 700;
+            color: #212529;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .hp-thank-you-content p {
+            font-size: 1rem;
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+            max-width: 400px;
+            line-height: 1.5;
         }
 
         .hp-info-card {
@@ -298,43 +469,45 @@
             max-width: 400px;
             text-align: left;
             margin-bottom: 1rem;
+            box-sizing: border-box;
         }
         .hp-info-card:last-child {
             margin-bottom: 0;
         }
+        .hp-info-card .hp-icon-wrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
         .hp-info-card i {
-            color: #495057;
+            color: #6c757d;
+            font-size: 1.25rem; /* Adjusted icon size */
+            margin-right: 0.75rem;
+        }
+        .hp-info-card h2 {
+            font-size: 1.1rem; /* Adjusted heading size */
+            font-weight: 600;
+            color: #212529;
+            margin: 0;
+        }
+        .hp-info-card p {
+            font-size: 0.875rem;
+            color: #6c757d;
+            margin-left: 2rem; /* Indent paragraph below icon/heading */
+            margin-top: 0.25rem;
+            margin-bottom: 0;
+        }
+        .hp-info-card a {
+            color: #dc3545;
+            text-decoration: none;
+        }
+        .hp-info-card a:hover {
+            text-decoration: underline;
         }
 
         /* Ensure the form-footer for this screen is centered */
-        .hp-main-content .hp-form-footer.text-center-footer {
+        .hp-main-content .hp-form-footer.hp-text-center-footer {
             justify-content: center;
-        }
-
-        /* Custom Modal/Message Box Styles */
-        .hp-modal-overlay {
-            position: fixed;
-            inset: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1050; /* Bootstrap modal z-index */
-        }
-        .hp-modal-content {
-            background-color: #fff;
-            padding: 2rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-            text-align: center;
-            max-width: 90%;
-            width: 400px;
-        }
-        .hp-modal-content p {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #212529;
         }
 
         /* Hide all step containers by default */
@@ -344,241 +517,350 @@
             flex-grow: 1;
             justify-content: space-between;
         }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hp-form-container {
+                flex-direction: column;
+                min-height: auto; /* Allow height to adjust */
+                width: 100%; /* Take full width on small screens */
+                border-radius: 0.5rem;
+            }
+
+            .hp-sidebar {
+                width: 100%;
+                padding: 1.5rem;
+                flex-direction: row; /* Horizontal layout for sidebar on small screens */
+                overflow-x: auto; /* Allow horizontal scroll if many items */
+                white-space: nowrap; /* Prevent wrapping */
+                justify-content: flex-start; /* Align items to start */
+                gap: 1rem; /* Space between sidebar items */
+            }
+            .hp-sidebar-header {
+                display: none; /* Hide header on small screens */
+            }
+            .hp-sidebar-nav {
+                margin-top: 0;
+                display: flex;
+                gap: 1rem;
+            }
+            .hp-nav-item {
+                padding: 0.5rem 0.75rem;
+                margin-bottom: 0;
+                flex-direction: column; /* Stack icon and text */
+                font-size: 0.875rem;
+                text-align: center;
+            }
+            .hp-nav-item i {
+                margin-right: 0;
+                margin-bottom: 0.25rem; /* Space between icon and text */
+                font-size: 1rem;
+            }
+            .hp-nav-item span {
+                white-space: normal; /* Allow text to wrap if needed */
+            }
+            .hp-nav-item .hp-check-icon {
+                display: none; /* Hide check icons on small screen sidebar nav */
+            }
+
+            .hp-main-content {
+                padding: 1.5rem;
+            }
+            .hp-main-content-header {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 1.5rem;
+            }
+            .hp-main-content-header h1 {
+                font-size: 1.5rem;
+            }
+            .hp-main-content-header .hp-close-button {
+                position: absolute; /* Position relative to the main content */
+                top: 1rem;
+                right: 1rem;
+            }
+
+            .hp-options-grid, .hp-form-fields, .hp-use-cases-grid {
+                grid-template-columns: 1fr; /* Single column layout */
+                gap: 1rem;
+            }
+
+            .hp-form-footer {
+                flex-direction: column;
+                gap: 1rem;
+                padding-top: 1rem;
+            }
+            .hp-button {
+                width: 100%; /* Full width buttons */
+            }
+
+            .hp-thank-you-content h1 {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="hp-form-container">
-        <div class="hp-sidebar">
-            <div class="hp-sidebar-header">
-                <h2>Meridiene</h2>
-                <p>Organizational Planning Software</p>
-            </div>
-            <nav class="hp-sidebar-nav">
-                <div id="nav-company-size" class="hp-nav-item" data-step="company-size">
-                    <i class="fas fa-building"></i>
-                    <span>Company Size</span>
-                    <i class="fas fa-check-circle hp-check-icon"></i>
-                </div>
-                <div id="nav-contact-info" class="hp-nav-item" data-step="contact-information">
-                    <i class="fas fa-address-book"></i>
-                    <span>Contact Information</span>
-                    <i class="fas fa-check-circle hp-check-icon"></i>
-                </div>
-                <div id="nav-use-cases" class="hp-nav-item" data-step="use-cases">
-                    <i class="fas fa-lightbulb"></i>
-                    <span>Use Cases</span>
-                    <i class="fas fa-check-circle hp-check-icon"></i>
-                </div>
-                <div id="nav-requirements" class="hp-nav-item" data-step="requirements">
-                    <i class="fas fa-clipboard-list"></i>
-                    <span>Requirements</span>
-                    <i class="fas fa-check-circle hp-check-icon"></i>
-                </div>
-                <div id="nav-final-checklist" class="hp-nav-item" data-step="final-checklist">
-                    <i class="fas fa-file-invoice hp-check-icon"></i> <span>Final Checklist</span>
-                    <i class="fas fa-circle-notch hp-check-icon"></i>
-                </div>
-            </nav>
-            <div></div>
-        </div>
+    <button class="hp-open-modal-button">Open Form</button>
 
-        <div class="hp-main-content">
-            <div id="company-size-step" class="hp-step-container">
-                <div class="hp-main-content-header">
-                    <div>
-                        <h1>What's your company size?</h1>
-                        <p>This helps us understand your organizational complexity.</p>
-                    </div>
-                    <button type="button" class="btn-close text-secondary" aria-label="Close form"></button>
+    <div id="formModal" class="hp-modal-overlay">
+        <div class="hp-form-container">
+            <div class="hp-sidebar">
+                <div class="hp-sidebar-header">
+                    <h2>Meridiene</h2>
+                    <p>Organizational Planning Software</p>
                 </div>
-                <div class="hp-options-grid">
-                    <div class="hp-option-card" data-value="1000-2000">
-                        <i class="fas fa-users"></i>
-                        <h3>1000 - 2000</h3>
-                        <p>Growing Enterprise</p>
-                        <i class="fas fa-check-circle hp-selected-icon"></i>
-                    </div>
-                    <div class="hp-option-card" data-value="2000-5000">
+                <nav class="hp-sidebar-nav">
+                    <div id="nav-company-size" class="hp-nav-item" data-step="company-size">
                         <i class="fas fa-building"></i>
-                        <h3>2000 - 5000</h3>
-                        <p>Large Corporation</p>
-                        <i class="fas fa-check-circle hp-selected-icon"></i>
+                        <span>Company Size</span>
+                        <i class="fas fa-check-circle hp-check-icon"></i>
                     </div>
-                    <div class="hp-option-card" data-value="5000-10000">
-                        <i class="fas fa-briefcase"></i>
-                        <h3>5000 - 10000</h3>
-                        <p>Enterprise Scale</p>
-                        <i class="fas fa-check-circle hp-selected-icon"></i>
+                    <div id="nav-contact-info" class="hp-nav-item" data-step="contact-information">
+                        <i class="fas fa-address-book"></i>
+                        <span>Contact Information</span>
+                        <i class="fas fa-check-circle hp-check-icon"></i>
                     </div>
-                    <div class="hp-option-card" data-value="10k-plus">
-                        <i class="fas fa-city"></i>
-                        <h3>10k or more</h3>
-                        <p>Global Enterprise</p>
-                        <i class="fas fa-check-circle hp-selected-icon"></i>
+                    <div id="nav-use-cases" class="hp-nav-item" data-step="use-cases">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Use Cases</span>
+                        <i class="fas fa-check-circle hp-check-icon"></i>
                     </div>
-                </div>
-                <div class="hp-form-footer">
-                    <button type="button" class="btn btn-outline-secondary hp-back-button" disabled>Back</button>
-                    <button type="button" class="btn btn-danger hp-continue-button" disabled>Continue</button>
-                </div>
+                    <div id="nav-requirements" class="hp-nav-item" data-step="requirements">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>Requirements</span>
+                        <i class="fas fa-check-circle hp-check-icon"></i>
+                    </div>
+                    <div id="nav-final-checklist" class="hp-nav-item" data-step="final-checklist">
+                        <i class="fas fa-file-invoice hp-check-icon"></i> <span>Final Checklist</span>
+                        <i class="fas fa-circle-notch hp-check-icon"></i>
+                    </div>
+                </nav>
+                <div></div>
             </div>
 
-            <div id="contact-information-step" class="hp-step-container">
-                <div class="hp-main-content-header">
-                    <div>
-                        <h1>Contact Information</h1>
-                        <p>Help us personalize our approach to your needs.</p>
-                    </div>
-                    <button type="button" class="btn-close text-secondary" aria-label="Close form"></button>
-                </div>
-                <div class="hp-form-fields">
-                    <div class="hp-form-group">
-                        <label for="yourName" class="form-label">Your Name *</label>
-                        <input type="text" class="form-control" id="yourName" placeholder="John Doe">
-                    </div>
-                    <div class="hp-form-group">
-                        <label for="yourPosition" class="form-label">Your Position *</label>
-                        <input type="text" class="form-control" id="yourPosition" placeholder="HR Director">
-                    </div>
-                    <div class="hp-form-group hp-full-width">
-                        <label for="companyName" class="form-label">Company Name *</label>
-                        <input type="text" class="form-control" id="companyName" placeholder="Acme Corporation">
-                    </div>
-                    <div class="hp-form-group">
-                        <label for="companyEmail" class="form-label">Company Email *</label>
-                        <input type="email" class="form-control" id="companyEmail" placeholder="john@acme.com">
-                    </div>
-                    <div class="hp-form-group">
-                        <label for="phoneNumber" class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" id="phoneNumber" placeholder="+1 (555) 123-4567">
-                    </div>
-                </div>
-                <div class="hp-form-footer">
-                    <button type="button" class="btn btn-outline-secondary hp-back-button">Back</button>
-                    <button type="button" class="btn btn-danger hp-continue-button" disabled>Continue</button>
-                </div>
-            </div>
-
-            <div id="use-cases-step" class="hp-step-container">
-                <div class="hp-main-content-header">
-                    <div>
-                        <h1>Use Cases</h1>
-                        <p>Select the areas you might be interested in exploring.</p>
-                    </div>
-                    <button type="button" class="btn-close text-secondary" aria-label="Close form"></button>
-                </div>
-                <div class="hp-use-cases-grid">
-                    <label class="hp-use-case-card">
-                        <input type="checkbox" name="useCase" value="strategic_workforce_planning">
-                        <span>Strategic workforce planning</span>
-                    </label>
-                    <label class="hp-use-case-card">
-                        <input type="checkbox" name="useCase" value="org_design">
-                        <span>Org design</span>
-                    </label>
-                    <label class="hp-use-case-card">
-                        <input type="checkbox" name="useCase" value="org_transformation">
-                        <span>Org transformation</span>
-                    </label>
-                    <label class="hp-use-case-card">
-                        <input type="checkbox" name="useCase" value="current_state_analysis">
-                        <span>Current state analysis</span>
-                    </label>
-                    <label class="hp-use-case-card">
-                        <input type="checkbox" name="useCase" value="activity_analysis">
-                        <span>Activity analysis</span>
-                    </label>
-                    <label class="hp-use-case-card">
-                        <input type="checkbox" name="useCase" value="organizational_survey">
-                        <span>Organizational Survey</span>
-                    </label>
-                </div>
-                <div class="hp-form-footer">
-                    <button type="button" class="btn btn-outline-secondary hp-back-button">Back</button>
-                    <button type="button" class="btn btn-danger hp-continue-button" disabled>Continue</button>
-                </div>
-            </div>
-
-            <div id="requirements-step" class="hp-step-container">
-                <div class="hp-main-content-header">
-                    <div>
-                        <h1>Define Your Requirements</h1>
-                        <p>Help us understand your specific challenges and what you're looking for.</p>
-                    </div>
-                    <button type="button" class="btn-close text-secondary" aria-label="Close form"></button>
-                </div>
-                <div class="hp-form-fields">
-                    <div class="hp-form-group hp-full-width">
-                        <label for="problemsFacing" class="form-label">What problems is your organization facing? *</label>
-                        <textarea class="form-control" id="problemsFacing" rows="5" placeholder="Describe the organizational challenges you're experiencing..."></textarea>
-                    </div>
-                    <div class="hp-form-group hp-full-width">
-                        <label for="toolRequirements" class="form-label">What are you looking for in an organizational planning tool? *</label>
-                        <textarea class="form-control" id="toolRequirements" rows="5" placeholder="Tell us about your requirements, expectations, and desired outcomes..."></textarea>
-                    </div>
-                </div>
-                <div class="hp-form-footer">
-                    <button type="button" class="btn btn-outline-secondary hp-back-button">Back</button>
-                    <button type="button" class="btn btn-danger hp-continue-button" disabled>Submit</button>
-                </div>
-            </div>
-
-            <div id="final-checklist-step" class="hp-step-container">
-                <div class="hp-main-content-header">
-                    <div></div> <button type="button" class="btn-close text-secondary" aria-label="Close form"></button>
-                </div>
-                <div class="hp-thank-you-content">
-                    <div class="hp-checkmark-circle">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <h1 class="h3 fw-bold text-dark mt-4 mb-2">Thank you for choosing Meridiene!</h1>
-                    <p class="text-muted text-center mb-4 mx-auto" style="max-width: 400px;">Your interest has been recorded and we will soon be in touch. An email will find you with meeting details.</p>
-
-                    <div class="hp-info-card">
-                        <div class="d-flex align-items-center mb-2">
-                            <i class="fas fa-clock text-secondary fs-5 me-3"></i>
-                            <h2 class="h5 fw-semibold text-dark">Time required</h2>
+            <div class="hp-main-content">
+                <div id="company-size-step" class="hp-step-container">
+                    <div class="hp-main-content-header">
+                        <div>
+                            <h1>What's your company size?</h1>
+                            <p>This helps us understand your organizational complexity.</p>
                         </div>
-                        <p class="text-muted ms-4">We'll schedule a 30-45 minute consultation</p>
+                        <button type="button" class="hp-close-button" aria-label="Close form">
+                            <i class="fas fa-times"></i>
+                        </button>
                     </div>
-
-                    <div class="hp-info-card mt-3">
-                        <div class="d-flex align-items-center mb-2">
-                            <i class="fas fa-map-marker-alt text-secondary fs-5 me-3"></i>
-                            <h2 class="h5 fw-semibold text-dark">Have questions?</h2>
+                    <div class="hp-options-grid">
+                        <div class="hp-option-card" data-value="1000-2000">
+                            <i class="fas fa-users"></i>
+                            <h3>1000 - 2000</h3>
+                            <p>Growing Enterprise</p>
+                            <i class="fas fa-check-circle hp-selected-icon"></i>
                         </div>
-                        <p class="text-muted ms-4">Contact us at <a href="mailto:contact@meridiene.com" class="text-danger text-decoration-none">contact@meridiene.com</a></p>
+                        <div class="hp-option-card" data-value="2000-5000">
+                            <i class="fas fa-building"></i>
+                            <h3>2000 - 5000</h3>
+                            <p>Large Corporation</p>
+                            <i class="fas fa-check-circle hp-selected-icon"></i>
+                        </div>
+                        <div class="hp-option-card" data-value="5000-10000">
+                            <i class="fas fa-briefcase"></i>
+                            <h3>5000 - 10000</h3>
+                            <p>Enterprise Scale</p>
+                            <i class="fas fa-check-circle hp-selected-icon"></i>
+                        </div>
+                        <div class="hp-option-card" data-value="10k-plus">
+                            <i class="fas fa-city"></i>
+                            <h3>10k or more</h3>
+                            <p>Global Enterprise</p>
+                            <i class="fas fa-check-circle hp-selected-icon"></i>
+                        </div>
+                    </div>
+                    <div class="hp-form-footer">
+                        <button type="button" class="hp-button hp-button-outline-secondary hp-back-button" disabled>Back</button>
+                        <button type="button" class="hp-button hp-button-danger hp-continue-button" disabled>Continue</button>
                     </div>
                 </div>
-                <div class="hp-form-footer text-center-footer">
-                    <button type="button" class="btn btn-danger hp-close-form-button">Close</button>
+
+                <div id="contact-information-step" class="hp-step-container">
+                    <div class="hp-main-content-header">
+                        <div>
+                            <h1>Contact Information</h1>
+                            <p>Help us personalize our approach to your needs.</p>
+                        </div>
+                        <button type="button" class="hp-close-button" aria-label="Close form">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="hp-form-fields">
+                        <div class="hp-form-group">
+                            <label for="yourName" class="hp-label">Your Name *</label>
+                            <input type="text" class="hp-form-control" id="yourName" placeholder="John Doe">
+                        </div>
+                        <div class="hp-form-group">
+                            <label for="yourPosition" class="hp-label">Your Position *</label>
+                            <input type="text" class="hp-form-control" id="yourPosition" placeholder="HR Director">
+                        </div>
+                        <div class="hp-form-group hp-full-width">
+                            <label for="companyName" class="hp-label">Company Name *</label>
+                            <input type="text" class="hp-form-control" id="companyName" placeholder="Acme Corporation">
+                        </div>
+                        <div class="hp-form-group">
+                            <label for="companyEmail" class="hp-label">Company Email *</label>
+                            <input type="email" class="hp-form-control" id="companyEmail" placeholder="john@acme.com">
+                        </div>
+                        <div class="hp-form-group">
+                            <label for="phoneNumber" class="hp-label">Phone Number</label>
+                            <input type="tel" class="hp-form-control" id="phoneNumber" placeholder="+1 (555) 123-4567">
+                        </div>
+                    </div>
+                    <div class="hp-form-footer">
+                        <button type="button" class="hp-button hp-button-outline-secondary hp-back-button">Back</button>
+                        <button type="button" class="hp-button hp-button-danger hp-continue-button" disabled>Continue</button>
+                    </div>
+                </div>
+
+                <div id="use-cases-step" class="hp-step-container">
+                    <div class="hp-main-content-header">
+                        <div>
+                            <h1>Use Cases</h1>
+                            <p>Select the areas you might be interested in exploring.</p>
+                        </div>
+                        <button type="button" class="hp-close-button" aria-label="Close form">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="hp-use-cases-grid">
+                        <label class="hp-use-case-card">
+                            <input type="checkbox" name="useCase" value="strategic_workforce_planning">
+                            <span>Strategic workforce planning</span>
+                        </label>
+                        <label class="hp-use-case-card">
+                            <input type="checkbox" name="useCase" value="org_design">
+                            <span>Org design</span>
+                        </label>
+                        <label class="hp-use-case-card">
+                            <input type="checkbox" name="useCase" value="org_transformation">
+                            <span>Org transformation</span>
+                        </label>
+                        <label class="hp-use-case-card">
+                            <input type="checkbox" name="useCase" value="current_state_analysis">
+                            <span>Current state analysis</span>
+                        </label>
+                        <label class="hp-use-case-card">
+                            <input type="checkbox" name="useCase" value="activity_analysis">
+                            <span>Activity analysis</span>
+                        </label>
+                        <label class="hp-use-case-card">
+                            <input type="checkbox" name="useCase" value="organizational_survey">
+                            <span>Organizational Survey</span>
+                        </label>
+                    </div>
+                    <div class="hp-form-footer">
+                        <button type="button" class="hp-button hp-button-outline-secondary hp-back-button">Back</button>
+                        <button type="button" class="hp-button hp-button-danger hp-continue-button" disabled>Continue</button>
+                    </div>
+                </div>
+
+                <div id="requirements-step" class="hp-step-container">
+                    <div class="hp-main-content-header">
+                        <div>
+                            <h1>Define Your Requirements</h1>
+                            <p>Help us understand your specific challenges and what you're looking for.</p>
+                        </div>
+                        <button type="button" class="hp-close-button" aria-label="Close form">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="hp-form-fields">
+                        <div class="hp-form-group hp-full-width">
+                            <label for="problemsFacing" class="hp-label">What problems is your organization facing? *</label>
+                            <textarea class="hp-form-control" id="problemsFacing" rows="5" placeholder="Describe the organizational challenges you're experiencing..."></textarea>
+                        </div>
+                        <div class="hp-form-group hp-full-width">
+                            <label for="toolRequirements" class="hp-label">What are you looking for in an organizational planning tool? *</label>
+                            <textarea class="hp-form-control" id="toolRequirements" rows="5" placeholder="Tell us about your requirements, expectations, and desired outcomes..."></textarea>
+                        </div>
+                    </div>
+                    <div class="hp-form-footer">
+                        <button type="button" class="hp-button hp-button-outline-secondary hp-back-button">Back</button>
+                        <button type="button" class="hp-button hp-button-danger hp-continue-button" disabled>Submit</button>
+                    </div>
+                </div>
+
+                <div id="final-checklist-step" class="hp-step-container">
+                    <div class="hp-main-content-header">
+                        <div></div>
+                        <button type="button" class="hp-close-button" aria-label="Close form">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="hp-thank-you-content">
+                        <div class="hp-checkmark-circle">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h1>Thank you for choosing Meridiene!</h1>
+                        <p>Your interest has been recorded and we will soon be in touch. An email will find you with meeting details.</p>
+
+                        <div class="hp-info-card">
+                            <div class="hp-icon-wrapper">
+                                <i class="fas fa-clock"></i>
+                                <h2>Time required</h2>
+                            </div>
+                            <p>We'll schedule a 30-45 minute consultation</p>
+                        </div>
+
+                        <div class="hp-info-card">
+                            <div class="hp-icon-wrapper">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <h2>Have questions?</h2>
+                            </div>
+                            <p>Contact us at <a href="mailto:contact@meridiene.com">contact@meridiene.com</a></p>
+                        </div>
+                    </div>
+                    <div class="hp-form-footer hp-text-center-footer">
+                        <button type="button" class="hp-button hp-button-danger hp-close-form-button">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
             const $mainContent = $('.hp-main-content');
             const $navItems = $('.hp-nav-item');
+            const $formModal = $('#formModal'); // The modal overlay
 
             let currentStep = 'company-size'; // Initial step
 
-            // Function to display a custom modal message
+            // Function to display a custom message modal (for alerts)
             function showMessageModal(message) {
                 const $modalOverlay = $(`
                     <div class="hp-modal-overlay">
-                        <div class="hp-modal-content">
+                        <div class="hp-modal-content-message">
                             <p>${message}</p>
-                            <button type="button" class="btn btn-danger">OK</button>
+                            <button type="button" class="hp-button hp-button-danger">OK</button>
                         </div>
                     </div>
                 `);
                 $('body').append($modalOverlay);
-                $modalOverlay.find('button').on('click', function() {
+                $modalOverlay.find('.hp-button').on('click', function() {
                     $modalOverlay.remove();
                 });
+            }
+
+            // Function to open the main form modal
+            function openFormModal() {
+                $formModal.addClass('show');
+                renderStep('company-size'); // Always start at the first step when opening
+            }
+
+            // Function to close the main form modal
+            function closeFormModal() {
+                $formModal.removeClass('show');
+                // Optional: Reset form fields here if needed
+                // For example: $('#yourName').val('');
             }
 
             function renderStep(stepName) {
@@ -589,59 +871,61 @@
 
                 // Reset all nav items and then set active/completed based on stepName
                 $navItems.removeClass('active completed');
+                $navItems.find('.hp-check-icon').removeClass('fa-check-circle').addClass('fa-circle-notch'); // Reset icons
+
+                // Re-enable all buttons by default, then disable as needed per step
+                $(`.hp-button`).prop('disabled', false);
+                $(`.hp-form-footer .hp-back-button, .hp-form-footer .hp-continue-button, .hp-form-footer .hp-close-form-button`).show();
+
 
                 if (stepName === 'company-size') {
                     $('#nav-company-size').addClass('active');
-                    // Disable back button on first step
                     $(`#${stepName}-step`).find('.hp-back-button').prop('disabled', true);
+                    $(`#${stepName}-step`).find('.hp-continue-button').prop('disabled', true); // Initially disabled
                 } else if (stepName === 'contact-information') {
-                    $('#nav-company-size').addClass('completed');
+                    $('#nav-company-size').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
                     $('#nav-contact-info').addClass('active');
+                    $(`#${stepName}-step`).find('.hp-continue-button').prop('disabled', true); // Initially disabled
                 } else if (stepName === 'use-cases') {
-                    $('#nav-company-size').addClass('completed');
-                    $('#nav-contact-info').addClass('completed');
+                    $('#nav-company-size').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
+                    $('#nav-contact-info').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
                     $('#nav-use-cases').addClass('active');
+                    $(`#${stepName}-step`).find('.hp-continue-button').prop('disabled', true); // Initially disabled
                 } else if (stepName === 'requirements') {
-                    $('#nav-company-size').addClass('completed');
-                    $('#nav-contact-info').addClass('completed');
-                    $('#nav-use-cases').addClass('completed');
+                    $('#nav-company-size').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
+                    $('#nav-contact-info').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
+                    $('#nav-use-cases').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
                     $('#nav-requirements').addClass('active');
+                    $(`#${stepName}-step`).find('.hp-continue-button').prop('disabled', true); // Initially disabled
                 } else if (stepName === 'final-checklist') {
-                    $('#nav-company-size').addClass('completed');
-                    $('#nav-contact-info').addClass('completed');
-                    $('#nav-use-cases').addClass('completed');
-                    $('#nav-requirements').addClass('completed');
-                    $('#nav-final-checklist').addClass('active');
-                    // Change the icon for Final Checklist in sidebar to a solid checkmark
-                    $('#nav-final-checklist .fa-circle-notch').removeClass('fa-circle-notch').addClass('fa-check-circle');
+                    $('#nav-company-size').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
+                    $('#nav-contact-info').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
+                    $('#nav-use-cases').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
+                    $('#nav-requirements').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
+                    $('#nav-final-checklist').addClass('active').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle'); // Final checkmark
+
                     // Hide back/continue buttons on final step
                     $(`#${stepName}-step`).find('.hp-form-footer .hp-back-button, .hp-form-footer .hp-continue-button').hide();
                     // Show the dedicated close button for the final step
                     $(`#${stepName}-step`).find('.hp-form-footer .hp-close-form-button').show();
-
                 }
                 currentStep = stepName;
-                attachEventListeners(); // Re-attach event listeners after content is loaded (or step is shown)
+                attachEventListeners();
             }
 
             function attachEventListeners() {
-                // Remove previous event listeners to prevent duplicates
-                // Only remove handlers from direct descendants of the current step container
-                // that match our button classes to avoid affecting other parts of the DOM.
-                $('.hp-step-container').find('.hp-continue-button, .hp-back-button, .btn-close, .hp-option-card, .hp-use-case-card input, .form-control, .hp-close-form-button').off();
+                // Detach all listeners from buttons and inputs within any step container
+                $('.hp-step-container').find('.hp-continue-button, .hp-back-button, .hp-close-button, .hp-option-card, .hp-use-case-card input, .hp-form-control, .hp-close-form-button').off();
 
                 const $currentStepContainer = $(`#${currentStep}-step`);
                 const $continueButton = $currentStepContainer.find('.hp-continue-button');
                 const $backButton = $currentStepContainer.find('.hp-back-button');
-                const $closeButton = $currentStepContainer.find('.btn-close'); // Header close button (Bootstrap's btn-close)
+                const $headerCloseButton = $currentStepContainer.find('.hp-close-button'); // Top right close button
 
-                // Universal close button listener
-                if ($closeButton.length) {
-                    $closeButton.on('click', function() {
-                        console.log('Header close button clicked.');
-                        showMessageModal('Closing the form.');
-                        // Add logic here to close or hide the form entirely
-                        // $('.hp-form-container').hide();
+                // Universal header close button listener (closes the modal)
+                if ($headerCloseButton.length) {
+                    $headerCloseButton.on('click', function() {
+                        closeFormModal();
                     });
                 }
 
@@ -664,8 +948,6 @@
                             showMessageModal('Please select a company size to continue.');
                         }
                     });
-
-                    // Back button is disabled for the first step, so no listener needed here.
 
                 } else if (currentStep === 'contact-information') {
                     const $contactInputs = $currentStepContainer.find('.hp-form-fields input');
@@ -771,17 +1053,18 @@
                     if ($closeFormButton.length) {
                         $closeFormButton.on('click', function() {
                             console.log('Form Close button clicked from final checklist.');
-                            showMessageModal('Form submission complete! Closing the form.');
-                            // Here you would add logic to truly close or reset the form,
-                            // for example, hiding the main form container or redirecting.
-                            // $('.hp-form-container').hide();
+                            showMessageModal('Form submission complete!');
+                            closeFormModal(); // Close the modal after submission message
                         });
                     }
                 }
             }
 
-            // Initial render of the first step
-            renderStep('company-size');
+            // Event listener for the "Open Form" button
+            $('.hp-open-modal-button').on('click', openFormModal);
+
+            // Initial render is now called when the modal is opened
+            // renderStep('company-size'); // Removed from here
         });
     </script>
 </body>

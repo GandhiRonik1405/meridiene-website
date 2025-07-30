@@ -31,10 +31,10 @@
         <script src="assets/js/custom.js"></script>
 
 
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 
 
@@ -259,7 +259,7 @@
                                         </h2>
                                     </div>
                                     <div class="space-y-6">
-                                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white font-semibold border-0 h-14 rounded-lg px-10 text-lg group hover:scale-105 hover:shadow-hover transition-all duration-500 relative overflow-hidden animate-pulse-glow" data-bs-toggle="modal" data-bs-target="#planningModal">
+                                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white font-semibold border-0 h-14 rounded-lg px-10 text-lg group hover:scale-105 hover:shadow-hover transition-all duration-500 relative overflow-hidden animate-pulse-glow hp-open-modal-button">
                                             <div class="absolute inset-0 bg-gradient-shift opacity-20 animate-gradient-shift">
                                             </div>
                                             <svg class="lucide lucide-rocket mr-3 h-6 w-6 group-hover:rotate-12 transition-transform duration-300" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -1079,22 +1079,228 @@
                     </section>
                 <!-- Site content end -->
 
-                <!-- Modal -->
-    <div class="modal fade" id="planningModal" tabindex="-1" aria-labelledby="planningModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-        <div class="modal-content">
-            <!-- <div class="modal-header">
-                <h5 class="modal-title" id="planningModalLabel">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div> -->
+                <div id="formModal" class="hp-modal-overlay">
+                    <div class="hp-form-container">
+                        <div class="hp-sidebar">
+                            <div class="hp-sidebar-header">
+                                <h2>Meridiene</h2>
+                                <p>Organizational Planning Software</p>
+                            </div>
+                            <nav class="hp-sidebar-nav">
+                                <div id="nav-company-size" class="hp-nav-item" data-step="company-size">
+                                    <i class="fas fa-building"></i>
+                                    <span>Company Size</span>
+                                    <i class="fas fa-check-circle hp-check-icon"></i>
+                                </div>
+                                <div id="nav-contact-info" class="hp-nav-item" data-step="contact-information">
+                                    <i class="fas fa-address-book"></i>
+                                    <span>Contact Information</span>
+                                    <i class="fas fa-check-circle hp-check-icon"></i>
+                                </div>
+                                <div id="nav-use-cases" class="hp-nav-item" data-step="use-cases">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <span>Use Cases</span>
+                                    <i class="fas fa-check-circle hp-check-icon"></i>
+                                </div>
+                                <div id="nav-requirements" class="hp-nav-item" data-step="requirements">
+                                    <i class="fas fa-clipboard-list"></i>
+                                    <span>Requirements</span>
+                                    <i class="fas fa-check-circle hp-check-icon"></i>
+                                </div>
+                                <div id="nav-final-checklist" class="hp-nav-item" data-step="final-checklist">
+                                    <i class="fas fa-file-invoice hp-check-icon"></i> <span>Final Checklist</span>
+                                    <i class="fas fa-circle-notch hp-check-icon"></i>
+                                </div>
+                            </nav>
+                            <div></div>
+                        </div>
             
-            <!-- <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div> -->
-        </div>
-        </div>
-  </div>
+                        <div class="hp-main-content">
+                            <div id="company-size-step" class="hp-step-container">
+                                <div class="hp-main-content-header">
+                                    <div>
+                                        <h1>What's your company size?</h1>
+                                        <p>This helps us understand your organizational complexity.</p>
+                                    </div>
+                                    <button type="button" class="hp-close-button" aria-label="Close form">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                                <div class="hp-options-grid">
+                                    <div class="hp-option-card" data-value="1000-2000">
+                                        <i class="fas fa-users"></i>
+                                        <h3>1000 - 2000</h3>
+                                        <p>Growing Enterprise</p>
+                                        <i class="fas fa-check-circle hp-selected-icon"></i>
+                                    </div>
+                                    <div class="hp-option-card" data-value="2000-5000">
+                                        <i class="fas fa-building"></i>
+                                        <h3>2000 - 5000</h3>
+                                        <p>Large Corporation</p>
+                                        <i class="fas fa-check-circle hp-selected-icon"></i>
+                                    </div>
+                                    <div class="hp-option-card" data-value="5000-10000">
+                                        <i class="fas fa-briefcase"></i>
+                                        <h3>5000 - 10000</h3>
+                                        <p>Enterprise Scale</p>
+                                        <i class="fas fa-check-circle hp-selected-icon"></i>
+                                    </div>
+                                    <div class="hp-option-card" data-value="10k-plus">
+                                        <i class="fas fa-city"></i>
+                                        <h3>10k or more</h3>
+                                        <p>Global Enterprise</p>
+                                        <i class="fas fa-check-circle hp-selected-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="hp-form-footer">
+                                    <button type="button" class="hp-button hp-button-outline-secondary hp-back-button" disabled>Back</button>
+                                    <button type="button" class="hp-button hp-button-danger hp-continue-button" disabled>Continue</button>
+                                </div>
+                            </div>
+            
+                            <div id="contact-information-step" class="hp-step-container">
+                                <div class="hp-main-content-header">
+                                    <div>
+                                        <h1>Contact Information</h1>
+                                        <p>Help us personalize our approach to your needs.</p>
+                                    </div>
+                                    <button type="button" class="hp-close-button" aria-label="Close form">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                                <div class="hp-form-fields">
+                                    <div class="hp-form-group">
+                                        <label for="yourName" class="hp-label">Your Name *</label>
+                                        <input type="text" class="hp-form-control" id="yourName" placeholder="John Doe">
+                                    </div>
+                                    <div class="hp-form-group">
+                                        <label for="yourPosition" class="hp-label">Your Position *</label>
+                                        <input type="text" class="hp-form-control" id="yourPosition" placeholder="HR Director">
+                                    </div>
+                                    <div class="hp-form-group hp-full-width">
+                                        <label for="companyName" class="hp-label">Company Name *</label>
+                                        <input type="text" class="hp-form-control" id="companyName" placeholder="Acme Corporation">
+                                    </div>
+                                    <div class="hp-form-group">
+                                        <label for="companyEmail" class="hp-label">Company Email *</label>
+                                        <input type="email" class="hp-form-control" id="companyEmail" placeholder="john@acme.com">
+                                    </div>
+                                    <div class="hp-form-group">
+                                        <label for="phoneNumber" class="hp-label">Phone Number</label>
+                                        <input type="tel" class="hp-form-control" id="phoneNumber" placeholder="+1 (555) 123-4567">
+                                    </div>
+                                </div>
+                                <div class="hp-form-footer">
+                                    <button type="button" class="hp-button hp-button-outline-secondary hp-back-button">Back</button>
+                                    <button type="button" class="hp-button hp-button-danger hp-continue-button" disabled>Continue</button>
+                                </div>
+                            </div>
+            
+                            <div id="use-cases-step" class="hp-step-container">
+                                <div class="hp-main-content-header">
+                                    <div>
+                                        <h1>Use Cases</h1>
+                                        <p>Select the areas you might be interested in exploring.</p>
+                                    </div>
+                                    <button type="button" class="hp-close-button" aria-label="Close form">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                                <div class="hp-use-cases-grid">
+                                    <label class="hp-use-case-card">
+                                        <input type="checkbox" name="useCase" value="strategic_workforce_planning">
+                                        <span>Strategic workforce planning</span>
+                                    </label>
+                                    <label class="hp-use-case-card">
+                                        <input type="checkbox" name="useCase" value="org_design">
+                                        <span>Org design</span>
+                                    </label>
+                                    <label class="hp-use-case-card">
+                                        <input type="checkbox" name="useCase" value="org_transformation">
+                                        <span>Org transformation</span>
+                                    </label>
+                                    <label class="hp-use-case-card">
+                                        <input type="checkbox" name="useCase" value="current_state_analysis">
+                                        <span>Current state analysis</span>
+                                    </label>
+                                    <label class="hp-use-case-card">
+                                        <input type="checkbox" name="useCase" value="activity_analysis">
+                                        <span>Activity analysis</span>
+                                    </label>
+                                    <label class="hp-use-case-card">
+                                        <input type="checkbox" name="useCase" value="organizational_survey">
+                                        <span>Organizational Survey</span>
+                                    </label>
+                                </div>
+                                <div class="hp-form-footer">
+                                    <button type="button" class="hp-button hp-button-outline-secondary hp-back-button">Back</button>
+                                    <button type="button" class="hp-button hp-button-danger hp-continue-button" disabled>Continue</button>
+                                </div>
+                            </div>
+            
+                            <div id="requirements-step" class="hp-step-container">
+                                <div class="hp-main-content-header">
+                                    <div>
+                                        <h1>Define Your Requirements</h1>
+                                        <p>Help us understand your specific challenges and what you're looking for.</p>
+                                    </div>
+                                    <button type="button" class="hp-close-button" aria-label="Close form">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                                <div class="hp-form-fields">
+                                    <div class="hp-form-group hp-full-width">
+                                        <label for="problemsFacing" class="hp-label">What problems is your organization facing? *</label>
+                                        <textarea class="hp-form-control" id="problemsFacing" rows="5" placeholder="Describe the organizational challenges you're experiencing..."></textarea>
+                                    </div>
+                                    <div class="hp-form-group hp-full-width">
+                                        <label for="toolRequirements" class="hp-label">What are you looking for in an organizational planning tool? *</label>
+                                        <textarea class="hp-form-control" id="toolRequirements" rows="5" placeholder="Tell us about your requirements, expectations, and desired outcomes..."></textarea>
+                                    </div>
+                                </div>
+                                <div class="hp-form-footer">
+                                    <button type="button" class="hp-button hp-button-outline-secondary hp-back-button">Back</button>
+                                    <button type="button" class="hp-button hp-button-danger hp-continue-button" disabled>Submit</button>
+                                </div>
+                            </div>
+            
+                            <div id="final-checklist-step" class="hp-step-container">
+                                <div class="hp-main-content-header">
+                                    <div></div>
+                                    <button type="button" class="hp-close-button" aria-label="Close form">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                                <div class="hp-thank-you-content">
+                                    <div class="hp-checkmark-circle">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <h1>Thank you for choosing Meridiene!</h1>
+                                    <p>Your interest has been recorded and we will soon be in touch. An email will find you with meeting details.</p>
+            
+                                    <div class="hp-info-card">
+                                        <div class="hp-icon-wrapper">
+                                            <i class="fas fa-clock"></i>
+                                            <h2>Time required</h2>
+                                        </div>
+                                        <p>We'll schedule a 30-45 minute consultation</p>
+                                    </div>
+            
+                                    <div class="hp-info-card">
+                                        <div class="hp-icon-wrapper">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <h2>Have questions?</h2>
+                                        </div>
+                                        <p>Contact us at <a href="mailto:contact@meridiene.com">contact@meridiene.com</a></p>
+                                    </div>
+                                </div>
+                                <div class="hp-form-footer hp-text-center-footer">
+                                    <button type="button" class="hp-button hp-button-danger hp-close-form-button">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
 
         </div>
         <!-- Footer start -->
@@ -1350,28 +1556,41 @@
 
 
 
-
         $(document).ready(function() {
             const $mainContent = $('.hp-main-content');
             const $navItems = $('.hp-nav-item');
+            const $formModal = $('#formModal'); // The modal overlay
 
             let currentStep = 'company-size'; // Initial step
 
-            // Function to display a custom modal message
-            // function showMessageModal(message) {
-            //     const $modalOverlay = $(`
-            //         <div class="hp-modal-overlay">
-            //             <div class="hp-modal-content">
-            //                 <p>${message}</p>
-            //                 <button type="button" class="btn btn-danger">OK</button>
-            //             </div>
-            //         </div>
-            //     `);
-            //     $('body').append($modalOverlay);
-            //     $modalOverlay.find('button').on('click', function() {
-            //         $modalOverlay.remove();
-            //     });
-            // }
+            // Function to display a custom message modal (for alerts)
+            function showMessageModal(message) {
+                const $modalOverlay = $(`
+                    <div class="hp-modal-overlay">
+                        <div class="hp-modal-content-message">
+                            <p>${message}</p>
+                            <button type="button" class="hp-button hp-button-danger">OK</button>
+                        </div>
+                    </div>
+                `);
+                $('body').append($modalOverlay);
+                $modalOverlay.find('.hp-button').on('click', function() {
+                    $modalOverlay.remove();
+                });
+            }
+
+            // Function to open the main form modal
+            function openFormModal() {
+                $formModal.addClass('show');
+                renderStep('company-size'); // Always start at the first step when opening
+            }
+
+            // Function to close the main form modal
+            function closeFormModal() {
+                $formModal.removeClass('show');
+                // Optional: Reset form fields here if needed
+                // For example: $('#yourName').val('');
+            }
 
             function renderStep(stepName) {
                 // Hide all step containers
@@ -1381,61 +1600,63 @@
 
                 // Reset all nav items and then set active/completed based on stepName
                 $navItems.removeClass('active completed');
+                $navItems.find('.hp-check-icon').removeClass('fa-check-circle').addClass('fa-circle-notch'); // Reset icons
+
+                // Re-enable all buttons by default, then disable as needed per step
+                $(`.hp-button`).prop('disabled', false);
+                $(`.hp-form-footer .hp-back-button, .hp-form-footer .hp-continue-button, .hp-form-footer .hp-close-form-button`).show();
+
 
                 if (stepName === 'company-size') {
                     $('#nav-company-size').addClass('active');
-                    // Disable back button on first step
                     $(`#${stepName}-step`).find('.hp-back-button').prop('disabled', true);
+                    $(`#${stepName}-step`).find('.hp-continue-button').prop('disabled', true); // Initially disabled
                 } else if (stepName === 'contact-information') {
-                    $('#nav-company-size').addClass('completed');
+                    $('#nav-company-size').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
                     $('#nav-contact-info').addClass('active');
+                    $(`#${stepName}-step`).find('.hp-continue-button').prop('disabled', true); // Initially disabled
                 } else if (stepName === 'use-cases') {
-                    $('#nav-company-size').addClass('completed');
-                    $('#nav-contact-info').addClass('completed');
+                    $('#nav-company-size').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
+                    $('#nav-contact-info').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
                     $('#nav-use-cases').addClass('active');
+                    $(`#${stepName}-step`).find('.hp-continue-button').prop('disabled', true); // Initially disabled
                 } else if (stepName === 'requirements') {
-                    $('#nav-company-size').addClass('completed');
-                    $('#nav-contact-info').addClass('completed');
-                    $('#nav-use-cases').addClass('completed');
+                    $('#nav-company-size').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
+                    $('#nav-contact-info').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
+                    $('#nav-use-cases').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
                     $('#nav-requirements').addClass('active');
+                    $(`#${stepName}-step`).find('.hp-continue-button').prop('disabled', true); // Initially disabled
                 } else if (stepName === 'final-checklist') {
-                    $('#nav-company-size').addClass('completed');
-                    $('#nav-contact-info').addClass('completed');
-                    $('#nav-use-cases').addClass('completed');
-                    $('#nav-requirements').addClass('completed');
-                    $('#nav-final-checklist').addClass('active');
-                    // Change the icon for Final Checklist in sidebar to a solid checkmark
-                    $('#nav-final-checklist .fa-circle-notch').removeClass('fa-circle-notch').addClass('fa-check-circle');
+                    $('#nav-company-size').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
+                    $('#nav-contact-info').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
+                    $('#nav-use-cases').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
+                    $('#nav-requirements').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
+                    $('#nav-final-checklist').addClass('active').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle'); // Final checkmark
+
                     // Hide back/continue buttons on final step
                     $(`#${stepName}-step`).find('.hp-form-footer .hp-back-button, .hp-form-footer .hp-continue-button').hide();
                     // Show the dedicated close button for the final step
                     $(`#${stepName}-step`).find('.hp-form-footer .hp-close-form-button').show();
-
                 }
                 currentStep = stepName;
-                attachEventListeners(); // Re-attach event listeners after content is loaded (or step is shown)
+                attachEventListeners();
             }
 
             function attachEventListeners() {
-                // Remove previous event listeners to prevent duplicates
-                // Only remove handlers from direct descendants of the current step container
-                // that match our button classes to avoid affecting other parts of the DOM.
-                $('.hp-step-container').find('.hp-continue-button, .hp-back-button, .btn-close, .hp-option-card, .hp-use-case-card input, .form-control, .hp-close-form-button').off();
+                // Detach all listeners from buttons and inputs within any step container
+                $('.hp-step-container').find('.hp-continue-button, .hp-back-button, .hp-close-button, .hp-option-card, .hp-use-case-card input, .hp-form-control, .hp-close-form-button').off();
 
                 const $currentStepContainer = $(`#${currentStep}-step`);
                 const $continueButton = $currentStepContainer.find('.hp-continue-button');
                 const $backButton = $currentStepContainer.find('.hp-back-button');
-                const $closeButton = $currentStepContainer.find('.btn-close'); // Header close button (Bootstrap's btn-close)
+                const $headerCloseButton = $currentStepContainer.find('.hp-close-button'); // Top right close button
 
-                // Universal close button listener
-                // if ($closeButton.length) {
-                //     $closeButton.on('click', function() {
-                //         console.log('Header close button clicked.');
-                //         showMessageModal('Closing the form.');
-                //         // Add logic here to close or hide the form entirely
-                //         // $('.hp-form-container').hide();
-                //     });
-                // }
+                // Universal header close button listener (closes the modal)
+                if ($headerCloseButton.length) {
+                    $headerCloseButton.on('click', function() {
+                        closeFormModal();
+                    });
+                }
 
                 if (currentStep === 'company-size') {
                     const $optionCards = $currentStepContainer.find('.hp-option-card');
@@ -1456,8 +1677,6 @@
                             showMessageModal('Please select a company size to continue.');
                         }
                     });
-
-                    // Back button is disabled for the first step, so no listener needed here.
 
                 } else if (currentStep === 'contact-information') {
                     const $contactInputs = $currentStepContainer.find('.hp-form-fields input');
@@ -1563,27 +1782,22 @@
                     if ($closeFormButton.length) {
                         $closeFormButton.on('click', function() {
                             console.log('Form Close button clicked from final checklist.');
-                            showMessageModal('Form submission complete! Closing the form.');
-                            // Here you would add logic to truly close or reset the form,
-                            // for example, hiding the main form container or redirecting.
-                            // $('.hp-form-container').hide();
+                            showMessageModal('Form submission complete!');
+                            closeFormModal(); // Close the modal after submission message
                         });
                     }
                 }
             }
 
-            // Initial render of the first step
-            renderStep('company-size');
+            // Event listener for the "Open Form" button
+            $('.hp-open-modal-button').on('click', openFormModal);
+
+            // Initial render is now called when the modal is opened
+            // renderStep('company-size'); // Removed from here
         });
 
 
-
-
-
-
-
-
-
+        
 
 </script>
 

@@ -1,107 +1,165 @@
- /* Parent class for encapsulation */
- .hp-form-container {
+/* Button to open the modal */
+.hp-open-modal-button {
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    background-color: #dc3545; /* Red */
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.hp-open-modal-button:hover {
+    background-color: #bb2d3b; /* Darker red */
+    box-shadow: 0 0.35rem 0.7rem rgba(0, 0, 0, 0.15);
+}
+
+/* Custom Modal/Message Box Styles */
+.hp-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Darker overlay for modal */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensure it's above other content */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.hp-modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hp-modal-content-message { /* For the small message modal */
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 90%;
+    width: 400px;
+    box-sizing: border-box;
+}
+.hp-modal-content-message p {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+
+/* Form Modal Specific Styles */
+.hp-form-container {
     display: flex;
     background-color: #ffffff;
     border-radius: 1rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 100%;
-    /* max-width: 1024px; */
+    width: 90%;
+    max-width: 1024px;
     min-height: 600px;
+    box-sizing: border-box;
+    transform: scale(0.95); /* Slightly scale down when hidden */
+    transition: transform 0.3s ease-in-out;
 }
 
+.hp-modal-overlay.show .hp-form-container {
+    transform: scale(1); /* Scale up when shown */
+}
+
+/* Sidebar styles */
 .hp-sidebar {
-    /* width: 280px; */
-    width: auto;
-    background-color: rgba(249, 250, 251, 1);
+    width: 280px;
+    background-color: #343a40; /* Dark gray for sidebar */
     color: #f8f9fa; /* Light text color */
     padding: 2rem;
-    border-right: 2px solid #e9ecef;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0; /* Prevent sidebar from shrinking */
 }
 .hp-sidebar-header h2 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #000;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
 }
 .hp-sidebar-header p {
     font-size: 0.875rem;
-    color: rgba(75, 85, 99, 1);
+    color: #adb5bd;
+    margin-top: 0;
 }
-
 .hp-sidebar-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
-
 .hp-nav-item {
     display: flex;
     align-items: center;
-    gap: 10px;
     padding: 0.75rem 1rem;
     margin-bottom: 0.5rem;
     border-radius: 0.5rem;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
-    color: #000;
-    white-space: nowrap;
 }
 .hp-nav-item.active {
-    background-color: #fff;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    background-color: #495057; /* Slightly lighter gray for active item */
 }
 .hp-nav-item:hover:not(.active) {
-    background-color: #fff;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    background-color: #495057;
 }
 .hp-nav-item i {
-    /* margin-right: 0.75rem; */
-    /* font-size: 1.125rem; */
+    margin-right: 0.75rem;
+    font-size: 1.125rem;
 }
 .hp-nav-item .hp-check-icon {
     margin-left: auto;
     color: #6c757d; /* Gray checkmark */
 }
 .hp-nav-item.completed .hp-check-icon {
-    color: #198754; /* Green checkmark for completed (Bootstrap success color) */
+    color: #198754; /* Green checkmark for completed */
 }
 
-.hp-nav-item .nav-company-icon {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
-    opacity: .9;
-    border-radius: 100%;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-}
-
+/* Main content styles */
 .hp-main-content {
     flex-grow: 1;
     padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-sizing: border-box;
 }
 .hp-main-content-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start; /* Align items to the start for better spacing */
     margin-bottom: 2rem;
 }
 .hp-main-content-header h1 {
-    font-size: 1.5rem;
+    font-size: 1.875rem;
     font-weight: 700;
     color: #212529;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
 }
 .hp-main-content-header p {
     font-size: 1rem;
     color: #495057;
-    margin-top: 0.5rem;
+    margin-top: 0;
+}
+.hp-main-content-header .hp-close-button { /* Custom close button */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #6c757d;
+    cursor: pointer;
+    padding: 0;
+}
+.hp-main-content-header .hp-close-button:hover {
+    color: #495057;
 }
 
 /* Company Size Specific Styles */
@@ -109,10 +167,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
-    /* margin-top: 2rem; */
+    margin-top: 2rem;
 }
 .hp-option-card {
-    /* background-color: #f8f9fa; */
+    background-color: #f8f9fa; /* Light background for cards */
     border: 2px solid #e9ecef; /* Light border */
     border-radius: 0.75rem;
     padding: 1.5rem;
@@ -122,7 +180,7 @@
     position: relative;
 }
 .hp-option-card.selected {
-    border-color: #dc3545; /* Red border for selected card (Bootstrap danger color) */
+    border-color: #dc3545; /* Red border for selected card */
     background-color: #ffebeb; /* Light red background for selected card */
     box-shadow: 0 0.25rem 0.5rem rgba(220, 53, 69, 0.1);
 }
@@ -176,7 +234,36 @@
     color: #212529;
     margin-bottom: 0.5rem;
 }
-/* Bootstrap's form-control class handles most of this */
+.hp-form-control { /* Custom form control */
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    box-sizing: border-box; /* Ensure padding is included */
+}
+.hp-form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #dc3545; /* Red focus border */
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25); /* Red shadow */
+}
+.hp-form-control::placeholder {
+    color: #6c757d;
+    opacity: 1;
+}
+textarea.hp-form-control {
+    min-height: 120px;
+    resize: vertical; /* Allow vertical resizing */
+}
 .hp-full-width {
     grid-column: 1 / -1;
 }
@@ -217,7 +304,7 @@
     display: inline-block;
     width: 1.25rem;
     height: 1.25rem;
-    border: 1px solid #ced4da; /* Bootstrap border color */
+    border: 1px solid #ced4da; /* Border color */
     border-radius: 0.25rem;
     margin-right: 0.75rem;
     background-color: #fff;
@@ -227,11 +314,11 @@
 
 /* Custom checkmark inside the box */
 .hp-use-case-card::after {
-    content: '\f00c';
+    content: '\f00c'; /* Font Awesome check icon */
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     position: absolute;
-    left: 1.25rem;
+    left: 1.25rem; /* Adjust based on padding and box size */
     top: 50%;
     transform: translateY(-50%);
     font-size: 0.9rem;
@@ -241,7 +328,7 @@
 
 /* Styles when checkbox is checked */
 .hp-use-case-card:has(input[type="checkbox"]:checked) {
-    border-color: #dc3545; /* Bootstrap danger color */
+    border-color: #dc3545; /* Danger color */
     background-color: #ffebeb;
     box-shadow: 0 0.25rem 0.5rem rgba(220, 53, 69, 0.1);
 }
@@ -259,15 +346,57 @@
     border-color: #f1aeb5;
 }
 
+/* Form Footer */
 .hp-form-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: auto; /* Push to the bottom */
     padding-top: 1.5rem;
     border-top: 1px solid #e9ecef;
 }
-/* Bootstrap buttons will replace these */
+
+/* Custom Buttons */
+.hp-button {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.375rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.hp-button-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+.hp-button-danger:hover {
+    color: #fff;
+    background-color: #bb2d3b;
+    border-color: #bb2d3b;
+}
+.hp-button-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+}
+.hp-button-outline-secondary:hover {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+.hp-button:disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}
 
 /* Final Checklist (Thank You) Specific Styles */
 .hp-thank-you-content {
@@ -284,13 +413,28 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-color: #dc3545; /* Bootstrap danger color */
+    background-color: #dc3545; /* Danger color */
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 3rem;
     color: #ffffff;
     margin-bottom: 1.5rem;
+}
+
+.hp-thank-you-content h1 {
+    font-size: 1.75rem; /* Adjusted for better fit */
+    font-weight: 700;
+    color: #212529;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+.hp-thank-you-content p {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+    max-width: 400px;
+    line-height: 1.5;
 }
 
 .hp-info-card {
@@ -302,43 +446,45 @@
     max-width: 400px;
     text-align: left;
     margin-bottom: 1rem;
+    box-sizing: border-box;
 }
 .hp-info-card:last-child {
     margin-bottom: 0;
 }
+.hp-info-card .hp-icon-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
 .hp-info-card i {
-    color: #495057;
+    color: #6c757d;
+    font-size: 1.25rem; /* Adjusted icon size */
+    margin-right: 0.75rem;
+}
+.hp-info-card h2 {
+    font-size: 1.1rem; /* Adjusted heading size */
+    font-weight: 600;
+    color: #212529;
+    margin: 0;
+}
+.hp-info-card p {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-left: 2rem; /* Indent paragraph below icon/heading */
+    margin-top: 0.25rem;
+    margin-bottom: 0;
+}
+.hp-info-card a {
+    color: #dc3545;
+    text-decoration: none;
+}
+.hp-info-card a:hover {
+    text-decoration: underline;
 }
 
 /* Ensure the form-footer for this screen is centered */
-.hp-main-content .hp-form-footer.text-center-footer {
+.hp-main-content .hp-form-footer.hp-text-center-footer {
     justify-content: center;
-}
-
-/* Custom Modal/Message Box Styles */
-.hp-modal-overlay {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1050; /* Bootstrap modal z-index */
-}
-.hp-modal-content {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 0.75rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 90%;
-    width: 400px;
-}
-.hp-modal-content p {
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #212529;
 }
 
 /* Hide all step containers by default */
@@ -349,9 +495,87 @@
     justify-content: space-between;
 }
 
-#planningModal .modal-body {
-    padding: 0;
-} 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hp-form-container {
+        flex-direction: column;
+        min-height: auto; /* Allow height to adjust */
+        width: 100%; /* Take full width on small screens */
+        border-radius: 0.5rem;
+    }
+
+    .hp-sidebar {
+        width: 100%;
+        padding: 1.5rem;
+        flex-direction: row; /* Horizontal layout for sidebar on small screens */
+        overflow-x: auto; /* Allow horizontal scroll if many items */
+        white-space: nowrap; /* Prevent wrapping */
+        justify-content: flex-start; /* Align items to start */
+        gap: 1rem; /* Space between sidebar items */
+    }
+    .hp-sidebar-header {
+        display: none; /* Hide header on small screens */
+    }
+    .hp-sidebar-nav {
+        margin-top: 0;
+        display: flex;
+        gap: 1rem;
+    }
+    .hp-nav-item {
+        padding: 0.5rem 0.75rem;
+        margin-bottom: 0;
+        flex-direction: column; /* Stack icon and text */
+        font-size: 0.875rem;
+        text-align: center;
+    }
+    .hp-nav-item i {
+        margin-right: 0;
+        margin-bottom: 0.25rem; /* Space between icon and text */
+        font-size: 1rem;
+    }
+    .hp-nav-item span {
+        white-space: normal; /* Allow text to wrap if needed */
+    }
+    .hp-nav-item .hp-check-icon {
+        display: none; /* Hide check icons on small screen sidebar nav */
+    }
+
+    .hp-main-content {
+        padding: 1.5rem;
+    }
+    .hp-main-content-header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+    }
+    .hp-main-content-header h1 {
+        font-size: 1.5rem;
+    }
+    .hp-main-content-header .hp-close-button {
+        position: absolute; /* Position relative to the main content */
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .hp-options-grid, .hp-form-fields, .hp-use-cases-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 1rem;
+    }
+
+    .hp-form-footer {
+        flex-direction: column;
+        gap: 1rem;
+        padding-top: 1rem;
+    }
+    .hp-button {
+        width: 100%; /* Full width buttons */
+    }
+
+    .hp-thank-you-content h1 {
+        font-size: 1.5rem;
+    }
+}
+
 
 /**/
 
