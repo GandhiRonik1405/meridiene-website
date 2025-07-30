@@ -3666,8 +3666,14 @@ body {
       }
     
       .bg_video_c {
-        background-color: hsl(var(--secondary) / .2);
+        background-color:#e0d4e4;
+        
     }
+    .add_bg_color_c{
+        background: #5b2f77;
+        color: white;
+    }
+   
 /* cuatom css end */
 
   
