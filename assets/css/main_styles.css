@@ -2928,7 +2928,7 @@ body {
     opacity: 1
 }
 
-.hover\:shadow-\[0_0_0_1px_hsl\(var\(--sidebar-accent\)\)\]: hover {
+.hover\:shadow-\[0_0_0_1px_hsl\(var\(--sidebar-accent\)\)\]:hover {
     --tw-shadow: 0 0 0 1px hsl(var(--sidebar-accent));
     --tw-shadow-colored: 0 0 0 1px var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)
@@ -3364,6 +3364,7 @@ body {
         overflow: hidden;
         border-right: 2px solid #007BFF;
         animation: blink-caret 0.75s step-end infinite;
+        font-size: 32px;
     }
 
     @keyframes blink-caret {
