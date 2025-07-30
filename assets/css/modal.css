@@ -241,12 +241,13 @@
     color: #6c757d;
 }
 .hp-selected-icon {
-    position: absolute;
+    /* position: absolute;
     bottom: 0.75rem;
-    right: 0.75rem;
+    left: 50%; */
     font-size: 1.5rem;
     color: #dc3545; /* Red checkmark */
     display: none;
+    margin-top: 20px;
 }
 .hp-option-card.selected .hp-selected-icon {
     display: block;
