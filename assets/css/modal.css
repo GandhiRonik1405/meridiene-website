@@ -60,8 +60,8 @@
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 90%;
-    max-width: 1024px;
-    min-height: 600px;
+    max-width: 900px;
+    min-height: 700px;
     box-sizing: border-box;
     transform: scale(0.95); /* Slightly scale down when hidden */
     transition: transform 0.3s ease-in-out;
@@ -73,54 +73,90 @@
 
 /* Sidebar styles */
 .hp-sidebar {
-    width: 280px;
-    background-color: #343a40; /* Dark gray for sidebar */
-    color: #f8f9fa; /* Light text color */
+    width: auto;
+    background-color: rgba(249, 250, 251, 1);
+    border-right: 2px solid #e9ecef;
+    color: #f8f9fa;
     padding: 2rem;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    flex-shrink: 0; /* Prevent sidebar from shrinking */
+    justify-content: space-between; */
+    flex-shrink: 0; 
 }
 .hp-sidebar-header h2 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #ffffff;
+    color: #000;
     margin-bottom: 0.25rem;
 }
 .hp-sidebar-header p {
     font-size: 0.875rem;
-    color: #adb5bd;
+    color: rgba(75, 85, 99, 1);
     margin-top: 0;
 }
 .hp-sidebar-nav {
     margin-top: 2rem;
 }
+
+/* Sidebar nav items */
 .hp-nav-item {
+    position: relative; /* Needed for positioning the dot */
     display: flex;
     align-items: center;
+    gap: 10px;
     padding: 0.75rem 1rem;
     margin-bottom: 0.5rem;
     border-radius: 0.5rem;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; /* Add color transition */
+    color: #000; /* Default text color */
 }
-.hp-nav-item.active {
-    background-color: #495057; /* Slightly lighter gray for active item */
-}
-.hp-nav-item:hover:not(.active) {
-    background-color: #495057;
-}
+
+/* Default icon color */
 .hp-nav-item i {
-    margin-right: 0.75rem;
-    font-size: 1.125rem;
+    font-size: 16px;
+    color: #adb5bd; /* Default icon color */
+    transition: color 0.2s ease-in-out;
 }
-.hp-nav-item .hp-check-icon {
-    margin-left: auto;
-    color: #6c757d; /* Gray checkmark */
+
+.hp-nav-item span {
+    flex-grow: 1; /* Pushes dot to the right */
 }
-.hp-nav-item.completed .hp-check-icon {
+
+/* Active state */
+.hp-nav-item.active {
+    background-color: #fff; 
+    color: #000;
+    font-weight: 500; 
+}
+.hp-nav-item.active i {
+    /* color: #ffffff;  */
+}
+
+/* Red dot for active item */
+.hp-nav-item.active::after {
+    content: '';
+    display: block;
+    width: 8px; /* Size of the dot */
+    height: 8px;
+    background-color: #dc3545; /* Red dot color */
+    border-radius: 50%;
+    margin-left: 0.5rem; /* Space from text */
+    flex-shrink: 0; /* Prevent it from shrinking */
+}
+
+/* Completed state */
+.hp-nav-item.completed {
+    color: rgba(22, 163, 74, 1);
+}
+.hp-nav-item.completed i {
     color: #198754; /* Green checkmark for completed */
+}
+
+/* Hover state for non-active items */
+.hp-nav-item:hover:not(.active) {
+    /* background-color: #495057;
+    color: #fff; */
 }
 
 /* Main content styles */
@@ -139,7 +175,7 @@
     margin-bottom: 2rem;
 }
 .hp-main-content-header h1 {
-    font-size: 1.875rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #212529;
     margin-top: 0;
@@ -170,7 +206,6 @@
     margin-top: 2rem;
 }
 .hp-option-card {
-    background-color: #f8f9fa; /* Light background for cards */
     border: 2px solid #e9ecef; /* Light border */
     border-radius: 0.75rem;
     padding: 1.5rem;
@@ -180,12 +215,12 @@
     position: relative;
 }
 .hp-option-card.selected {
-    border-color: #dc3545; /* Red border for selected card */
-    background-color: #ffebeb; /* Light red background for selected card */
+    border-color: #e05265; 
+    background-color: hsla(353, 70%, 60%, 0.05);
     box-shadow: 0 0.25rem 0.5rem rgba(220, 53, 69, 0.1);
 }
 .hp-option-card:hover {
-    border-color: #f1aeb5; /* Lighter red on hover */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 }
 .hp-option-card i:first-child {
     font-size: 2.5rem;
@@ -282,11 +317,10 @@ textarea.hp-form-control {
     padding: 0.75rem 1.25rem;
     border: 1px solid #e9ecef;
     border-radius: 0.5rem;
-    background-color: #f8f9fa;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: 500;
-    color: #495057;
+    color: #000;
     position: relative;
     transition: all 0.2s ease-in-out;
 }
@@ -304,7 +338,7 @@ textarea.hp-form-control {
     display: inline-block;
     width: 1.25rem;
     height: 1.25rem;
-    border: 1px solid #ced4da; /* Border color */
+    border: 1px solid 1px solid hsl(353, 70%, 60%); 
     border-radius: 0.25rem;
     margin-right: 0.75rem;
     background-color: #fff;
@@ -318,7 +352,7 @@ textarea.hp-form-control {
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     position: absolute;
-    left: 1.25rem; /* Adjust based on padding and box size */
+    left: 23px; /* Adjust based on padding and box size */
     top: 50%;
     transform: translateY(-50%);
     font-size: 0.9rem;
@@ -376,8 +410,9 @@ textarea.hp-form-control {
 }
 .hp-button-danger {
     color: #fff;
-    background-color: #dc3545;
+    /* background-color: #dc3545; */
     border-color: #dc3545;
+    border: 0;
 }
 .hp-button-danger:hover {
     color: #fff;
@@ -536,8 +571,8 @@ textarea.hp-form-control {
     .hp-nav-item span {
         white-space: normal; /* Allow text to wrap if needed */
     }
-    .hp-nav-item .hp-check-icon {
-        display: none; /* Hide check icons on small screen sidebar nav */
+    .hp-nav-item::after { /* Hide dot on small screens */
+        display: none !important;
     }
 
     .hp-main-content {
@@ -576,11 +611,32 @@ textarea.hp-form-control {
     }
 }
 
-
 /**/
 
 #service-grid button {
     height: 100%;
     display: flex;
     flex-direction: column;
+}
+
+.gradient-cta {
+    background: linear-gradient(135deg, hsl(353, 70%, 60%), hsl(270, 52%, 32%));
+}
+
+.hp-nav-item.active .hp-sidebar-icon {
+    background: linear-gradient(135deg, hsl(353, 70%, 60%), hsl(270, 52%, 32%));
+}
+
+.hp-nav-item.completed .hp-sidebar-icon {
+    background-color: rgba(220, 252, 231, 1);
+}
+
+.hp-sidebar-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(229, 231, 235, 1);
 }

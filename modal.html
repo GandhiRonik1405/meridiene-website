@@ -119,31 +119,64 @@
         .hp-sidebar-nav {
             margin-top: 2rem;
         }
+
+        /* Sidebar nav items */
         .hp-nav-item {
+            position: relative; /* Needed for positioning the dot */
             display: flex;
             align-items: center;
             padding: 0.75rem 1rem;
             margin-bottom: 0.5rem;
             border-radius: 0.5rem;
             cursor: pointer;
-            transition: background-color 0.2s ease-in-out;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; /* Add color transition */
+            color: #f8f9fa; /* Default text color */
         }
-        .hp-nav-item.active {
-            background-color: #495057; /* Slightly lighter gray for active item */
-        }
-        .hp-nav-item:hover:not(.active) {
-            background-color: #495057;
-        }
+
+        /* Default icon color */
         .hp-nav-item i {
             margin-right: 0.75rem;
             font-size: 1.125rem;
+            color: #adb5bd; /* Default icon color */
+            transition: color 0.2s ease-in-out;
         }
-        .hp-nav-item .hp-check-icon {
-            margin-left: auto;
-            color: #6c757d; /* Gray checkmark */
+
+        .hp-nav-item span {
+            flex-grow: 1; /* Pushes dot to the right */
         }
-        .hp-nav-item.completed .hp-check-icon {
+
+        /* Active state */
+        .hp-nav-item.active {
+            background-color: #495057; /* Slightly lighter gray for active item */
+            color: #ffffff; /* Active text color */
+        }
+        .hp-nav-item.active i {
+            color: #ffffff; /* Active icon color (matches text for vibrancy) */
+        }
+
+        /* Red dot for active item */
+        .hp-nav-item.active::after {
+            content: '';
+            display: block;
+            width: 8px; /* Size of the dot */
+            height: 8px;
+            background-color: #dc3545; /* Red dot color */
+            border-radius: 50%;
+            margin-left: 0.5rem; /* Space from text */
+            flex-shrink: 0; /* Prevent it from shrinking */
+        }
+
+        /* Completed state */
+        .hp-nav-item.completed {
+            color: #f8f9fa; /* Completed text color (same as default) */
+        }
+        .hp-nav-item.completed i {
             color: #198754; /* Green checkmark for completed */
+        }
+
+        /* Hover state for non-active items */
+        .hp-nav-item:hover:not(.active) {
+            background-color: #495057;
         }
 
         /* Main content styles */
@@ -559,8 +592,8 @@
             .hp-nav-item span {
                 white-space: normal; /* Allow text to wrap if needed */
             }
-            .hp-nav-item .hp-check-icon {
-                display: none; /* Hide check icons on small screen sidebar nav */
+            .hp-nav-item::after { /* Hide dot on small screens */
+                display: none !important;
             }
 
             .hp-main-content {
@@ -612,28 +645,24 @@
                 </div>
                 <nav class="hp-sidebar-nav">
                     <div id="nav-company-size" class="hp-nav-item" data-step="company-size">
-                        <i class="fas fa-building"></i>
+                        <i class="fas fa-building" data-original-icon="fa-building"></i>
                         <span>Company Size</span>
-                        <i class="fas fa-check-circle hp-check-icon"></i>
                     </div>
                     <div id="nav-contact-info" class="hp-nav-item" data-step="contact-information">
-                        <i class="fas fa-address-book"></i>
+                        <i class="fas fa-address-book" data-original-icon="fa-address-book"></i>
                         <span>Contact Information</span>
-                        <i class="fas fa-check-circle hp-check-icon"></i>
                     </div>
                     <div id="nav-use-cases" class="hp-nav-item" data-step="use-cases">
-                        <i class="fas fa-lightbulb"></i>
+                        <i class="fas fa-lightbulb" data-original-icon="fa-lightbulb"></i>
                         <span>Use Cases</span>
-                        <i class="fas fa-check-circle hp-check-icon"></i>
                     </div>
                     <div id="nav-requirements" class="hp-nav-item" data-step="requirements">
-                        <i class="fas fa-clipboard-list"></i>
+                        <i class="fas fa-clipboard-list" data-original-icon="fa-clipboard-list"></i>
                         <span>Requirements</span>
-                        <i class="fas fa-check-circle hp-check-icon"></i>
                     </div>
                     <div id="nav-final-checklist" class="hp-nav-item" data-step="final-checklist">
-                        <i class="fas fa-file-invoice hp-check-icon"></i> <span>Final Checklist</span>
-                        <i class="fas fa-circle-notch hp-check-icon"></i>
+                        <i class="fas fa-file-invoice" data-original-icon="fa-file-invoice"></i>
+                        <span>Final Checklist</span>
                     </div>
                 </nav>
                 <div></div>
@@ -861,6 +890,22 @@
                 $formModal.removeClass('show');
                 // Optional: Reset form fields here if needed
                 // For example: $('#yourName').val('');
+                // Also reset sidebar state if closing completely
+                $navItems.each(function() {
+                    const $navItem = $(this);
+                    const $icon = $navItem.find('i.fas');
+                    const originalIconClass = $icon.data('original-icon');
+                    $navItem.removeClass('active completed');
+                    $icon.attr('class', 'fas ' + originalIconClass); // Restore original icon
+                });
+            }
+
+            // Helper function to determine if a step is completed
+            function isStepCompleted(navStep, currentStep) {
+                const stepOrder = ['company-size', 'contact-information', 'use-cases', 'requirements', 'final-checklist'];
+                const navIndex = stepOrder.indexOf(navStep);
+                const currentIndex = stepOrder.indexOf(currentStep);
+                return navIndex < currentIndex;
             }
 
             function renderStep(stepName) {
@@ -869,44 +914,52 @@
                 // Show the target step container
                 $(`#${stepName}-step`).css('display', 'flex'); // Use flex to maintain layout
 
-                // Reset all nav items and then set active/completed based on stepName
-                $navItems.removeClass('active completed');
-                $navItems.find('.hp-check-icon').removeClass('fa-check-circle').addClass('fa-circle-notch'); // Reset icons
+                // Reset all nav items: remove active/completed, restore original icon
+                $navItems.each(function() {
+                    const $navItem = $(this);
+                    const $icon = $navItem.find('i.fas'); // Select the Font Awesome icon
+                    const originalIconClass = $icon.data('original-icon'); // Get original icon class
 
-                // Re-enable all buttons by default, then disable as needed per step
-                $(`.hp-button`).prop('disabled', false);
+                    $navItem.removeClass('active completed');
+                    // Ensure the correct original icon class is present before adding others
+                    $icon.attr('class', 'fas ' + originalIconClass); // Restore original icon class
+                });
+
+                // Apply active/completed states based on current step
+                $navItems.each(function() {
+                    const $navItem = $(this);
+                    const navStep = $navItem.data('step');
+                    const $icon = $navItem.find('i.fas');
+                    const originalIconClass = $icon.data('original-icon'); // Re-fetch as it might have changed
+
+                    if (navStep === stepName) {
+                        $navItem.addClass('active');
+                        // For active, keep the original icon, CSS will handle its white color
+                        $icon.attr('class', 'fas ' + originalIconClass);
+                    } else if (isStepCompleted(navStep, stepName)) {
+                        $navItem.addClass('completed');
+                        // For completed, change to checkmark icon
+                        $icon.attr('class', 'fas fa-check-circle');
+                    }
+                });
+
+                // Handle button states
+                $(`.hp-button`).prop('disabled', false); // Re-enable all by default
                 $(`.hp-form-footer .hp-back-button, .hp-form-footer .hp-continue-button, .hp-form-footer .hp-close-form-button`).show();
 
 
                 if (stepName === 'company-size') {
-                    $('#nav-company-size').addClass('active');
                     $(`#${stepName}-step`).find('.hp-back-button').prop('disabled', true);
                     $(`#${stepName}-step`).find('.hp-continue-button').prop('disabled', true); // Initially disabled
                 } else if (stepName === 'contact-information') {
-                    $('#nav-company-size').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
-                    $('#nav-contact-info').addClass('active');
                     $(`#${stepName}-step`).find('.hp-continue-button').prop('disabled', true); // Initially disabled
                 } else if (stepName === 'use-cases') {
-                    $('#nav-company-size').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
-                    $('#nav-contact-info').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
-                    $('#nav-use-cases').addClass('active');
                     $(`#${stepName}-step`).find('.hp-continue-button').prop('disabled', true); // Initially disabled
                 } else if (stepName === 'requirements') {
-                    $('#nav-company-size').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
-                    $('#nav-contact-info').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
-                    $('#nav-use-cases').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
-                    $('#nav-requirements').addClass('active');
                     $(`#${stepName}-step`).find('.hp-continue-button').prop('disabled', true); // Initially disabled
                 } else if (stepName === 'final-checklist') {
-                    $('#nav-company-size').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
-                    $('#nav-contact-info').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
-                    $('#nav-use-cases').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
-                    $('#nav-requirements').addClass('completed').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle');
-                    $('#nav-final-checklist').addClass('active').find('.hp-check-icon').removeClass('fa-circle-notch').addClass('fa-check-circle'); // Final checkmark
-
-                    // Hide back/continue buttons on final step
+                    // No back/continue, only close button
                     $(`#${stepName}-step`).find('.hp-form-footer .hp-back-button, .hp-form-footer .hp-continue-button').hide();
-                    // Show the dedicated close button for the final step
                     $(`#${stepName}-step`).find('.hp-form-footer .hp-close-form-button').show();
                 }
                 currentStep = stepName;
@@ -1064,7 +1117,6 @@
             $('.hp-open-modal-button').on('click', openFormModal);
 
             // Initial render is now called when the modal is opened
-            // renderStep('company-size'); // Removed from here
         });
     </script>
 </body>
