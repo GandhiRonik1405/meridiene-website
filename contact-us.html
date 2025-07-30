@@ -169,10 +169,11 @@
                                     <div dir="ltr" data-orientation="horizontal" class="w-full">
                                         <div role="tablist" aria-orientation="horizontal" class="h-10 items-center justify-center text-muted-foreground grid w-full grid-cols-3 mb-8 bg-muted/20 p-1 rounded-lg" tabindex="0" data-orientation="horizontal" style="outline: none;">
                                             <button type="button" role="tab" aria-selected="true" aria-controls="radix-:r0:-content-sales" data-state="active" id="radix-:r0:-trigger-sales" class="inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:bg-gradient-to-r data-[state=active]:from-brand-red data-[state=active]:to-brand-purple data-[state=active]:text-white transition-all duration-300 data-[state=active]:shadow-lg" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">Sales Inquiry</button>
-                                            <button type="button" role="tab" aria-selected="false" aria-controls="radix-:r0:-content-support" data-state="inactive" id="radix-:r0:-trigger-support" class="inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:bg-gradient-to-r data-[state=active]:from-brand-red data-[state=active]:to-brand-purple data-[state=active]:text-white transition-all duration-300 data-[state=active]:shadow-lg" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">Support</button><button type="button" role="tab" aria-selected="false" aria-controls="radix-:r0:-content-partnership" data-state="inactive" id="radix-:r0:-trigger-partnership" class="inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:bg-gradient-to-r data-[state=active]:from-brand-red data-[state=active]:to-brand-purple data-[state=active]:text-white transition-all duration-300 data-[state=active]:shadow-lg" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">Partnership</button>
+                                          
+                                            
                                         </div>
                                         <div data-state="active" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-:r0:-trigger-sales" id="radix-:r0:-content-sales" tabindex="0" class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 animate-fade-in" style="animation-duration: 0s;">
-                                            <form class="space-y-8"  method="POST">
+                                            <form class="space-y-8" action="send-mail.php" method="POST">
                                                 <div class="grid md:grid-cols-2 gap-4">
                                                     <div class="space-y-2"><label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="firstName">First Name *</label><input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" name="firstName" id="firstName" placeholder="John" required=""></div>
                                                     <div class="space-y-2"><label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="lastName">Last Name *</label><input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" name="lastName" id="lastName" placeholder="Doe" required=""></div>
@@ -195,23 +196,7 @@
                                                         </select>
                                                       </div>
                                                       
-                                                    <!-- <div class="space-y-2">
-                                                        <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="companySize">Company Size</label>
-                                                        <button type="button" role="combobox" aria-controls="radix-:r4:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" data-placeholder="" class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;>span]:line-clamp-1">
-                                                            <span style="pointer-events: none;">Select company size</span>
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
-                                                                <path d="m6 9 6 6 6-6"></path>
-                                                            </svg>
-                                                        </button>
-                                                        <select aria-hidden="true" tabindex="-1" style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; overflow-wrap: normal;">
-                                                            <option value=""></option>
-                                                            <option value="startup">Startup (1-10 employees)</option>
-                                                            <option value="small">Small (11-50 employees)</option>
-                                                            <option value="medium">Medium (51-200 employees)</option>
-                                                            <option value="large">Large (201-1000 employees)</option>
-                                                            <option value="enterprise">Enterprise (1000+ employees)</option>
-                                                        </select>
-                                                    </div> -->
+                                                
                                                 </div>
                                                 <div class="space-y-2">
                                                     <label for="useCase" class="text-sm font-medium leading-none">Primary Use Case *</label>
@@ -227,24 +212,7 @@
                                                     </select>
                                                   </div>
                                                   
-                                                <!-- <div class="space-y-2">
-                                                    <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="useCase">Primary Use Case *</label>
-                                                    <button type="button" role="combobox" aria-controls="radix-:r5:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" data-placeholder="" class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;>span]:line-clamp-1">
-                                                        <span style="pointer-events: none;">What challenges are you looking to solve?</span>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
-                                                            <path d="m6 9 6 6 6-6"></path>
-                                                        </svg>
-                                                    </button>
-                                                    <select aria-hidden="true" tabindex="-1" style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; overflow-wrap: normal;">
-                                                        <option value=""></option>
-                                                        <option value="strategy">Strategic Planning &amp; AI Integration</option>
-                                                        <option value="operations">Operations Optimization</option>
-                                                        <option value="transformation">Digital Transformation</option>
-                                                        <option value="analytics">Predictive Analytics</option>
-                                                        <option value="automation">Process Automation</option>
-                                                        <option value="other">Other</option>
-                                                    </select>
-                                                </div> -->
+                                              
                                                 <div class="space-y-2"><label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="message">Tell us about your needs *</label><textarea class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[120px]" name="message" id="message" placeholder="Describe your current challenges and what you hope to achieve with Meridiene..." required=""></textarea></div>
                                                 <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-to-r from-brand-red to-brand-purple text-white hover:shadow-[0_6px_20px_hsl(var(--brand-red)/0.4)] hover:scale-105 h-11 rounded-md px-8 w-full" type="submit">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send w-4 h-4 mr-2">
@@ -255,54 +223,8 @@
                                                 </button>
                                             </form>
                                         </div>
-                                        <div data-state="inactive" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-:r0:-trigger-support" hidden="" id="radix-:r0:-content-support" tabindex="0" class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 animate-fade-in">
-                                            <form class="space-y-8">
-                                                <div class="grid md:grid-cols-2 gap-4">
-                                                    <div class="space-y-2"><label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="supportName">Name *</label><input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="supportName" placeholder="Your name" required=""></div>
-                                                    <div class="space-y-2"><label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="supportEmail">Email *</label><input type="email" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="supportEmail" placeholder="your@email.com" required=""></div>
-                                                </div>
-                                              
-                                                <div class="space-y-2">
-                                                    <label for="priority" class="text-sm font-medium leading-none">Priority Level</label>
-                                                    <select name="priority" id="priority" required
-                                                      class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
-                                                      <option value="">Select priority</option>
-                                                      <option value="Low - General Question">Low - General Question</option>
-                                                      <option value="Medium - Feature Request">Medium - Feature Request</option>
-                                                      <option value="High - Issue Affecting Work">High - Issue Affecting Work</option>
-                                                      <option value="Urgent - System Down">Urgent - System Down</option>
-                                                    </select>
-                                                  </div>
-                                                  
-                                                <div class="space-y-2"><label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="supportMessage">How can we help? *</label><textarea class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[120px]" id="supportMessage" placeholder="Describe your issue or question in detail..." required=""></textarea></div>
-                                                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-accent text-accent-foreground hover:bg-accent/90 shadow-[0_4px_15px_hsl(var(--brand-purple)/0.3)] hover:shadow-[0_6px_20px_hsl(var(--brand-purple)/0.4)] hover:scale-105 h-11 rounded-md px-8 w-full" type="submit">Submit Support Request</button>
-                                            </form>
-                                        </div>
-                                        <div data-state="inactive" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-:r0:-trigger-partnership" hidden="" id="radix-:r0:-content-partnership" tabindex="0" class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 animate-fade-in">
-                                            <form class="space-y-8">
-                                                <div class="grid md:grid-cols-2 gap-4">
-                                                    <div class="space-y-2"><label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="partnerName">Name *</label><input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="partnerName" placeholder="Your name" required=""></div>
-                                                    <div class="space-y-2"><label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="partnerEmail">Email *</label><input type="email" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="partnerEmail" placeholder="partner@company.com" required=""></div>
-                                                </div>
-                                                <div class="space-y-2"><label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="partnerCompany">Organization *</label><input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="partnerCompany" placeholder="Your organization" required=""></div>
-                                                <div class="space-y-2">
-                                                    <label for="partnershipType" class="text-sm font-medium leading-none">Partnership Type</label>
-                                                    <select name="partnershipType" id="partnershipType" required
-                                                      class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
-                                                      <option value="">Select partnership type</option>
-                                                      <option value="Technology Integration">Technology Integration</option>
-                                                      <option value="Reseller Partnership">Reseller Partnership</option>
-                                                      <option value="Consulting Partnership">Consulting Partnership</option>
-                                                      <option value="Strategic Alliance">Strategic Alliance</option>
-                                                      <option value="Other">Other</option>
-                                                    </select>
-                                                  </div>
-                                                  
-                                            
-                                                <div class="space-y-2"><label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="partnerMessage">Partnership Proposal *</label><textarea class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[120px]" id="partnerMessage" placeholder="Tell us about your organization and how we can work together..." required=""></textarea></div>
-                                                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-to-r from-brand-red to-brand-purple text-white hover:shadow-[0_6px_20px_hsl(var(--brand-red)/0.4)] hover:scale-105 h-11 rounded-md px-8 w-full" type="submit">Submit Partnership Inquiry</button>
-                                            </form>
-                                        </div>
+                                      
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -374,7 +296,7 @@
                         </div>
                         <div class="p-6 pt-0 px-8">
                             <div class="w-full space-y-6" data-orientation="vertical">
-                                <div data-state="closed" data-orientation="vertical" class="faq-item border border-border/30 rounded-lg px-6 py-3 shadow-sm hover:shadow-[0_4px_15px_hsl(var(--brand-red)/0.1)] hover:scale-[1.02] transition-all duration-300 bg-card/50" style="animation-delay: 0ms;">
+                                <div class="faq-item border border-gray-300 rounded-xl px-6 mb-4">
                                     <div class="faq-question text-lg font-semibold cursor-pointer">
                                         <h3 class="flex">
                                             <button aria-controls="radix-:r1:" aria-expanded="false" class="flex flex-1 items-center justify-between hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-lg font-semibold hover:text-primary transition-colors duration-300 py-6" id="radix-:r0:" type="button">
@@ -388,9 +310,11 @@
                                     </div>
                                     <div class="faq-answer text-gray-600 leading-relaxed pb-6 hidden">
                                         Meridiene combines AI-powered analytics with personalized use case solutions, specifically designed to navigate the complex modern marketplace. Our platform adapts to your organization's unique challenges and provides comprehensive strategies for AI integration and digital transformation.
+
                                     </div>
                                 </div>
-                                <div data-state="closed" data-orientation="vertical" class="faq-item border border-border/30 rounded-lg px-6 py-3 shadow-sm hover:shadow-[0_4px_15px_hsl(var(--brand-red)/0.1)] hover:scale-[1.02] transition-all duration-300 bg-card/50" style="animation-delay: 0ms;">
+                             
+                                <div class="faq-item border border-gray-300 rounded-xl px-6 mb-4">
                                     <div class="faq-question text-lg font-semibold cursor-pointer">
                                         <h3 class="flex">
                                             <button aria-controls="radix-:r1:" aria-expanded="false" class="flex flex-1 items-center justify-between hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-lg font-semibold hover:text-primary transition-colors duration-300 py-6" id="radix-:r0:" type="button">
@@ -406,7 +330,7 @@
                                         Implementation timelines vary based on your organization size and complexity. Typically, our Starter plan can be deployed within 1-2 weeks, Professional within 2-4 weeks, and Enterprise solutions within 4-8 weeks. We provide dedicated support throughout the entire process.
                                     </div>
                                 </div>
-                                <div data-state="closed" data-orientation="vertical" class="faq-item border border-border/30 rounded-lg px-6 py-3 shadow-sm hover:shadow-[0_4px_15px_hsl(var(--brand-red)/0.1)] hover:scale-[1.02] transition-all duration-300 bg-card/50" style="animation-delay: 0ms;">
+                                <div class="faq-item border border-gray-300 rounded-xl px-6 mb-4">
                                     <div class="faq-question text-lg font-semibold cursor-pointer">
                                         <h3 class="flex">
                                             <button aria-controls="radix-:r1:" aria-expanded="false" class="flex flex-1 items-center justify-between hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-lg font-semibold hover:text-primary transition-colors duration-300 py-6" id="radix-:r0:" type="button">
@@ -422,7 +346,7 @@
                                         Yes! All plans include comprehensive training programs. Professional and Enterprise plans include dedicated account managers, priority support, and custom training sessions. We ensure your team is fully equipped to maximize Meridiene's potential.
                                     </div>
                                 </div>
-                                <div data-state="closed" data-orientation="vertical" class="faq-item border border-border/30 rounded-lg px-6 py-3 shadow-sm hover:shadow-[0_4px_15px_hsl(var(--brand-red)/0.1)] hover:scale-[1.02] transition-all duration-300 bg-card/50" style="animation-delay: 0ms;">
+                                <div class="faq-item border border-gray-300 rounded-xl px-6 mb-4">
                                     <div class="faq-question text-lg font-semibold cursor-pointer">
                                         <h3 class="flex">
                                             <button aria-controls="radix-:r1:" aria-expanded="false" class="flex flex-1 items-center justify-between hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-lg font-semibold hover:text-primary transition-colors duration-300 py-6" id="radix-:r0:" type="button">
@@ -438,7 +362,7 @@
                                         Absolutely. Meridiene is built with integration in mind. We support APIs and have pre-built connectors for major enterprise systems. Our Enterprise plan includes custom integrations and dedicated technical support for seamless system integration.
                                     </div>
                                 </div>
-                                <div data-state="closed" data-orientation="vertical" class="faq-item border border-border/30 rounded-lg px-6 py-3 shadow-sm hover:shadow-[0_4px_15px_hsl(var(--brand-red)/0.1)] hover:scale-[1.02] transition-all duration-300 bg-card/50" style="animation-delay: 0ms;">
+                                <div class="faq-item border border-gray-300 rounded-xl px-6 mb-4">
                                     <div class="faq-question text-lg font-semibold cursor-pointer">
                                         <h3 class="flex">
                                             <button aria-controls="radix-:r1:" aria-expanded="false" class="flex flex-1 items-center justify-between hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-lg font-semibold hover:text-primary transition-colors duration-300 py-6" id="radix-:r0:" type="button">
@@ -454,7 +378,7 @@
                                         Meridiene features advanced AI for predictive analytics, strategic planning automation, risk assessment algorithms, and intelligent decision support. Our AI adapts to your industry and organizational patterns to provide increasingly accurate insights over time.
                                     </div>
                                 </div>
-                                <div data-state="closed" data-orientation="vertical" class="faq-item border border-border/30 rounded-lg px-6 py-3 shadow-sm hover:shadow-[0_4px_15px_hsl(var(--brand-red)/0.1)] hover:scale-[1.02] transition-all duration-300 bg-card/50" style="animation-delay: 0ms;">
+                                <div class="faq-item border border-gray-300 rounded-xl px-6 mb-4">
                                     <div class="faq-question text-lg font-semibold cursor-pointer">
                                         <h3 class="flex">
                                             <button aria-controls="radix-:r1:" aria-expanded="false" class="flex flex-1 items-center justify-between hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-lg font-semibold hover:text-primary transition-colors duration-300 py-6" id="radix-:r0:" type="button">
@@ -470,6 +394,7 @@
                                         Data security is our top priority. We employ enterprise-grade encryption, comply with SOC 2 Type II standards, and offer white-label solutions for maximum security. Enterprise plans include advanced security features and compliance certifications.
                                     </div>
                                 </div>
+                               
                             </div>
                         </div>
                     </div>
@@ -562,21 +487,7 @@
                             About Us
                             </a>
                         </li>
-                        <li>
-                            <a href="#">
-                            Careers
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            News &amp; Press
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            Partners
-                            </a>
-                        </li>
+                    
                         <li>
                             <a href="#">
                             Contact

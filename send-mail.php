@@ -5,45 +5,34 @@ require __DIR__ . '/vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// require 'PHPMailer/SMTP.php';
-// require 'PHPMailer/Exception.php';
-require __DIR__ . '/vendor/phpmailer/phpmailer/src/SMTP.php';
-require __DIR__ . '/vendor/phpmailer/phpmailer/src/Exception.php';
-
 $mail = new PHPMailer(true);
 
 try {
     // SMTP settings
     $mail->isSMTP();
-    $mail->Host       = 'smtp.gmail.com';         // Gmail SMTP
+    $mail->Host       = 'smtp.googlemail.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'ashvin.vadhaniya@txtech.co';    // 🔁 अपना Gmail डालें
-    $mail->Password   = 'Ashvin@123';      // 🔁 App password (2FA enabled)
-    $mail->SMTPSecure = 'tls';
-    $mail->Port       = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Username   = 'hitesh.vaghela@txtech.co';
+    $mail->Password   = 'oacqmtprgtmqmmen'; // App password
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port       = 465;
 
     // Email content
-    $mail->setFrom('ashvin.vadhaniya@txtech.co', 'Meridiene Website');
-    $mail->addAddress('vishnu.mevada@txtech.co');    // 🔁 जहाँ form data जाना चाहिए
+    $mail->setFrom('hitesh.vaghela@txtech.co', 'Website Contact');
+    $mail->addAddress('vishnu.mevada@txtech.co');
 
     $mail->isHTML(true);
-    $mail->Subject = 'New Inquiry from Website';
-    $mail->Body    = '
-        <h3>Contact Details</h3>
-        <p><strong>First Name:</strong> ' ."Sdsdsdssds" . '</p>
-      
-    ';
+    $mail->Subject = 'Test Email from Website';
+    $mail->Body    = '<h3>It works!</h3><p>This is a test message.</p>';
 
     $mail->send();
-    echo 'success';
-    exit;
-
+    echo '✅ Mail sent successfully';
 } catch (Exception $e) {
-    echo "Mail sending failed. Error: {$mail->ErrorInfo}";
+    echo "❌ Mail sending failed. Error: {$mail->ErrorInfo}";
 }
 
 
-exit;
+// exit;
 
 // if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //     // 1. Collect form data safely
