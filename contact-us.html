@@ -24,7 +24,11 @@
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/main_styles.css" />
         <link rel="stylesheet" href="assets/css/about-us.css" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <script src="assets/js/custom.js"></script>
+
+
     </head>
     <body>
         <!-- Site loader start -->
@@ -214,8 +218,10 @@
                                                     </select>
                                                   </div>
                                                   
-                                              
+
                                                 <div class="space-y-2"><label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="message">Tell us about your needs *</label><textarea class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[120px]" name="message" id="message" placeholder="Describe your current challenges and what you hope to achieve with Meridiene..." required=""></textarea></div>
+                                                <div class="g-recaptcha" data-sitekey="6Lc0NhgqAAAAAIvuDy-iRGY6FLzLWk_zHbtzpRk9"></div>
+
                                                 <button type="submit" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-to-r from-brand-red to-brand-purple text-white hover:shadow-[0_6px_20px_hsl(var(--brand-red)/0.4)] hover:scale-105 h-11 rounded-md px-8 w-full" type="submit">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send w-4 h-4 mr-2">
                                                         <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path>
@@ -223,6 +229,7 @@
                                                     </svg>
                                                     Request Demo &amp; Consultation
                                                 </button>
+                                                
                                             </form>
                                             <div id="responseMsg"></div>
                                         </div>
@@ -246,7 +253,7 @@
                                             </div>
                                             <div>
                                                 <h4 class="font-semibold text-lg">Email Us</h4>
-                                                <p class="text-muted-foreground">hello@meridiene.com</p>
+                                                <p class="text-muted-foreground">info@txtech.co                                                </p>
                                                 <p class="text-sm text-muted-foreground">We'll respond within 24 hours</p>
                                             </div>
                                         </div>
@@ -601,7 +608,7 @@
             });
             });
         </script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
         <script>
           $('#contactForm').on('submit', function(e) {
             e.preventDefault();
