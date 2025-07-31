@@ -995,7 +995,6 @@
 
                     $continueButton.on('click', function() {
                         if (selectedOption) {
-                            console.log('Selected company size:', selectedOption);
                             renderStep('contact-information');
                         } else {
                             showMessageModal('Please select a company size to continue.');
@@ -1034,12 +1033,10 @@
                             companyEmail: $currentStepContainer.find('#companyEmail').val(),
                             phoneNumber: $currentStepContainer.find('#phoneNumber').val(),
                         };
-                        console.log('Contact Information:', contactData);
                         renderStep('use-cases');
                     });
 
                     $backButton.on('click', function() {
-                        console.log('Back button clicked from contact information.');
                         renderStep('company-size');
                     });
                 } else if (currentStep === 'use-cases') {
@@ -1063,7 +1060,6 @@
                         const selectedUseCases = $useCaseCheckboxes.filter(':checked').map(function() {
                             return $(this).val();
                         }).get();
-                        console.log('Selected Use Cases:', selectedUseCases);
                         renderStep('requirements');
                     });
 

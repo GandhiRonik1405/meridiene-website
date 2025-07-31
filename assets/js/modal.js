@@ -161,7 +161,6 @@ $(document).ready(function() {
 
             $continueButton.on('click', function() {
                 if (selectedOption) {
-                    console.log('Selected company size:', selectedOption);
                     renderStep('contact-information');
                 } else {
                     showMessageModal('Please select a company size to continue.');

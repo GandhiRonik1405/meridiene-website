@@ -5,17 +5,28 @@ require __DIR__ . '/config.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-header('Content-Type: application/json');
 
-// Sanitize input
-$firstName   = htmlspecialchars($_POST['firstName'] ?? '');
-$lastName    = htmlspecialchars($_POST['lastName'] ?? '');
+
+$companySize = htmlspecialchars($_POST['companySize'] ?? 'Not Selected');
+$name   = htmlspecialchars($_POST['name'] ?? '');
+$position   = htmlspecialchars($_POST['position'] ?? '');
+$company     = htmlspecialchars($_POST['company'] ?? '');
 $email       = filter_var($_POST['email'] ?? '', FILTER_SANITIZE_EMAIL);
 $phone       = htmlspecialchars($_POST['phone'] ?? '');
-$company     = htmlspecialchars($_POST['company'] ?? '');
-$companySize = htmlspecialchars($_POST['companySize'] ?? 'Not Selected');
-$useCase     = htmlspecialchars($_POST['useCase'] ?? 'Not Selected');
-$message     = htmlspecialchars($_POST['message'] ?? '');
+$problems    = htmlspecialchars($_POST['problems'] ?? '');
+$useCases = $_POST['useCases'] ?? 'Not Selected';
+if (is_array($useCases)) {
+    $useCases = implode(', ', array_map('htmlspecialchars', $useCases));
+} else {
+    $useCases = htmlspecialchars($useCases);
+}
+$tools = $_POST['tools'] ?? '';
+if (is_array($tools)) {
+    $tools = implode(', ', array_map('htmlspecialchars', $tools));
+} else {
+    $tools = htmlspecialchars($tools);
+}
+
 
 // reCAPTCHA
 $recaptchaSecret   = RECAPTCHA_SECRET_KEY;
@@ -25,7 +36,7 @@ $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?sec
 $response = json_decode($verify);
 
 // Check reCAPTCHA
-// if ($response && $response->success) {
+ if ($response && $response->success) {
     $mail = new PHPMailer(true);
 
     try {
@@ -46,9 +57,9 @@ $response = json_decode($verify);
         include 'email-template.php'; 
         $htmlContent = ob_get_clean();
 
-        $htmlContent = str_replace('{{name}}', htmlspecialchars($firstName . ' ' . $lastName), $htmlContent);
+        $htmlContent = str_replace('{{name}}', htmlspecialchars($name), $htmlContent);
         $htmlContent = str_replace('{{email}}', htmlspecialchars($email), $htmlContent);
-        $htmlContent = str_replace('{{message}}', nl2br(htmlspecialchars($message)), $htmlContent);
+        // $htmlContent = str_replace('{{message}}', nl2br(htmlspecialchars($problems.''.$tools)), $htmlContent);
     
         $mail->Body = $htmlContent;
     
@@ -67,12 +78,12 @@ $response = json_decode($verify);
         ]);
     }
 
-// } else {
-//     echo json_encode([
-//         'status' => 'recaptcha_failed',
-//         'message' => 'Please verify the CAPTCHA and try again.'
-//     ]);
-// }
+} else {
+    echo json_encode([
+        'status' => 'recaptcha_failed',
+        'message' => 'Please verify the CAPTCHA and try again.'
+    ]);
+}
 
 exit;
 ?>

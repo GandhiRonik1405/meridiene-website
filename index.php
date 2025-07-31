@@ -1101,7 +1101,8 @@
                                     </div>
                                 </div><br>
                                 <div class="g-recaptcha" data-sitekey="6Lc0NhgqAAAAAIvuDy-iRGY6FLzLWk_zHbtzpRk9"></div>
-
+                                <br>
+                                <div id="responseMsg"></div>
                                 <div class="hp-form-footer">
                                     <button type="button" class="hp-button hp-button-outline-secondary hp-back-button">Back</button>
                                     <button type="button" class="hp-continue-button">Submit</button>
@@ -1279,15 +1280,24 @@
                 type: "POST",
                 url: "send-mail.php", // replace with your actual endpoint
                 data: formData,
+                dataType: 'json', 
                 success: function (response) {
+                    let $msgBox = $('#responseMsg');
+                    if (response.status === 'success') {
+                        $msgBox.html('<div class="text-green-700 bg-green-50 border border-green-300 p-4 rounded">✅ ' + response.message + '</div>');
+                        $('#contactForm')[0].reset();
+                        grecaptcha.reset(); // reset reCAPTCHA if needed
+                    } else if (response.status === 'recaptcha_failed') {
+                        $msgBox.html('<div class="text-yellow-700 bg-yellow-50 border border-yellow-300 p-4 rounded">⚠️ ' + response.message + '</div>');
+                    } else {
+                        $msgBox.html('<div class="text-red-700 bg-red-50 border border-red-300 p-4 rounded">❌ ' + response.message + '</div>');
+                    }
                     $('#requirements-step').hide();
                     $('#final-checklist-step').show();
-                    // Optional: Play video or redirect
                 },
-                error: function (xhr, status, error) {
-                    console.error("Form submission error:", error);
-                    alert("Something went wrong. Please try again.");
-                }
+                    error: function(xhr, status, error) {
+                    $('#responseMsg').html('<div class="text-red-700 bg-red-50 border border-red-300 p-4 rounded">❌ Something went wrong: ' + error + '</div>');
+                    }
             });
 
         });
