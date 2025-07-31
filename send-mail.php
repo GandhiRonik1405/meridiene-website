@@ -6,6 +6,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 
+header('Content-Type: application/json');
 
 $companySize = htmlspecialchars($_POST['companySize'] ?? 'Not Selected');
 $name   = htmlspecialchars($_POST['name'] ?? '');
@@ -27,7 +28,6 @@ if (is_array($tools)) {
     $tools = htmlspecialchars($tools);
 }
 
-
 // reCAPTCHA
 $recaptchaSecret   = RECAPTCHA_SECRET_KEY;
 $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
@@ -36,7 +36,7 @@ $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?sec
 $response = json_decode($verify);
 
 // Check reCAPTCHA
- if ($response && $response->success) {
+//  if ($response && $response->success) {
     $mail = new PHPMailer(true);
 
     try {
@@ -59,7 +59,7 @@ $response = json_decode($verify);
 
         $htmlContent = str_replace('{{name}}', htmlspecialchars($name), $htmlContent);
         $htmlContent = str_replace('{{email}}', htmlspecialchars($email), $htmlContent);
-        // $htmlContent = str_replace('{{message}}', nl2br(htmlspecialchars($problems.''.$tools)), $htmlContent);
+        $htmlContent = str_replace('{{message}}', nl2br(htmlspecialchars($problems.''.$tools)), $htmlContent);
     
         $mail->Body = $htmlContent;
     
@@ -78,12 +78,12 @@ $response = json_decode($verify);
         ]);
     }
 
-} else {
-    echo json_encode([
-        'status' => 'recaptcha_failed',
-        'message' => 'Please verify the CAPTCHA and try again.'
-    ]);
-}
+// } else {
+//     echo json_encode([
+//         'status' => 'recaptcha_failed',
+//         'message' => 'Please verify the CAPTCHA and try again.'
+//     ]);
+// }
 
 exit;
 ?>
