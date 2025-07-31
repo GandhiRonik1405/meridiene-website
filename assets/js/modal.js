@@ -1,3 +1,4 @@
+
 const $mainContent = $('.hp-main-content');
     const $navItems = $('.hp-nav-item');
     const $formModal = $('#formModal'); // The modal overlay
@@ -22,11 +23,6 @@ function showMessageModal(message) {
     });
 }
 
-// Function to open the main form modal
-// function openFormModal() {
-//     $formModal.addClass('show');
-//     renderStep('company-size'); // Always start at the first step when opening
-// }
 
 function openFormModal() {
     if (!isInline) { // Only add 'show' class if it's not an inline form
@@ -35,28 +31,10 @@ function openFormModal() {
     renderStep('company-size'); // Always start at the first step when opening
 }
 
-// Function to close the main form modal
-// function closeFormModal() {
-//     $formModal.removeClass('show');
-//     // Optional: Reset form fields here if needed
-//     // For example: $('#yourName').val('');
-//     // Also reset sidebar state if closing completely
-//     $navItems.each(function() {
-//         const $navItem = $(this);
-//         const $icon = $navItem.find('i.fas');
-//         const originalIconClass = $icon.data('original-icon');
-//         $navItem.removeClass('active completed');
-//         $icon.attr('class', 'fas ' + originalIconClass); // Restore original icon
-//     });
-// }
-
 function closeFormModal() {
     if (!isInline) { // Only remove 'show' class if it's not an inline form
         $formModal.removeClass('show');
     }
-    // Optional: Reset form fields here if needed
-    // For example: $('#yourName').val('');
-    // Also reset sidebar state if closing completely
     $navItems.each(function() {
         const $navItem = $(this);
         const $icon = $navItem.find('i.fas');
@@ -284,9 +262,6 @@ function attachEventListeners() {
 }
 
 $(document).ready(function() {
-        // Event listener for the "Open Form" button
-    // $('.hp-open-modal-button').on('click', openFormModal);
-       // Event listener for the "Open Form" button (only for modal behavior)
        if (!isInline) {
             $('.hp-open-modal-button').on('click', openFormModal);
         } else {
@@ -294,5 +269,4 @@ $(document).ready(function() {
             openFormModal(); // This will effectively just call renderStep('company-size')
         }
 
-    // Initial render is now called when the modal is opened
 });
