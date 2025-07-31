@@ -23,28 +23,35 @@
             <tr>
                 <td class="content-section" style="padding: 16px 40px 32px 40px; color: #4A4A4A; line-height: 1.5; font-size: 15px;">
                     <div style="background-color: #ffffff; padding: 20px;">
-                        <h1 class="heading-text" style="color: #2D3748; font-size: 24px; font-weight: 600; margin-top: 0; margin-bottom: 10px;">Thank You for Reaching Out!</h1>
+                        <h1 class="heading-text" style="color: #2D3748; font-size: 24px; font-weight: 600; margin-top: 0; margin-bottom: 10px;">Your Demo Session is Being Scheduled</h1>
                         <span style="color: #fff; border-top: 3px solid #DF5660;">Hello</span>
                         <p style="margin-top: 0; margin-bottom: 16px;">
                             Hi, <span class="name-highlight" style="font-weight: 600; color: #2D3748;">{{name}}</span>
                         </p>
                         <p style="margin-top: 0; margin-bottom: 24px;">
-                            Thank you for reaching out to us! We've received your inquiry and our team will get back to you shortly.
+                            Thank you for reaching out to Meridiene — your interest has been recorded.
                         </p>
+                        <p>
+                            We’re in the process of scheduling a tailored demo session just for you. This 30-minute session will walk you through a personalized solution, showing exactly how Meridiene can help you address your organizational challenges with clarity and confidence.
+                        </p>
+                        <p>
+                            You’ll receive a meeting link from us shortly.
+                        </p>
+                        <p></p>
 
-                        <h2 class="sub-heading" style="color: #2D3748; font-size: 18px; font-weight: 600; margin-top: 0; margin-bottom: 16px;">Quick Summary of Your Submission</h2>
+                        <h2 class="sub-heading" style="color: #2D3748; font-size: 18px; font-weight: 600; margin-top: 0; margin-bottom: 16px;">quick overview of your interest</h2>
 
                         <table class="summary-table" role="presentation" cellspacing="0" cellpadding="0" border="0" style="width: 100%; margin-bottom: 24px; font-size: 15px;">
                             <tr>
-                                <td class="summary-label" style="color: #6B7280; font-weight: 500; width: 80px; min-width: 80px; white-space: nowrap; padding-right: 10px; padding-top: 6px; padding-bottom: 6px;">Name:</td>
+                                <td class="summary-label" style="color: #6B7280; font-weight: 500; width: 80px; min-width: 80px; white-space: nowrap; padding-right: 10px; padding-top: 6px; padding-bottom: 6px;">provided email:</td>
                                 <td class="summary-value" style="color: #2D3748; font-weight: 600; padding-top: 6px; padding-bottom: 6px;">{{name}}</td>
                             </tr>
                             <tr>
-                                <td class="summary-label" style="color: #6B7280; font-weight: 500; width: 80px; min-width: 80px; white-space: nowrap; padding-right: 10px; padding-top: 6px; padding-bottom: 6px;">Email:</td>
+                                <td class="summary-label" style="color: #6B7280; font-weight: 500; width: 80px; min-width: 80px; white-space: nowrap; padding-right: 10px; padding-top: 6px; padding-bottom: 6px;">Modules interested in:</td>
                                 <td class="summary-value" style="color: #2D3748; font-weight: 600; padding-top: 6px; padding-bottom: 6px;">{{email}}</td>
                             </tr>
                             <tr>
-                                <td class="summary-label" style="color: #6B7280; font-weight: 500; width: 80px; min-width: 80px; white-space: nowrap; padding-right: 10px; padding-top: 6px; padding-bottom: 6px;">Message:</td>
+                                <td class="summary-label" style="color: #6B7280; font-weight: 500; width: 80px; min-width: 80px; white-space: nowrap; padding-right: 10px; padding-top: 6px; padding-bottom: 6px;">Modules interested in:</td>
                                 <td class="summary-value" style="color: #2D3748; font-weight: 600; padding-top: 6px; padding-bottom: 6px;">{{message}}</td>
                             </tr>
                         </table>
@@ -60,7 +67,7 @@
                         </div>
 
                         <p style="margin-top: 0; margin-bottom: 32px;">
-                            We appreciate your interest and will be in touch soon.
+                            Looking forward to connecting soon!
                         </p>
                     </div>
 
