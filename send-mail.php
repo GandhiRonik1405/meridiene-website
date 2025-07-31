@@ -28,14 +28,12 @@ if (is_array($tools)) {
     $tools = htmlspecialchars($tools);
 }
 
-// reCAPTCHA
 $recaptchaSecret   = RECAPTCHA_SECRET_KEY;
 $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
 
 $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$recaptchaSecret}&response={$recaptchaResponse}");
 $response = json_decode($verify);
 
-// Check reCAPTCHA
 //  if ($response && $response->success) {
     $mail = new PHPMailer(true);
 

@@ -1105,9 +1105,9 @@
                                 <div id="responseMsg"></div>
                                 <div class="hp-form-footer">
                                     <button type="button" class="hp-button hp-button-outline-secondary hp-back-button">Back</button>
-                                    <button type="button" class="hp-continue-button-test">Submit</button>
+                                    <!-- <button type="button" class="hp-continue-button">Submit</button> -->
 
-                                    <!-- <button type="button" class="hp-button hp-button-danger hp-continue-button inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white font-semibold border-0 rounded-lg px-10 text-lg group hover:scale-105 hover:shadow-hover transition-all duration-500 relative overflow-hidden animate-pulse-glow" disabled>Submit</button> -->
+                                     <button type="button" class="hp-button hp-button-danger hp-continue-button inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white font-semibold border-0 rounded-lg px-10 text-lg group hover:scale-105 hover:shadow-hover transition-all duration-500 relative overflow-hidden animate-pulse-glow" disabled>Submit</button> 
                                 </div>
                             </div>
             
@@ -1239,9 +1239,7 @@
 
         document.addEventListener("DOMContentLoaded", checkCookieConsent);
         
-
-
-        $(document).on('click', '.hp-continue-button-test:contains("Submit")', function () {
+        $(document).on('click', '.hp-continue-button:contains("Submit")', function () {          
             var companySize = $('.hp-option-card.selected').data('value');
             var name = $('#yourName').val();
             var position = $('#yourPosition').val();
@@ -1275,36 +1273,20 @@
                 tools: tools
             };
 
-            // Submit with AJAX
             $.ajax({
                 type: "POST",
                 url: "send-mail.php", // replace with your actual endpoint
                 data: formData,
                 dataType: 'json', 
-                // success: function (response) {
-                //     let $msgBox = $('#responseMsg');
-                //     if (response.status === 'success') {
-                //         $msgBox.html('<div class="text-green-700 bg-green-50 border border-green-300 p-4 rounded">✅ ' + response.message + '</div>');
-                //         $('#contactForm')[0].reset();
-                //         grecaptcha.reset(); // reset reCAPTCHA if needed
-                //     } else if (response.status === 'recaptcha_failed') {
-                //         $msgBox.html('<div class="text-yellow-700 bg-yellow-50 border border-yellow-300 p-4 rounded">⚠️ ' + response.message + '</div>');
-                //     } else {
-                //         $msgBox.html('<div class="text-red-700 bg-red-50 border border-red-300 p-4 rounded">❌ ' + response.message + '</div>');
-                //     }
-                //     $('#requirements-step').hide();
-                //     $('#final-checklist-step').show();
-                // },
-
+        
                 success: function (response) {
                     let $msgBox = $('#responseMsg');
                     if (response.status === 'success') {
+                        
                         $msgBox.html('<div class="text-green-700 bg-green-50 border border-green-300 p-4 rounded">✅ ' + response.message + '</div>');
-                        $('#contactForm')[0].reset();
-                       
-                        grecaptcha.reset(); // reset reCAPTCHA if needed
-                        // Call renderStep to move to the final-checklist
-                        renderStep('final-checklist'); // <--- ADD THIS LINE
+                        renderStep('final-checklist'); 
+
+                        grecaptcha.reset(); 
                     } else if (response.status === 'recaptcha_failed') {
                         $msgBox.html('<div class="text-yellow-700 bg-yellow-50 border border-yellow-300 p-4 rounded">⚠️ ' + response.message + '</div>');
                         console.warn('Form failed:', res.message);
@@ -1312,15 +1294,8 @@
                     } else {
                         $msgBox.html('<div class="text-red-700 bg-red-50 border border-red-300 p-4 rounded">❌ ' + response.message + '</div>');
                     }
-<<<<<<< Updated upstream
-                    // Remove these two lines as renderStep will handle visibility
-=======
->>>>>>> Stashed changes
-                    // $('#requirements-step').hide();
-                    // $('#final-checklist-step').show();
+                  
                 },
-
-
                     error: function(xhr, status, error) {
                     $('#responseMsg').html('<div class="text-red-700 bg-red-50 border border-red-300 p-4 rounded">❌ Something went wrong: ' + error + '</div>');
                     }
