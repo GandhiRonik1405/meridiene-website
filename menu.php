@@ -80,7 +80,7 @@
                 </a>
             </div>
             <div class="flex items-center space-x-4">
-                <button class="items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white hover:shadow-glow font-semibold h-12 rounded-lg px-8 text-base hidden md:inline-flex group hover:scale-105 transition-all duration-300 relative overflow-hidden">
+                <button class="items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white hover:shadow-glow font-semibold h-12 rounded-lg px-8 text-base hidden md:inline-flex group hover:scale-105 transition-all duration-300 relative overflow-hidden hp-open-modal-button">
                     <div class="absolute inset-0 bg-gradient-glow opacity-0 group-hover:opacity-100 animate-shimmer transition-opacity duration-300">
                     </div>
                     <svg class="lucide lucide-sparkles mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">

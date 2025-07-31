@@ -677,7 +677,7 @@
                                         <div class="aspect-video bg-muted rounded-lg flex items-center justify-center mb-6">
                                             <div class="text-center">
                                                 <video autoplay="" muted="" loop="" playsinline="" class="rounded-3xl shadow-glow border border-border/20 transition-all duration-700 group-hover:shadow-hover group-hover:scale-[1.02]" style="width: 642px; height: 361px;">
-                                                    <source src="assets/video/Meridiene Animation 001.mp4" type="video/mp4">
+                                                    <source src="assets/video/Plan Your Workforce with Foresight.mp4" type="video/mp4">
                                                     Your browser does not support the video tag.
                                                 </video>
                                                 <!-- <svg class="lucide lucide-play h-16 w-16 text-primary mx-auto mb-4 cursor-pointer hover:scale-110 transition-transform" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -693,10 +693,10 @@
                                             </div>
                                         </div>
                                         <h3 class="text-xl font-semibold mb-2">
-                                            Global Tech Company Case Study
+                                        Plan Your Workforce with Foresight
                                         </h3>
                                         <p class="text-muted-foreground">
-                                            Learn how a 15,000+ employee tech company identified $12M in workforce optimization opportunities and reduced planning cycles from weeks to hours.
+                                        need to start planning? See how Meridiene helps you set future assumptions for cost, demand, and supply, combine them with real employee data, and identify workforce gaps so you can act before they turn into risks.
                                         </p>
                                     </div>
                                 </div>

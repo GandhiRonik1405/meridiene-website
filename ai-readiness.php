@@ -214,16 +214,16 @@
                                         <div class="aspect-video bg-muted rounded-lg flex items-center justify-center mb-6">
                                             <div class="text-center">
                                                 <video autoplay="" muted="" loop="" playsinline="" class="rounded-3xl shadow-glow border border-border/20 transition-all duration-700 group-hover:shadow-hover group-hover:scale-[1.02]" style="width: 642px; height: 361px;">
-                                                    <source src="assets/video/Meridiene Animation 001.mp4" type="video/mp4">
+                                                    <source src="assets/video/There is an AI for THIS.mp4" type="video/mp4">
                                                     Your browser does not support the video tag.
                                                 </video>
                                             </div>
                                         </div>
                                         <h3 class="text-xl font-semibold mb-2">
-                                            Global Tech Company Case Study
+                                        There is an AI for THIS?
                                         </h3>
                                         <p class="text-muted-foreground">
-                                            Learn how a 15,000+ employee tech company identified $12M in workforce optimization opportunities and reduced planning cycles from weeks to hours.
+                                        Revealed!! how Meridiene analyzes your org structure to show automation potential by role, compares employee readiness with market standards, and uncovers the exact AI tools reshaping the future of work, task by task.
                                         </p>
                                     </div>
                                 </div>

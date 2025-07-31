@@ -4,7 +4,11 @@
     <?php include('header.php') ?>
     <!-- Head end -->
     <body>
-        
+        <style>
+        .bg-secondary {
+            background-color: hsl(var(--secondary));
+        }
+         </style>
         <div id="root">
             <div aria-label="Notifications (F8)" role="region" style="pointer-events: none;" tabindex="-1">
                 <ol class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]" tabindex="-1">
@@ -442,7 +446,7 @@
                             </div>
                         </div>
                         <div class="buttons">
-                            <a class="btn-demo gradient-cta" href="#">
+                            <a class="btn-demo gradient-cta hp-open-modal-button" href="#">
                             Request Live Demo
                             </a>
                            
@@ -835,8 +839,8 @@
                                 See exactly how Meridiene's AI can solve your specific workforce challenges. Book a personalized demo with one of our strategists today.
                             </p>
                             <div class="space-y-6">
-                                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-14 rounded-lg group hover:scale-110 hover:shadow-hover transition-all duration-500 text-lg px-12 py-6 animate-bounce-gentle relative overflow-hidden">
-                                    <div class="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-14 rounded-lg group hover:scale-110 hover:shadow-hover transition-all duration-500 text-lg px-12 py-6 animate-bounce-gentle relative overflow-hidden hp-open-modal-button">
+                                    <div class="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-500 ">
                                     </div>
                                     <svg class="lucide lucide-eye mr-3 h-6 w-6 group-hover:rotate-12 transition-transform duration-300" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0">
@@ -844,7 +848,7 @@
                                         <circle cx="12" cy="12" r="3">
                                         </circle>
                                     </svg>
-                                    <span class="relative z-10">
+                                    <span class="relative z-10 ">
                                     Navigate Your AI Journey
                                     </span>
                                     <svg class="lucide lucide-arrow-right ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform duration-300" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">

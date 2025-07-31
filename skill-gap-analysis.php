@@ -434,17 +434,18 @@
                                                             <div class="aspect-video bg-muted rounded-lg flex items-center justify-center mb-6">
                                                                 <div class="text-center">
                                                                     <video autoplay="" muted="" loop="" playsinline="" class="rounded-3xl shadow-glow border border-border/20 transition-all duration-700 group-hover:shadow-hover group-hover:scale-[1.02]" style="width: 642px; height: 361px;">
-                                                                        <source src="assets/video/Meridiene Animation 001.mp4" type="video/mp4">
+                                                                        <source src="assets/video/Know Your Resource Spending, But Better.mp4" type="video/mp4">
                                                                         Your browser does not support the video tag.
                                                                     </video>
                                                                  
                                                                 </div>
                                                             </div>
                                                             <h3 class="text-xl font-semibold mb-2">
-                                                                Global Tech Company Case Study
+                                                            Know Your Resource Spending, But Better
                                                             </h3>
                                                             <p class="text-muted-foreground">
-                                                                See how a Fortune 500 technology company used Meridiene to successfully navigate a company-wide agile transformation, reducing implementation time by 40% and increasing employee adoption by 65%.
+                                                            Meridiene’s Time and Resource Allocation Survey helps leadership define activities, collect time data directly from teams, and connect that input to real employee costs giving you clear visibility into where time and money are truly going
+
                                                             </p>
                                                         </div>
                                                     </div>
@@ -621,17 +622,17 @@
                                                             <div class="aspect-video bg-muted rounded-lg flex items-center justify-center mb-6">
                                                                 <div class="text-center">
                                                                     <video autoplay="" muted="" loop="" playsinline="" class="rounded-3xl shadow-glow border border-border/20 transition-all duration-700 group-hover:shadow-hover group-hover:scale-[1.02]" style="width: 642px; height: 361px;">
-                                                                        <source src="assets/video/Meridiene Animation 001.mp4" type="video/mp4">
+                                                                        <source src="assets/video/Structure Your Effort.mp4" type="video/mp4">
                                                                         Your browser does not support the video tag.
                                                                     </video>
                                                                  
                                                                 </div>
                                                             </div>
                                                             <h3 class="text-xl font-semibold mb-2">
-                                                                Global Tech Company Case Study
+                                                            Structure Your Effort
                                                             </h3>
                                                             <p class="text-muted-foreground">
-                                                                See how a Fortune 500 technology company used Meridiene to successfully navigate a company-wide agile transformation, reducing implementation time by 40% and increasing employee adoption by 65%.
+                                                            Meridiene transforms survey data into a visual activity map of your organization highlighting time gaps, resource overlaps, and inefficiencies. It helps leaders realign effort with strategy, all from a single, centralized workspace.
                                                             </p>
                                                         </div>
                                                     </div>

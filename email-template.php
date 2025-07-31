@@ -24,9 +24,9 @@
                 <td class="content-section" style="padding: 16px 40px 32px 40px; color: #4A4A4A; line-height: 1.5; font-size: 15px;">
                     <div style="background-color: #ffffff; padding: 20px;">
                         <h1 class="heading-text" style="color: #2D3748; font-size: 24px; font-weight: 600; margin-top: 0; margin-bottom: 10px;">Thank You for Reaching Out!</h1>
-                        <span style="color: #fff; border-top: 3px solid #DF5660;">Helloo</span>
+                        <span style="color: #fff; border-top: 3px solid #DF5660;">Hello</span>
                         <p style="margin-top: 0; margin-bottom: 16px;">
-                            Hi, <span class="name-highlight" style="font-weight: 600; color: #2D3748;">Kishan Khirsariya</span>
+                            Hi, <span class="name-highlight" style="font-weight: 600; color: #2D3748;">{{name}}</span>
                         </p>
                         <p style="margin-top: 0; margin-bottom: 24px;">
                             Thank you for reaching out to us! We've received your inquiry and our team will get back to you shortly.
@@ -37,15 +37,15 @@
                         <table class="summary-table" role="presentation" cellspacing="0" cellpadding="0" border="0" style="width: 100%; margin-bottom: 24px; font-size: 15px;">
                             <tr>
                                 <td class="summary-label" style="color: #6B7280; font-weight: 500; width: 80px; min-width: 80px; white-space: nowrap; padding-right: 10px; padding-top: 6px; padding-bottom: 6px;">Name:</td>
-                                <td class="summary-value" style="color: #2D3748; font-weight: 600; padding-top: 6px; padding-bottom: 6px;">Kishan Khirsariya</td>
+                                <td class="summary-value" style="color: #2D3748; font-weight: 600; padding-top: 6px; padding-bottom: 6px;">{{name}}</td>
                             </tr>
                             <tr>
                                 <td class="summary-label" style="color: #6B7280; font-weight: 500; width: 80px; min-width: 80px; white-space: nowrap; padding-right: 10px; padding-top: 6px; padding-bottom: 6px;">Email:</td>
-                                <td class="summary-value" style="color: #2D3748; font-weight: 600; padding-top: 6px; padding-bottom: 6px;">kishankhirsariya@gmail.com</td>
+                                <td class="summary-value" style="color: #2D3748; font-weight: 600; padding-top: 6px; padding-bottom: 6px;">{{email}}</td>
                             </tr>
                             <tr>
                                 <td class="summary-label" style="color: #6B7280; font-weight: 500; width: 80px; min-width: 80px; white-space: nowrap; padding-right: 10px; padding-top: 6px; padding-bottom: 6px;">Message:</td>
-                                <td class="summary-value" style="color: #2D3748; font-weight: 600; padding-top: 6px; padding-bottom: 6px;">I'm interested in your services and would like to learn more about pricing options.</td>
+                                <td class="summary-value" style="color: #2D3748; font-weight: 600; padding-top: 6px; padding-bottom: 6px;">{{message}}</td>
                             </tr>
                         </table>
 

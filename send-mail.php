@@ -25,7 +25,7 @@ $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?sec
 $response = json_decode($verify);
 
 // Check reCAPTCHA
-if ($response && $response->success) {
+// if ($response && $response->success) {
     $mail = new PHPMailer(true);
 
     try {
@@ -41,18 +41,17 @@ if ($response && $response->success) {
         $mail->addAddress(MAIL_TO);
 
         $mail->isHTML(true);
-        $mail->Subject = 'New Contact Form Submission';
-        $mail->Body    = "
-            <h3>Contact Details</h3>
-            <p><strong>First Name:</strong> {$firstName}</p>
-            <p><strong>Last Name:</strong> {$lastName}</p>
-            <p><strong>Email:</strong> {$email}</p>
-            <p><strong>Phone:</strong> {$phone}</p>
-            <p><strong>Company:</strong> {$company}</p>
-            <p><strong>Company Size:</strong> {$companySize}</p>
-            <p><strong>Use Case:</strong> {$useCase}</p>
-            <p><strong>Message:</strong><br>{$message}</p>
-        ";
+        $mail->Subject = 'Thank You for Contacting Meridiene';
+        ob_start();
+        include 'email-template.php'; 
+        $htmlContent = ob_get_clean();
+
+        $htmlContent = str_replace('{{name}}', htmlspecialchars($firstName . ' ' . $lastName), $htmlContent);
+        $htmlContent = str_replace('{{email}}', htmlspecialchars($email), $htmlContent);
+        $htmlContent = str_replace('{{message}}', nl2br(htmlspecialchars($message)), $htmlContent);
+    
+        $mail->Body = $htmlContent;
+    
 
         $mail->send();
 
@@ -68,12 +67,12 @@ if ($response && $response->success) {
         ]);
     }
 
-} else {
-    echo json_encode([
-        'status' => 'recaptcha_failed',
-        'message' => 'Please verify the CAPTCHA and try again.'
-    ]);
-}
+// } else {
+//     echo json_encode([
+//         'status' => 'recaptcha_failed',
+//         'message' => 'Please verify the CAPTCHA and try again.'
+//     ]);
+// }
 
 exit;
 ?>
