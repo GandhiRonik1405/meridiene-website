@@ -961,7 +961,7 @@
                             <div id="company-size-step" class="hp-step-container">
                                 <div class="hp-main-content-header">
                                     <div>
-                                        <h1>What's your company size?</h1>
+                                        <h1>What's your company size? </h1>
                                         <p>This helps us understand your organizational complexity.</p>
                                     </div>
                                     <button type="button" class="hp-close-button" aria-label="Close form">
@@ -1099,10 +1099,14 @@
                                         <label for="toolRequirements" class="hp-label">What are you looking for in an organizational planning tool? *</label>
                                         <textarea class="hp-form-control" id="toolRequirements" rows="5" placeholder="Tell us about your requirements, expectations, and desired outcomes..."></textarea>
                                     </div>
-                                </div>
+                                </div><br>
+                                <div class="g-recaptcha" data-sitekey="6Lc0NhgqAAAAAIvuDy-iRGY6FLzLWk_zHbtzpRk9"></div>
+
                                 <div class="hp-form-footer">
                                     <button type="button" class="hp-button hp-button-outline-secondary hp-back-button">Back</button>
-                                    <button type="button" class="hp-button hp-button-danger hp-continue-button inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white font-semibold border-0 rounded-lg px-10 text-lg group hover:scale-105 hover:shadow-hover transition-all duration-500 relative overflow-hidden animate-pulse-glow" disabled>Submit</button>
+                                    <button type="button" class="hp-continue-button">Submit</button>
+
+                                    <!-- <button type="button" class="hp-button hp-button-danger hp-continue-button inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white font-semibold border-0 rounded-lg px-10 text-lg group hover:scale-105 hover:shadow-hover transition-all duration-500 relative overflow-hidden animate-pulse-glow" disabled>Submit</button> -->
                                 </div>
                             </div>
             
@@ -1234,6 +1238,59 @@
 
         document.addEventListener("DOMContentLoaded", checkCookieConsent);
         
+
+
+        $(document).on('click', '.hp-continue-button:contains("Submit")', function () {
+            var companySize = $('.hp-option-card.selected').data('value');
+            var name = $('#yourName').val();
+            var position = $('#yourPosition').val();
+            var company = $('#companyName').val();
+            var email = $('#companyEmail').val();
+            var phone = $('#phoneNumber').val();
+            var useCases = [];
+            $('input[name="useCase"]:checked').each(function () {
+                useCases.push($(this).val());
+            });
+
+            // Requirements
+            var problems = $('#problemsFacing').val();
+            var tools = $('#toolRequirements').val();
+
+            // Basic validation (optional)
+            if (!name || !position || !company || !email || !problems || !tools) {
+                alert("Please fill all required fields.");
+                return;
+            }
+
+            var formData = {
+                companySize: companySize,
+                name: name,
+                position: position,
+                company: company,
+                email: email,
+                phone: phone,
+                useCases: useCases,
+                problems: problems,
+                tools: tools
+            };
+
+            // Submit with AJAX
+            $.ajax({
+                type: "POST",
+                url: "send-mail.php", // replace with your actual endpoint
+                data: formData,
+                success: function (response) {
+                    $('#requirements-step').hide();
+                    $('#final-checklist-step').show();
+                    // Optional: Play video or redirect
+                },
+                error: function (xhr, status, error) {
+                    console.error("Form submission error:", error);
+                    alert("Something went wrong. Please try again.");
+                }
+            });
+
+        });
 
 </script>
 
