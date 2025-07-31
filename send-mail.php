@@ -1,11 +1,13 @@
 <?php
 
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/config.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// Sanitize form input
+header('Content-Type: application/json');
+
+// Sanitize input
 $firstName   = htmlspecialchars($_POST['firstName'] ?? '');
 $lastName    = htmlspecialchars($_POST['lastName'] ?? '');
 $email       = filter_var($_POST['email'] ?? '', FILTER_SANITIZE_EMAIL);
@@ -15,8 +17,8 @@ $companySize = htmlspecialchars($_POST['companySize'] ?? 'Not Selected');
 $useCase     = htmlspecialchars($_POST['useCase'] ?? 'Not Selected');
 $message     = htmlspecialchars($_POST['message'] ?? '');
 
-// reCAPTCHA validation
-$recaptchaSecret   = '6Lc0NhgqAAAAALUMwxlm13nf6CCF46OCjXPan02q'; // ✅ Your secret key
+// reCAPTCHA
+$recaptchaSecret   = RECAPTCHA_SECRET_KEY;
 $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
 
 $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$recaptchaSecret}&response={$recaptchaResponse}");
@@ -24,22 +26,19 @@ $response = json_decode($verify);
 
 // Check reCAPTCHA
 if ($response && $response->success) {
-
     $mail = new PHPMailer(true);
 
     try {
-        // SMTP configuration
         $mail->isSMTP();
-        $mail->Host       = 'smtp.googlemail.com';
+        $mail->Host       = MAIL_HOST;
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'khushbu.lakhataria@txtech.co';       // ✅ Your Gmail
-        $mail->Password   = 'hibtopadebpeeomk';                   // ✅ App password (not Gmail login pass)
-        $mail->SMTPSecure = 'ssl';
-        $mail->Port       = 465;
+        $mail->Username   = MAIL_USERNAME;
+        $mail->Password   = MAIL_PASSWORD;
+        $mail->SMTPSecure = MAIL_ENCRYPTION;
+        $mail->Port       = MAIL_PORT;
 
-        // Email content
-        $mail->setFrom('khushbu.lakhataria@txtech.co', 'Website Contact');
-        $mail->addAddress('ashvin.vadhaniya@txtech.co');
+        $mail->setFrom(MAIL_USERNAME, MAIL_FROM_NAME);
+        $mail->addAddress(MAIL_TO);
 
         $mail->isHTML(true);
         $mail->Subject = 'New Contact Form Submission';
@@ -56,46 +55,25 @@ if ($response && $response->success) {
         ";
 
         $mail->send();
-        echo '
-        <div class="mt-4 flex items-start space-x-2 rounded-lg border border-green-300 bg-green-50 p-4 text-sm text-green-700 shadow-sm">
-            <svg class="h-5 w-5 mt-0.5 shrink-0 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M5 13l4 4L19 7" />
-            </svg>
-            <div>
-                <strong class="font-semibold">Success:</strong>
-                <span class="block sm:inline">Mail sent successfully.</span>
-            </div>
-        </div>';
-        
 
+        echo json_encode([
+            'status' => 'success',
+            'message' => 'Thank you for reaching out to us. We’ll get back to you shortly.'
+        ]);
     } catch (Exception $e) {
-        echo '
-        <div class="mt-4 flex items-start space-x-2 rounded-lg border border-red-300 bg-red-50 p-4 text-sm text-red-700 shadow-sm">
-            <svg class="h-5 w-5 mt-0.5 shrink-0 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M6 18L18 6M6 6l12 12" />
-            </svg>
-            <div>
-                <strong class="font-semibold">Error:</strong>
-                <span class="block sm:inline">Mail sending failed. ' . htmlspecialchars($mail->ErrorInfo) . '</span>
-            </div>
-        </div>';
-            }
+        echo json_encode([
+            'status' => 'error',
+            'message' => 'Mail sending failed.',
+            'error' => $mail->ErrorInfo
+        ]);
+    }
 
 } else {
-    echo '
-<div class="mt-4 flex items-start space-x-2 rounded-lg border border-red-300 bg-red-50 p-4 text-sm text-red-700 shadow-sm">
-    <svg class="h-5 w-5 mt-0.5 shrink-0 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M12 8v4m0 4h.01M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
-    </svg>
-    <div>
-        <strong class="font-semibold">reCAPTCHA Failed:</strong>
-        <span class="block sm:inline"> Please verify the CAPTCHA and try again.</span>
-    </div>
-</div>';
-
-    exit;
+    echo json_encode([
+        'status' => 'recaptcha_failed',
+        'message' => 'Please verify the CAPTCHA and try again.'
+    ]);
 }
+
+exit;
 ?>
