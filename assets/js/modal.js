@@ -236,35 +236,68 @@ $(document).ready(function() {
                 console.log('Back button clicked from use cases.');
                 renderStep('contact-information');
             });
-        } else if (currentStep === 'requirements') {
-            const $problemsTextarea = $currentStepContainer.find('#problemsFacing');
-            const $requirementsTextarea = $currentStepContainer.find('#toolRequirements');
+        } 
+        // else if (currentStep === 'requirements') {
+        //     const $problemsTextarea = $currentStepContainer.find('#problemsFacing');
+        //     const $requirementsTextarea = $currentStepContainer.find('#toolRequirements');
 
-            function checkRequirementsValidity() {
-                const problemsFilled = $problemsTextarea.val().trim() !== '';
-                const requirementsFilled = $requirementsTextarea.val().trim() !== '';
-                $continueButton.prop('disabled', !(problemsFilled && requirementsFilled));
-            }
+        //     function checkRequirementsValidity() {
+        //         const problemsFilled = $problemsTextarea.val().trim() !== '';
+        //         const requirementsFilled = $requirementsTextarea.val().trim() !== '';
+        //         $continueButton.prop('disabled', !(problemsFilled && requirementsFilled));
+        //     }
 
-            $problemsTextarea.on('input', checkRequirementsValidity);
-            $requirementsTextarea.on('input', checkRequirementsValidity);
+        //     $problemsTextarea.on('input', checkRequirementsValidity);
+        //     $requirementsTextarea.on('input', checkRequirementsValidity);
 
-            checkRequirementsValidity(); // Initial check on load
+        //     checkRequirementsValidity(); // Initial check on load
 
-            $continueButton.on('click', function() {
-                const requirementsData = {
-                    problems: $problemsTextarea.val().trim(),
-                    toolRequirements: $requirementsTextarea.val().trim()
-                };
-                console.log('Requirements Data:', requirementsData);
-                renderStep('final-checklist');
-            });
+        //     $continueButton.on('click', function() {
+        //         const requirementsData = {
+        //             problems: $problemsTextarea.val().trim(),
+        //             toolRequirements: $requirementsTextarea.val().trim()
+        //         };
+        //         console.log('Requirements Data:', requirementsData);
+        //         renderStep('final-checklist');
+        //     });
 
-            $backButton.on('click', function() {
-                console.log('Back button clicked from requirements.');
-                renderStep('use-cases');
-            });
-        } else if (currentStep === 'final-checklist') {
+        //     $backButton.on('click', function() {
+        //         console.log('Back button clicked from requirements.');
+        //         renderStep('use-cases');
+        //     });
+        // }
+     else if (currentStep === 'requirements') {
+        const $problemsTextarea = $currentStepContainer.find('#problemsFacing');
+        const $requirementsTextarea = $currentStepContainer.find('#toolRequirements');
+
+        function checkRequirementsValidity() {
+            const problemsFilled = $problemsTextarea.val().trim() !== '';
+            const requirementsFilled = $requirementsTextarea.val().trim() !== '';
+            $continueButton.prop('disabled', !(problemsFilled && requirementsFilled));
+        }
+
+        $problemsTextarea.on('input', checkRequirementsValidity);
+        $requirementsTextarea.on('input', checkRequirementsValidity);
+
+        checkRequirementsValidity(); // Initial check on load
+
+        $continueButton.on('click', function() {
+            const requirementsData = {
+                problems: $problemsTextarea.val().trim(),
+                toolRequirements: $requirementsTextarea.val().trim()
+            };
+            console.log('Requirements Data:', requirementsData);
+            // Temporarily stop flow here
+            showMessageModal('Requirements submitted! Further steps are currently disabled.');
+            // Do NOT call renderStep('final-checklist');
+        });
+
+        $backButton.on('click', function() {
+            console.log('Back button clicked from requirements.');
+            renderStep('use-cases');
+        });
+    }
+         else if (currentStep === 'final-checklist') {
             // This screen has no "Back" button, and "Continue" is replaced by "Close"
             const $closeFormButton = $currentStepContainer.find('.hp-close-form-button');
 

@@ -1,6 +1,6 @@
 <!-- Site loader start -->
 <div class="fixed inset-0 flex items-center justify-center bg-white z-50" id="loader">
-    <div class="w-12 h-12 animate-spin">
+    <div class="w-12 h-12">
         <img src="assets/images/gradient-logo-animation-1.gif"/>
     </div>
 </div>
