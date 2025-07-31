@@ -522,7 +522,7 @@
                                     <div class="aspect-video bg-muted rounded-lg flex items-center justify-center mb-6">
                                         <div class="text-center">
                                             <video autoplay="" muted="" loop="" playsinline="" class="rounded-3xl shadow-glow border border-border/20 transition-all duration-700 group-hover:shadow-hover group-hover:scale-[1.02]" style="width: 642px; height: 361px;">
-                                                <source src="assets/video/Meridiene Animation 001.mp4" type="video/mp4">
+                                                <source src="assets/video/Model your Future.mp4" type="video/mp4">
                                                 Your browser does not support the video tag.
                                             </video>
                                             <!-- <svg class="lucide lucide-play h-16 w-16 text-primary mx-auto mb-4 cursor-pointer hover:scale-110 transition-transform" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -538,10 +538,10 @@
                                         </div>
                                     </div>
                                     <h3 class="text-xl font-semibold mb-2">
-                                        Global Tech Company Case Study
+                                       Model your Future
                                     </h3>
                                     <p class="text-muted-foreground">
-                                        See how a Fortune 500 technology company used Meridiene to successfully navigate a company-wide agile transformation, reducing implementation time by 40% and increasing employee adoption by 65%.
+                                    see how Meridiene lets you design future org structures from scratch or templates, adjust budgets, and simulate impact, all before making a single real-world change
                                     </p>
                                 </div>
                             </div>
@@ -606,33 +606,6 @@
        <!-- Footer end -->
 
         <script>
-            /* ✅ Use Case Menu Toggle Start */
-            const toggleBtn = document.getElementById("usecase-btn");
-            const submenu = document.getElementById("sub_menu_c");
-            
-            toggleBtn.addEventListener("click", function (e) {
-                submenu.classList.toggle("opacity-0");
-                submenu.classList.toggle("invisible");
-                submenu.classList.toggle("-translate-y-2");
-            
-                submenu.classList.toggle("opacity-100");
-                submenu.classList.toggle("visible");
-                submenu.classList.toggle("translate-y-0");
-            });
-            
-            // Outside click logic
-            document.addEventListener("click", function (e) {
-                if (!submenu || !toggleBtn) return;
-            
-                if (submenu.contains(e.target) || toggleBtn.contains(e.target)) return;
-            
-                if (submenu.classList.contains("visible")) {
-                submenu.classList.remove("opacity-100", "visible", "translate-y-0");
-                submenu.classList.add("opacity-0", "invisible", "-translate-y-2");
-                }
-            });
-            /* ✅ Use Case Menu Toggle End */
-            
             
             // ✅ Transformation Scenarios: Card Selection
             const cards = document.querySelectorAll(".card-item_c");
@@ -647,28 +620,6 @@
                 // ✅ Add selection styling to clicked card
                 card.classList.add("bg-primary/5", "rounded-lg", "border");
             });
-            });
-            
-            const header = document.querySelector("nav");
-            
-            window.addEventListener("scroll", () => {
-            if (window.scrollY > 10) {
-              header.classList.add(
-                "bg-background/95",
-                "backdrop-blur-lg",
-                "border-b",
-                "border-border",
-                "shadow-elegant"
-              );
-            } else {
-              header.classList.remove(
-                "bg-background/95",
-                "backdrop-blur-lg",
-                "border-b",
-                "border-border",
-                "shadow-elegant"
-              );
-            }
             });
             
         </script>

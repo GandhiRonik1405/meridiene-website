@@ -247,73 +247,8 @@
         <!-- Footer end -->
 
         <script>
-            const toggleBtn = document.getElementById("usecase-toggle");
-            const submenu = document.getElementById("sub_menu_c");
-            const arrowIcon = document.getElementById("usecase-arrow");
             
-            toggleBtn.addEventListener("click", function () {
-                submenu.classList.toggle("opacity-0");
-                submenu.classList.toggle("invisible");
-                submenu.classList.toggle("-translate-y-2");
-            
-                submenu.classList.toggle("opacity-100");
-                submenu.classList.toggle("visible");
-                submenu.classList.toggle("translate-y-0");
-            
-                // 🔁 Toggle arrow rotation
-                arrowIcon.classList.toggle("rotate-180");
-            });
-            
-            // ✅ Close on outside click
-            document.addEventListener("click", function (e) {
-                if (!submenu || !toggleBtn) return;
-            
-                if (submenu.contains(e.target) || toggleBtn.contains(e.target)) return;
-            
-                if (submenu.classList.contains("visible")) {
-                submenu.classList.remove("opacity-100", "visible", "translate-y-0");
-                submenu.classList.add("opacity-0", "invisible", "-translate-y-2");
-            
-                arrowIcon.classList.remove("rotate-180");
-                }
-            });
-            
-            // Close on outside click
-            document.addEventListener("click", function (e) {
-                if (!submenu || !toggleBtn) return;
-                if (submenu.contains(e.target) || toggleBtn.contains(e.target)) return;
-            
-                if (submenu.classList.contains("visible")) {
-                submenu.classList.remove("opacity-100", "visible", "translate-y-0");
-                submenu.classList.add("opacity-0", "invisible", "-translate-y-2");
-            
-                arrowIcon.innerHTML = "&#9662;"; // ▼ reset on close
-                }
-            });
-            
-            /* ✅ Sticky Header Style on Scroll */
-            const header = document.querySelector("nav");
-            
-            window.addEventListener("scroll", () => {
-              if (window.scrollY > 10) {
-                header.classList.add(
-                  "bg-background/95",
-                  "backdrop-blur-lg",
-                  "border-b",
-                  "border-border",
-                  "shadow-elegant"
-                );
-              } else {
-                header.classList.remove(
-                  "bg-background/95",
-                  "backdrop-blur-lg",
-                  "border-b",
-                  "border-border",
-                  "shadow-elegant"
-                );
-              }
-            });
-            
+           
             document.addEventListener('DOMContentLoaded', () => {
             const tabButtons = document.querySelectorAll('[role="tab"]');
             

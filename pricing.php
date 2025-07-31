@@ -1050,32 +1050,6 @@
          <!-- Footer end -->
 
         <script>
-            /* ✅ Use Case Menu Toggle Start */
-            const toggleBtn = document.getElementById("usecase-btn");
-            const submenu = document.getElementById("sub_menu_c");
-            
-            toggleBtn.addEventListener("click", function (e) {
-                submenu.classList.toggle("opacity-0");
-                submenu.classList.toggle("invisible");
-                submenu.classList.toggle("-translate-y-2");
-            
-                submenu.classList.toggle("opacity-100");
-                submenu.classList.toggle("visible");
-                submenu.classList.toggle("translate-y-0");
-            });
-            
-            // Outside click logic
-            document.addEventListener("click", function (e) {
-                if (!submenu || !toggleBtn) return;
-            
-                if (submenu.contains(e.target) || toggleBtn.contains(e.target)) return;
-            
-                if (submenu.classList.contains("visible")) {
-                submenu.classList.remove("opacity-100", "visible", "translate-y-0");
-                submenu.classList.add("opacity-0", "invisible", "-translate-y-2");
-                }
-            });
-            /* ✅ Use Case Menu Toggle End */
             
             /* ✅ Text Auto Type Effect */
             const phrases = ["Success Path", "Growth Strategy", "AI Advantage"];
@@ -1142,27 +1116,6 @@
             }
             });
             
-            const header = document.querySelector("nav");
-            
-            window.addEventListener("scroll", () => {
-            if (window.scrollY > 10) {
-              header.classList.add(
-                "bg-background/95",
-                "backdrop-blur-lg",
-                "border-b",
-                "border-border",
-                "shadow-elegant"
-              );
-            } else {
-              header.classList.remove(
-                "bg-background/95",
-                "backdrop-blur-lg",
-                "border-b",
-                "border-border",
-                "shadow-elegant"
-              );
-            }
-            });
         </script>
     </body>
 </html>
