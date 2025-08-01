@@ -34,19 +34,46 @@
 </head>
 
 <?php
+$video_urls = [];
 
 if (isset($_COOKIE['contact_form_submitted']) && $_COOKIE['contact_form_submitted'] === 'true') {
+    
+    $video_urls = [
+        'home' => 'assets/video/Meridiene Animation 001.mp4',
+        'organizational' => 'assets/video/Meridiene Animation 001.mp4',
+        'workforce' => 'assets/video/Plan Your Workforce with Foresight.mp4',
+        'aireadiness' => 'assets/video/There is an AI for THIS.mp4',
+        'skillgapone' => 'assets/video/Know Your Resource Spending, But Better.mp4',
+        'skillgaptwo' => 'assets/video/Structure Your Effort.mp4',
 
-$video_urls = [
-    'home' => 'assets/video/Meridiene Animation 001.mp4',
-    'organizational' => 'assets/video/Meridiene Animation 001.mp4',
-    'workforce' => 'assets/video/Plan Your Workforce with Foresight.mp4',
-    'aireadiness' => 'assets/video/There is an AI for THIS.mp4',
-    'skillgapone' => 'assets/video/Know Your Resource Spending, But Better.mp4',
-    'skillgapone' => 'assets/video/Structure Your Effort.mp4',
-
-];
-
+    ];
 }
+?>
+<script>
+    const videoURLs = <?php echo json_encode($video_urls); ?>;
+</script>
 
- ?>
+<script>
+    $(document).ready(function () {
+       
+        if (document.cookie.includes("contact_form_submitted=true")) {
+        
+            if (typeof videoURLs !== 'undefined') {
+                const page = $('source[data-video-id]').data('video-id');
+                const videoUrl = videoURLs[page];
+
+                if (videoUrl) {
+                    // $('#video-trigger').remove();
+                    const $videoSource = $('source[data-video-id="' + page + '"]');
+                    $videoSource.attr('src', videoUrl);
+                    $('#dynamic-video')[0].load();
+                    $('#video-trigger').css('display', 'none');
+                    $('#video-container').show();
+                }
+            }
+        }
+       
+    
+    });
+</script>
+

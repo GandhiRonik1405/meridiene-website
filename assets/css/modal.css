@@ -1,5 +1,5 @@
 /* Button to open the modal */
-.hp-open-modal-button {
+.modal .hp-open-modal-button {
     padding: 1rem 2rem;
     font-size: 1.25rem;
     background-color: #dc3545; /* Red */
