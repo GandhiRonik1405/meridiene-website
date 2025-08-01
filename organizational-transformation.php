@@ -7,9 +7,7 @@
     ?>
     <link rel="stylesheet" href="assets/css/organizational-tr.css" />
     <style>
-        .bg-secondary {
-            background-color: hsl(var(--secondary));
-        }
+        .bg-secondary { background-color: hsl(var(--secondary)); }
     </style>
  <body>
       

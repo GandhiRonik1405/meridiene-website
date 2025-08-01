@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php 
-    $pageTitle = 'Skill Gap Analysis'; 
-    include('header.php') 
-?>
-<style>
-.bg-secondary {
-    background-color: hsl(var(--secondary));
-}
-</style>    
+    <?php 
+        $pageTitle = 'Skill Gap Analysis'; 
+        include('header.php') 
+    ?>
+    <style>
+    .bg-secondary { background-color: hsl(var(--secondary)); }
+    </style>    
     <body>
      
         <div id="root">

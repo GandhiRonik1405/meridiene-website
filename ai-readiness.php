@@ -5,9 +5,7 @@
         include('header.php') 
     ?>
     <link rel="stylesheet" href="assets/css/ai-readiness.css" />
-     
     <body>
-      
         <div id="root">
         <div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events: none;">
             <ol tabindex="-1" class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"></ol>
@@ -543,12 +541,11 @@
             </section>
         </div>
 
-       <!-- Footer start -->
-      <?php include('footer.php') ?>
-       <!-- Footer end -->
+        <!-- Footer start -->
+        <?php include('footer.php') ?>
+        <!-- Footer end -->
 
         <script>
-            
             /* ✅ Tab System for Platform Sidebar */
             const buttons = document.querySelectorAll(".sidebar button");
             const mainPanel = document.getElementById("main-panel");

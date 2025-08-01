@@ -6,35 +6,10 @@
 ?>
     <link rel="stylesheet" href="assets/css/organizational-tr.css" />
     <style>
-        .bg-secondary {
-            background-color: hsl(var(--secondary));
-        }
-         </style>
-
-    <!-- <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Pricing</title>
-        <link rel="icon" type="image/svg+xml" href="assets/images/favicon.ico" />
-        <meta name="description" content="Pricing" />
-        <meta name="author" content="Pricing" />
-        <meta property="og:title" content="meridiene-navigator-blueprint" />
-        <meta property="og:description" content="Pricing" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/473a7f6f-2458-44b1-95c8-4caff523bd8d/id-preview-3eec9659--72a35f65-ccde-4691-bf48-6671fc54cd49.lovable.app-1752472652091.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/473a7f6f-2458-44b1-95c8-4caff523bd8d/id-preview-3eec9659--72a35f65-ccde-4691-bf48-6671fc54cd49.lovable.app-1752472652091.png" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/main_styles.css" />
-        <link rel="stylesheet" href="assets/css/common_style.css" />
-        <script src="assets/js/custom.js"></script>
-    </head> -->
+        .bg-secondary { background-color: hsl(var(--secondary)); }
+    </style>
     <body>
-      
-
         <div id="root">
-
             <!-- Header menu start -->
             <?php include('menu.php') ?>
             <!-- Header menu end -->

@@ -1,4 +1,3 @@
-
 $(document).on('click', '.hp-continue-button:contains("Submit")', function () {          
     var companySize = $('.hp-option-card.selected').data('value');
     var name = $('#yourName').val();
@@ -82,6 +81,5 @@ $(document).on('click', '.hp-continue-button:contains("Submit")', function () {
             $('#responseMsg').html('<div class="text-red-700 bg-red-50 border border-red-300 p-4 rounded">❌ Something went wrong: ' + error + '</div>');
         }
     });
-
 
 });

@@ -1,12 +1,11 @@
 
 const $mainContent = $('.hp-main-content');
-    const $navItems = $('.hp-nav-item');
-    const $formModal = $('#formModal'); // The modal overlay
-    const isInline = $formModal.hasClass('hp-inline-form'); // Check if it's an inline form
+const $navItems = $('.hp-nav-item');
+const $formModal = $('#formModal'); // The modal overlay
+const isInline = $formModal.hasClass('hp-inline-form'); // Check if it's an inline form
 
-    let currentStep = 'company-size'; // Initial step
+let currentStep = 'company-size'; // Initial step
 
-    
 // Function to display a custom message modal (for alerts)
 function showMessageModal(message) {
     const $modalOverlay = $(`
@@ -22,7 +21,6 @@ function showMessageModal(message) {
         $modalOverlay.remove();
     });
 }
-
 
 function openFormModal() {
     if (!isInline) { // Only add 'show' class if it's not an inline form

@@ -112,35 +112,35 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
 
-      // ✅ COunting first image (home page)
+  // ✅ COunting first image (home page)
 
-      function animateCountUp(id, endValue, duration = 2000) {
-        const el = document.getElementById(id);
-        if (!el) return;
-    
-        let start = 0;
-        const startTime = performance.now();
-    
-        function update(currentTime) {
-          const progress = Math.min((currentTime - startTime) / duration, 1);
-          const value = Math.floor(progress * endValue);
-          el.textContent = id === "count-12" ? value : value + "%";
-    
-          if (progress < 1) {
-            requestAnimationFrame(update);
-          }
-        }
-    
+  function animateCountUp(id, endValue, duration = 2000) {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    let start = 0;
+    const startTime = performance.now();
+
+    function update(currentTime) {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      const value = Math.floor(progress * endValue);
+      el.textContent = id === "count-12" ? value : value + "%";
+
+      if (progress < 1) {
         requestAnimationFrame(update);
       }
-    
-      // Run after page is loaded
-      window.addEventListener("DOMContentLoaded", () => {
-        animateCountUp("count-97", 97);       // For 97%
-        animateCountUp("count-12", 12);       // For $12M
-        animateCountUp("count-94", 94); // ✅ add this line
+    }
 
-      });
+    requestAnimationFrame(update);
+  }
+
+  // Run after page is loaded
+  window.addEventListener("DOMContentLoaded", () => {
+    animateCountUp("count-97", 97);       // For 97%
+    animateCountUp("count-12", 12);       // For $12M
+    animateCountUp("count-94", 94); // ✅ add this line
+
+  });
   	
 /* ✅ Loader Hide on Page Load Start */
 

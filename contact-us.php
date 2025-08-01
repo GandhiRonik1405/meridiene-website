@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- Head start -->
- <?php include('header.php') ?>
-<!-- Head end -->
+<?php 
+    $pageTitle = 'Contact Us'; 
+    include('header.php') 
+?>
 <link rel="stylesheet" href="assets/css/about-us.css" />
     <body>
        
@@ -14,7 +15,7 @@
           
             <!-- Header menu start -->
            <?php include('menu.php') ?>
-                <!-- Header menu end -->
+            <!-- Header menu end -->
 
             <!-- Site content start -->
             <br><br>
@@ -248,80 +249,6 @@
                         </div>
                     </div>
 
-                    <!-- <div class="grid lg:grid-cols-3 gap-8">
-                        <div class="lg:col-span-2 animate-scale-in">
-                            <div class="rounded-lg text-card-foreground shadow-[0_4px_20px_hsl(var(--brand-red)/0.08)] border border-border/50 bg-card/80 backdrop-blur-sm hover:shadow-[0_8px_30px_hsl(var(--brand-red)/0.12)] transition-all duration-500">
-                                <div class="p-8">
-                                    <div dir="ltr" data-orientation="horizontal" class="w-full">
-                                        <div role="tablist" aria-orientation="horizontal" class="h-10 items-center justify-center text-muted-foreground grid w-full grid-cols-3 mb-8 bg-muted/20 p-1 rounded-lg" tabindex="0" data-orientation="horizontal" style="outline: none;">
-                                            <button type="button" role="tab" aria-selected="true" aria-controls="radix-:r0:-content-sales" data-state="active" id="radix-:r0:-trigger-sales" class="inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:bg-gradient-to-r data-[state=active]:from-brand-red data-[state=active]:to-brand-purple data-[state=active]:text-white transition-all duration-300 data-[state=active]:shadow-lg" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">Sales Inquiry</button>
-                                          
-                                            
-                                        </div>
-                                        <div data-state="active" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-:r0:-trigger-sales" id="radix-:r0:-content-sales" tabindex="0" class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 animate-fade-in" style="animation-duration: 0s;">
-                                            <form class="space-y-8" method="POST" id="contactForm"> 
-                                                <div class="grid md:grid-cols-2 gap-4">
-                                                    <div class="space-y-2"><label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="firstName">First Name *</label><input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" name="firstName" id="firstName" placeholder="John" required=""></div>
-                                                    <div class="space-y-2"><label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="lastName">Last Name *</label><input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" name="lastName" id="lastName" placeholder="Doe" required=""></div>
-                                                </div>
-                                                <div class="grid md:grid-cols-2 gap-4">
-                                                    <div class="space-y-2"><label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="email">Business Email *</label><input type="email" name="email" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="email" placeholder="john@company.com" required=""></div>
-                                                    <div class="space-y-2"><label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="phone">Phone Number</label><input type="tel" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" name="phone" id="phone" placeholder="+1 (555) 123-4567"></div>
-                                                </div>
-                                                <div class="grid md:grid-cols-2 gap-4">
-                                                    <div class="space-y-2"><label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="company">Company Name *</label><input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" name="company" id="company" placeholder="Your Company" required=""></div>
-                                                    <div class="space-y-2">
-                                                        <label class="text-sm font-medium leading-none" for="companySize">Company Size</label>
-                                                        <select name="companySize" id="companySize" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
-                                                          <option value="">Select company size</option>
-                                                          <option value="Startup (1-10 employees)">Startup (1-10 employees)</option>
-                                                          <option value="Small (11-50 employees)">Small (11-50 employees)</option>
-                                                          <option value="Medium (51-200 employees)">Medium (51-200 employees)</option>
-                                                          <option value="Large (201-1000 employees)">Large (201-1000 employees)</option>
-                                                          <option value="Enterprise (1000+ employees)">Enterprise (1000+ employees)</option>
-                                                        </select>
-                                                      </div>
-                                                      
-                                                
-                                                </div>
-                                                <div class="space-y-2">
-                                                    <label for="useCase" class="text-sm font-medium leading-none">Primary Use Case *</label>
-                                                    <select name="useCase" id="useCase" required
-                                                      class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
-                                                      <option value="">What challenges are you looking to solve?</option>
-                                                      <option value="Strategic Planning AI Integration">Strategic Planning &amp; AI Integration</option>
-                                                      <option value="Operations Optimization">Operations Optimization</option>
-                                                      <option value="Digital Transformation">Digital Transformation</option>
-                                                      <option value="Predictive Analytics">Predictive Analytics</option>
-                                                      <option value="Process Automation">Process Automation</option>
-                                                      <option value="Other">Other</option>
-                                                    </select>
-                                                  </div>
-                                                  
-
-                                                <div class="space-y-2"><label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="message">Tell us about your needs *</label><textarea class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[120px]" name="message" id="message" placeholder="Describe your current challenges and what you hope to achieve with Meridiene..." required=""></textarea></div>
-                                                <div class="g-recaptcha" data-sitekey="6Lc0NhgqAAAAAIvuDy-iRGY6FLzLWk_zHbtzpRk9"></div>
-
-                                                <button type="submit" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-to-r from-brand-red to-brand-purple text-white hover:shadow-[0_6px_20px_hsl(var(--brand-red)/0.4)] hover:scale-105 h-11 rounded-md px-8 w-full" type="submit">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send w-4 h-4 mr-2">
-                                                        <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path>
-                                                        <path d="m21.854 2.147-10.94 10.939"></path>
-                                                    </svg>
-                                                    Request Demo &amp; Consultation
-                                                </button>
-                                                
-                                            </form>
-                                            <br>
-                                            <div id="responseMsg"></div>
-                                        </div>
-                                      
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                       
-                    </div> -->
                 </div>
                 <div class="max-w-4xl mx-auto px-4 py-10">
                     <div class="rounded-lg text-card-foreground shadow-[0_4px_20px_hsl(var(--brand-red)/0.08)] border border-border/50 bg-card/80 backdrop-blur-sm hover:shadow-[0_8px_30px_hsl(var(--brand-red)/0.12)] transition-all duration-500 animate-fade-in-up">
@@ -443,6 +370,7 @@
 <!-- Footer end -->
 
 <script>
+    
     document.addEventListener('DOMContentLoaded', () => {
     const tabButtons = document.querySelectorAll('[role="tab"]');
     

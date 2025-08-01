@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- Head start -->
     <?php include('header.php') ?>
-    <!-- Head end -->
+    <style>
+        .bg-secondary { background-color: hsl(var(--secondary)); }
+    </style>
     <body>
-        <style>
-        .bg-secondary {
-            background-color: hsl(var(--secondary));
-        }
-         </style>
         <div id="root">
             <div aria-label="Notifications (F8)" role="region" style="pointer-events: none;" tabindex="-1">
                 <ol class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]" tabindex="-1">

@@ -26,7 +26,7 @@ $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
 $verify            = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$recaptchaSecret}&response={$recaptchaResponse}");
 $response          = json_decode($verify);
 
-// if ($response && $response->success) {
+if ($response && $response->success) {
     try {
         // ---------- Send to Admin ----------
         $mail = new PHPMailer(true);
@@ -113,12 +113,12 @@ $response          = json_decode($verify);
         ]);
     }
 
-// } else {
-//     echo json_encode([
-//         'status' => 'recaptcha_failed',
-//         'message' => 'Please verify the CAPTCHA and try again.'
-//     ]);
-// }
+} else {
+    echo json_encode([
+        'status' => 'recaptcha_failed',
+        'message' => 'Please verify the CAPTCHA and try again.'
+    ]);
+}
 
 exit;
 ?>

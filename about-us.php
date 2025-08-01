@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-    
+<html lang="en"> 
  <?php 
     $pageTitle = 'About Us'; 
     include('header.php') 

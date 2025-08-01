@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php 
+    <?php 
         $pageTitle = 'Strategic Workforce Planning'; 
         include('header.php') 
     ?>
-    
     <link rel="stylesheet" href="assets/css/organizational-tr.css" />
     <link rel="stylesheet" href="assets/css/workforce-planning.css" />
     <style>
-        .bg-secondary {
-            background-color: hsl(var(--secondary));
-        }
+        .bg-secondary { background-color: hsl(var(--secondary)); }
      </style>
     <body>
       
