@@ -154,29 +154,43 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="relative animate-scale-in">
-                                    <div class="" style="transform: translateY(0px);">
-                                        <div class="relative group">
-                                            <video autoplay muted loop playsinline class="rounded-3xl shadow-glow border border-border/20 transition-all duration-700 group-hover:shadow-hover group-hover:scale-[1.02]" style="width: 642px; height: 361px;">
-                                                <source src="assets/video/Meridiene Animation 001.mp4" type="video/mp4">
-                                                Your browser does not support the video tag.
-                                            </video>
-                                            <div class="absolute inset-0 bg-gradient-primary opacity-5 rounded-3xl group-hover:opacity-10 transition-opacity duration-700"></div>
-                                            <div class="absolute -top-4 -right-4 bg-background/90 backdrop-blur-sm border border-border rounded-xl p-4 shadow-elegant animate-bounce-gentle">
-                                                <div class="text-sm text-muted-foreground">AI Insights</div>
-                                                <div class="text-xl font-bold text-primary">
-                                                    <span class="animate-count-up" id="count-97">97%</span>
-                                                </div>
+                               <!-- THUMBNAIL BLOCK -->
+                            <div class="relative group w-fit cursor-pointer" id="video-trigger" >
+                                <img src="assets/images/download.jpeg" alt="Video Thumbnail" class="rounded-3xl shadow-glow border border-border/20 transition-all duration-500 group-hover:shadow-hover group-hover:scale-[1.02]" style="width: 642px; height: 361px; object-fit: cover;" />
+
+                                <!-- Play Button Overlay -->
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <button class="bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-4 shadow-md transition hp-open-modal-button">▶️</button>
+                                </div>
+                            </div>
+
+                            <!-- VIDEO BLOCK -->
+                            <div id="video-container" class="relative animate-scale-in" style="display: none;">
+                                <div style="transform: translateY(0px);">
+                                    <div class="relative group">
+                                        <video id="dynamic-video" autoplay muted loop playsinline class="rounded-3xl shadow-glow border border-border/20 transition-all duration-700 group-hover:shadow-hover group-hover:scale-[1.02]" style="width: 642px; height: 361px;">
+                                            <source id="video-source" src="" data-video-id="home" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+
+                                        <div class="absolute inset-0 bg-gradient-primary opacity-5 rounded-3xl group-hover:opacity-10 transition-opacity duration-700"></div>
+
+                                        <div class="absolute -top-4 -right-4 bg-background/90 backdrop-blur-sm border border-border rounded-xl p-4 shadow-elegant animate-bounce-gentle">
+                                            <div class="text-sm text-muted-foreground">AI Insights</div>
+                                            <div class="text-xl font-bold text-primary">
+                                                <span class="animate-count-up" id="count-97">97%</span>
                                             </div>
-                                            <div class="absolute -bottom-4 -left-4 bg-background/90 backdrop-blur-sm border border-border rounded-xl p-4 shadow-elegant animate-bounce-gentle" style="animation-delay: 1s;">
-                                                <div class="text-sm text-muted-foreground">Cost Savings</div>
-                                                <div class="text-xl font-bold text-primary">
-                                                    $<span class="animate-count-up" id="count-12">12</span>M
-                                                </div>
-                                            </div>
+                                        </div>
+
+                                        <div class="absolute -bottom-4 -left-4 bg-background/90 backdrop-blur-sm border border-border rounded-xl p-4 shadow-elegant animate-bounce-gentle" style="animation-delay: 1s;">
+                                            <div class="text-sm text-muted-foreground">Cost Savings</div>
+                                            <div class="text-xl font-bold text-primary">$<span class="animate-count-up" id="count-12">12</span>M</div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                               
+                                
                             </div>
                         </div>
                     </section>
@@ -924,236 +938,11 @@
                         </div>
                     </section>
                 <!-- Site content end -->
-
-                <div id="formModal" class="hp-modal-overlay">
-                    <div class="hp-form-container">
-                        <div class="hp-sidebar">
-                            <div class="hp-sidebar-header">
-                                <h2>Meridiene</h2>
-                                <p>Organizational Planning Software</p>
-                            </div>
-                            <nav class="hp-sidebar-nav">
-                                <div id="nav-company-size" class="hp-nav-item" data-step="company-size">
-                                    <div class="hp-sidebar-icon"><i class="fas fa-building" data-original-icon="fa-building"></i></div>
-                                    <span>Company Size</span>
-                                </div>
-                                <div id="nav-contact-info" class="hp-nav-item" data-step="contact-information">
-                                    <div class="hp-sidebar-icon"><i class="fas fa-address-book" data-original-icon="fa-address-book"></i></div>
-                                    <span>Contact Information</span>
-                                </div>
-                                <div id="nav-use-cases" class="hp-nav-item" data-step="use-cases">
-                                    <div class="hp-sidebar-icon"><i class="fas fa-lightbulb" data-original-icon="fa-lightbulb"></i></div>
-                                    <span>Use Cases</span>
-                                </div>
-                                <div id="nav-requirements" class="hp-nav-item" data-step="requirements">
-                                    <div class="hp-sidebar-icon"><i class="fas fa-clipboard-list" data-original-icon="fa-clipboard-list"></i></div>
-                                    <span>Requirements</span>
-                                </div>
-                                <div id="nav-final-checklist" class="hp-nav-item" data-step="final-checklist">
-                                    <div class="hp-sidebar-icon"><i class="fas fa-file-invoice" data-original-icon="fa-file-invoice"></i></div>
-                                    <span>Final Checklist</span>
-                                </div>
-                            </nav>
-                            <div></div>
-                        </div>
-            
-                        <div class="hp-main-content">
-                            <div id="company-size-step" class="hp-step-container">
-                                <div class="hp-main-content-header">
-                                    <div>
-                                        <h1>What's your company size? </h1>
-                                        <p>This helps us understand your organizational complexity.</p>
-                                    </div>
-                                    <button type="button" class="hp-close-button" aria-label="Close form">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                                <div class="hp-options-grid">
-                                    <div class="hp-option-card selected" data-value="1000-2000">
-                                        <i class="fas fa-users"></i>
-                                        <h3>1000 - 2000</h3>
-                                        <p>Growing Enterprise</p>
-                                        <i class="fas fa-check-circle hp-selected-icon"></i>
-                                    </div>
-                                    <div class="hp-option-card" data-value="2000-5000">
-                                        <i class="fas fa-building"></i>
-                                        <h3>2000 - 5000</h3>
-                                        <p>Large Corporation</p>
-                                        <i class="fas fa-check-circle hp-selected-icon"></i>
-                                    </div>
-                                    <div class="hp-option-card" data-value="5000-10000">
-                                        <i class="fas fa-briefcase"></i>
-                                        <h3>5000 - 10000</h3>
-                                        <p>Enterprise Scale</p>
-                                        <i class="fas fa-check-circle hp-selected-icon"></i>
-                                    </div>
-                                    <div class="hp-option-card" data-value="10k-plus">
-                                        <i class="fas fa-city"></i>
-                                        <h3>10k or more</h3>
-                                        <p>Global Enterprise</p>
-                                        <i class="fas fa-check-circle hp-selected-icon"></i>
-                                    </div>
-                                </div>
-                                <div class="hp-form-footer">
-                                    <button type="button" class="hp-button hp-button-outline-secondary hp-back-button" disabled>Back</button>
-                                    <button type="button" class="hp-button hp-button-danger hp-continue-button inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white font-semibold border-0 rounded-lg px-10 text-lg group hover:scale-105 hover:shadow-hover transition-all duration-500 relative overflow-hidden animate-pulse-glow" disabled>Continue</button>
-                                </div>
-                            </div>
-            
-                            <div id="contact-information-step" class="hp-step-container">
-                                <div class="hp-main-content-header">
-                                    <div>
-                                        <h1>Contact Information</h1>
-                                        <p>Help us personalize our approach to your needs.</p>
-                                    </div>
-                                    <button type="button" class="hp-close-button" aria-label="Close form">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                                <div class="hp-form-fields">
-                                    <div class="hp-form-group">
-                                        <label for="yourName" class="hp-label">Your Name *</label>
-                                        <input type="text" class="hp-form-control" id="yourName" placeholder="John Doe">
-                                    </div>
-                                    <div class="hp-form-group">
-                                        <label for="yourPosition" class="hp-label">Your Position *</label>
-                                        <input type="text" class="hp-form-control" id="yourPosition" placeholder="HR Director">
-                                    </div>
-                                    <div class="hp-form-group hp-full-width">
-                                        <label for="companyName" class="hp-label">Company Name *</label>
-                                        <input type="text" class="hp-form-control" id="companyName" placeholder="Acme Corporation">
-                                    </div>
-                                    <div class="hp-form-group">
-                                        <label for="companyEmail" class="hp-label">Company Email *</label>
-                                        <input type="email" class="hp-form-control" id="companyEmail" placeholder="john@acme.com">
-                                    </div>
-                                    <div class="hp-form-group">
-                                        <label for="phoneNumber" class="hp-label">Phone Number</label>
-                                        <input type="tel" class="hp-form-control" id="phoneNumber" placeholder="+1 (555) 123-4567">
-                                    </div>
-                                </div>
-                                <div class="hp-form-footer">
-                                    <button type="button" class="hp-button hp-button-outline-secondary hp-back-button">Back</button>
-                                    <button type="button" class="hp-button hp-button-danger hp-continue-button inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white font-semibold border-0 rounded-lg px-10 text-lg group hover:scale-105 hover:shadow-hover transition-all duration-500 relative overflow-hidden animate-pulse-glow" disabled>Continue</button>
-                                </div>
-                            </div>
-            
-                            <div id="use-cases-step" class="hp-step-container">
-                                <div class="hp-main-content-header">
-                                    <div>
-                                        <h1>Use Cases</h1>
-                                        <p>Select the areas you might be interested in exploring.</p>
-                                    </div>
-                                    <button type="button" class="hp-close-button" aria-label="Close form">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                                <div class="hp-use-cases-grid">
-                                    <label class="hp-use-case-card">
-                                        <input type="checkbox" name="useCase" value="strategic_workforce_planning">
-                                        <span>Strategic workforce planning</span>
-                                    </label>
-                                    <label class="hp-use-case-card">
-                                        <input type="checkbox" name="useCase" value="org_design">
-                                        <span>Org design</span>
-                                    </label>
-                                    <label class="hp-use-case-card">
-                                        <input type="checkbox" name="useCase" value="org_transformation">
-                                        <span>Org transformation</span>
-                                    </label>
-                                    <label class="hp-use-case-card">
-                                        <input type="checkbox" name="useCase" value="current_state_analysis">
-                                        <span>Current state analysis</span>
-                                    </label>
-                                    <label class="hp-use-case-card">
-                                        <input type="checkbox" name="useCase" value="activity_analysis">
-                                        <span>Activity analysis</span>
-                                    </label>
-                                    <label class="hp-use-case-card">
-                                        <input type="checkbox" name="useCase" value="organizational_survey">
-                                        <span>Organizational Survey</span>
-                                    </label>
-                                </div>
-                                <div class="hp-form-footer">
-                                    <button type="button" class="hp-button hp-button-outline-secondary hp-back-button">Back</button>
-                                    <button type="button" class="hp-button hp-button-danger hp-continue-button inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white font-semibold border-0 rounded-lg px-10 text-lg group hover:scale-105 hover:shadow-hover transition-all duration-500 relative overflow-hidden animate-pulse-glow" disabled>Continue</button>
-                                </div>
-                            </div>
-            
-                            <div id="requirements-step" class="hp-step-container">
-                                <div class="hp-main-content-header">
-                                    <div>
-                                        <h1>Define Your Requirements</h1>
-                                        <p>Help us understand your specific challenges and what you're looking for.</p>
-                                    </div>
-                                    <button type="button" class="hp-close-button" aria-label="Close form">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                                <div class="hp-form-fields">
-                                    <div class="hp-form-group hp-full-width">
-                                        <label for="problemsFacing" class="hp-label">What problems is your organization facing? *</label>
-                                        <textarea class="hp-form-control" id="problemsFacing" rows="5" placeholder="Describe the organizational challenges you're experiencing..."></textarea>
-                                    </div>
-                                    <div class="hp-form-group hp-full-width">
-                                        <label for="toolRequirements" class="hp-label">What are you looking for in an organizational planning tool? *</label>
-                                        <textarea class="hp-form-control" id="toolRequirements" rows="5" placeholder="Tell us about your requirements, expectations, and desired outcomes..."></textarea>
-                                    </div>
-                                </div><br>
-                                <div class="g-recaptcha" data-sitekey="6Lc0NhgqAAAAAIvuDy-iRGY6FLzLWk_zHbtzpRk9"></div>
-                                <br>
-                                <div id="responseMsg"></div>
-                                <div class="hp-form-footer">
-                                    <button type="button" class="hp-button hp-button-outline-secondary hp-back-button">Back</button>
-                                    <!-- <button type="button" class="hp-continue-button">Submit</button> -->
-
-                                     <button type="button" class="hp-button hp-button-danger hp-continue-button inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white font-semibold border-0 rounded-lg px-10 text-lg group hover:scale-105 hover:shadow-hover transition-all duration-500 relative overflow-hidden animate-pulse-glow" disabled>Submit</button> 
-                                </div>
-                            </div>
-            
-                            <div id="final-checklist-step" class="hp-step-container">
-                                <div class="hp-main-content-header">
-                                    <div></div>
-                                    <button type="button" class="hp-close-button" aria-label="Close form">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                                <div class="hp-thank-you-content">
-                                    <div class="hp-checkmark-circle">
-                                        <i class="fas fa-check"></i>
-                                    </div>
-                                    <h1>Thank you for choosing Meridiene!</h1>
-                                    <p>Your interest has been recorded and we will soon be in touch. An email will find you with meeting details.</p>
-            
-                                    <div class="hp-info-card">
-                                        <div class="hp-icon-wrapper">
-                                            <i class="fas fa-clock"></i>
-                                            <h2>Time required</h2>
-                                        </div>
-                                        <p>We'll schedule a 30-45 minute consultation</p>
-                                    </div>
-            
-                                    <div class="hp-info-card">
-                                        <div class="hp-icon-wrapper">
-                                            <i class="fas fa-map-marker-alt"></i>
-                                            <h2>Have questions?</h2>
-                                        </div>
-                                        <p>Contact us at <a href="mailto:contact@meridiene.com">contact@meridiene.com</a></p>
-                                    </div>
-                                </div>
-                                <div class="hp-form-footer hp-text-center-footer">
-                                    <button type="button" class="hp-button hp-button-danger hp-close-form-button">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+ 
         </div>
         <!-- Footer start -->
             <?php include('footer.php') ?>
        <!-- Footer end -->
-        <script src="assets/js/modal.js"></script>
        <script>
 
         /* ✅ Tab System for Platform Sidebar */
@@ -1238,71 +1027,7 @@
         }
 
         document.addEventListener("DOMContentLoaded", checkCookieConsent);
-        
-        $(document).on('click', '.hp-continue-button:contains("Submit")', function () {          
-            var companySize = $('.hp-option-card.selected').data('value');
-            var name = $('#yourName').val();
-            var position = $('#yourPosition').val();
-            var company = $('#companyName').val();
-            var email = $('#companyEmail').val();
-            var phone = $('#phoneNumber').val();
-            var useCases = [];
-            $('input[name="useCase"]:checked').each(function () {
-                useCases.push($(this).val());
-            });
-
-            // Requirements
-            var problems = $('#problemsFacing').val();
-            var tools = $('#toolRequirements').val();
-
-            // Basic validation (optional)
-            if (!name || !position || !company || !email || !problems || !tools) {
-                alert("Please fill all required fields.");
-                return;
-            }
-
-            var formData = {
-                companySize: companySize,
-                name: name,
-                position: position,
-                company: company,
-                email: email,
-                phone: phone,
-                useCases: useCases,
-                problems: problems,
-                tools: tools
-            };
-
-            $.ajax({
-                type: "POST",
-                url: "send-mail.php", // replace with your actual endpoint
-                data: formData,
-                dataType: 'json', 
-        
-                success: function (response) {
-                    let $msgBox = $('#responseMsg');
-                    if (response.status === 'success') {
-                        
-                        $msgBox.html('<div class="text-green-700 bg-green-50 border border-green-300 p-4 rounded">✅ ' + response.message + '</div>');
-                        renderStep('final-checklist'); 
-
-                        grecaptcha.reset(); 
-                    } else if (response.status === 'recaptcha_failed') {
-                        $msgBox.html('<div class="text-yellow-700 bg-yellow-50 border border-yellow-300 p-4 rounded">⚠️ ' + response.message + '</div>');
-                        console.warn('Form failed:', res.message);
-
-                    } else {
-                        $msgBox.html('<div class="text-red-700 bg-red-50 border border-red-300 p-4 rounded">❌ ' + response.message + '</div>');
-                    }
-                  
-                },
-                    error: function(xhr, status, error) {
-                    $('#responseMsg').html('<div class="text-red-700 bg-red-50 border border-red-300 p-4 rounded">❌ Something went wrong: ' + error + '</div>');
-                    }
-            });
-
-        });
-
+    
 </script>
 
     </body>

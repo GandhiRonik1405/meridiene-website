@@ -29,4 +29,24 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="assets/js/custom.js"></script>
+    <script src="assets/js/send-mail.js"></script>
+
 </head>
+
+<?php
+
+if (isset($_COOKIE['contact_form_submitted']) && $_COOKIE['contact_form_submitted'] === 'true') {
+
+$video_urls = [
+    'home' => 'assets/video/Meridiene Animation 001.mp4',
+    'organizational' => 'assets/video/Meridiene Animation 001.mp4',
+    'workforce' => 'assets/video/Plan Your Workforce with Foresight.mp4',
+    'aireadiness' => 'assets/video/There is an AI for THIS.mp4',
+    'skillgapone' => 'assets/video/Know Your Resource Spending, But Better.mp4',
+    'skillgapone' => 'assets/video/Structure Your Effort.mp4',
+
+];
+
+}
+
+ ?>

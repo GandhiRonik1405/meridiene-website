@@ -224,7 +224,3 @@ tab.addEventListener("click", () => {
 });
 });
 
-
-      
-       
-          

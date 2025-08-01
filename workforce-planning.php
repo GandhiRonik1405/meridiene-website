@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- 1. Character Set and Viewport -->
-        <meta charset="UTF-8" />
+              <!-- Head start -->
+    <?php include('header.php') ?>
+    <link rel="stylesheet" href="assets/css/organizational-tr.css" />
+    <link rel="stylesheet" href="assets/css/workforce-planning.css" />
+    <style>
+        .bg-secondary {
+            background-color: hsl(var(--secondary));
+        }
+         </style>
+        <!-- <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Strategic Workforce Planning</title>
-        <!-- 2. Favicon -->
         <link rel="icon" type="image/svg+xml" href="assets/images/favicon.ico" />
-        <!-- 3. Meta Info -->
         <meta name="description" content="Strategic Workforce Planning" />
         <meta name="author" content="Strategic Workforce Planning" />
-        <!-- 4. Open Graph (for social sharing) -->
         <meta property="og:title" content="Strategic Workforce Planning" />
         <meta property="og:description" content="Strategic Workforce Planning" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/473a7f6f-2458-44b1-95c8-4caff523bd8d/id-preview-3eec9659--72a35f65-ccde-4691-bf48-6671fc54cd49.lovable.app-1752472652091.png" />
-        <!-- 5. Twitter Card -->
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/473a7f6f-2458-44b1-95c8-4caff523bd8d/id-preview-3eec9659--72a35f65-ccde-4691-bf48-6671fc54cd49.lovable.app-1752472652091.png" />
-        <!-- 6. External Stylesheets -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/main_styles.css" />
@@ -26,7 +29,8 @@
         <link rel="stylesheet" href="assets/css/organizational-tr.css" />
         <link rel="stylesheet" href="assets/css/workforce-planning.css" />
         <script src="assets/js/custom.js"></script>
-    </head>
+    </head> -->
+
     <body>
       
         <div id="root">
@@ -655,7 +659,7 @@
                                     </div>
                                 </div>
                                 <div class="mt-8 space-y-4">
-                                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white hover:shadow-glow hover:scale-[1.02] font-semibold border-0 h-12 rounded-lg px-8 text-base group">
+                                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white hover:shadow-glow hover:scale-[1.02] font-semibold border-0 h-12 rounded-lg px-8 text-base group hp-open-modal-button">
                                         <svg class="lucide lucide-play mr-2 h-5 w-5 group-hover:scale-110 transition-transform" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                             <polygon points="6 3 20 12 6 21 6 3">
                                             </polygon>
@@ -671,25 +675,24 @@
                                    
                                 </div>
                             </div>
-                            <div class="relative">
-                                <div class="rounded-lg border bg-card text-card-foreground shadow-sm bg-gradient-to-br from-card to-card/50 shadow-glow">
+                            <div class="relative group w-fit cursor-pointer" id="video-trigger" >
+                                <img src="assets/images/download.jpeg" alt="Video Thumbnail" class="rounded-3xl shadow-glow border border-border/20 transition-all duration-500 group-hover:shadow-hover group-hover:scale-[1.02]" style="width: 642px; height: 361px; object-fit: cover;" />
+
+                                <!-- Play Button Overlay -->
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <button class="bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-4 shadow-md transition hp-open-modal-button">▶️</button>
+                                </div>
+                            </div>
+                            <div class="relative" id="video-container" class="relative animate-scale-in" style="display: none;">
+                            <div class="rounded-lg border bg-card text-card-foreground shadow-sm bg-gradient-to-br from-card to-card/50 shadow-glow">
                                     <div class="p-8">
                                         <div class="aspect-video bg-muted rounded-lg flex items-center justify-center mb-6">
                                             <div class="text-center">
-                                                <video autoplay="" muted="" loop="" playsinline="" class="rounded-3xl shadow-glow border border-border/20 transition-all duration-700 group-hover:shadow-hover group-hover:scale-[1.02]" style="width: 642px; height: 361px;">
-                                                    <source src="assets/video/Plan Your Workforce with Foresight.mp4" type="video/mp4">
-                                                    Your browser does not support the video tag.
-                                                </video>
-                                                <!-- <svg class="lucide lucide-play h-16 w-16 text-primary mx-auto mb-4 cursor-pointer hover:scale-110 transition-transform" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                    <polygon points="6 3 20 12 6 21 6 3">
-                                                    </polygon>
-                                                    </svg>
-                                                    <p class="text-muted-foreground">
-                                                    Interactive SWP Demo
-                                                    </p>
-                                                    <p class="text-sm text-muted-foreground">
-                                                    See assumption-based planning in action
-                                                    </p> -->
+                                            <video id="dynamic-video" autoplay muted loop playsinline class="rounded-3xl shadow-glow border border-border/20 transition-all duration-700 group-hover:shadow-hover group-hover:scale-[1.02]" style="width: 642px; height: 361px;">
+                                                 <source id="video-source" src="" data-video-id="workforce" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                              </video>
+                                         
                                             </div>
                                         </div>
                                         <h3 class="text-xl font-semibold mb-2">
@@ -728,7 +731,7 @@
                             See exactly how Meridiene's AI can solve your specific workforce challenges. Book a personalized demo with one of our strategists today.
                         </p>
                         <div class="space-y-6">
-                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-14 rounded-lg group hover:scale-110 hover:shadow-hover transition-all duration-500 text-lg px-12 py-6 animate-bounce-gentle relative overflow-hidden">
+                            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-14 rounded-lg group hover:scale-110 hover:shadow-hover transition-all duration-500 text-lg px-12 py-6 animate-bounce-gentle relative overflow-hidden hp-open-modal-button">
                                 <div class="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-500">
                                 </div>
                                 <svg class="lucide lucide-eye mr-3 h-6 w-6 group-hover:rotate-12 transition-transform duration-300" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">

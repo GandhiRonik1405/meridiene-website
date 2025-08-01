@@ -39,7 +39,7 @@ if ($response && $response->success) {
         $mail->Port       = MAIL_PORT;
 
         $mail->setFrom(MAIL_USERNAME, MAIL_FROM_NAME);
-        $mail->addAddress(MAIL_TO);
+        $mail->addAddress($email);
 
         $mail->isHTML(true);
         $mail->Subject = 'Thank You for Contacting Meridiene';
@@ -66,7 +66,7 @@ if ($response && $response->success) {
         $userMail->Port       = MAIL_PORT;
 
         $userMail->setFrom(MAIL_USERNAME, MAIL_FROM_NAME);
-        $userMail->addAddress($email); 
+        $userMail->addAddress(MAIL_TO); 
 
         $userMail->isHTML(true);
         $userMail->Subject = 'Thank You from Meridiene';
@@ -79,9 +79,21 @@ if ($response && $response->success) {
         $userMail->Body = $thankYouHtml;
         $userMail->send();
 
+        $video_urls = [
+            'home' => 'assets/video/Meridiene Animation 001.mp4',
+            'organizational' => 'assets/video/Meridiene Animation 001.mp4',
+            'workforce' => 'assets/video/Plan Your Workforce with Foresight.mp4',
+            'aireadiness' => 'assets/video/There is an AI for THIS.mp4',
+            'skillgapone' => 'assets/video/Know Your Resource Spending, But Better.mp4',
+            'skillgaptwo' => 'assets/video/Structure Your Effort.mp4',
+
+        ];
+
         echo json_encode([
             'status' => 'success',
-            'message' => 'Thank you for reaching out to us. A confirmation email has also been sent.'
+            'message' => 'Thank you for reaching out to us. A confirmation email has also been sent.',
+            'video_url' => $video_urls
+
         ]);
     } catch (Exception $e) {
         echo json_encode([

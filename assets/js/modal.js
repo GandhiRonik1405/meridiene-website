@@ -27,6 +27,7 @@ function showMessageModal(message) {
 function openFormModal() {
     if (!isInline) { // Only add 'show' class if it's not an inline form
         $formModal.addClass('show');
+        
     }
     renderStep('company-size'); // Always start at the first step when opening
 }

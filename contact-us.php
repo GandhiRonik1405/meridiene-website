@@ -1,36 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- 1. Character Set and Viewport -->
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>meridiene-navigator-blueprint</title>
-        <!-- 2. Favicon -->
-        <link rel="icon" type="image/svg+xml" href="assets/images/favicon.ico" />
-        <!-- 3. Meta Info -->
-        <meta name="description" content="Lovable Generated Project" />
-        <meta name="author" content="Lovable" />
-        <!-- 4. Open Graph (for social sharing) -->
-        <meta property="og:title" content="meridiene-navigator-blueprint" />
-        <meta property="og:description" content="Lovable Generated Project" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/473a7f6f-2458-44b1-95c8-4caff523bd8d/id-preview-3eec9659--72a35f65-ccde-4691-bf48-6671fc54cd49.lovable.app-1752472652091.png" />
-        <!-- 5. Twitter Card -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@lovable_dev" />
-        <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/473a7f6f-2458-44b1-95c8-4caff523bd8d/id-preview-3eec9659--72a35f65-ccde-4691-bf48-6671fc54cd49.lovable.app-1752472652091.png" />
-        <!-- 6. External Stylesheets -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/main_styles.css" />
-        <link rel="stylesheet" href="assets/css/modal.css" />
-        <link rel="stylesheet" href="assets/css/about-us.css" />
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-        <script src="assets/js/custom.js"></script>
-        <script src="assets/js/modal.js"></script>
-
-    </head>
+    <!-- Head start -->
+ <?php include('header.php') ?>
+<!-- Head end -->
+<link rel="stylesheet" href="assets/css/about-us.css" />
     <body>
        
         <div id="root">
@@ -491,73 +464,7 @@
             });
         </script>
     
-        <script>
-               $(document).on('click', '.hp-continue-button:contains("Submit")', function () {          
-            var companySize = $('.hp-option-card.selected').data('value');
-            var name = $('#yourName').val();
-            var position = $('#yourPosition').val();
-            var company = $('#companyName').val();
-            var email = $('#companyEmail').val();
-            var phone = $('#phoneNumber').val();
-            var useCases = [];
-            $('input[name="useCase"]:checked').each(function () {
-                useCases.push($(this).val());
-            });
 
-            // Requirements
-            var problems = $('#problemsFacing').val();
-            var tools = $('#toolRequirements').val();
-
-            // Basic validation (optional)
-            if (!name || !position || !company || !email || !problems || !tools) {
-                alert("Please fill all required fields.");
-                return;
-            }
-
-            var formData = {
-                companySize: companySize,
-                name: name,
-                position: position,
-                company: company,
-                email: email,
-                phone: phone,
-                useCases: useCases,
-                problems: problems,
-                tools: tools
-            };
-
-            $.ajax({
-                type: "POST",
-                url: "send-mail.php", // replace with your actual endpoint
-                data: formData,
-                dataType: 'json', 
-        
-                success: function (response) {
-                    let $msgBox = $('#responseMsg');
-                    if (response.status === 'success') {
-                        
-                        $msgBox.html('<div class="text-green-700 bg-green-50 border border-green-300 p-4 rounded">✅ ' + response.message + '</div>');
-                        renderStep('final-checklist'); 
-
-                        grecaptcha.reset(); 
-                    } else if (response.status === 'recaptcha_failed') {
-                        $msgBox.html('<div class="text-yellow-700 bg-yellow-50 border border-yellow-300 p-4 rounded">⚠️ ' + response.message + '</div>');
-                        console.warn('Form failed:', res.message);
-
-                    } else {
-                        $msgBox.html('<div class="text-red-700 bg-red-50 border border-red-300 p-4 rounded">❌ ' + response.message + '</div>');
-                    }
-                  
-                },
-                    error: function(xhr, status, error) {
-                    $('#responseMsg').html('<div class="text-red-700 bg-red-50 border border-red-300 p-4 rounded">❌ Something went wrong: ' + error + '</div>');
-                    }
-            });
-
-        });
-         
-        </script>
-  
   <script>
     function showMessageModal(message) {
       const $modalOverlay = $(`
