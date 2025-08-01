@@ -151,27 +151,27 @@
                                     </div>
                                     <div class="hp-use-cases-grid">
                                         <label class="hp-use-case-card">
-                                            <input type="checkbox" name="useCase" value="strategic_workforce_planning">
+                                            <input type="checkbox" name="useCase" value="Strategic workforce planning">
                                             <span>Strategic workforce planning</span>
                                         </label>
                                         <label class="hp-use-case-card">
-                                            <input type="checkbox" name="useCase" value="org_design">
+                                            <input type="checkbox" name="useCase" value="Org design">
                                             <span>Org design</span>
                                         </label>
                                         <label class="hp-use-case-card">
-                                            <input type="checkbox" name="useCase" value="org_transformation">
+                                            <input type="checkbox" name="useCase" value="Org transformation">
                                             <span>Org transformation</span>
                                         </label>
                                         <label class="hp-use-case-card">
-                                            <input type="checkbox" name="useCase" value="current_state_analysis">
+                                            <input type="checkbox" name="useCase" value="Current state analysis">
                                             <span>Current state analysis</span>
                                         </label>
                                         <label class="hp-use-case-card">
-                                            <input type="checkbox" name="useCase" value="activity_analysis">
+                                            <input type="checkbox" name="useCase" value="Activity analysis">
                                             <span>Activity analysis</span>
                                         </label>
                                         <label class="hp-use-case-card">
-                                            <input type="checkbox" name="useCase" value="organizational_survey">
+                                            <input type="checkbox" name="useCase" value="Organizational Survey">
                                             <span>Organizational Survey</span>
                                         </label>
                                     </div>

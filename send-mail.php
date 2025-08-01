@@ -72,10 +72,20 @@ $response          = json_decode($verify);
         $userMail->Subject = 'Thank You from Meridiene';
 
         ob_start();
-        include 'email-thankyou.php'; 
-        $thankYouHtml = ob_get_clean();
-        $thankYouHtml = str_replace('{{name}}', $name, $thankYouHtml);
+        include 'email-tmp.php'; 
 
+        $thankYouHtml = ob_get_clean();
+        $thankYouHtml = str_replace('{{company}}', $company, $thankYouHtml);
+        $thankYouHtml = str_replace('{{companySize}}', $companySize, $thankYouHtml);
+        $thankYouHtml = str_replace('{{name}}', $name, $thankYouHtml);
+        $thankYouHtml = str_replace('{{email}}', $email, $thankYouHtml);
+        $thankYouHtml = str_replace('{{position}}', $position, $thankYouHtml);
+        // $thankYouHtml = str_replace('{{phone}}', $phone, $thankYouHtml);
+        $thankYouHtml = str_replace('{{problems}}', $problems, $thankYouHtml);
+        $thankYouHtml = str_replace('{{useCases}}', $useCases, $thankYouHtml);
+        $thankYouHtml = str_replace('{{tools}}', $tools, $thankYouHtml);
+
+      
         $userMail->Body = $thankYouHtml;
         $userMail->send();
 
