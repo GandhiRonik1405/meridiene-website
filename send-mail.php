@@ -5,8 +5,8 @@ require __DIR__ . '/config.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-
 header('Content-Type: application/json');
+
 
 $companySize = htmlspecialchars($_POST['companySize'] ?? 'Not Selected');
 $name   = htmlspecialchars($_POST['name'] ?? '');
@@ -16,28 +16,20 @@ $email       = filter_var($_POST['email'] ?? '', FILTER_SANITIZE_EMAIL);
 $phone       = htmlspecialchars($_POST['phone'] ?? '');
 $problems    = htmlspecialchars($_POST['problems'] ?? '');
 $useCases = $_POST['useCases'] ?? 'Not Selected';
-if (is_array($useCases)) {
-    $useCases = implode(', ', array_map('htmlspecialchars', $useCases));
-} else {
-    $useCases = htmlspecialchars($useCases);
-}
+$useCases = is_array($useCases) ? implode(', ', array_map('htmlspecialchars', $useCases)) : htmlspecialchars($useCases);
+
 $tools = $_POST['tools'] ?? '';
-if (is_array($tools)) {
-    $tools = implode(', ', array_map('htmlspecialchars', $tools));
-} else {
-    $tools = htmlspecialchars($tools);
-}
+$tools = is_array($tools) ? implode(', ', array_map('htmlspecialchars', $tools)) : htmlspecialchars($tools);
 
 $recaptchaSecret   = RECAPTCHA_SECRET_KEY;
 $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
+$verify            = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$recaptchaSecret}&response={$recaptchaResponse}");
+$response          = json_decode($verify);
 
-$verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$recaptchaSecret}&response={$recaptchaResponse}");
-$response = json_decode($verify);
-
-//  if ($response && $response->success) {
-    $mail = new PHPMailer(true);
-
+if ($response && $response->success) {
     try {
+        // ---------- Send to Admin ----------
+        $mail = new PHPMailer(true);
         $mail->isSMTP();
         $mail->Host       = MAIL_HOST;
         $mail->SMTPAuth   = true;
@@ -51,22 +43,45 @@ $response = json_decode($verify);
 
         $mail->isHTML(true);
         $mail->Subject = 'Thank You for Contacting Meridiene';
+
         ob_start();
-        include 'email-template.php'; 
+        include 'email-template.php'; // Admin template
         $htmlContent = ob_get_clean();
 
-        $htmlContent = str_replace('{{name}}', htmlspecialchars($name), $htmlContent);
-        $htmlContent = str_replace('{{email}}', htmlspecialchars($email), $htmlContent);
-        $htmlContent = str_replace('{{message}}', nl2br(htmlspecialchars($problems.''.$tools)), $htmlContent);
-    
-        $mail->Body = $htmlContent;
-    
+        $htmlContent = str_replace('{{name}}', $name, $htmlContent);
+        $htmlContent = str_replace('{{email}}', $email, $htmlContent);
+        $htmlContent = str_replace('{{message}}', nl2br($problems . "\n" . $tools), $htmlContent);
 
+        $mail->Body = $htmlContent;
         $mail->send();
+
+        // ---------- Send Thank You Email to User ----------
+        $userMail = new PHPMailer(true);
+        $userMail->isSMTP();
+        $userMail->Host       = MAIL_HOST;
+        $userMail->SMTPAuth   = true;
+        $userMail->Username   = MAIL_USERNAME;
+        $userMail->Password   = MAIL_PASSWORD;
+        $userMail->SMTPSecure = MAIL_ENCRYPTION;
+        $userMail->Port       = MAIL_PORT;
+
+        $userMail->setFrom(MAIL_USERNAME, MAIL_FROM_NAME);
+        $userMail->addAddress($email); 
+
+        $userMail->isHTML(true);
+        $userMail->Subject = 'Thank You from Meridiene';
+
+        ob_start();
+        include 'email-thankyou.php'; 
+        $thankYouHtml = ob_get_clean();
+        $thankYouHtml = str_replace('{{name}}', $name, $thankYouHtml);
+
+        $userMail->Body = $thankYouHtml;
+        $userMail->send();
 
         echo json_encode([
             'status' => 'success',
-            'message' => 'Thank you for reaching out to us. We’ll get back to you shortly.'
+            'message' => 'Thank you for reaching out to us. A confirmation email has also been sent.'
         ]);
     } catch (Exception $e) {
         echo json_encode([
@@ -76,12 +91,12 @@ $response = json_decode($verify);
         ]);
     }
 
-// } else {
-//     echo json_encode([
-//         'status' => 'recaptcha_failed',
-//         'message' => 'Please verify the CAPTCHA and try again.'
-//     ]);
-// }
+} else {
+    echo json_encode([
+        'status' => 'recaptcha_failed',
+        'message' => 'Please verify the CAPTCHA and try again.'
+    ]);
+}
 
 exit;
 ?>
