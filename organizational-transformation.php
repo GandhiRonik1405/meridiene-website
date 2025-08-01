@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-        <!-- Head start -->
-    <?php include('header.php') ?>
+
+    <?php 
+        $pageTitle = 'Organizational Transformation'; 
+        include('header.php') 
+    ?>
     <link rel="stylesheet" href="assets/css/organizational-tr.css" />
     <style>
         .bg-secondary {
             background-color: hsl(var(--secondary));
         }
-         </style>
+    </style>
  <body>
       
         <div id="root" >
@@ -589,21 +592,17 @@
        <?php include('footer.php') ?>
        <!-- Footer end -->
         <script>
-            
-            // ✅ Transformation Scenarios: Card Selection
-            const cards = document.querySelectorAll(".card-item_c");
-            
-            cards.forEach((card) => {
-            card.addEventListener("click", () => {
-                // 🔁 Remove selection styling from all cards
-                cards.forEach((c) => {
-                c.classList.remove("bg-primary/5", "rounded-lg", "border");
-                });
-            
-                // ✅ Add selection styling to clicked card
-                card.classList.add("bg-primary/5", "rounded-lg", "border");
+
+        const cards = document.querySelectorAll(".card-item_c");
+        cards.forEach((card) => {
+        card.addEventListener("click", () => {
+            cards.forEach((c) => {
+            c.classList.remove("bg-primary/5", "rounded-lg", "border");
             });
-            });
+        
+            card.classList.add("bg-primary/5", "rounded-lg", "border");
+        });
+        });
             
         </script>
     </body>

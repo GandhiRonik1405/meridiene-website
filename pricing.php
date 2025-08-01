@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include('header.php') ?>
+<?php 
+    $pageTitle = 'Pricing'; 
+    include('header.php') 
+?>
     <link rel="stylesheet" href="assets/css/organizational-tr.css" />
     <style>
         .bg-secondary {

@@ -1,17 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-
-    <?php include('header.php') ?>
+    <?php 
+        $pageTitle = 'AI Readiness Assessment'; 
+        include('header.php') 
+    ?>
     <link rel="stylesheet" href="assets/css/ai-readiness.css" />
      
-      
-        <script src="assets/js/custom.js"></script>
-       
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    </head>
     <body>
       
         <div id="root">
@@ -505,13 +499,7 @@
                                 </div>
                             </div>
                         </div>
-                      </div>
-                 
-
-                  
-                    
-                   
-                    
+                      </div>                    
                 </div>
             </div>
             <!-- Site content end -->
