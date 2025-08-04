@@ -153,7 +153,7 @@ function renderStep(stepName, $modalElement, $modalNavItems, modalId) {
         $currentStepContainer.find('.hp-form-footer .hp-back-button, .hp-form-footer .hp-continue-button').hide();
         $currentStepContainer.find('.hp-form-footer .hp-close-form-button').show();
     }
-    
+
     // Attach event listeners for THIS specific modal
     attachEventListeners($modalElement, modalId);
 }
@@ -311,16 +311,103 @@ function attachEventListeners($modalElement, modalId) {
 
         checkRequirementsValidity(); // Initial check on load
 
-        $continueButton.on('click', function() {
-            const requirementsData = {
-                problems: $problemsTextarea.val().trim(),
-                toolRequirements: $requirementsTextarea.val().trim()
-            };
-            console.log('Requirements Data:', requirementsData);
-            // Temporarily stop flow here
-            showMessageModal('Requirements submitted! Further steps are currently disabled.');
-            // We explicitly do NOT call renderStep('final-checklist'); here as per your original logic.
-        });
+        // --- IMPORTANT: Submit Button Logic Integration ---
+        // This specific listener for "Submit" needs to be attached here,
+        // within the context of the current modal.
+        if ($continueButton.text().trim() === 'Submit') {
+            $continueButton.on('click', function() {
+                const companySize = $currentStepContainer.find('.hp-option-card.selected').data('value');
+                const name = $currentStepContainer.find('#yourName').val();
+                const position = $currentStepContainer.find('#yourPosition').val();
+                const company = $currentStepContainer.find('#companyName').val();
+                const email = $currentStepContainer.find('#companyEmail').val();
+                const phone = $currentStepContainer.find('#phoneNumber').val();
+                const useCases = [];
+                // It's important to scope this to the current modal's step containers
+                $modalElement.find('input[name="useCase"]:checked').each(function () {
+                    useCases.push($(this).val());
+                });
+
+                // Requirements
+                const problems = $currentStepContainer.find('#problemsFacing').val();
+                const tools = $currentStepContainer.find('#toolRequirements').val();
+
+                // Basic validation
+                if (!name || !position || !company || !email || !problems || !tools) {
+                    showMessageModal("Please fill all required fields.");
+                    return;
+                }
+
+                const formData = {
+                    companySize: companySize,
+                    name: name,
+                    position: position,
+                    company: company,
+                    email: email,
+                    phone: phone,
+                    useCases: useCases,
+                    problems: problems,
+                    tools: tools
+                };
+                $modalElement.find('.loader').removeClass('hidden'); // Scope loader to the current modal
+
+                $.ajax({
+                    type: "POST",
+                    url: "send-mail.php",
+                    data: formData,
+                    dataType: 'json',
+
+                    success: function (response) {
+                        // Scope message box to the current modal's context
+                        let $msgBox = $modalElement.find('#responseMsg');
+
+                        if (response.status === 'success') {
+                            $modalElement.find('.loader').addClass('hidden');
+                            $msgBox.html('<div class="text-green-700 bg-green-50 border border-green-300 p-4 rounded">✅ ' + response.message + '</div>');
+
+                            // Call renderStep for 'final-checklist' with the correct modal context
+                            if (modalId === 'formModal') {
+                                renderStep('final-checklist', $formModal, $formModalNavItems, 'formModal');
+                            } else if (modalId === 'contactModal') {
+                                renderStep('final-checklist', $contactModal, $contactModalNavItems, 'contactModal');
+                            }
+
+                            if (response.send_video === 'send_v_url') {
+                                const d = new Date();
+                                d.setTime(d.getTime() + (7 * 24 * 60 * 60 * 1000));
+                                document.cookie = "contact_form_submitted=true; expires=" + d.toUTCString() + "; path=/";
+
+                                $('#video-trigger').remove(); // This assumes a global video trigger element
+
+                                const page = $('source[data-video-id]').data('video-id'); // e.g., 'home', 'workforce', etc.
+
+                                const videoUrl = response.video_url[page];
+
+                                if (videoUrl) {
+                                    const $videoSource = $('source[data-video-id="' + page + '"]');
+                                    $videoSource.attr('src', videoUrl);
+
+                                    $('#dynamic-video')[0].load();
+                                    $('#video-container').fadeIn();
+                                } else {
+                                    console.warn('No matching video URL found for page:', page);
+                                }
+                            }
+                            grecaptcha.reset(); // Assuming reCAPTCHA is global or handled appropriately
+                        } else if (response.status === 'recaptcha_failed') {
+                            $msgBox.html('<div class="text-yellow-700 bg-yellow-50 border border-yellow-300 p-4 rounded">⚠️ ' + response.message + '</div>');
+                            console.warn('Form failed:', response.message);
+                        } else {
+                            $msgBox.html('<div class="text-red-700 bg-red-50 border border-red-300 p-4 rounded">❌ ' + response.message + '</div>');
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        // Scope message box to the current modal's context
+                        $modalElement.find('#responseMsg').html('<div class="text-red-700 bg-red-50 border border-red-300 p-4 rounded">❌ Something went wrong: ' + error + '</div>');
+                    }
+                });
+            });
+        }
 
         $backButton.on('click', function() {
             console.log('Back button clicked from requirements.');
