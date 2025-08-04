@@ -55,21 +55,26 @@
 
 <script>
     $(document).ready(function () {
-       
-        if (document.cookie.includes("contact_form_submitted=true")) {
-            if (typeof videoURLs !== 'undefined') {
-                const page = $('source[data-video-id]').data('video-id');
-                const videoUrl = videoURLs[page];
-
-                if (videoUrl) {
-                    const $videoSource = $('source[data-video-id="' + page + '"]');
-                    $videoSource.attr('src', videoUrl);
-                    $('#dynamic-video')[0].load();
-                    $('#video-trigger').css('display', 'none');
-                    $('#video-container').show();
-                }
+        function loadVideoForPage(page) {
+            const videoUrl = videoURLs[page];
+            if (videoUrl) {
+                const $videoSource = $('source[data-video-id]');
+                $videoSource.attr('src', videoUrl).attr('data-video-id', page);
+                $('#dynamic-video')[0].load();
+                $('#video-trigger').css('display', 'none');
+                $('#video-container').show();
+            } else {
+                console.warn('No video URL for page:', page);
             }
         }
-    });
-</script>
 
+        // ✅ On page load (if cookie is set)
+        if (document.cookie.includes("contact_form_submitted=true")) {
+            const page = $('source[data-video-id]').data('video-id');
+            loadVideoForPage(page);
+        }         
+    
+    });
+    // $(document).on('click', '.custom_video', function () {
+    // });
+</script>
