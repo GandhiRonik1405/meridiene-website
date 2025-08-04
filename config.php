@@ -13,6 +13,9 @@ define('MAIL_PASSWORD', $_ENV['MAIL_PASSWORD']);
 define('MAIL_ENCRYPTION', $_ENV['MAIL_ENCRYPTION']); // 'ssl'
 define('MAIL_FROM_NAME', $_ENV['MAIL_FROM_NAME']);
 define('MAIL_TO', $_ENV['MAIL_TO']);
+define('MAIL_TO_CC', $_ENV['MAIL_TO_CC']);
+define('BASE_URL', $_ENV['BASE_URL']);
+
 
 define('RECAPTCHA_SITE_KEY', $_ENV['RECAPTCHA_SITE_KEY']);
 define('RECAPTCHA_SECRET_KEY', $_ENV['RECAPTCHA_SECRET_KEY']);

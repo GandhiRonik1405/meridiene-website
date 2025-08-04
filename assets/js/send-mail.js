@@ -42,10 +42,11 @@ $(document).on('click', '.hp-continue-button:contains("Submit")', function () {
             let $msgBox = $('#responseMsg');
     
             if (response.status === 'success') {
-                const d = new Date();
-                d.setTime(d.getTime() + (7 * 24 * 60 * 60 * 1000));
-                document.cookie = "contact_form_submitted=true; expires=" + d.toUTCString() + "; path=/";
-    
+                if (response.send_video === 'send_v_url') {
+                    const d = new Date();
+                    d.setTime(d.getTime() + (7 * 24 * 60 * 60 * 1000));
+                    document.cookie = "contact_form_submitted=true; expires=" + d.toUTCString() + "; path=/";
+                }
                 $msgBox.html('<div class="text-green-700 bg-green-50 border border-green-300 p-4 rounded">✅ ' + response.message + '</div>');
     
                 renderStep('final-checklist');

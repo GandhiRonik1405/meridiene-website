@@ -158,7 +158,7 @@
                     </button>
                 </div>
                 <div class="hp-options-grid">
-                    <div class="hp-option-card selected" data-value="1000-2000">
+                    <div class="hp-option-card" data-value="1000-2000">
                         <i class="fas fa-users"></i>
                         <h3>1000 - 2000</h3>
                         <p>Growing Enterprise</p>
@@ -333,3 +333,18 @@
 </div>
 </div>
 <script src="assets/js/modal.js"></script>
+<script>
+function acceptCookies() {
+    document.getElementById("cookie-banner").style.display = "none";
+    document.cookie = "cookie_consent=accepted; path=/; max-age=" + 60 * 60 * 24 * 30; // 30 days
+}
+
+function checkCookieConsent() {
+    if (!document.cookie.includes("cookie_consent=accepted")) {
+    document.getElementById("cookie-banner").style.display = "flex";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", checkCookieConsent);
+
+</script>

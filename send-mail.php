@@ -68,6 +68,17 @@ $response          = json_decode($verify);
         $userMail->setFrom(MAIL_USERNAME, MAIL_FROM_NAME);
         $userMail->addAddress(MAIL_TO); 
 
+        $ccEmails = explode(',', MAIL_TO_CC);
+        if (!empty(MAIL_TO_CC)) {
+            foreach ($ccEmails as $cc) {
+                $trimmedEmail = trim($cc);
+                if (filter_var($trimmedEmail, FILTER_VALIDATE_EMAIL)) {
+                    $userMail->addCC($trimmedEmail);
+                }
+            }
+        }
+
+
         $userMail->isHTML(true);
         $userMail->Subject = 'New Inquiry Received from Website';
 
@@ -89,6 +100,17 @@ $response          = json_decode($verify);
         $userMail->Body = $thankYouHtml;
         $userMail->send();
 
+        $allowedBrands = ['nakisa', 'agentnoon', 'orgvue', 'q5partners', 'hanelly', 'ingentis'];
+        $domain = substr(strrchr($email, "@"), 1); // e.g., nakisa.com
+        $brand = explode('.', $domain)[0]; // e.g., nakisa
+
+        // Condition check
+        if (in_array(strtolower($brand), $allowedBrands)) {
+            $email_type = "send_nv_url";
+        } else{
+            $email_type = "send_v_url";
+        }
+
         $video_urls = [
             'home' => 'assets/video/Meridiene Animation 001.mp4',
             'organizational' => 'assets/video/Meridiene Animation 001.mp4',
@@ -102,7 +124,8 @@ $response          = json_decode($verify);
         echo json_encode([
             'status' => 'success',
             'message' => 'Thank you for reaching out to us. A confirmation email has also been sent.',
-            'video_url' => $video_urls
+            'video_url' => $video_urls,
+            'send_video' => $email_type
 
         ]);
     } catch (Exception $e) {

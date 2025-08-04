@@ -1011,18 +1011,7 @@
           });
         });
 
-        function acceptCookies() {
-            document.getElementById("cookie-banner").style.display = "none";
-            document.cookie = "cookie_consent=accepted; path=/; max-age=" + 60 * 60 * 24 * 30; // 30 days
-        }
-
-        function checkCookieConsent() {
-            if (!document.cookie.includes("cookie_consent=accepted")) {
-            document.getElementById("cookie-banner").style.display = "flex";
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", checkCookieConsent);
+       
     
 </script>
 
