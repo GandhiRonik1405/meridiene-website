@@ -106,7 +106,7 @@
                                     </svg>
                                     Insights
                                 </button>
-                                <button aria-controls="radix-:r0:-content-reports" aria-selected="false" class="tab-button justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm flex items-center gap-2" id="radix-:r0:-trigger-reports" role="tab" tabindex="-1" type="button">
+                                <button aria-controls="radix-:r0:-content-reports" aria-selected="false" class="tab-button justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm flex items-center gap-2 custom_video" id="radix-:r0:-trigger-reports" role="tab" tabindex="-1" type="button">
                                     <svg class="lucide lucide-file-text h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
                                         <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
@@ -606,7 +606,7 @@
                                                       
                                                     </div>
                                                 </div>
-                                                <div class="relative group w-fit cursor-pointer" id="video-trigger" >
+                                                <div class="relative group w-fit cursor-pointer video-trigger_2" id="video-trigger" >
                                                     <img src="assets/images/download.jpeg" alt="Video Thumbnail" class="rounded-3xl shadow-glow border border-border/20 transition-all duration-500 group-hover:shadow-hover group-hover:scale-[1.02]" style="width: 642px; height: 361px; object-fit: cover;" />
 
                                                     <!-- Play Button Overlay -->
@@ -614,11 +614,11 @@
                                                         <button class="bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-4 shadow-md transition hp-open-modal-button">▶️</button>
                                                     </div>
                                                 </div>
-                                                <div class="relative" id="video-container" class="relative animate-scale-in" style="display: none;">
+                                                <div class="relative video-container_2" id="video-container" class="relative animate-scale-in" style="display: none;">
                                                 <div class="rounded-lg border bg-card text-card-foreground shadow-sm bg-gradient-to-br from-card to-card/50 shadow-glow">
                                                         <div class="p-8">
                                                             <div class="aspect-video bg-muted rounded-lg flex items-center justify-center mb-6">
-                                                                <div class="text-center">
+                                                                <div class="text-center v_custom_2">
                                                                     <video id="dynamic-video" autoplay muted loop playsinline class="rounded-3xl shadow-glow border border-border/20 transition-all duration-700 group-hover:shadow-hover group-hover:scale-[1.02]" style="width: 642px; height: 361px;">
                                                                     <source id="video-source" src="" data-video-id="skillgaptwo" type="video/mp4">
                                                                     Your browser does not support the video tag.

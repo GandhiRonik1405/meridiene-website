@@ -54,7 +54,7 @@
 </script>
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function () {      
         function loadVideoForPage(page) {
             const videoUrl = videoURLs[page];
             if (videoUrl) {
@@ -75,6 +75,24 @@
         }         
     
     });
-    // $(document).on('click', '.custom_video', function () {
-    // });
+    
+    $(document).on('click', '.custom_video', function () {
+        if (document.cookie.includes("contact_form_submitted=true")) {
+
+        $('.video-trigger_2').css('display', 'none');
+        $('.video-container_2').show();
+
+        $('.v_custom_2').empty();
+
+        const newVideoHtml = `
+        <video autoplay muted loop playsinline style="width: 642px; height: 361px;" class="rounded-3xl border shadow-lg">
+            <source src="assets/video/Structure Your Effort.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        `;
+        // 3. Append new video block inside wrapper
+        $('.v_custom_2').append(newVideoHtml);
+
+    }
+    });
 </script>

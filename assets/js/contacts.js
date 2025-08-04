@@ -260,4 +260,17 @@ function showMessageModal(message) {
     openFormModal(); // This will effectively just call renderStep('company-size')
  }
 
+
+ $('.hp-open-modal-button').on('click', function () {
+   $('#formModal').fadeIn(400).css('display', 'flex');
+
+   $('html, body').animate({
+     scrollTop: $('#formModal').offset().top
+   }, 350);
+ });
+
+ $('.hp-close-button, .hp-close-form-button').on('click', function () {
+   $('#formModal').fadeOut(300);
+ });
+
 });
