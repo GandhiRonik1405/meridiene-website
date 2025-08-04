@@ -103,7 +103,7 @@
         </p>
         <div class="footer-links">
             <i class="fas fa-envelope "></i>
-            <a href="mailto:info@meridiene.com" class="text-sm hover:underline">info@meridiene.com</a>
+            <a href="mailto:info@txtech.co" class="text-sm hover:underline">info@txtech.co</a>
         </div>
     </div>
 </footer>
@@ -321,7 +321,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <h2>Have questions?</h2>
                         </div>
-                        <p>Contact us at <a href="mailto:contact@meridiene.com">contact@meridiene.com</a></p>
+                        <p>Contact us at <a href="mailto:info@txtech.co">info@txtech.co</a></p>
                     </div>
                 </div>
                 <div class="hp-form-footer hp-text-center-footer">

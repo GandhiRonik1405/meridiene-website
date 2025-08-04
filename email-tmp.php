@@ -118,11 +118,11 @@
                                 </table>
                             </td>
                             <td align="right" class="footer-email-link" style="padding-top: 0px;">
-                                <a href="mailto:info@meridiene.com" class="footer-email" style="color: #ffffff; text-decoration: none; font-weight: 500; display: flex; justify-content: flex-end; align-items: center; gap: 15px;">
+                                <a href="mailto:info@txtech.co" class="footer-email" style="color: #ffffff; text-decoration: none; font-weight: 500; display: flex; justify-content: flex-end; align-items: center; gap: 15px;">
                                     <div style=" width: 25px; height: 25px; color: #fff; border: 1px solid #fff; border-radius: 100%; display: flex; justify-content: center; align-items: center;">
                                         <i class="fa-solid fa-envelope" style="font-size: 13px;"></i>
                                     </div>
-                                    info@meridiene.com
+                                    info@txtech.co
                                 </a>
                             </td>
                         </tr>

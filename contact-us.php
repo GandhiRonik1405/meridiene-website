@@ -27,7 +27,7 @@
                         <p class="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">Ready to transform your organization with AI-powered solutions? Let's discuss how Meridiene can navigate your business through the complex modern marketplace.</p>
                     </div>
 
-                    <div id="formModal" class="hp-inline-form flex justify-center">
+                    <div id="formModal" class="hp-inline-form flex justify-center formModal_contact">
                         <div class="hp-form-container">
                             <div class="hp-sidebar">
                                 <div class="hp-sidebar-header">
@@ -238,7 +238,7 @@
                                                 <i class="fas fa-map-marker-alt"></i>
                                                 <h2>Have questions?</h2>
                                             </div>
-                                            <p>Contact us at <a href="mailto:contact@meridiene.com">contact@meridiene.com</a></p>
+                                            <p>Contact us at <a href="mailto:info@txtech.co">info@txtech.co                                            </a></p>
                                         </div>
                                     </div>
                                     <div class="hp-form-footer hp-text-center-footer">

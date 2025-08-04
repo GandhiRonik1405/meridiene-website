@@ -63,7 +63,7 @@
                             <div style=" width: 25px; height: 25px; color: #DF5660; border: 1px solid #DF5660; border-radius: 100%; display: flex; justify-content: center; align-items: center;">
                                 <i class="fa-solid fa-envelope" style="font-size: 13px;"></i>
                             </div>
-                            <a href="mailto:support@meridiene.com" class="contact-email" style="color: #000; text-decoration: none; font-weight: 500; word-break: break-all;">support@meridiene.com</a>
+                            <a href="mailto:info@txtech.co" class="contact-email" style="color: #000; text-decoration: none; font-weight: 500; word-break: break-all;">info@txtech.co</a>
                         </div>
 
                         <p style="margin-top: 0; margin-bottom: 32px;">
@@ -105,11 +105,11 @@
                                 </table>
                             </td>
                             <td align="right" class="footer-email-link" style="padding-top: 0px;">
-                                <a href="mailto:info@meridiene.com" class="footer-email" style="color: #ffffff; text-decoration: none; font-weight: 500; display: flex; justify-content: flex-end; align-items: center; gap: 15px;">
+                                <a href="mailto:info@txtech.co" class="footer-email" style="color: #ffffff; text-decoration: none; font-weight: 500; display: flex; justify-content: flex-end; align-items: center; gap: 15px;">
                                     <div style=" width: 25px; height: 25px; color: #fff; border: 1px solid #fff; border-radius: 100%; display: flex; justify-content: center; align-items: center;">
                                         <i class="fa-solid fa-envelope" style="font-size: 13px;"></i>
                                     </div>
-                                    info@meridiene.com
+                                    info@txtech.co
                                 </a>
                             </td>
                         </tr>

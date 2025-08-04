@@ -69,7 +69,7 @@ $response          = json_decode($verify);
         $userMail->addAddress(MAIL_TO); 
 
         $userMail->isHTML(true);
-        $userMail->Subject = 'Thank You from Meridiene';
+        $userMail->Subject = 'New Inquiry Received from Website';
 
         ob_start();
         include 'email-tmp.php'; 
