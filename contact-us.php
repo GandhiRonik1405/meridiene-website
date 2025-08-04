@@ -389,6 +389,6 @@
     });
     });
 </script>
-<script src="assets/js/contacts.js"></script>
+<!-- <script src="assets/js/contacts.js"></script> -->
 </body>
 </html>

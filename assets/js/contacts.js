@@ -261,16 +261,16 @@ function showMessageModal(message) {
  }
 
 
- $('.hp-open-modal-button').on('click', function () {
-   $('#formModal').fadeIn(400).css('display', 'flex');
+//  $('.hp-open-modal-button').on('click', function () {
+//    $('#formModal').fadeIn(400).css('display', 'flex');
 
-   $('html, body').animate({
-     scrollTop: $('#formModal').offset().top
-   }, 350);
- });
+//    $('html, body').animate({
+//      scrollTop: $('#formModal').offset().top
+//    }, 350);
+//  });
 
- $('.hp-close-button, .hp-close-form-button').on('click', function () {
-   $('#formModal').fadeOut(300);
- });
+//  $('.hp-close-button, .hp-close-form-button').on('click', function () {
+//    $('#formModal').fadeOut(300);
+//  });
 
 });
