@@ -33,7 +33,8 @@ $(document).on('click', '.hp-continue-button:contains("Submit")', function () {
         problems: problems,
         tools: tools
     };
-
+    $('.loader').removeClass('hidden');
+    
     $.ajax({
         type: "POST",
         url: "send-mail.php",
