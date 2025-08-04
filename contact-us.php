@@ -71,7 +71,7 @@
                                         </button>
                                     </div>
                                     <div class="hp-options-grid">
-                                        <div class="hp-option-card selected" data-value="1000-2000">
+                                        <div class="hp-option-card" data-value="1000-2000">
                                             <i class="fas fa-users"></i>
                                             <h3>1000 - 2000</h3>
                                             <p>Growing Enterprise</p>
@@ -207,6 +207,9 @@
                                         <div id="responseMsg"></div>
                                     <div class="hp-form-footer">
                                         <button type="button" class="hp-button hp-button-outline-secondary hp-back-button">Back</button>
+                                        <span class="loader hidden w-4 h-4 border-4 border-white border-t-transparent rounded-full " style="width: 50px;">
+                                        <img src="assets/images/form_loder.gif"/>
+                                        </span> 
                                         <button type="button" class="hp-button hp-button-danger hp-continue-button inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white font-semibold border-0 rounded-lg px-10 text-lg group hover:scale-105 hover:shadow-hover transition-all duration-500 relative overflow-hidden animate-pulse-glow" disabled>Submit</button>
                                     </div>
                                 </div>

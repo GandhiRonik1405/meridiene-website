@@ -1,4 +1,6 @@
-$(document).on('click', '.hp-continue-button:contains("Submit")', function () {          
+$(document).on('click', '.hp-continue-button:contains("Submit")', function () {  
+    
+
     var companySize = $('.hp-option-card.selected').data('value');
     var name = $('#yourName').val();
     var position = $('#yourPosition').val();
@@ -42,15 +44,17 @@ $(document).on('click', '.hp-continue-button:contains("Submit")', function () {
             let $msgBox = $('#responseMsg');
     
             if (response.status === 'success') {
-                if (response.send_video === 'send_v_url') {
-                    const d = new Date();
-                    d.setTime(d.getTime() + (7 * 24 * 60 * 60 * 1000));
-                    document.cookie = "contact_form_submitted=true; expires=" + d.toUTCString() + "; path=/";
-                }
+
+                $('.loader').addClass('hidden');
                 $msgBox.html('<div class="text-green-700 bg-green-50 border border-green-300 p-4 rounded">✅ ' + response.message + '</div>');
     
                 renderStep('final-checklist');
-    
+                if (response.send_video === 'send_v_url') {
+                   
+                    const d = new Date();
+                    d.setTime(d.getTime() + (7 * 24 * 60 * 60 * 1000));
+                    document.cookie = "contact_form_submitted=true; expires=" + d.toUTCString() + "; path=/";
+
                 $('#video-trigger').remove();
     
                 const page = $('source[data-video-id]').data('video-id'); // e.g., 'home', 'workforce', etc.
@@ -66,6 +70,8 @@ $(document).on('click', '.hp-continue-button:contains("Submit")', function () {
                 } else {
                     console.warn('No matching video URL found for page:', page);
                 }
+                
+            }
     
                 grecaptcha.reset();
     
