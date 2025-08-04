@@ -22,6 +22,11 @@ function showMessageModal(message) {
     });
 }
 
+// Global variable to store the currently active modal's functions
+// This is a common pattern for scenarios where external code needs to interact
+// with the active instance of a component.
+window.activeFormModal = null;
+
 // Main function to initialize a form modal
 function initializeFormModal($formModalElement) {
     const isInline = $formModalElement.hasClass('hp-inline-form');
@@ -36,6 +41,7 @@ function initializeFormModal($formModalElement) {
             $formModalElement.addClass('show');
         }
         renderStep('company-size');
+        window.activeFormModal = this; // Set the current modal instance as active
     }
 
     function closeFormModal() {
@@ -49,6 +55,7 @@ function initializeFormModal($formModalElement) {
             $navItem.removeClass('active completed');
             $icon.attr('class', 'fas ' + originalIconClass);
         });
+        window.activeFormModal = null; // Clear active modal when closed
     }
 
     function isStepCompleted(navStep, currentStep) {
@@ -229,15 +236,9 @@ function initializeFormModal($formModalElement) {
 
             checkRequirementsValidity();
 
-            $continueButton.on('click', function() {
-                const requirementsData = {
-                    problems: $problemsTextarea.val().trim(),
-                    toolRequirements: $requirementsTextarea.val().trim()
-                };
-                console.log('Requirements Data:', requirementsData);
-                showMessageModal('Requirements submitted! Further steps are currently disabled.');
-                // Do NOT call renderStep('final-checklist');
-            });
+            // The 'Submit' button for requirements step now relies on the global event listener
+            // within send-mail.js. We remove the direct click handler here.
+            // $continueButton.on('click', function() { ... });
 
             $backButton.on('click', function() {
                 console.log('Back button clicked from requirements.');
@@ -256,9 +257,11 @@ function initializeFormModal($formModalElement) {
         }
     }
 
-    // Return the openFormModal function so it can be triggered from outside if needed
+    // Return the necessary functions for external interaction
     return {
-        open: openFormModal
+        open: openFormModal,
+        renderStep: renderStep, // Expose renderStep
+        closeFormModal: closeFormModal // Expose closeFormModal
     };
 }
 
@@ -269,13 +272,18 @@ $(document).ready(function() {
     if ($primaryFormModal.length) {
         const primaryModalInstance = initializeFormModal($primaryFormModal);
         // Attach event listener for the button that opens the primary modal
-        $('.hp-open-modal-button').on('click', primaryModalInstance.open);
+        $('.hp-open-modal-button').on('click', function() {
+            primaryModalInstance.open();
+            window.activeFormModal = primaryModalInstance; // Set active modal when opened
+        });
     }
 
     // Initialize the inline modal if it exists
     const $inlineFormModal = $('#formModalInline');
     if ($inlineFormModal.length) {
+        const inlineModalInstance = initializeFormModal($inlineFormModal);
         // Since it's an inline form, directly call its open method to render the first step
-        initializeFormModal($inlineFormModal).open();
+        inlineModalInstance.open();
+        window.activeFormModal = inlineModalInstance; // Set active modal if it's the only one/default
     }
 });
