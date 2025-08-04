@@ -27,7 +27,7 @@
                         <p class="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">Ready to transform your organization with AI-powered solutions? Let's discuss how Meridiene can navigate your business through the complex modern marketplace.</p>
                     </div>
 
-                    <div id="contactModal" class="hp-inline-form flex justify-center formModal_contact">
+                    <div id="formModal" class="hp-inline-form flex justify-center formModal_contact">
                         <div class="hp-form-container">
                             <div class="hp-sidebar">
                                 <div class="hp-sidebar-header">
