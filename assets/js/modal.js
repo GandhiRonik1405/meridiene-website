@@ -1,16 +1,24 @@
-const $mainContent = $('.hp-main-content'); // Assuming this refers to the main content area for general use
-const $navItems = $('.hp-nav-item'); // Navigation items within the form (likely shared structure)
-const $formModal = $('#formModal'); // The original form modal overlay
-const isInline = $formModal.hasClass('hp-inline-form'); // Check if the original form is inline
+const $mainContent = $('.hp-main-content'); // Main content (general use, not directly modified)
 
-// New elements for the Contact Modal
+// Original Form Modal variables
+const $formModal = $('#formModal'); // The modal overlay
+const isFormModalInline = $formModal.hasClass('hp-inline-form'); // Check if it's an inline form
+
+// New Contact Modal variables
 const $contactModal = $('#contactModal'); // The contact modal overlay
 const isContactModalInline = $contactModal.hasClass('hp-inline-form'); // Check if contact modal is inline
 
-let currentStep = 'company-size'; // Initial step for the main form
-let currentContactModalStep = 'company-size'; // Initial step for the contact modal
+// Navigation items for the ORIGINAL form modal (assume these are specific to #formModal)
+const $formModalNavItems = $formModal.find('.hp-nav-item');
 
-// Function to display a custom message modal (for alerts) - Shared utility
+// Navigation items for the CONTACT form modal (these must be inside #contactModal)
+const $contactModalNavItems = $contactModal.find('.hp-nav-item');
+
+// Separate current step tracking for each modal
+let currentFormModalStep = 'company-size'; // Initial step for the ORIGINAL form
+let currentContactModalStep = 'company-size'; // Initial step for the CONTACT form
+
+// Function to display a custom message modal (shared utility)
 function showMessageModal(message) {
     const $modalOverlay = $(`
         <div class="hp-modal-overlay">
@@ -26,20 +34,21 @@ function showMessageModal(message) {
     });
 }
 
-// --- Functions for original Form Modal (#formModal) ---
+// --- Functions for Original Form Modal (#formModal) ---
 function openFormModal() {
-    if (!isInline) {
+    if (!isFormModalInline) {
         $formModal.addClass('show');
     }
-    renderStep('company-size', $formModal, $navItems, 'formModal'); // Pass relevant elements and a unique identifier
+    // Call renderStep, specifying the formModal, its nav items, and its unique ID
+    renderStep('company-size', $formModal, $formModalNavItems, 'formModal');
 }
 
 function closeFormModal() {
-    if (!isInline) {
+    if (!isFormModalInline) {
         $formModal.removeClass('show');
     }
-    // Reset nav items for the formModal specifically
-    $formModal.find('.hp-nav-item').each(function() {
+    // Reset nav items for the ORIGINAL form modal
+    $formModalNavItems.each(function() {
         const $navItem = $(this);
         const $icon = $navItem.find('i.fas');
         const originalIconClass = $icon.data('original-icon');
@@ -53,15 +62,16 @@ function openContactModal() {
     if (!isContactModalInline) {
         $contactModal.addClass('show');
     }
-    renderStep('company-size', $contactModal, $contactModal.find('.hp-nav-item'), 'contactModal'); // Pass specific elements
+    // Call renderStep, specifying the contactModal, its nav items, and its unique ID
+    renderStep('company-size', $contactModal, $contactModalNavItems, 'contactModal');
 }
 
 function closeContactModal() {
     if (!isContactModalInline) {
         $contactModal.removeClass('show');
     }
-    // Reset nav items for the contactModal specifically
-    $contactModal.find('.hp-nav-item').each(function() {
+    // Reset nav items for the CONTACT form modal
+    $contactModalNavItems.each(function() {
         const $navItem = $(this);
         const $icon = $navItem.find('i.fas');
         const originalIconClass = $icon.data('original-icon');
@@ -69,7 +79,6 @@ function closeContactModal() {
         $icon.attr('class', 'fas ' + originalIconClass);
     });
 }
-
 
 // Helper function to determine if a step is completed (can be shared)
 function isStepCompleted(navStep, currentStep) {
@@ -79,37 +88,39 @@ function isStepCompleted(navStep, currentStep) {
     return navIndex < currentIndex;
 }
 
-// Generalized renderStep function to work with any modal
+// GENERALIZED function to render a step for ANY modal
 function renderStep(stepName, $modalElement, $modalNavItems, modalId) {
-    // Determine which currentStep variable to update based on modalId
+    // Update the correct current step variable based on the modal being used
     if (modalId === 'formModal') {
-        currentStep = stepName;
+        currentFormModalStep = stepName;
     } else if (modalId === 'contactModal') {
         currentContactModalStep = stepName;
     }
 
-    // Hide all step containers within the specific modal
+    // Hide all step containers within the SPECIFIC modal ($modalElement)
     $modalElement.find('.hp-step-container').hide();
-    // Show the target step container within the specific modal
+    // Show the target step container within the SPECIFIC modal
     $modalElement.find(`#${stepName}-step`).css('display', 'flex');
 
-    // Reset all nav items for the specific modal
+    // Reset all nav items for the SPECIFIC modal ($modalNavItems)
     $modalNavItems.each(function() {
         const $navItem = $(this);
         const $icon = $navItem.find('i.fas');
         const originalIconClass = $icon.data('original-icon');
+
         $navItem.removeClass('active completed');
-        $icon.attr('class', 'fas ' + originalIconClass);
+        $icon.attr('class', 'fas ' + originalIconClass); // Restore original icon
     });
 
-    // Apply active/completed states based on current step for the specific modal
+    // Apply active/completed states based on the current step for the SPECIFIC modal
     $modalNavItems.each(function() {
         const $navItem = $(this);
         const navStep = $navItem.data('step');
         const $icon = $navItem.find('i.fas');
-        const originalIconClass = $icon.data('original-icon');
+        const originalIconClass = $icon.data('original-icon'); // Re-fetch as it might have changed
 
-        const activeStep = (modalId === 'formModal') ? currentStep : currentContactModalStep;
+        // Get the currently active step for THIS specific modal
+        const activeStep = (modalId === 'formModal') ? currentFormModalStep : currentContactModalStep;
 
         if (navStep === activeStep) {
             $navItem.addClass('active');
@@ -120,45 +131,47 @@ function renderStep(stepName, $modalElement, $modalNavItems, modalId) {
         }
     });
 
-    // Handle button states for the specific modal
-    $modalElement.find(`.hp-button`).prop('disabled', false);
+    // Handle button states for the SPECIFIC modal
+    $modalElement.find(`.hp-button`).prop('disabled', false); // Re-enable all by default
     $modalElement.find(`.hp-form-footer .hp-back-button, .hp-form-footer .hp-continue-button, .hp-form-footer .hp-close-form-button`).show();
 
-    // Select the current step container within the specific modal
+
+    // Select the current step container WITHIN THE SPECIFIC MODAL
     const $currentStepContainer = $modalElement.find(`#${stepName}-step`);
 
     if (stepName === 'company-size') {
         $currentStepContainer.find('.hp-back-button').prop('disabled', true);
-        $currentStepContainer.find('.hp-continue-button').prop('disabled', true);
+        $currentStepContainer.find('.hp-continue-button').prop('disabled', true); // Initially disabled
     } else if (stepName === 'contact-information') {
-        $currentStepContainer.find('.hp-continue-button').prop('disabled', true);
+        $currentStepContainer.find('.hp-continue-button').prop('disabled', true); // Initially disabled
     } else if (stepName === 'use-cases') {
-        $currentStepContainer.find('.hp-continue-button').prop('disabled', true);
+        $currentStepContainer.find('.hp-continue-button').prop('disabled', true); // Initially disabled
     } else if (stepName === 'requirements') {
-        $currentStepContainer.find('.hp-continue-button').prop('disabled', true);
+        $currentStepContainer.find('.hp-continue-button').prop('disabled', true); // Initially disabled
     } else if (stepName === 'final-checklist') {
+        // No back/continue, only close button
         $currentStepContainer.find('.hp-form-footer .hp-back-button, .hp-form-footer .hp-continue-button').hide();
         $currentStepContainer.find('.hp-form-footer .hp-close-form-button').show();
     }
     
-    // Attach event listeners for the specific modal
+    // Attach event listeners for THIS specific modal
     attachEventListeners($modalElement, modalId);
 }
 
-
-// Generalized attachEventListeners function
+// GENERALIZED function to attach event listeners for ANY modal
 function attachEventListeners($modalElement, modalId) {
-    // Detach all listeners from buttons and inputs within any step container of this specific modal
+    // Detach all listeners from buttons and inputs within any step container of THIS specific modal
     $modalElement.find('.hp-step-container').find('.hp-continue-button, .hp-back-button, .hp-close-button, .hp-option-card, .hp-use-case-card input, .hp-form-control, .hp-close-form-button').off();
 
-    const currentActiveStep = (modalId === 'formModal') ? currentStep : currentContactModalStep;
+    // Determine the currently active step for THIS specific modal
+    const currentActiveStep = (modalId === 'formModal') ? currentFormModalStep : currentContactModalStep;
 
     const $currentStepContainer = $modalElement.find(`#${currentActiveStep}-step`);
     const $continueButton = $currentStepContainer.find('.hp-continue-button');
     const $backButton = $currentStepContainer.find('.hp-back-button');
-    const $headerCloseButton = $currentStepContainer.find('.hp-close-button');
+    const $headerCloseButton = $currentStepContainer.find('.hp-close-button'); // Top right close button
 
-    // Universal header close button listener
+    // Universal header close button listener (closes the respective modal)
     if ($headerCloseButton.length) {
         $headerCloseButton.on('click', function() {
             if (modalId === 'formModal') {
@@ -182,10 +195,11 @@ function attachEventListeners($modalElement, modalId) {
 
         $continueButton.on('click', function() {
             if (selectedOption) {
+                // Render next step within the SAME modal
                 if (modalId === 'formModal') {
-                    renderStep('contact-information', $formModal, $navItems, 'formModal');
+                    renderStep('contact-information', $formModal, $formModalNavItems, 'formModal');
                 } else if (modalId === 'contactModal') {
-                    renderStep('contact-information', $contactModal, $contactModal.find('.hp-nav-item'), 'contactModal');
+                    renderStep('contact-information', $contactModal, $contactModalNavItems, 'contactModal');
                 }
             } else {
                 showMessageModal('Please select a company size to continue.');
@@ -214,7 +228,7 @@ function attachEventListeners($modalElement, modalId) {
         }
 
         $contactInputs.on('input', checkContactFormValidity);
-        checkContactFormValidity();
+        checkContactFormValidity(); // Run on initial load to set button state
 
         $continueButton.on('click', function() {
             const contactData = {
@@ -225,19 +239,21 @@ function attachEventListeners($modalElement, modalId) {
                 phoneNumber: $currentStepContainer.find('#phoneNumber').val(),
             };
             console.log('Contact Information:', contactData);
+            // Render next step within the SAME modal
             if (modalId === 'formModal') {
-                renderStep('use-cases', $formModal, $navItems, 'formModal');
+                renderStep('use-cases', $formModal, $formModalNavItems, 'formModal');
             } else if (modalId === 'contactModal') {
-                renderStep('use-cases', $contactModal, $contactModal.find('.hp-nav-item'), 'contactModal');
+                renderStep('use-cases', $contactModal, $contactModalNavItems, 'contactModal');
             }
         });
 
         $backButton.on('click', function() {
             console.log('Back button clicked from contact information.');
+            // Render previous step within the SAME modal
             if (modalId === 'formModal') {
-                renderStep('company-size', $formModal, $navItems, 'formModal');
+                renderStep('company-size', $formModal, $formModalNavItems, 'formModal');
             } else if (modalId === 'contactModal') {
-                renderStep('company-size', $contactModal, $contactModal.find('.hp-nav-item'), 'contactModal');
+                renderStep('company-size', $contactModal, $contactModalNavItems, 'contactModal');
             }
         });
     } else if (currentActiveStep === 'use-cases') {
@@ -248,36 +264,39 @@ function attachEventListeners($modalElement, modalId) {
             $useCaseCheckboxes.each(function() {
                 if ($(this).prop('checked')) {
                     isAnySelected = true;
-                    return false;
+                    return false; // Break out of each loop
                 }
             });
             $continueButton.prop('disabled', !isAnySelected);
         }
 
         $useCaseCheckboxes.on('change', checkUseCasesValidity);
-        checkUseCasesValidity();
+        checkUseCasesValidity(); // Initial check on load
 
         $continueButton.on('click', function() {
             const selectedUseCases = $useCaseCheckboxes.filter(':checked').map(function() {
                 return $(this).val();
             }).get();
             console.log('Selected Use Cases:', selectedUseCases);
+            // Render next step within the SAME modal
             if (modalId === 'formModal') {
-                renderStep('requirements', $formModal, $navItems, 'formModal');
+                renderStep('requirements', $formModal, $formModalNavItems, 'formModal');
             } else if (modalId === 'contactModal') {
-                renderStep('requirements', $contactModal, $contactModal.find('.hp-nav-item'), 'contactModal');
+                renderStep('requirements', $contactModal, $contactModalNavItems, 'contactModal');
             }
         });
 
         $backButton.on('click', function() {
             console.log('Back button clicked from use cases.');
+            // Render previous step within the SAME modal
             if (modalId === 'formModal') {
-                renderStep('contact-information', $formModal, $navItems, 'formModal');
+                renderStep('contact-information', $formModal, $formModalNavItems, 'formModal');
             } else if (modalId === 'contactModal') {
-                renderStep('contact-information', $contactModal, $contactModal.find('.hp-nav-item'), 'contactModal');
+                renderStep('contact-information', $contactModal, $contactModalNavItems, 'contactModal');
             }
         });
-    } else if (currentActiveStep === 'requirements') {
+    }
+    else if (currentActiveStep === 'requirements') {
         const $problemsTextarea = $currentStepContainer.find('#problemsFacing');
         const $requirementsTextarea = $currentStepContainer.find('#toolRequirements');
 
@@ -290,7 +309,7 @@ function attachEventListeners($modalElement, modalId) {
         $problemsTextarea.on('input', checkRequirementsValidity);
         $requirementsTextarea.on('input', checkRequirementsValidity);
 
-        checkRequirementsValidity();
+        checkRequirementsValidity(); // Initial check on load
 
         $continueButton.on('click', function() {
             const requirementsData = {
@@ -298,25 +317,30 @@ function attachEventListeners($modalElement, modalId) {
                 toolRequirements: $requirementsTextarea.val().trim()
             };
             console.log('Requirements Data:', requirementsData);
+            // Temporarily stop flow here
             showMessageModal('Requirements submitted! Further steps are currently disabled.');
-            // Do NOT call renderStep('final-checklist');
+            // We explicitly do NOT call renderStep('final-checklist'); here as per your original logic.
         });
 
         $backButton.on('click', function() {
             console.log('Back button clicked from requirements.');
+            // Render previous step within the SAME modal
             if (modalId === 'formModal') {
-                renderStep('use-cases', $formModal, $navItems, 'formModal');
+                renderStep('use-cases', $formModal, $formModalNavItems, 'formModal');
             } else if (modalId === 'contactModal') {
-                renderStep('use-cases', $contactModal, $contactModal.find('.hp-nav-item'), 'contactModal');
+                renderStep('use-cases', $contactModal, $contactModalNavItems, 'contactModal');
             }
         });
-    } else if (currentActiveStep === 'final-checklist') {
+    }
+    else if (currentActiveStep === 'final-checklist') {
+        // This screen has no "Back" button, and "Continue" is replaced by "Close"
         const $closeFormButton = $currentStepContainer.find('.hp-close-form-button');
 
         if ($closeFormButton.length) {
             $closeFormButton.on('click', function() {
                 console.log('Form Close button clicked from final checklist.');
                 showMessageModal('Form submission complete!');
+                // Close the respective modal after submission message
                 if (modalId === 'formModal') {
                     closeFormModal();
                 } else if (modalId === 'contactModal') {
@@ -328,20 +352,20 @@ function attachEventListeners($modalElement, modalId) {
 }
 
 $(document).ready(function() {
-    // Initialize original Form Modal
-    if (!isInline) {
+    // Initialize Original Form Modal
+    if (!isFormModalInline) { // Check the specific inline flag for formModal
         $('.hp-open-modal-button').on('click', openFormModal);
     } else {
+        // If it's an inline form, directly render the first step on page load
         openFormModal();
     }
 
     // Initialize Contact Modal
-    // This is the button in your header that will open the contact modal
-    // You'll need to add a class like 'hp-open-contact-modal-button' to it
+    // This button will likely be in your header on the contact page
     $('.hp-open-contact-modal-button').on('click', openContactModal);
 
-    // If the contact modal should be inline on the contact page
+    // If the contact modal should be inline on the contact page, open it by default
     if (isContactModalInline) {
-        openContactModal(); // Directly open if it's an inline form on load
+        openContactModal();
     }
 });
