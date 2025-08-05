@@ -642,3 +642,9 @@ textarea.hp-form-control {
     align-items: center;
     background-color: rgba(229, 231, 235, 1);
 }
+
+/**/
+
+.play-icon:hover img {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(4%) saturate(343%) hue-rotate(9deg) brightness(116%) contrast(100%);
+}

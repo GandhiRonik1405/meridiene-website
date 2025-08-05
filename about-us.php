@@ -27,7 +27,7 @@
                     </div>
                 </section>
                 <section class="py-20 px-6 bg-muted/30">
-                    <div class="max-w-6xl mx-auto">
+                    <div class="container mx-auto">
                         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" style="opacity: 1;">
                             <div style="opacity: 1; transform: none;">
                                 <div class="rounded-lg text-card-foreground p-8 h-full border-0 shadow-lg bg-card/50 backdrop-blur-sm hover:shadow-xl transition-all duration-300 group">

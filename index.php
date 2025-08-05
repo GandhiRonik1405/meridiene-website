@@ -156,7 +156,7 @@
 
                                 <!-- Play Button Overlay -->
                                 <div class="absolute inset-0 flex items-center justify-center">
-                                    <button class="bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-4 shadow-md transition hp-open-modal-button">▶️</button>
+                                    <button class="bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-4 shadow-md transition hp-open-modal-button play-icon"><img src="assets/images/play.png" alt="play icon" width="25" height="25"></button>
                                 </div>
                             </div>
 

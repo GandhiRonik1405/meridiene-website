@@ -85,7 +85,7 @@
                             Model organizational transformations before implementation. Visualize impact, identify risks, and ensure successful change management with predictive insights and scenario planning.
                         </p>
                     </div>
-                    <div class="max-w-7xl mx-auto">
+                    <div class="mx-auto">
                         <div class="rounded-lg bg-card text-card-foreground shadow-sm bg-gradient-to-br from-card to-card/50 border-2 border-primary/20 shadow-glow overflow-hidden">
                             <div class="flex flex-col space-y-1.5 p-6 bg-secondary/50 border-b border-border">
                                 <div class="flex items-center justify-between">

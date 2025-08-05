@@ -113,7 +113,7 @@
                 </div>
             </section>
             <section class="py-20 pt-10 px-4">
-                <div class="container mx-auto">
+                <div class="container mx-auto px-6">
                     <div class="flex items-center justify-center gap-4 mb-12">
                         <span class="text-lg font-medium text-primary" id="monthlyText">
                         Monthly
@@ -129,7 +129,7 @@
                             Save 20%
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto">
                         <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative p-6 transition-all duration-500 hover:scale-105 hover:shadow-hover animate-fade-in group" style="animation-delay: 0ms;">
                             <div class="flex flex-col space-y-1.5 p-6 relative z-10">
                                 <div class="flex items-center justify-between mb-4">
@@ -674,7 +674,7 @@
                 </div>
             </section>
             <section class="py-20 px-4 bg-muted/30">
-                <div class="container mx-auto">
+                <div class="container mx-auto px-6">
                     <div class="text-center mb-12">
                         <h2 class="text-4xl font-bold mb-4">
                             Why

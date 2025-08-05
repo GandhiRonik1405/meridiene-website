@@ -18,7 +18,7 @@
         <!-- Site content start -->
         <br><br><br>
         <div class="min-h-screen bg-background">
-            <div class="max-w-7xl mx-auto px-6 py-8">
+            <div class="container mx-auto px-6 py-8">
                 <div class="mb-8">
                     <h1 class="text-4xl font-bold bg-gradient-to-r from-brand-red to-brand-purple bg-clip-text text-transparent mb-4">AI Readiness Assessment</h1>
                     <p class="text-lg text-muted-foreground">Analyze market trends, skill gaps, and AI impact across your organization</p>

@@ -98,7 +98,7 @@
                                 Set cost, demand, and supply assumptions. Combine with real employee data. See and assess gaps within your workforce planning with precision.
                             </p>
                         </div>
-                        <div class="max-w-4xl mx-auto mb-16">
+                        <div class="mx-auto mb-16">
                             <div class="rounded-lg border text-card-foreground shadow-sm border-destructive/20 bg-destructive/5">
                                 <div class="p-8">
                                     <div class="flex items-start space-x-4">
@@ -145,7 +145,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="max-w-7xl mx-auto">
+                        <div class="mx-auto">
                             <div class="rounded-lg bg-card text-card-foreground shadow-sm bg-gradient-to-br from-card to-card/50 border-2 border-primary/20 shadow-glow overflow-hidden">
                                 <div class="flex flex-col space-y-1.5 p-6 bg-secondary/50 border-b border-border">
                                     <div class="flex items-center justify-between">
