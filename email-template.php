@@ -17,7 +17,7 @@
         <table class="email-card" align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="background-color: #f5f5f5; border-radius: 25px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); max-width: 600px; margin: 40px auto; overflow: hidden;">
             <tr>
                 <td class="header-section" style="padding: 32px 24px 16px 24px; text-align: center;">
-                    <img src="<?= BASE_URL ?>/assets/images/Meridiene-logo.png" alt="Meridiene Logo" width="width: 100px;" style="display: block; margin: 0 auto; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;">
+                    <img src="<?= BASE_URL ?>/assets/images/Meridiene-logo.png" alt="Meridiene Logo" width="100" style="display: block; margin: 0 auto; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;">
                 </td>
             </tr>
             <tr>

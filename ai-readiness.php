@@ -19,10 +19,36 @@
         <br><br><br>
         <div class="min-h-screen bg-background">
             <div class="container mx-auto px-6 py-8">
-                <div class="mb-8">
-                    <h1 class="text-4xl font-bold bg-gradient-to-r from-brand-red to-brand-purple bg-clip-text text-transparent mb-4">AI Readiness Assessment</h1>
+            <div class="text-center mb-16">
+                        <div class="inline-flex items-center space-x-2 bg-primary/10 rounded-full px-4 py-2 mb-6">
+                            <svg class="lucide lucide-refresh-cw h-4 w-4 text-primary animate-spin-slow" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8">
+                                </path>
+                                <path d="M21 3v5h-5">
+                                </path>
+                                <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16">
+                                </path>
+                                <path d="M8 16H3v5">
+                                </path>
+                            </svg>
+                            <span class="text-sm font-medium text-primary">
+                            AI Readiness Assessment
+                            </span>
+                        </div>
+                        <h1 class="text-5xl lg:text-6xl font-bold mb-6">
+                           AI Readiness
+                            <span class="bg-gradient-primary bg-clip-text text-transparent">
+                            Assessment
+                            </span>
+                        </h1>
+                        <p class="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                        Analyze market trends, skill gaps, and AI impact across your organization
+                        </p>
+                    </div>
+                <!-- <div class="mb-8">
+                    <h1 class="text-4xl font-bold bg-gradient-to-r from-brand-red to-brand-purple bg-clip-text text-transparent mb-4"></h1>
                     <p class="text-lg text-muted-foreground">Analyze market trends, skill gaps, and AI impact across your organization</p>
-                </div>
+                </div> -->
                 <div class="mb-12">
                     <h2 class="text-3xl font-bold mb-6">See Your AI Transformation in Action</h2>
                     <p class="text-lg text-muted-foreground mb-8 max-w-3xl">Watch how Meridiene's AI models analyze organizational readiness in real-time, providing predictive insights and impact assessments to ensure successful AI transformations.</p>
