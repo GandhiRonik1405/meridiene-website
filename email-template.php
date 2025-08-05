@@ -29,7 +29,7 @@
                             Hi, <span class="name-highlight" style="font-weight: 600; color: #2D3748;">{{name}}</span>
                         </p>
                         <p style="margin-top: 0; margin-bottom: 24px;">
-                            Thank you for reaching out to Meridiene — your interest has been recorded.
+                            Thank you for reaching out to Meridiene, your interest has been recorded.
                         </p>
                         <p>
                             We’re in the process of scheduling a tailored demo session just for you. This 30-minute session will walk you through a personalized solution, showing exactly how Meridiene can help you address your organizational challenges with clarity and confidence.

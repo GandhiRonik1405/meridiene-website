@@ -109,7 +109,7 @@
 </footer>
 <div id="cookie-banner" class="fixed bottom-0 left-0 w-full z-50 bg-white border-t border-gray-300 px-6 py-4 shadow-lg flex flex-col md:flex-row items-center justify-between text-sm text-gray-800 hidden">
     <div>
-        <p><strong>This website uses cookies</strong> to ensure you get the best experience.</p>
+        <p>We use cookies to ensure you get the best experience on our website. By continuing to use this site, you accept our use of cookies.</p>
     </div>
     <button onclick="acceptCookies()" class="mt-1 shrink-0 bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-md text-xs">
     Accept
