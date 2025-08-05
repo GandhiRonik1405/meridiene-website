@@ -2,13 +2,6 @@ $(document).on('click', '.hp-continue-button:contains("Submit")', function () {
     // Determine which modal the clicked submit button belongs to
     // Find the closest parent formModal or formModalInline
     const $currentModal = $(this).closest('#formModal, #formModalInline');
-
-    // Get the instance of the modal that this button belongs to
-    // This assumes that initializeFormModal returns an object with renderStep and closeFormModal
-    // and that 'this' (the button) is within the scope of an initialized modal.
-    // A more robust way might involve storing modal instances in a map by ID if you have many.
-    // For now, we'll assume the click context implies the activeFormModal is the one to use.
-
     if (!window.activeFormModal) {
         console.error("No active form modal found to submit from.");
         // Potentially show an error message or prevent submission
@@ -47,8 +40,10 @@ $(document).on('click', '.hp-continue-button:contains("Submit")', function () {
         problems: problems,
         tools: tools
     };
-    $currentModal.find('.loader').removeClass('hidden'); // Use $currentModal to find the loader
     
+    $('.btn-inner-icon').addClass('hidden');
+    $('.btn-inner-loader').removeClass('hidden');
+    $('.hp-continue-button').prop('disabled', true);
     $.ajax({
         type: "POST",
         url: "send-mail.php",
@@ -60,7 +55,8 @@ $(document).on('click', '.hp-continue-button:contains("Submit")', function () {
     
             if (response.status === 'success') {
 
-                $currentModal.find('.loader').addClass('hidden'); // Use $currentModal to hide the loader
+                $('.btn-inner-icon').removeClass('hidden');
+                $('.btn-inner-loader').addClass('hidden');
                 $msgBox.html('<div class="text-green-700 bg-green-50 border border-green-300 p-4 rounded">✅ ' + response.message + '</div>');
     
                 // Call renderStep on the active modal instance
@@ -97,17 +93,24 @@ $(document).on('click', '.hp-continue-button:contains("Submit")', function () {
                 grecaptcha.reset();
     
             } else if (response.status === 'recaptcha_failed') {
+                 $('.btn-inner-icon').removeClass('hidden');
+                 $('.btn-inner-loader').addClass('hidden');
+                $('.hp-continue-button').prop('disabled', false);
                 $msgBox.html('<div class="text-yellow-700 bg-yellow-50 border border-yellow-300 p-4 rounded">⚠️ ' + response.message + '</div>');
                 console.warn('Form failed:', response.message);
     
             } else {
+                $('.btn-inner-icon').removeClass('hidden');
+                $('.btn-inner-loader').addClass('hidden');
+                $('.hp-continue-button').prop('disabled', false);
                 $msgBox.html('<div class="text-red-700 bg-red-50 border border-red-300 p-4 rounded">❌ ' + response.message + '</div>');
             }
         },
     
         error: function (xhr, status, error) {
-            // Use $currentModal to target elements within the specific modal
-            $currentModal.find('.loader').addClass('hidden');
+            $('.btn-inner-icon').removeClass('hidden');
+            $('.btn-inner-loader').addClass('hidden');
+            $('.hp-continue-button').prop('disabled', false);
             $currentModal.find('#responseMsg').html('<div class="text-red-700 bg-red-50 border border-red-300 p-4 rounded">❌ Something went wrong: ' + error + '</div>');
         }
     });

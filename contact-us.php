@@ -291,9 +291,7 @@
                         <h1>What's your company size?</h1>
                         <p>This helps us understand your organizational complexity.</p>
                     </div>
-                    <button type="button" class="hp-close-button" aria-label="Close form">
-                        <i class="fas fa-times"></i>
-                    </button>
+                  
                 </div>
                 <div class="hp-options-grid">
                     <div class="hp-option-card" data-value="1000-2000">
@@ -333,9 +331,7 @@
                         <h1>Contact Information</h1>
                         <p>Help us personalize our approach to your needs.</p>
                     </div>
-                    <button type="button" class="hp-close-button" aria-label="Close form">
-                        <i class="fas fa-times"></i>
-                    </button>
+                   
                 </div>
                 <div class="hp-form-fields">
                     <div class="hp-form-group">
@@ -371,9 +367,7 @@
                         <h1>Use Cases</h1>
                         <p>Select the areas you might be interested in exploring.</p>
                     </div>
-                    <button type="button" class="hp-close-button" aria-label="Close form">
-                        <i class="fas fa-times"></i>
-                    </button>
+                 
                 </div>
                 <div class="hp-use-cases-grid">
                     <label class="hp-use-case-card">
@@ -413,9 +407,7 @@
                         <h1>Define Your Requirements</h1>
                         <p>Help us understand your specific challenges and what you're looking for.</p>
                     </div>
-                    <button type="button" class="hp-close-button" aria-label="Close form">
-                        <i class="fas fa-times"></i>
-                    </button>
+                  
                 </div>
                 <div class="hp-form-fields">
                     <div class="hp-form-group hp-full-width">
@@ -435,16 +427,20 @@
                     <span class="loader hidden w-4 h-4 border-4 border-white border-t-transparent rounded-full " style="width: 50px;">
                     <img src="assets/images/form_loder.gif"/>
                     </span>
-                    <button type="button" class="hp-button hp-button-danger hp-continue-button inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white font-semibold border-0 rounded-lg px-10 text-lg group hover:scale-105 hover:shadow-hover transition-all duration-500 relative overflow-hidden animate-pulse-glow" disabled>Submit</button>
+                    <button type="button" class="hp-button hp-button-danger hp-continue-button inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-primary text-white font-semibold border-0 rounded-lg px-10 text-lg group hover:scale-105 hover:shadow-hover transition-all duration-500 relative overflow-hidden animate-pulse-glow" disabled>
+                    <div class="btn-inner-loader hidden">
+                            <svg width="60" height="60" viewBox="0 0 50 50"><circle cx="40" cy="25" r="3" fill="#ffffff"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" begin="0s" repeatCount="indefinite"></animate></circle><circle cx="37.99038105676658" cy="32.5" r="3" fill="#ffffff"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" begin="0.1s" repeatCount="indefinite"></animate></circle><circle cx="32.5" cy="37.99038105676658" r="3" fill="#ffffff"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" begin="0.2s" repeatCount="indefinite"></animate></circle><circle cx="25" cy="40" r="3" fill="#ffffff"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" begin="0.30000000000000004s" repeatCount="indefinite"></animate></circle><circle cx="17.500000000000004" cy="37.99038105676658" r="3" fill="#ffffff"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" begin="0.4s" repeatCount="indefinite"></animate></circle><circle cx="12.00961894323342" cy="32.5" r="3" fill="#ffffff"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" begin="0.5s" repeatCount="indefinite"></animate></circle><circle cx="10" cy="25.000000000000004" r="3" fill="#ffffff"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" begin="0.6000000000000001s" repeatCount="indefinite"></animate></circle><circle cx="12.009618943233418" cy="17.500000000000004" r="3" fill="#ffffff"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" begin="0.7000000000000001s" repeatCount="indefinite"></animate></circle><circle cx="17.499999999999993" cy="12.009618943233423" r="3" fill="#ffffff"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" begin="0.8s" repeatCount="indefinite"></animate></circle><circle cx="24.999999999999996" cy="10" r="3" fill="#ffffff"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" begin="0.9s" repeatCount="indefinite"></animate></circle><circle cx="32.5" cy="12.009618943233422" r="3" fill="#ffffff"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" begin="1s" repeatCount="indefinite"></animate></circle><circle cx="37.99038105676658" cy="17.499999999999993" r="3" fill="#ffffff"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" begin="1.1s" repeatCount="indefinite"></animate></circle></svg>
+                        </div>
+                        <div class="btn-inner-icon ">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="#ffffff" d="M568.4 37.7C578.2 34.2 589 36.7 596.4 44C603.8 51.3 606.2 62.2 602.7 72L424.7 568.9C419.7 582.8 406.6 592 391.9 592C377.7 592 364.9 583.4 359.6 570.3L295.4 412.3C290.9 401.3 292.9 388.7 300.6 379.7L395.1 267.3C400.2 261.2 399.8 252.3 394.2 246.7C388.6 241.1 379.6 240.7 373.6 245.8L261.2 340.1C252.1 347.7 239.6 349.7 228.6 345.3L70.1 280.8C57 275.5 48.4 262.7 48.4 248.5C48.4 233.8 57.6 220.7 71.5 215.7L568.4 37.7z"></path></svg>
+                        </div>    Submit</button>
                 </div>
             </div>
 
             <div id="final-checklist-step" class="hp-step-container">
                 <div class="hp-main-content-header">
                     <div></div>
-                    <button type="button" class="hp-close-button" aria-label="Close form">
-                        <i class="fas fa-times"></i>
-                    </button>
+                   
                 </div>
                 <div class="hp-thank-you-content">
                     <div class="hp-checkmark-circle">
