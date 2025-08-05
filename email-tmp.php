@@ -17,7 +17,7 @@
         <table class="email-card" align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="background-color: #f5f5f5; border-radius: 25px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); max-width: 600px; margin: 40px auto; overflow: hidden;">
             <tr>
                 <td class="header-section" style="padding: 32px 24px 16px 24px; text-align: center;">
-                    <img src="<?= BASE_URL ?>assets/images/Meridiene-logo.png" alt="Meridiene Logo" width="" style="display: block; margin: 0 auto; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;">
+                    <img src="<?= BASE_URL ?>/assets/images/Meridiene-logo.png" alt="Meridiene Logo" width="width: 100px;"  style="display: block; margin: 0 auto; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;">
                 
                 </td>
             </tr>
@@ -102,27 +102,30 @@
                                     <tr>
                                         <td style="padding-right: 16px;">
                                             <a href="#" style="text-decoration: none; width: 25px; height: 25px; color: #fff; border: 1px solid #fff; border-radius: 100%; display: flex; justify-content: center; align-items: center;">
-                                                 <i class="fa-brands fa-linkedin-in" style="font-size: 13px;"></i>
+                                            <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" style="vertical-align: middle;" />
                                             </a>
                                         </td>
                                         <td style="padding-right: 16px;">
                                             <a href="#" style="text-decoration: none; width: 25px; height: 25px; color: #fff; border: 1px solid #fff; border-radius: 100%; display: flex; justify-content: center; align-items: center;">
-                                                <i class="fa-brands fa-twitter" style="font-size: 13px;"></i>
+                                        <img src="<?= BASE_URL ?>/assets/images/x-twitter.png" alt="Twitter"  /> 
+                                           
+                                             
                                             </a>
                                         </td>
                                         <td>
                                             <a href="#" style="text-decoration: none; width: 25px; height: 25px; color: #fff; border: 1px solid #fff; border-radius: 100%; display: flex; justify-content: center; align-items: center;">
-                                                <i class="fa-brands fa-facebook-f" style="font-size: 13px;"></i>
-                                            </a>
+                                            <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png"  alt="Facebook" />
+
+                                        </a>
                                         </td>
                                     </tr>
                                 </table>
                             </td>
                             <td align="right" class="footer-email-link" style="padding-top: 0px;">
                                 <a href="mailto:info@txtech.co" class="footer-email" style="color: #ffffff; text-decoration: none; font-weight: 500; display: flex; justify-content: flex-end; align-items: center; gap: 15px;">
-                                    <div style=" width: 25px; height: 25px; color: #fff; border: 1px solid #fff; border-radius: 100%; display: flex; justify-content: center; align-items: center;">
-                                        <i class="fa-solid fa-envelope" style="font-size: 13px;"></i>
-                                    </div>
+                                    <div >
+                                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" width="20" height="20" alt="email icon" style="vertical-align: middle;"  alt="email icon">
+                                    </div>&nbsp;
                                     info@txtech.co
                                 </a>
                             </td>
